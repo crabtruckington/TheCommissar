@@ -1,0 +1,11 @@
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\TheCommissar.exe.config
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\TheCommissar.exe
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\TheCommissar.pdb
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.bpModForm.resources
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.mainForm.resources
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.Properties.Resources.resources
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.talentForm.resources
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.csproj.GenerateResource.cache
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.csproj.CoreCompileInputs.cache
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.exe
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.pdb
