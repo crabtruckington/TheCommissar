@@ -995,7 +995,7 @@ namespace TheCommissar
                 }
                 if (raceSelection == "Necron, 20BP")
                 {
-                    archetypeSelect.Items.Add("Necron Immortal");
+                    archetypeSelect.Items.Add("Necron Cryptek");
                 }
                 if (raceSelection == "Adeptus Astartes, 50BP")
                 { 
@@ -1015,7 +1015,7 @@ namespace TheCommissar
                 }
                 if (raceSelection == "Necron, 20BP")
                 {
-                    archetypeSelect.Items.Add("Necron Overlord");
+                    archetypeSelect.Items.Add("Necron Nemesor");
                 }
             }
 
@@ -1128,13 +1128,13 @@ namespace TheCommissar
                 bpSpentOnArchetype = 30;
             }
             if (archetypeSelect.SelectedItem.ToString() == "Sister of Battle" || archetypeSelect.SelectedItem.ToString() == "Rogue Trader" ||
-                archetypeSelect.SelectedItem.ToString() == "Skitarius" || archetypeSelect.SelectedItem.ToString() == "Crusader" ||
-                archetypeSelect.SelectedItem.ToString() == "Necron Immortal")
+                archetypeSelect.SelectedItem.ToString() == "Skitarius" || archetypeSelect.SelectedItem.ToString() == "Crusader")
             {
                 bpSpentOnArchetype = 40;
             }
             if (archetypeSelect.SelectedItem.ToString() == "Sanctioned Psyker" || archetypeSelect.SelectedItem.ToString() == "Rogue Psyker" ||
-                archetypeSelect.SelectedItem.ToString() == "Imperial Commisar" || archetypeSelect.SelectedItem.ToString() == "Tactical Space Marine")
+                archetypeSelect.SelectedItem.ToString() == "Imperial Commisar" || archetypeSelect.SelectedItem.ToString() == "Tactical Space Marine" ||
+                archetypeSelect.SelectedItem.ToString() == "Necron Cryptek")
             {
                 bpSpentOnArchetype = 50;
             }
@@ -1147,7 +1147,7 @@ namespace TheCommissar
             {
                 bpSpentOnArchetype = 70;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Eldar Warlock" || archetypeSelect.SelectedItem.ToString() == "Necron Overlord")
+            if (archetypeSelect.SelectedItem.ToString() == "Eldar Warlock" || archetypeSelect.SelectedItem.ToString() == "Necron Nemesor")
             {
                 bpSpentOnArchetype = 80;
             }
@@ -1192,6 +1192,8 @@ namespace TheCommissar
             }
         }
 
+
+        //saving routine, this is totally gross
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -1266,10 +1268,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(bpSpentOnArchetype));
                 sw.WriteLine(Convert.ToString(bpSpentOnSkills));
                 sw.WriteLine(Convert.ToString(bpSpentOnAttributes));
-
-
-
-                // new work right now
                 sw.WriteLine(Convert.ToString(rankValueBox.Value));
                 sw.WriteLine(Convert.ToString(wealthValueBox.Value));
                 sw.WriteLine(Convert.ToString(corruptionValueBox.Value));
@@ -1282,7 +1280,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(attFellowshipModifier.Value));
                 sw.WriteLine(Convert.ToString(attInitiativeModifier.Value));
                 sw.WriteLine(Convert.ToString(attSpeedModifier.Value));
-
                 sw.WriteLine("?????RangedWeaponName?????");
                 sw.WriteLine(Convert.ToString(rangedWeaponNameBox.Text));
                 sw.WriteLine("?????RangedWeaponNameEnd?????");
@@ -1298,14 +1295,12 @@ namespace TheCommissar
                 sw.WriteLine("?????RangedWeaponKeywords?????");
                 sw.WriteLine(Convert.ToString(rangedWeaponKeywordsBox.Text));
                 sw.WriteLine("?????RangedWeaponKeywordsEnd?????");
-
                 sw.WriteLine("?????MeleeWeaponName?????");
                 sw.WriteLine(Convert.ToString(meleeWeaponNameBox.Text));
                 sw.WriteLine("?????MeleeWeaponNameEnd?????");
                 sw.WriteLine(Convert.ToString(meleeWeaponDamageBox.Text));
                 sw.WriteLine(Convert.ToString(meleeWeaponEDBox.Text));
                 sw.WriteLine(Convert.ToString(meleeWeaponAPBox.Text));
-
                 sw.WriteLine("?????MeleeWeaponRange?????");
                 sw.WriteLine(Convert.ToString(MeleeWeaponRangeBox.Text));
                 sw.WriteLine("?????MeleeWeaponRangeEnd?????");
@@ -1316,8 +1311,6 @@ namespace TheCommissar
                 sw.WriteLine("?????MeleeWeaponKeywords?????");
                 sw.WriteLine(Convert.ToString(meleeWeaponKeywordsBox.Text));
                 sw.WriteLine("?????MeleeWeaponKeywordsEnd?????");
-
-
                 sw.WriteLine("?????ArmorName?????");
                 sw.WriteLine(Convert.ToString(armorNameBox.Text));
                 sw.WriteLine("?????ArmorNameEnd?????");
@@ -1329,8 +1322,6 @@ namespace TheCommissar
                 sw.WriteLine("?????ArmorKeywords?????");
                 sw.WriteLine(Convert.ToString(armorKeywordsBox.Text));
                 sw.WriteLine("?????ArmorKeywordsEnd?????");
-
-
                 sw.WriteLine(Convert.ToString("?????Power1?????"));
                 sw.WriteLine(Convert.ToString(powerNameBox1.Text));
                 sw.WriteLine(Convert.ToString("?????Power2?????"));
@@ -1379,8 +1370,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerNameBox23.Text));
                 sw.WriteLine(Convert.ToString("?????Power24?????"));
                 sw.WriteLine(Convert.ToString(powerNameBox24.Text));
-
-                
                 sw.WriteLine(Convert.ToString("?????PowerDamage1?????"));
                 sw.WriteLine(Convert.ToString(powerDamageBox1.Text));
                 sw.WriteLine(Convert.ToString("?????PowerDamage2?????"));
@@ -1429,9 +1418,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerDamageBox23.Text));
                 sw.WriteLine(Convert.ToString("?????PowerDamage24?????"));
                 sw.WriteLine(Convert.ToString(powerDamageBox24.Text));
-
-
-
                 sw.WriteLine(Convert.ToString("?????PowerED1?????"));
                 sw.WriteLine(Convert.ToString(powerEDBox1.Text));
                 sw.WriteLine(Convert.ToString("?????PowerED2?????"));
@@ -1480,7 +1466,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerEDBox23.Text));
                 sw.WriteLine(Convert.ToString("?????PowerED24?????"));
                 sw.WriteLine(Convert.ToString(powerEDBox24.Text));
-
                 sw.WriteLine(Convert.ToString("?????PowerActivation1?????"));
                 sw.WriteLine(Convert.ToString(powerActivationBox1.Text));
                 sw.WriteLine(Convert.ToString("?????PowerActivation2?????"));
@@ -1529,7 +1514,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerActivationBox23.Text));
                 sw.WriteLine(Convert.ToString("?????PowerActivation24?????"));
                 sw.WriteLine(Convert.ToString(powerActivationBox24.Text));
-
                 sw.WriteLine(Convert.ToString("?????PowerRange1?????"));
                 sw.WriteLine(Convert.ToString(powerRangeBox1.Text));
                 sw.WriteLine(Convert.ToString("?????PowerRange2?????"));
@@ -1578,7 +1562,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerRangeBox23.Text));
                 sw.WriteLine(Convert.ToString("?????PowerRange24?????"));
                 sw.WriteLine(Convert.ToString(powerRangeBox24.Text));
-
                 sw.WriteLine(Convert.ToString("?????PowerMulti1?????"));
                 sw.WriteLine(Convert.ToString(powerMultiCheckBox1.Checked.ToString()));
                 sw.WriteLine(Convert.ToString(powerMultiCheckBox2.Checked.ToString()));
@@ -1604,7 +1587,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerMultiCheckBox22.Checked.ToString()));
                 sw.WriteLine(Convert.ToString(powerMultiCheckBox23.Checked.ToString()));
                 sw.WriteLine(Convert.ToString(powerMultiCheckBox24.Checked.ToString()));
-
                 sw.WriteLine(Convert.ToString("?????PowerKeyword1?????"));
                 sw.WriteLine(Convert.ToString(powerKeywordBox1.Text));
                 sw.WriteLine(Convert.ToString("?????PowerKeyword2?????"));
@@ -1653,7 +1635,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerKeywordBox23.Text));
                 sw.WriteLine(Convert.ToString("?????PowerKeyword24?????"));
                 sw.WriteLine(Convert.ToString(powerKeywordBox24.Text));
-
                 sw.WriteLine(Convert.ToString("?????PowerPotency1?????"));
                 sw.WriteLine(Convert.ToString(powerPotencyBox1.Text));
                 sw.WriteLine(Convert.ToString("?????PowerPotency2?????"));
@@ -1702,10 +1683,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(powerPotencyBox23.Text));
                 sw.WriteLine(Convert.ToString("?????PowerPotency24?????"));
                 sw.WriteLine(Convert.ToString(powerPotencyBox24.Text));
-                //new work right now
-
-
-
                 // talents and special tabs
                 sw.WriteLine("?????Talents?????");
                 foreach (var item in talentBox.Items)
@@ -1722,6 +1699,8 @@ namespace TheCommissar
             }
         }
 
+
+        //loading routine, this is absolutely disgusting and there has to be a better way to do it
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
