@@ -9,3 +9,4 @@ F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCo
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.mainForm.resources
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.talentForm.resources
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.bpModForm.resources
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.csprojAssemblyReference.cache
