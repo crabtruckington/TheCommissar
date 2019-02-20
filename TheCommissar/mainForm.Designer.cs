@@ -47,6 +47,36 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.core = new System.Windows.Forms.TabPage();
+            this.rankAndBonusLabel = new System.Windows.Forms.Label();
+            this.influenceValueBox = new System.Windows.Forms.NumericUpDown();
+            this.resolveValueBox = new System.Windows.Forms.NumericUpDown();
+            this.influenceBonusLabel = new System.Windows.Forms.Label();
+            this.resolveBonusLabel = new System.Windows.Forms.Label();
+            this.passiveAwarenessValueBox = new System.Windows.Forms.NumericUpDown();
+            this.passiveAwarenessBonusLabel = new System.Windows.Forms.Label();
+            this.convictionValueBox = new System.Windows.Forms.NumericUpDown();
+            this.convictionBonusLabel = new System.Windows.Forms.Label();
+            this.resilienceValueBox = new System.Windows.Forms.NumericUpDown();
+            this.soakValueBox = new System.Windows.Forms.NumericUpDown();
+            this.resilienceBonusLabel = new System.Windows.Forms.Label();
+            this.soakBonusLabel = new System.Windows.Forms.Label();
+            this.defenceValueBox = new System.Windows.Forms.NumericUpDown();
+            this.defenceBonusLabel = new System.Windows.Forms.Label();
+            this.attSpeedModifier = new System.Windows.Forms.NumericUpDown();
+            this.attInitiativeModifier = new System.Windows.Forms.NumericUpDown();
+            this.attFellowshipModifier = new System.Windows.Forms.NumericUpDown();
+            this.attWillpowerModifier = new System.Windows.Forms.NumericUpDown();
+            this.attIntellectModifier = new System.Windows.Forms.NumericUpDown();
+            this.attToughnessModifier = new System.Windows.Forms.NumericUpDown();
+            this.attAgilityModifier = new System.Windows.Forms.NumericUpDown();
+            this.attStrengthModifier = new System.Windows.Forms.NumericUpDown();
+            this.attModiferLabel = new System.Windows.Forms.Label();
+            this.corruptionValueBox = new System.Windows.Forms.NumericUpDown();
+            this.corruptionValueLabel = new System.Windows.Forms.Label();
+            this.wealthValueBox = new System.Windows.Forms.NumericUpDown();
+            this.rankValueBox = new System.Windows.Forms.NumericUpDown();
+            this.wealthValueLabel = new System.Windows.Forms.Label();
+            this.rankValueLabel = new System.Windows.Forms.Label();
             this.removeBPButton = new System.Windows.Forms.Button();
             this.addBPButton = new System.Windows.Forms.Button();
             this.nameBox = new System.Windows.Forms.TextBox();
@@ -164,115 +194,217 @@
             this.skillAthletics = new System.Windows.Forms.NumericUpDown();
             this.athleticsLabel = new System.Windows.Forms.Label();
             this.equipment = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.armorNameLabel = new System.Windows.Forms.Label();
+            this.armorRatingBox = new System.Windows.Forms.NumericUpDown();
+            this.armorRatingHeaderLabel = new System.Windows.Forms.Label();
+            this.armorKeywordsBox = new System.Windows.Forms.TextBox();
+            this.armorValueBox = new System.Windows.Forms.TextBox();
+            this.armorTraitsBox = new System.Windows.Forms.TextBox();
+            this.armorNameBox = new System.Windows.Forms.TextBox();
+            this.meleeWeaponKeywordsBox = new System.Windows.Forms.TextBox();
+            this.meleeWeaponValueBox = new System.Windows.Forms.TextBox();
+            this.meleeWeaponTraitsBox = new System.Windows.Forms.TextBox();
+            this.MeleeWeaponRangeBox = new System.Windows.Forms.TextBox();
+            this.meleeWeaponAPBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.meleeWeaponEDBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.meleeWeaponDamageBox = new System.Windows.Forms.TextBox();
+            this.meleeWeaponNameBox = new System.Windows.Forms.TextBox();
+            this.meleeWeaponHeaderLabel = new System.Windows.Forms.Label();
+            this.rangedWeaponKeywordsBox = new System.Windows.Forms.TextBox();
+            this.keywordsHeaderLabel = new System.Windows.Forms.Label();
+            this.rangedWeaponValueBox = new System.Windows.Forms.TextBox();
+            this.rangedWeaponTraitBox = new System.Windows.Forms.TextBox();
+            this.rangedWeaponSalvoBox = new System.Windows.Forms.TextBox();
+            this.rangedWeaponRangeBox = new System.Windows.Forms.TextBox();
+            this.rangedWeaponAPBox = new System.Windows.Forms.TextBox();
+            this.rangedEDBoxLabel = new System.Windows.Forms.Label();
+            this.rangedWeaponEDBox = new System.Windows.Forms.TextBox();
+            this.rangedBaseModLabel = new System.Windows.Forms.Label();
+            this.rangedWeaponDamageBox = new System.Windows.Forms.TextBox();
+            this.rangedWeaponNameBox = new System.Windows.Forms.TextBox();
+            this.weaponValueHeaderLabel = new System.Windows.Forms.Label();
+            this.weaponTraitsHeaderLabel = new System.Windows.Forms.Label();
+            this.salvoHeaderLabel = new System.Windows.Forms.Label();
+            this.weaponRangeHeaderLabel = new System.Windows.Forms.Label();
+            this.apHeaderLabel = new System.Windows.Forms.Label();
+            this.weaponDamageHeaderLabel = new System.Windows.Forms.Label();
+            this.rangedWeaponHeaderLabel = new System.Windows.Forms.Label();
+            this.armorHeaderLabel = new System.Windows.Forms.Label();
+            this.miscEquipmentHeaderLabel = new System.Windows.Forms.Label();
+            this.equipmentTextBox = new System.Windows.Forms.RichTextBox();
             this.psychicpowers = new System.Windows.Forms.TabPage();
-            this.notes = new System.Windows.Forms.TabPage();
-            this.notesTextBox = new System.Windows.Forms.RichTextBox();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.summary = new System.Windows.Forms.TabPage();
-            this.traitsLabel = new System.Windows.Forms.Label();
-            this.defenceTraitLabel = new System.Windows.Forms.Label();
-            this.resilienceTraitLabel = new System.Windows.Forms.Label();
-            this.speedTraitLabel = new System.Windows.Forms.Label();
-            this.convictionTraitLabel = new System.Windows.Forms.Label();
-            this.passiveAwarenessTraitLabel = new System.Windows.Forms.Label();
-            this.influenceTraitLabel = new System.Windows.Forms.Label();
-            this.soakTraitLabel = new System.Windows.Forms.Label();
-            this.shockTraitLabel = new System.Windows.Forms.Label();
-            this.woundsTraitLabel = new System.Windows.Forms.Label();
-            this.corruptionTraitLabel = new System.Windows.Forms.Label();
-            this.resolveTraitLabel = new System.Windows.Forms.Label();
-            this.wealthTraitLabel = new System.Windows.Forms.Label();
-            this.combatTraitsLabel = new System.Windows.Forms.Label();
-            this.mentalTraitsLabel = new System.Windows.Forms.Label();
-            this.socialTraitsLabel = new System.Windows.Forms.Label();
-            this.damageTrackLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.shockTotalLabel = new System.Windows.Forms.Label();
-            this.woundsTotalLabel = new System.Windows.Forms.Label();
-            this.rankValueLabel = new System.Windows.Forms.Label();
-            this.rankTraitLabel = new System.Windows.Forms.Label();
-            this.wealthValueLabel = new System.Windows.Forms.Label();
-            this.rankValueBox = new System.Windows.Forms.NumericUpDown();
-            this.wealthValueBox = new System.Windows.Forms.NumericUpDown();
-            this.corruptionValueLabel = new System.Windows.Forms.Label();
-            this.corruptionValueBox = new System.Windows.Forms.NumericUpDown();
-            this.lifetimeBPEarnedLabel = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.powerMultiCheckBox3 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox3 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox3 = new System.Windows.Forms.TextBox();
-            this.powerDNBox3 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox3 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox3 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.powerEDBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.powerDamageBox3 = new System.Windows.Forms.TextBox();
-            this.powerNameBox3 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox2 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox2 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox2 = new System.Windows.Forms.TextBox();
-            this.powerDNBox2 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox2 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox2 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.powerEDBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.powerDamageBox2 = new System.Windows.Forms.TextBox();
-            this.powerNameBox2 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox1 = new System.Windows.Forms.CheckBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.powerDurationBox1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.powerKeywordBox1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.powerDNBox1 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox1 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox1 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.powerEDBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.powerDamageBox1 = new System.Windows.Forms.TextBox();
-            this.powerNameBox1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.powerMultiCheckBox6 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox6 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox6 = new System.Windows.Forms.TextBox();
-            this.powerDNBox6 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox6 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox6 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.powerEDBox6 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.powerDamageBox6 = new System.Windows.Forms.TextBox();
-            this.powerNameBox6 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox5 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox5 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox5 = new System.Windows.Forms.TextBox();
-            this.powerDNBox5 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox5 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox5 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.powerEDBox5 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.powerDamageBox5 = new System.Windows.Forms.TextBox();
-            this.powerNameBox5 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox4 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox4 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox4 = new System.Windows.Forms.TextBox();
-            this.powerDNBox4 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox4 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox4 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.powerEDBox4 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.powerDamageBox4 = new System.Windows.Forms.TextBox();
-            this.powerNameBox4 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox24 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox23 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox22 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox21 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox20 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox19 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox18 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox17 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox16 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox15 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox14 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox13 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox12 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox11 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox10 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox9 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox8 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox7 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox6 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox5 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox4 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox3 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox2 = new System.Windows.Forms.TextBox();
+            this.powerPotencyBox1 = new System.Windows.Forms.TextBox();
+            this.powerPotentcyLabel = new System.Windows.Forms.Label();
+            this.powerMultiCheckBox24 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox24 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox24 = new System.Windows.Forms.TextBox();
+            this.powerDNBox24 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox24 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox24 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.powerEDBox24 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.powerDamageBox24 = new System.Windows.Forms.TextBox();
+            this.powerNameBox24 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox23 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox23 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox23 = new System.Windows.Forms.TextBox();
+            this.powerDNBox23 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox23 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox23 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.powerEDBox23 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.powerDamageBox23 = new System.Windows.Forms.TextBox();
+            this.powerNameBox23 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox22 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox22 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox22 = new System.Windows.Forms.TextBox();
+            this.powerDNBox22 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox22 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox22 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.powerEDBox22 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.powerDamageBox22 = new System.Windows.Forms.TextBox();
+            this.powerNameBox22 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox21 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox21 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox21 = new System.Windows.Forms.TextBox();
+            this.powerDNBox21 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox21 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox21 = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.powerEDBox21 = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.powerDamageBox21 = new System.Windows.Forms.TextBox();
+            this.powerNameBox21 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox20 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox20 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox20 = new System.Windows.Forms.TextBox();
+            this.powerDNBox20 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox20 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox20 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.powerEDBox20 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.powerDamageBox20 = new System.Windows.Forms.TextBox();
+            this.powerNameBox20 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox19 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox19 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox19 = new System.Windows.Forms.TextBox();
+            this.powerDNBox19 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox19 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox19 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.powerEDBox19 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.powerDamageBox19 = new System.Windows.Forms.TextBox();
+            this.powerNameBox19 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox18 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox18 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox18 = new System.Windows.Forms.TextBox();
+            this.powerDNBox18 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox18 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox18 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.powerEDBox18 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.powerDamageBox18 = new System.Windows.Forms.TextBox();
+            this.powerNameBox18 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox17 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox17 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox17 = new System.Windows.Forms.TextBox();
+            this.powerDNBox17 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox17 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox17 = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.powerEDBox17 = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.powerDamageBox17 = new System.Windows.Forms.TextBox();
+            this.powerNameBox17 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox16 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox16 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox16 = new System.Windows.Forms.TextBox();
+            this.powerDNBox16 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox16 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox16 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.powerEDBox16 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.powerDamageBox16 = new System.Windows.Forms.TextBox();
+            this.powerNameBox16 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox15 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox15 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox15 = new System.Windows.Forms.TextBox();
+            this.powerDNBox15 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox15 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox15 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.powerEDBox15 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.powerDamageBox15 = new System.Windows.Forms.TextBox();
+            this.powerNameBox15 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox14 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox14 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox14 = new System.Windows.Forms.TextBox();
+            this.powerDNBox14 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox14 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox14 = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.powerEDBox14 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.powerDamageBox14 = new System.Windows.Forms.TextBox();
+            this.powerNameBox14 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox13 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox13 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox13 = new System.Windows.Forms.TextBox();
+            this.powerDNBox13 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox13 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox13 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.powerEDBox13 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.powerDamageBox13 = new System.Windows.Forms.TextBox();
+            this.powerNameBox13 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox12 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox12 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox12 = new System.Windows.Forms.TextBox();
+            this.powerDNBox12 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox12 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox12 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.powerEDBox12 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.powerDamageBox12 = new System.Windows.Forms.TextBox();
+            this.powerNameBox12 = new System.Windows.Forms.TextBox();
             this.powerMultiCheckBox11 = new System.Windows.Forms.CheckBox();
             this.powerDurationBox11 = new System.Windows.Forms.TextBox();
             this.powerKeywordBox11 = new System.Windows.Forms.TextBox();
@@ -328,228 +460,113 @@
             this.label38 = new System.Windows.Forms.Label();
             this.powerDamageBox7 = new System.Windows.Forms.TextBox();
             this.powerNameBox7 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox14 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox14 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox14 = new System.Windows.Forms.TextBox();
-            this.powerDNBox14 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox14 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox14 = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.powerEDBox14 = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.powerDamageBox14 = new System.Windows.Forms.TextBox();
-            this.powerNameBox14 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox13 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox13 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox13 = new System.Windows.Forms.TextBox();
-            this.powerDNBox13 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox13 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox13 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.powerEDBox13 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.powerDamageBox13 = new System.Windows.Forms.TextBox();
-            this.powerNameBox13 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox12 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox12 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox12 = new System.Windows.Forms.TextBox();
-            this.powerDNBox12 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox12 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox12 = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.powerEDBox12 = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.powerDamageBox12 = new System.Windows.Forms.TextBox();
-            this.powerNameBox12 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox17 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox17 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox17 = new System.Windows.Forms.TextBox();
-            this.powerDNBox17 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox17 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox17 = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.powerEDBox17 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.powerDamageBox17 = new System.Windows.Forms.TextBox();
-            this.powerNameBox17 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox16 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox16 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox16 = new System.Windows.Forms.TextBox();
-            this.powerDNBox16 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox16 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox16 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.powerEDBox16 = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.powerDamageBox16 = new System.Windows.Forms.TextBox();
-            this.powerNameBox16 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox15 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox15 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox15 = new System.Windows.Forms.TextBox();
-            this.powerDNBox15 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox15 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox15 = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.powerEDBox15 = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.powerDamageBox15 = new System.Windows.Forms.TextBox();
-            this.powerNameBox15 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox20 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox20 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox20 = new System.Windows.Forms.TextBox();
-            this.powerDNBox20 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox20 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox20 = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.powerEDBox20 = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.powerDamageBox20 = new System.Windows.Forms.TextBox();
-            this.powerNameBox20 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox19 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox19 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox19 = new System.Windows.Forms.TextBox();
-            this.powerDNBox19 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox19 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox19 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.powerEDBox19 = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.powerDamageBox19 = new System.Windows.Forms.TextBox();
-            this.powerNameBox19 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox18 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox18 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox18 = new System.Windows.Forms.TextBox();
-            this.powerDNBox18 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox18 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox18 = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.powerEDBox18 = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.powerDamageBox18 = new System.Windows.Forms.TextBox();
-            this.powerNameBox18 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox24 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox24 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox24 = new System.Windows.Forms.TextBox();
-            this.powerDNBox24 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox24 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox24 = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.powerEDBox24 = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.powerDamageBox24 = new System.Windows.Forms.TextBox();
-            this.powerNameBox24 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox23 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox23 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox23 = new System.Windows.Forms.TextBox();
-            this.powerDNBox23 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox23 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox23 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.powerEDBox23 = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.powerDamageBox23 = new System.Windows.Forms.TextBox();
-            this.powerNameBox23 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox22 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox22 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox22 = new System.Windows.Forms.TextBox();
-            this.powerDNBox22 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox22 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox22 = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.powerEDBox22 = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.powerDamageBox22 = new System.Windows.Forms.TextBox();
-            this.powerNameBox22 = new System.Windows.Forms.TextBox();
-            this.powerMultiCheckBox21 = new System.Windows.Forms.CheckBox();
-            this.powerDurationBox21 = new System.Windows.Forms.TextBox();
-            this.powerKeywordBox21 = new System.Windows.Forms.TextBox();
-            this.powerDNBox21 = new System.Windows.Forms.TextBox();
-            this.powerRangeBox21 = new System.Windows.Forms.TextBox();
-            this.powerActivationBox21 = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.powerEDBox21 = new System.Windows.Forms.TextBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.powerDamageBox21 = new System.Windows.Forms.TextBox();
-            this.powerNameBox21 = new System.Windows.Forms.TextBox();
-            this.powersTextBox = new System.Windows.Forms.RichTextBox();
+            this.powerMultiCheckBox6 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox6 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox6 = new System.Windows.Forms.TextBox();
+            this.powerDNBox6 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox6 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox6 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.powerEDBox6 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.powerDamageBox6 = new System.Windows.Forms.TextBox();
+            this.powerNameBox6 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox5 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox5 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox5 = new System.Windows.Forms.TextBox();
+            this.powerDNBox5 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox5 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox5 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.powerEDBox5 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.powerDamageBox5 = new System.Windows.Forms.TextBox();
+            this.powerNameBox5 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox4 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox4 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox4 = new System.Windows.Forms.TextBox();
+            this.powerDNBox4 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox4 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox4 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.powerEDBox4 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.powerDamageBox4 = new System.Windows.Forms.TextBox();
+            this.powerNameBox4 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox3 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox3 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox3 = new System.Windows.Forms.TextBox();
+            this.powerDNBox3 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox3 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox3 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.powerEDBox3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.powerDamageBox3 = new System.Windows.Forms.TextBox();
+            this.powerNameBox3 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.powerDurationBox2 = new System.Windows.Forms.TextBox();
+            this.powerKeywordBox2 = new System.Windows.Forms.TextBox();
+            this.powerDNBox2 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox2 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox2 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.powerEDBox2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.powerDamageBox2 = new System.Windows.Forms.TextBox();
+            this.powerNameBox2 = new System.Windows.Forms.TextBox();
+            this.powerMultiCheckBox1 = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.powerDurationBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.powerKeywordBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.powerDNBox1 = new System.Windows.Forms.TextBox();
+            this.powerRangeBox1 = new System.Windows.Forms.TextBox();
+            this.powerActivationBox1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.powerEDBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.powerDamageBox1 = new System.Windows.Forms.TextBox();
+            this.powerNameBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.powerPotentcyLabel = new System.Windows.Forms.Label();
-            this.powerPotencyBox6 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox5 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox4 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox3 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox2 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox1 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox12 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox11 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox10 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox9 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox8 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox7 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox18 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox17 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox16 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox15 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox14 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox13 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox24 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox23 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox22 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox21 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox20 = new System.Windows.Forms.TextBox();
-            this.powerPotencyBox19 = new System.Windows.Forms.TextBox();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.armorHeaderLabel = new System.Windows.Forms.Label();
-            this.miscEquipmentHeaderLabel = new System.Windows.Forms.Label();
-            this.equipmentTextBox = new System.Windows.Forms.RichTextBox();
-            this.armorRatingBox = new System.Windows.Forms.NumericUpDown();
-            this.armorRatingHeaderLabel = new System.Windows.Forms.Label();
-            this.armorKeywordsBox = new System.Windows.Forms.TextBox();
-            this.armorValueBox = new System.Windows.Forms.TextBox();
-            this.armorTraitsBox = new System.Windows.Forms.TextBox();
-            this.armorNameBox = new System.Windows.Forms.TextBox();
-            this.meleeWeaponKeywordsBox = new System.Windows.Forms.TextBox();
-            this.meleeWeaponValueBox = new System.Windows.Forms.TextBox();
-            this.meleeWeaponTraitsBox = new System.Windows.Forms.TextBox();
-            this.MeleeWeaponRangeBox = new System.Windows.Forms.TextBox();
-            this.meleeWeaponAPBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.meleeWeaponEDBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.meleeWeaponDamageBox = new System.Windows.Forms.TextBox();
-            this.meleeWeaponNameBox = new System.Windows.Forms.TextBox();
-            this.meleeWeaponHeaderLabel = new System.Windows.Forms.Label();
-            this.rangedWeaponKeywordsBox = new System.Windows.Forms.TextBox();
-            this.keywordsHeaderLabel = new System.Windows.Forms.Label();
-            this.rangedWeaponValueBox = new System.Windows.Forms.TextBox();
-            this.rangedWeaponTraitBox = new System.Windows.Forms.TextBox();
-            this.rangedWeaponSalvoBox = new System.Windows.Forms.TextBox();
-            this.rangedWeaponRangeBox = new System.Windows.Forms.TextBox();
-            this.rangedWeaponAPBox = new System.Windows.Forms.TextBox();
-            this.rangedEDBoxLabel = new System.Windows.Forms.Label();
-            this.rangedWeaponEDBox = new System.Windows.Forms.TextBox();
-            this.rangedBaseModLabel = new System.Windows.Forms.Label();
-            this.rangedWeaponDamageBox = new System.Windows.Forms.TextBox();
-            this.rangedWeaponNameBox = new System.Windows.Forms.TextBox();
-            this.weaponValueHeaderLabel = new System.Windows.Forms.Label();
-            this.weaponTraitsHeaderLabel = new System.Windows.Forms.Label();
-            this.salvoHeaderLabel = new System.Windows.Forms.Label();
-            this.weaponRangeHeaderLabel = new System.Windows.Forms.Label();
-            this.apHeaderLabel = new System.Windows.Forms.Label();
-            this.weaponDamageHeaderLabel = new System.Windows.Forms.Label();
-            this.rangedWeaponHeaderLabel = new System.Windows.Forms.Label();
-            this.attModiferLabel = new System.Windows.Forms.Label();
-            this.attSpeedModifier = new System.Windows.Forms.NumericUpDown();
-            this.attInitiativeModifier = new System.Windows.Forms.NumericUpDown();
-            this.attFellowshipModifier = new System.Windows.Forms.NumericUpDown();
-            this.attWillpowerModifier = new System.Windows.Forms.NumericUpDown();
-            this.attIntellectModifier = new System.Windows.Forms.NumericUpDown();
-            this.attToughnessModifier = new System.Windows.Forms.NumericUpDown();
-            this.attAgilityModifier = new System.Windows.Forms.NumericUpDown();
-            this.attStrengthModifier = new System.Windows.Forms.NumericUpDown();
-            this.influenceValueBox = new System.Windows.Forms.NumericUpDown();
-            this.InfluenceValueLabel = new System.Windows.Forms.Label();
-            this.armorNameLabel = new System.Windows.Forms.Label();
+            this.powersTextBox = new System.Windows.Forms.RichTextBox();
+            this.notes = new System.Windows.Forms.TabPage();
+            this.notesTextBox = new System.Windows.Forms.RichTextBox();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.summary = new System.Windows.Forms.TabPage();
+            this.lifetimeBPEarnedLabel = new System.Windows.Forms.Label();
+            this.rankTraitLabel = new System.Windows.Forms.Label();
+            this.woundsTotalLabel = new System.Windows.Forms.Label();
+            this.shockTotalLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.damageTrackLabel = new System.Windows.Forms.Label();
+            this.socialTraitsLabel = new System.Windows.Forms.Label();
+            this.mentalTraitsLabel = new System.Windows.Forms.Label();
+            this.combatTraitsLabel = new System.Windows.Forms.Label();
+            this.wealthTraitLabel = new System.Windows.Forms.Label();
+            this.resolveTraitLabel = new System.Windows.Forms.Label();
+            this.corruptionTraitLabel = new System.Windows.Forms.Label();
+            this.woundsTraitLabel = new System.Windows.Forms.Label();
+            this.shockTraitLabel = new System.Windows.Forms.Label();
+            this.soakTraitLabel = new System.Windows.Forms.Label();
+            this.influenceTraitLabel = new System.Windows.Forms.Label();
+            this.passiveAwarenessTraitLabel = new System.Windows.Forms.Label();
+            this.convictionTraitLabel = new System.Windows.Forms.Label();
+            this.speedTraitLabel = new System.Windows.Forms.Label();
+            this.resilienceTraitLabel = new System.Windows.Forms.Label();
+            this.defenceTraitLabel = new System.Windows.Forms.Label();
+            this.traitsLabel = new System.Windows.Forms.Label();
+            this.shockValueBox = new System.Windows.Forms.NumericUpDown();
+            this.shockBonusLabel = new System.Windows.Forms.Label();
+            this.woundsValueBox = new System.Windows.Forms.NumericUpDown();
+            this.woundsBonusLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -558,6 +575,24 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.core.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.influenceValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resolveValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passiveAwarenessValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.convictionValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resilienceValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soakValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenceValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attSpeedModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attInitiativeModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attFellowshipModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attWillpowerModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attIntellectModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attToughnessModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attAgilityModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attStrengthModifier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corruptionValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wealthValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rankValueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attInitiative)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attFellowship)).BeginInit();
@@ -586,31 +621,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.skillAwareness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillAthletics)).BeginInit();
             this.equipment.SuspendLayout();
-            this.psychicpowers.SuspendLayout();
-            this.notes.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.summary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rankValueBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wealthValueBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corruptionValueBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.armorRatingBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attSpeedModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attInitiativeModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attFellowshipModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attWillpowerModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attIntellectModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attToughnessModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attAgilityModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attStrengthModifier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.influenceValueBox)).BeginInit();
+            this.psychicpowers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.notes.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.summary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shockValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.woundsValueBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -768,9 +793,27 @@
             // 
             // core
             // 
+            this.core.AutoScroll = true;
             this.core.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.core.Controls.Add(this.shockValueBox);
+            this.core.Controls.Add(this.shockBonusLabel);
+            this.core.Controls.Add(this.woundsValueBox);
+            this.core.Controls.Add(this.woundsBonusLabel);
+            this.core.Controls.Add(this.rankAndBonusLabel);
             this.core.Controls.Add(this.influenceValueBox);
-            this.core.Controls.Add(this.InfluenceValueLabel);
+            this.core.Controls.Add(this.resolveValueBox);
+            this.core.Controls.Add(this.influenceBonusLabel);
+            this.core.Controls.Add(this.resolveBonusLabel);
+            this.core.Controls.Add(this.passiveAwarenessValueBox);
+            this.core.Controls.Add(this.passiveAwarenessBonusLabel);
+            this.core.Controls.Add(this.convictionValueBox);
+            this.core.Controls.Add(this.convictionBonusLabel);
+            this.core.Controls.Add(this.resilienceValueBox);
+            this.core.Controls.Add(this.soakValueBox);
+            this.core.Controls.Add(this.resilienceBonusLabel);
+            this.core.Controls.Add(this.soakBonusLabel);
+            this.core.Controls.Add(this.defenceValueBox);
+            this.core.Controls.Add(this.defenceBonusLabel);
             this.core.Controls.Add(this.attSpeedModifier);
             this.core.Controls.Add(this.attInitiativeModifier);
             this.core.Controls.Add(this.attFellowshipModifier);
@@ -833,6 +876,286 @@
             this.core.TabIndex = 0;
             this.core.Text = "Core";
             // 
+            // rankAndBonusLabel
+            // 
+            this.rankAndBonusLabel.AutoSize = true;
+            this.rankAndBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rankAndBonusLabel.Location = new System.Drawing.Point(0, 155);
+            this.rankAndBonusLabel.Name = "rankAndBonusLabel";
+            this.rankAndBonusLabel.Size = new System.Drawing.Size(114, 13);
+            this.rankAndBonusLabel.TabIndex = 73;
+            this.rankAndBonusLabel.Text = "Rank and Bonuses";
+            // 
+            // influenceValueBox
+            // 
+            this.influenceValueBox.Location = new System.Drawing.Point(189, 289);
+            this.influenceValueBox.Name = "influenceValueBox";
+            this.influenceValueBox.Size = new System.Drawing.Size(56, 20);
+            this.influenceValueBox.TabIndex = 72;
+            this.influenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.influenceValueBox.ValueChanged += new System.EventHandler(this.influenceValueBox_ValueChanged_1);
+            // 
+            // resolveValueBox
+            // 
+            this.resolveValueBox.Location = new System.Drawing.Point(189, 262);
+            this.resolveValueBox.Name = "resolveValueBox";
+            this.resolveValueBox.Size = new System.Drawing.Size(56, 20);
+            this.resolveValueBox.TabIndex = 71;
+            this.resolveValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.resolveValueBox.ValueChanged += new System.EventHandler(this.resolveValueBox_ValueChanged);
+            // 
+            // influenceBonusLabel
+            // 
+            this.influenceBonusLabel.AutoSize = true;
+            this.influenceBonusLabel.Location = new System.Drawing.Point(129, 291);
+            this.influenceBonusLabel.Name = "influenceBonusLabel";
+            this.influenceBonusLabel.Size = new System.Drawing.Size(51, 13);
+            this.influenceBonusLabel.TabIndex = 70;
+            this.influenceBonusLabel.Text = "Influence";
+            // 
+            // resolveBonusLabel
+            // 
+            this.resolveBonusLabel.AutoSize = true;
+            this.resolveBonusLabel.Location = new System.Drawing.Point(129, 264);
+            this.resolveBonusLabel.Name = "resolveBonusLabel";
+            this.resolveBonusLabel.Size = new System.Drawing.Size(46, 13);
+            this.resolveBonusLabel.TabIndex = 69;
+            this.resolveBonusLabel.Text = "Resolve";
+            // 
+            // passiveAwarenessValueBox
+            // 
+            this.passiveAwarenessValueBox.Location = new System.Drawing.Point(189, 235);
+            this.passiveAwarenessValueBox.Name = "passiveAwarenessValueBox";
+            this.passiveAwarenessValueBox.Size = new System.Drawing.Size(56, 20);
+            this.passiveAwarenessValueBox.TabIndex = 68;
+            this.passiveAwarenessValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.passiveAwarenessValueBox.ValueChanged += new System.EventHandler(this.passiveAwarenessValueBox_ValueChanged);
+            // 
+            // passiveAwarenessBonusLabel
+            // 
+            this.passiveAwarenessBonusLabel.AutoSize = true;
+            this.passiveAwarenessBonusLabel.Location = new System.Drawing.Point(129, 233);
+            this.passiveAwarenessBonusLabel.Name = "passiveAwarenessBonusLabel";
+            this.passiveAwarenessBonusLabel.Size = new System.Drawing.Size(59, 26);
+            this.passiveAwarenessBonusLabel.TabIndex = 67;
+            this.passiveAwarenessBonusLabel.Text = "Passive\r\nAwareness\r\n";
+            // 
+            // convictionValueBox
+            // 
+            this.convictionValueBox.Location = new System.Drawing.Point(189, 210);
+            this.convictionValueBox.Name = "convictionValueBox";
+            this.convictionValueBox.Size = new System.Drawing.Size(56, 20);
+            this.convictionValueBox.TabIndex = 66;
+            this.convictionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.convictionValueBox.ValueChanged += new System.EventHandler(this.convictionValueBox_ValueChanged);
+            // 
+            // convictionBonusLabel
+            // 
+            this.convictionBonusLabel.AutoSize = true;
+            this.convictionBonusLabel.Location = new System.Drawing.Point(129, 212);
+            this.convictionBonusLabel.Name = "convictionBonusLabel";
+            this.convictionBonusLabel.Size = new System.Drawing.Size(57, 13);
+            this.convictionBonusLabel.TabIndex = 65;
+            this.convictionBonusLabel.Text = "Conviction";
+            // 
+            // resilienceValueBox
+            // 
+            this.resilienceValueBox.Location = new System.Drawing.Point(189, 184);
+            this.resilienceValueBox.Name = "resilienceValueBox";
+            this.resilienceValueBox.Size = new System.Drawing.Size(56, 20);
+            this.resilienceValueBox.TabIndex = 64;
+            this.resilienceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.resilienceValueBox.ValueChanged += new System.EventHandler(this.resilienceValueBox_ValueChanged);
+            // 
+            // soakValueBox
+            // 
+            this.soakValueBox.Location = new System.Drawing.Point(57, 289);
+            this.soakValueBox.Name = "soakValueBox";
+            this.soakValueBox.Size = new System.Drawing.Size(56, 20);
+            this.soakValueBox.TabIndex = 63;
+            this.soakValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.soakValueBox.ValueChanged += new System.EventHandler(this.soakValueBox_ValueChanged);
+            // 
+            // resilienceBonusLabel
+            // 
+            this.resilienceBonusLabel.AutoSize = true;
+            this.resilienceBonusLabel.Location = new System.Drawing.Point(129, 186);
+            this.resilienceBonusLabel.Name = "resilienceBonusLabel";
+            this.resilienceBonusLabel.Size = new System.Drawing.Size(56, 13);
+            this.resilienceBonusLabel.TabIndex = 62;
+            this.resilienceBonusLabel.Text = "Resilience";
+            // 
+            // soakBonusLabel
+            // 
+            this.soakBonusLabel.AutoSize = true;
+            this.soakBonusLabel.Location = new System.Drawing.Point(0, 291);
+            this.soakBonusLabel.Name = "soakBonusLabel";
+            this.soakBonusLabel.Size = new System.Drawing.Size(32, 13);
+            this.soakBonusLabel.TabIndex = 61;
+            this.soakBonusLabel.Text = "Soak";
+            // 
+            // defenceValueBox
+            // 
+            this.defenceValueBox.Location = new System.Drawing.Point(57, 262);
+            this.defenceValueBox.Name = "defenceValueBox";
+            this.defenceValueBox.Size = new System.Drawing.Size(56, 20);
+            this.defenceValueBox.TabIndex = 60;
+            this.defenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.defenceValueBox.ValueChanged += new System.EventHandler(this.defenceValueBox_ValueChanged);
+            // 
+            // defenceBonusLabel
+            // 
+            this.defenceBonusLabel.AutoSize = true;
+            this.defenceBonusLabel.Location = new System.Drawing.Point(0, 264);
+            this.defenceBonusLabel.Name = "defenceBonusLabel";
+            this.defenceBonusLabel.Size = new System.Drawing.Size(48, 13);
+            this.defenceBonusLabel.TabIndex = 59;
+            this.defenceBonusLabel.Text = "Defence";
+            // 
+            // attSpeedModifier
+            // 
+            this.attSpeedModifier.Location = new System.Drawing.Point(438, 213);
+            this.attSpeedModifier.Name = "attSpeedModifier";
+            this.attSpeedModifier.ReadOnly = true;
+            this.attSpeedModifier.Size = new System.Drawing.Size(47, 20);
+            this.attSpeedModifier.TabIndex = 58;
+            this.attSpeedModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attSpeedModifier.ValueChanged += new System.EventHandler(this.attSpeedModifier_ValueChanged);
+            // 
+            // attInitiativeModifier
+            // 
+            this.attInitiativeModifier.Location = new System.Drawing.Point(438, 188);
+            this.attInitiativeModifier.Name = "attInitiativeModifier";
+            this.attInitiativeModifier.ReadOnly = true;
+            this.attInitiativeModifier.Size = new System.Drawing.Size(47, 20);
+            this.attInitiativeModifier.TabIndex = 57;
+            this.attInitiativeModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attInitiativeModifier.ValueChanged += new System.EventHandler(this.attInitiativeModifier_ValueChanged);
+            // 
+            // attFellowshipModifier
+            // 
+            this.attFellowshipModifier.Location = new System.Drawing.Point(438, 163);
+            this.attFellowshipModifier.Name = "attFellowshipModifier";
+            this.attFellowshipModifier.ReadOnly = true;
+            this.attFellowshipModifier.Size = new System.Drawing.Size(47, 20);
+            this.attFellowshipModifier.TabIndex = 56;
+            this.attFellowshipModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attFellowshipModifier.ValueChanged += new System.EventHandler(this.attFellowshipModifier_ValueChanged);
+            // 
+            // attWillpowerModifier
+            // 
+            this.attWillpowerModifier.Location = new System.Drawing.Point(438, 138);
+            this.attWillpowerModifier.Name = "attWillpowerModifier";
+            this.attWillpowerModifier.ReadOnly = true;
+            this.attWillpowerModifier.Size = new System.Drawing.Size(47, 20);
+            this.attWillpowerModifier.TabIndex = 55;
+            this.attWillpowerModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attWillpowerModifier.ValueChanged += new System.EventHandler(this.attWillpowerModifier_ValueChanged);
+            // 
+            // attIntellectModifier
+            // 
+            this.attIntellectModifier.Location = new System.Drawing.Point(438, 113);
+            this.attIntellectModifier.Name = "attIntellectModifier";
+            this.attIntellectModifier.ReadOnly = true;
+            this.attIntellectModifier.Size = new System.Drawing.Size(47, 20);
+            this.attIntellectModifier.TabIndex = 54;
+            this.attIntellectModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attIntellectModifier.ValueChanged += new System.EventHandler(this.attIntellectModifier_ValueChanged);
+            // 
+            // attToughnessModifier
+            // 
+            this.attToughnessModifier.Location = new System.Drawing.Point(438, 88);
+            this.attToughnessModifier.Name = "attToughnessModifier";
+            this.attToughnessModifier.ReadOnly = true;
+            this.attToughnessModifier.Size = new System.Drawing.Size(47, 20);
+            this.attToughnessModifier.TabIndex = 53;
+            this.attToughnessModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attToughnessModifier.ValueChanged += new System.EventHandler(this.attToughnessModifier_ValueChanged);
+            // 
+            // attAgilityModifier
+            // 
+            this.attAgilityModifier.Location = new System.Drawing.Point(438, 63);
+            this.attAgilityModifier.Name = "attAgilityModifier";
+            this.attAgilityModifier.ReadOnly = true;
+            this.attAgilityModifier.Size = new System.Drawing.Size(47, 20);
+            this.attAgilityModifier.TabIndex = 52;
+            this.attAgilityModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attAgilityModifier.ValueChanged += new System.EventHandler(this.attAgilityModifier_ValueChanged);
+            // 
+            // attStrengthModifier
+            // 
+            this.attStrengthModifier.Location = new System.Drawing.Point(438, 38);
+            this.attStrengthModifier.Name = "attStrengthModifier";
+            this.attStrengthModifier.ReadOnly = true;
+            this.attStrengthModifier.Size = new System.Drawing.Size(47, 20);
+            this.attStrengthModifier.TabIndex = 51;
+            this.attStrengthModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.attStrengthModifier.ValueChanged += new System.EventHandler(this.attStrengthModifier_ValueChanged);
+            // 
+            // attModiferLabel
+            // 
+            this.attModiferLabel.AutoSize = true;
+            this.attModiferLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attModiferLabel.Location = new System.Drawing.Point(435, 8);
+            this.attModiferLabel.Name = "attModiferLabel";
+            this.attModiferLabel.Size = new System.Drawing.Size(110, 13);
+            this.attModiferLabel.TabIndex = 50;
+            this.attModiferLabel.Text = "Attribute Modifiers";
+            // 
+            // corruptionValueBox
+            // 
+            this.corruptionValueBox.Location = new System.Drawing.Point(57, 235);
+            this.corruptionValueBox.Name = "corruptionValueBox";
+            this.corruptionValueBox.Size = new System.Drawing.Size(56, 20);
+            this.corruptionValueBox.TabIndex = 49;
+            this.corruptionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.corruptionValueBox.ValueChanged += new System.EventHandler(this.corruptionValueBox_ValueChanged);
+            // 
+            // corruptionValueLabel
+            // 
+            this.corruptionValueLabel.AutoSize = true;
+            this.corruptionValueLabel.Location = new System.Drawing.Point(0, 237);
+            this.corruptionValueLabel.Name = "corruptionValueLabel";
+            this.corruptionValueLabel.Size = new System.Drawing.Size(55, 13);
+            this.corruptionValueLabel.TabIndex = 48;
+            this.corruptionValueLabel.Text = "Corruption";
+            // 
+            // wealthValueBox
+            // 
+            this.wealthValueBox.Location = new System.Drawing.Point(57, 210);
+            this.wealthValueBox.Name = "wealthValueBox";
+            this.wealthValueBox.Size = new System.Drawing.Size(56, 20);
+            this.wealthValueBox.TabIndex = 47;
+            this.wealthValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.wealthValueBox.ValueChanged += new System.EventHandler(this.wealthValueBox_ValueChanged);
+            // 
+            // rankValueBox
+            // 
+            this.rankValueBox.Location = new System.Drawing.Point(57, 184);
+            this.rankValueBox.Name = "rankValueBox";
+            this.rankValueBox.Size = new System.Drawing.Size(56, 20);
+            this.rankValueBox.TabIndex = 46;
+            this.rankValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.rankValueBox.ValueChanged += new System.EventHandler(this.rankValueBox_ValueChanged);
+            // 
+            // wealthValueLabel
+            // 
+            this.wealthValueLabel.AutoSize = true;
+            this.wealthValueLabel.Location = new System.Drawing.Point(0, 212);
+            this.wealthValueLabel.Name = "wealthValueLabel";
+            this.wealthValueLabel.Size = new System.Drawing.Size(41, 13);
+            this.wealthValueLabel.TabIndex = 45;
+            this.wealthValueLabel.Text = "Wealth";
+            // 
+            // rankValueLabel
+            // 
+            this.rankValueLabel.AutoSize = true;
+            this.rankValueLabel.Location = new System.Drawing.Point(0, 186);
+            this.rankValueLabel.Name = "rankValueLabel";
+            this.rankValueLabel.Size = new System.Drawing.Size(33, 13);
+            this.rankValueLabel.TabIndex = 43;
+            this.rankValueLabel.Text = "Rank";
+            // 
             // removeBPButton
             // 
             this.removeBPButton.Location = new System.Drawing.Point(238, 443);
@@ -857,7 +1180,7 @@
             // 
             this.nameBox.Location = new System.Drawing.Point(61, 37);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(157, 20);
+            this.nameBox.Size = new System.Drawing.Size(184, 20);
             this.nameBox.TabIndex = 40;
             this.nameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -873,7 +1196,7 @@
             // 
             // removeTalentBtn
             // 
-            this.removeTalentBtn.Location = new System.Drawing.Point(663, 360);
+            this.removeTalentBtn.Location = new System.Drawing.Point(696, 360);
             this.removeTalentBtn.Name = "removeTalentBtn";
             this.removeTalentBtn.Size = new System.Drawing.Size(94, 23);
             this.removeTalentBtn.TabIndex = 38;
@@ -883,7 +1206,7 @@
             // 
             // addTalentBtn
             // 
-            this.addTalentBtn.Location = new System.Drawing.Point(543, 360);
+            this.addTalentBtn.Location = new System.Drawing.Point(576, 360);
             this.addTalentBtn.Name = "addTalentBtn";
             this.addTalentBtn.Size = new System.Drawing.Size(94, 23);
             this.addTalentBtn.TabIndex = 37;
@@ -894,7 +1217,7 @@
             // talentBox
             // 
             this.talentBox.FormattingEnabled = true;
-            this.talentBox.Location = new System.Drawing.Point(543, 37);
+            this.talentBox.Location = new System.Drawing.Point(576, 37);
             this.talentBox.Name = "talentBox";
             this.talentBox.Size = new System.Drawing.Size(214, 316);
             this.talentBox.TabIndex = 36;
@@ -903,7 +1226,7 @@
             // 
             this.talentLabel.AutoSize = true;
             this.talentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.talentLabel.Location = new System.Drawing.Point(540, 6);
+            this.talentLabel.Location = new System.Drawing.Point(573, 8);
             this.talentLabel.Name = "talentLabel";
             this.talentLabel.Size = new System.Drawing.Size(49, 13);
             this.talentLabel.TabIndex = 35;
@@ -915,7 +1238,7 @@
             this.archetypeSelect.FormattingEnabled = true;
             this.archetypeSelect.Location = new System.Drawing.Point(61, 113);
             this.archetypeSelect.Name = "archetypeSelect";
-            this.archetypeSelect.Size = new System.Drawing.Size(157, 21);
+            this.archetypeSelect.Size = new System.Drawing.Size(184, 21);
             this.archetypeSelect.TabIndex = 34;
             this.archetypeSelect.SelectedIndexChanged += new System.EventHandler(this.archetypeSelect_SelectedIndexChanged);
             // 
@@ -925,7 +1248,7 @@
             this.speciesSelect.FormattingEnabled = true;
             this.speciesSelect.Location = new System.Drawing.Point(61, 87);
             this.speciesSelect.Name = "speciesSelect";
-            this.speciesSelect.Size = new System.Drawing.Size(157, 21);
+            this.speciesSelect.Size = new System.Drawing.Size(184, 21);
             this.speciesSelect.TabIndex = 33;
             this.speciesSelect.SelectedIndexChanged += new System.EventHandler(this.speciesSelect_SelectedIndexChanged);
             // 
@@ -941,7 +1264,7 @@
             "5"});
             this.tierSelect.Location = new System.Drawing.Point(61, 62);
             this.tierSelect.Name = "tierSelect";
-            this.tierSelect.Size = new System.Drawing.Size(157, 21);
+            this.tierSelect.Size = new System.Drawing.Size(184, 21);
             this.tierSelect.TabIndex = 32;
             this.tierSelect.SelectedIndexChanged += new System.EventHandler(this.tierSelect_SelectedIndexChanged_1);
             // 
@@ -959,7 +1282,7 @@
             // 
             this.attSpeedTotal.AutoSize = true;
             this.attSpeedTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attSpeedTotal.Location = new System.Drawing.Point(370, 215);
+            this.attSpeedTotal.Location = new System.Drawing.Point(403, 215);
             this.attSpeedTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attSpeedTotal.Name = "attSpeedTotal";
             this.attSpeedTotal.Size = new System.Drawing.Size(28, 13);
@@ -970,7 +1293,7 @@
             // 
             this.attInitiativeTotal.AutoSize = true;
             this.attInitiativeTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attInitiativeTotal.Location = new System.Drawing.Point(370, 190);
+            this.attInitiativeTotal.Location = new System.Drawing.Point(403, 190);
             this.attInitiativeTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attInitiativeTotal.Name = "attInitiativeTotal";
             this.attInitiativeTotal.Size = new System.Drawing.Size(21, 13);
@@ -981,7 +1304,7 @@
             // 
             this.attFellowshipTotal.AutoSize = true;
             this.attFellowshipTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attFellowshipTotal.Location = new System.Drawing.Point(370, 165);
+            this.attFellowshipTotal.Location = new System.Drawing.Point(403, 165);
             this.attFellowshipTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attFellowshipTotal.Name = "attFellowshipTotal";
             this.attFellowshipTotal.Size = new System.Drawing.Size(21, 13);
@@ -992,7 +1315,7 @@
             // 
             this.attWillpowerTotal.AutoSize = true;
             this.attWillpowerTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attWillpowerTotal.Location = new System.Drawing.Point(370, 140);
+            this.attWillpowerTotal.Location = new System.Drawing.Point(403, 140);
             this.attWillpowerTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attWillpowerTotal.Name = "attWillpowerTotal";
             this.attWillpowerTotal.Size = new System.Drawing.Size(21, 13);
@@ -1003,7 +1326,7 @@
             // 
             this.attIntellectTotal.AutoSize = true;
             this.attIntellectTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attIntellectTotal.Location = new System.Drawing.Point(370, 115);
+            this.attIntellectTotal.Location = new System.Drawing.Point(403, 115);
             this.attIntellectTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attIntellectTotal.Name = "attIntellectTotal";
             this.attIntellectTotal.Size = new System.Drawing.Size(21, 13);
@@ -1014,7 +1337,7 @@
             // 
             this.attToughnessTotal.AutoSize = true;
             this.attToughnessTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attToughnessTotal.Location = new System.Drawing.Point(370, 90);
+            this.attToughnessTotal.Location = new System.Drawing.Point(403, 90);
             this.attToughnessTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attToughnessTotal.Name = "attToughnessTotal";
             this.attToughnessTotal.Size = new System.Drawing.Size(21, 13);
@@ -1025,7 +1348,7 @@
             // 
             this.attAgilityTotal.AutoSize = true;
             this.attAgilityTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attAgilityTotal.Location = new System.Drawing.Point(370, 65);
+            this.attAgilityTotal.Location = new System.Drawing.Point(403, 65);
             this.attAgilityTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attAgilityTotal.Name = "attAgilityTotal";
             this.attAgilityTotal.Size = new System.Drawing.Size(21, 13);
@@ -1036,7 +1359,7 @@
             // 
             this.attStrengthTotal.AutoSize = true;
             this.attStrengthTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attStrengthTotal.Location = new System.Drawing.Point(370, 40);
+            this.attStrengthTotal.Location = new System.Drawing.Point(403, 40);
             this.attStrengthTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attStrengthTotal.Name = "attStrengthTotal";
             this.attStrengthTotal.Size = new System.Drawing.Size(21, 13);
@@ -1068,7 +1391,7 @@
             // 
             this.raceLabel.AutoSize = true;
             this.raceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raceLabel.Location = new System.Drawing.Point(-1, 6);
+            this.raceLabel.Location = new System.Drawing.Point(-1, 8);
             this.raceLabel.Name = "raceLabel";
             this.raceLabel.Size = new System.Drawing.Size(118, 13);
             this.raceLabel.TabIndex = 17;
@@ -1077,7 +1400,7 @@
             // attSpeed
             // 
             this.attSpeed.Enabled = false;
-            this.attSpeed.Location = new System.Drawing.Point(317, 213);
+            this.attSpeed.Location = new System.Drawing.Point(350, 213);
             this.attSpeed.Name = "attSpeed";
             this.attSpeed.ReadOnly = true;
             this.attSpeed.Size = new System.Drawing.Size(47, 20);
@@ -1087,7 +1410,7 @@
             // 
             // attInitiative
             // 
-            this.attInitiative.Location = new System.Drawing.Point(317, 188);
+            this.attInitiative.Location = new System.Drawing.Point(350, 188);
             this.attInitiative.Name = "attInitiative";
             this.attInitiative.ReadOnly = true;
             this.attInitiative.Size = new System.Drawing.Size(47, 20);
@@ -1097,7 +1420,7 @@
             // 
             // attFellowship
             // 
-            this.attFellowship.Location = new System.Drawing.Point(317, 163);
+            this.attFellowship.Location = new System.Drawing.Point(350, 163);
             this.attFellowship.Name = "attFellowship";
             this.attFellowship.ReadOnly = true;
             this.attFellowship.Size = new System.Drawing.Size(47, 20);
@@ -1107,7 +1430,7 @@
             // 
             // attWillpower
             // 
-            this.attWillpower.Location = new System.Drawing.Point(317, 138);
+            this.attWillpower.Location = new System.Drawing.Point(350, 138);
             this.attWillpower.Name = "attWillpower";
             this.attWillpower.ReadOnly = true;
             this.attWillpower.Size = new System.Drawing.Size(47, 20);
@@ -1117,7 +1440,7 @@
             // 
             // attIntellect
             // 
-            this.attIntellect.Location = new System.Drawing.Point(317, 113);
+            this.attIntellect.Location = new System.Drawing.Point(350, 113);
             this.attIntellect.Name = "attIntellect";
             this.attIntellect.ReadOnly = true;
             this.attIntellect.Size = new System.Drawing.Size(47, 20);
@@ -1127,7 +1450,7 @@
             // 
             // attToughness
             // 
-            this.attToughness.Location = new System.Drawing.Point(317, 88);
+            this.attToughness.Location = new System.Drawing.Point(350, 88);
             this.attToughness.Name = "attToughness";
             this.attToughness.ReadOnly = true;
             this.attToughness.Size = new System.Drawing.Size(47, 20);
@@ -1137,7 +1460,7 @@
             // 
             // attAgility
             // 
-            this.attAgility.Location = new System.Drawing.Point(317, 63);
+            this.attAgility.Location = new System.Drawing.Point(350, 63);
             this.attAgility.Name = "attAgility";
             this.attAgility.ReadOnly = true;
             this.attAgility.Size = new System.Drawing.Size(47, 20);
@@ -1147,7 +1470,7 @@
             // 
             // attStrength
             // 
-            this.attStrength.Location = new System.Drawing.Point(317, 38);
+            this.attStrength.Location = new System.Drawing.Point(350, 38);
             this.attStrength.Name = "attStrength";
             this.attStrength.ReadOnly = true;
             this.attStrength.Size = new System.Drawing.Size(47, 20);
@@ -1158,7 +1481,7 @@
             // attSpeedLabel
             // 
             this.attSpeedLabel.AutoSize = true;
-            this.attSpeedLabel.Location = new System.Drawing.Point(235, 215);
+            this.attSpeedLabel.Location = new System.Drawing.Point(268, 215);
             this.attSpeedLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attSpeedLabel.Name = "attSpeedLabel";
             this.attSpeedLabel.Size = new System.Drawing.Size(38, 13);
@@ -1168,7 +1491,7 @@
             // attInitiativeLabel
             // 
             this.attInitiativeLabel.AutoSize = true;
-            this.attInitiativeLabel.Location = new System.Drawing.Point(235, 190);
+            this.attInitiativeLabel.Location = new System.Drawing.Point(268, 190);
             this.attInitiativeLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attInitiativeLabel.Name = "attInitiativeLabel";
             this.attInitiativeLabel.Size = new System.Drawing.Size(46, 13);
@@ -1178,7 +1501,7 @@
             // attFellowshipLabel
             // 
             this.attFellowshipLabel.AutoSize = true;
-            this.attFellowshipLabel.Location = new System.Drawing.Point(235, 165);
+            this.attFellowshipLabel.Location = new System.Drawing.Point(268, 165);
             this.attFellowshipLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attFellowshipLabel.Name = "attFellowshipLabel";
             this.attFellowshipLabel.Size = new System.Drawing.Size(56, 13);
@@ -1188,7 +1511,7 @@
             // attWillpowerLabel
             // 
             this.attWillpowerLabel.AutoSize = true;
-            this.attWillpowerLabel.Location = new System.Drawing.Point(235, 140);
+            this.attWillpowerLabel.Location = new System.Drawing.Point(268, 140);
             this.attWillpowerLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attWillpowerLabel.Name = "attWillpowerLabel";
             this.attWillpowerLabel.Size = new System.Drawing.Size(53, 13);
@@ -1198,7 +1521,7 @@
             // attIntellectLabel
             // 
             this.attIntellectLabel.AutoSize = true;
-            this.attIntellectLabel.Location = new System.Drawing.Point(235, 115);
+            this.attIntellectLabel.Location = new System.Drawing.Point(268, 115);
             this.attIntellectLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attIntellectLabel.Name = "attIntellectLabel";
             this.attIntellectLabel.Size = new System.Drawing.Size(44, 13);
@@ -1208,7 +1531,7 @@
             // attToughnessLabel
             // 
             this.attToughnessLabel.AutoSize = true;
-            this.attToughnessLabel.Location = new System.Drawing.Point(235, 90);
+            this.attToughnessLabel.Location = new System.Drawing.Point(268, 90);
             this.attToughnessLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attToughnessLabel.Name = "attToughnessLabel";
             this.attToughnessLabel.Size = new System.Drawing.Size(60, 13);
@@ -1218,7 +1541,7 @@
             // attAgilityLabel
             // 
             this.attAgilityLabel.AutoSize = true;
-            this.attAgilityLabel.Location = new System.Drawing.Point(235, 65);
+            this.attAgilityLabel.Location = new System.Drawing.Point(268, 65);
             this.attAgilityLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attAgilityLabel.Name = "attAgilityLabel";
             this.attAgilityLabel.Size = new System.Drawing.Size(34, 13);
@@ -1228,7 +1551,7 @@
             // attStrengthLabel
             // 
             this.attStrengthLabel.AutoSize = true;
-            this.attStrengthLabel.Location = new System.Drawing.Point(235, 40);
+            this.attStrengthLabel.Location = new System.Drawing.Point(268, 40);
             this.attStrengthLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.attStrengthLabel.Name = "attStrengthLabel";
             this.attStrengthLabel.Size = new System.Drawing.Size(47, 13);
@@ -1239,7 +1562,7 @@
             // 
             this.attributesLabel.AutoSize = true;
             this.attributesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attributesLabel.Location = new System.Drawing.Point(235, 6);
+            this.attributesLabel.Location = new System.Drawing.Point(268, 8);
             this.attributesLabel.Name = "attributesLabel";
             this.attributesLabel.Size = new System.Drawing.Size(61, 13);
             this.attributesLabel.TabIndex = 0;
@@ -2001,6 +2324,420 @@
             this.equipment.TabIndex = 2;
             this.equipment.Text = "Equipment";
             // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.AutoScroll = true;
+            this.splitContainer3.Panel1.Controls.Add(this.armorNameLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.armorRatingBox);
+            this.splitContainer3.Panel1.Controls.Add(this.armorRatingHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.armorKeywordsBox);
+            this.splitContainer3.Panel1.Controls.Add(this.armorValueBox);
+            this.splitContainer3.Panel1.Controls.Add(this.armorTraitsBox);
+            this.splitContainer3.Panel1.Controls.Add(this.armorNameBox);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponKeywordsBox);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponValueBox);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponTraitsBox);
+            this.splitContainer3.Panel1.Controls.Add(this.MeleeWeaponRangeBox);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponAPBox);
+            this.splitContainer3.Panel1.Controls.Add(this.label2);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponEDBox);
+            this.splitContainer3.Panel1.Controls.Add(this.label3);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponDamageBox);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponNameBox);
+            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponKeywordsBox);
+            this.splitContainer3.Panel1.Controls.Add(this.keywordsHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponValueBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponTraitBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponSalvoBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponRangeBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponAPBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedEDBoxLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponEDBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedBaseModLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponDamageBox);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponNameBox);
+            this.splitContainer3.Panel1.Controls.Add(this.weaponValueHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.weaponTraitsHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.salvoHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.weaponRangeHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.apHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.weaponDamageHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponHeaderLabel);
+            this.splitContainer3.Panel1.Controls.Add(this.armorHeaderLabel);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.miscEquipmentHeaderLabel);
+            this.splitContainer3.Panel2.Controls.Add(this.equipmentTextBox);
+            this.splitContainer3.Size = new System.Drawing.Size(819, 503);
+            this.splitContainer3.SplitterDistance = 251;
+            this.splitContainer3.TabIndex = 48;
+            // 
+            // armorNameLabel
+            // 
+            this.armorNameLabel.AutoSize = true;
+            this.armorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.armorNameLabel.Location = new System.Drawing.Point(6, 130);
+            this.armorNameLabel.Name = "armorNameLabel";
+            this.armorNameLabel.Size = new System.Drawing.Size(39, 13);
+            this.armorNameLabel.TabIndex = 122;
+            this.armorNameLabel.Text = "Armor";
+            // 
+            // armorRatingBox
+            // 
+            this.armorRatingBox.Location = new System.Drawing.Point(161, 147);
+            this.armorRatingBox.Name = "armorRatingBox";
+            this.armorRatingBox.Size = new System.Drawing.Size(57, 20);
+            this.armorRatingBox.TabIndex = 121;
+            this.armorRatingBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.armorRatingBox.ValueChanged += new System.EventHandler(this.armorRatingBox_ValueChanged);
+            // 
+            // armorRatingHeaderLabel
+            // 
+            this.armorRatingHeaderLabel.AutoSize = true;
+            this.armorRatingHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.armorRatingHeaderLabel.Location = new System.Drawing.Point(158, 130);
+            this.armorRatingHeaderLabel.Name = "armorRatingHeaderLabel";
+            this.armorRatingHeaderLabel.Size = new System.Drawing.Size(80, 13);
+            this.armorRatingHeaderLabel.TabIndex = 120;
+            this.armorRatingHeaderLabel.Text = "Armor Rating";
+            // 
+            // armorKeywordsBox
+            // 
+            this.armorKeywordsBox.Location = new System.Drawing.Point(692, 146);
+            this.armorKeywordsBox.Multiline = true;
+            this.armorKeywordsBox.Name = "armorKeywordsBox";
+            this.armorKeywordsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.armorKeywordsBox.Size = new System.Drawing.Size(118, 33);
+            this.armorKeywordsBox.TabIndex = 119;
+            // 
+            // armorValueBox
+            // 
+            this.armorValueBox.Location = new System.Drawing.Point(588, 146);
+            this.armorValueBox.Name = "armorValueBox";
+            this.armorValueBox.Size = new System.Drawing.Size(89, 20);
+            this.armorValueBox.TabIndex = 118;
+            // 
+            // armorTraitsBox
+            // 
+            this.armorTraitsBox.Location = new System.Drawing.Point(469, 146);
+            this.armorTraitsBox.Multiline = true;
+            this.armorTraitsBox.Name = "armorTraitsBox";
+            this.armorTraitsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.armorTraitsBox.Size = new System.Drawing.Size(105, 33);
+            this.armorTraitsBox.TabIndex = 117;
+            // 
+            // armorNameBox
+            // 
+            this.armorNameBox.Location = new System.Drawing.Point(7, 146);
+            this.armorNameBox.Multiline = true;
+            this.armorNameBox.Name = "armorNameBox";
+            this.armorNameBox.Size = new System.Drawing.Size(132, 33);
+            this.armorNameBox.TabIndex = 116;
+            // 
+            // meleeWeaponKeywordsBox
+            // 
+            this.meleeWeaponKeywordsBox.Location = new System.Drawing.Point(692, 84);
+            this.meleeWeaponKeywordsBox.Multiline = true;
+            this.meleeWeaponKeywordsBox.Name = "meleeWeaponKeywordsBox";
+            this.meleeWeaponKeywordsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.meleeWeaponKeywordsBox.Size = new System.Drawing.Size(118, 33);
+            this.meleeWeaponKeywordsBox.TabIndex = 115;
+            // 
+            // meleeWeaponValueBox
+            // 
+            this.meleeWeaponValueBox.Location = new System.Drawing.Point(588, 84);
+            this.meleeWeaponValueBox.Name = "meleeWeaponValueBox";
+            this.meleeWeaponValueBox.Size = new System.Drawing.Size(89, 20);
+            this.meleeWeaponValueBox.TabIndex = 114;
+            // 
+            // meleeWeaponTraitsBox
+            // 
+            this.meleeWeaponTraitsBox.Location = new System.Drawing.Point(469, 84);
+            this.meleeWeaponTraitsBox.Multiline = true;
+            this.meleeWeaponTraitsBox.Name = "meleeWeaponTraitsBox";
+            this.meleeWeaponTraitsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.meleeWeaponTraitsBox.Size = new System.Drawing.Size(105, 33);
+            this.meleeWeaponTraitsBox.TabIndex = 113;
+            // 
+            // MeleeWeaponRangeBox
+            // 
+            this.MeleeWeaponRangeBox.Location = new System.Drawing.Point(338, 84);
+            this.MeleeWeaponRangeBox.Multiline = true;
+            this.MeleeWeaponRangeBox.Name = "MeleeWeaponRangeBox";
+            this.MeleeWeaponRangeBox.Size = new System.Drawing.Size(63, 30);
+            this.MeleeWeaponRangeBox.TabIndex = 112;
+            // 
+            // meleeWeaponAPBox
+            // 
+            this.meleeWeaponAPBox.Location = new System.Drawing.Point(287, 84);
+            this.meleeWeaponAPBox.Name = "meleeWeaponAPBox";
+            this.meleeWeaponAPBox.Size = new System.Drawing.Size(34, 20);
+            this.meleeWeaponAPBox.TabIndex = 111;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(250, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 13);
+            this.label2.TabIndex = 110;
+            this.label2.Text = "ED";
+            // 
+            // meleeWeaponEDBox
+            // 
+            this.meleeWeaponEDBox.Location = new System.Drawing.Point(215, 84);
+            this.meleeWeaponEDBox.Name = "meleeWeaponEDBox";
+            this.meleeWeaponEDBox.Size = new System.Drawing.Size(34, 20);
+            this.meleeWeaponEDBox.TabIndex = 109;
+            this.meleeWeaponEDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(202, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.TabIndex = 108;
+            this.label3.Text = "+";
+            // 
+            // meleeWeaponDamageBox
+            // 
+            this.meleeWeaponDamageBox.Location = new System.Drawing.Point(161, 84);
+            this.meleeWeaponDamageBox.Name = "meleeWeaponDamageBox";
+            this.meleeWeaponDamageBox.Size = new System.Drawing.Size(40, 20);
+            this.meleeWeaponDamageBox.TabIndex = 107;
+            this.meleeWeaponDamageBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // meleeWeaponNameBox
+            // 
+            this.meleeWeaponNameBox.Location = new System.Drawing.Point(7, 84);
+            this.meleeWeaponNameBox.Multiline = true;
+            this.meleeWeaponNameBox.Name = "meleeWeaponNameBox";
+            this.meleeWeaponNameBox.Size = new System.Drawing.Size(132, 33);
+            this.meleeWeaponNameBox.TabIndex = 106;
+            // 
+            // meleeWeaponHeaderLabel
+            // 
+            this.meleeWeaponHeaderLabel.AutoSize = true;
+            this.meleeWeaponHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.meleeWeaponHeaderLabel.Location = new System.Drawing.Point(6, 67);
+            this.meleeWeaponHeaderLabel.Name = "meleeWeaponHeaderLabel";
+            this.meleeWeaponHeaderLabel.Size = new System.Drawing.Size(92, 13);
+            this.meleeWeaponHeaderLabel.TabIndex = 105;
+            this.meleeWeaponHeaderLabel.Text = "Melee Weapon";
+            // 
+            // rangedWeaponKeywordsBox
+            // 
+            this.rangedWeaponKeywordsBox.Location = new System.Drawing.Point(692, 21);
+            this.rangedWeaponKeywordsBox.Multiline = true;
+            this.rangedWeaponKeywordsBox.Name = "rangedWeaponKeywordsBox";
+            this.rangedWeaponKeywordsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.rangedWeaponKeywordsBox.Size = new System.Drawing.Size(118, 33);
+            this.rangedWeaponKeywordsBox.TabIndex = 104;
+            // 
+            // keywordsHeaderLabel
+            // 
+            this.keywordsHeaderLabel.AutoSize = true;
+            this.keywordsHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keywordsHeaderLabel.Location = new System.Drawing.Point(689, 4);
+            this.keywordsHeaderLabel.Name = "keywordsHeaderLabel";
+            this.keywordsHeaderLabel.Size = new System.Drawing.Size(61, 13);
+            this.keywordsHeaderLabel.TabIndex = 103;
+            this.keywordsHeaderLabel.Text = "Keywords";
+            // 
+            // rangedWeaponValueBox
+            // 
+            this.rangedWeaponValueBox.Location = new System.Drawing.Point(588, 21);
+            this.rangedWeaponValueBox.Name = "rangedWeaponValueBox";
+            this.rangedWeaponValueBox.Size = new System.Drawing.Size(89, 20);
+            this.rangedWeaponValueBox.TabIndex = 102;
+            // 
+            // rangedWeaponTraitBox
+            // 
+            this.rangedWeaponTraitBox.Location = new System.Drawing.Point(469, 21);
+            this.rangedWeaponTraitBox.Multiline = true;
+            this.rangedWeaponTraitBox.Name = "rangedWeaponTraitBox";
+            this.rangedWeaponTraitBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.rangedWeaponTraitBox.Size = new System.Drawing.Size(105, 33);
+            this.rangedWeaponTraitBox.TabIndex = 101;
+            // 
+            // rangedWeaponSalvoBox
+            // 
+            this.rangedWeaponSalvoBox.Location = new System.Drawing.Point(420, 21);
+            this.rangedWeaponSalvoBox.Name = "rangedWeaponSalvoBox";
+            this.rangedWeaponSalvoBox.Size = new System.Drawing.Size(28, 20);
+            this.rangedWeaponSalvoBox.TabIndex = 100;
+            // 
+            // rangedWeaponRangeBox
+            // 
+            this.rangedWeaponRangeBox.Location = new System.Drawing.Point(338, 21);
+            this.rangedWeaponRangeBox.Name = "rangedWeaponRangeBox";
+            this.rangedWeaponRangeBox.Size = new System.Drawing.Size(63, 20);
+            this.rangedWeaponRangeBox.TabIndex = 99;
+            // 
+            // rangedWeaponAPBox
+            // 
+            this.rangedWeaponAPBox.Location = new System.Drawing.Point(287, 21);
+            this.rangedWeaponAPBox.Name = "rangedWeaponAPBox";
+            this.rangedWeaponAPBox.Size = new System.Drawing.Size(34, 20);
+            this.rangedWeaponAPBox.TabIndex = 98;
+            // 
+            // rangedEDBoxLabel
+            // 
+            this.rangedEDBoxLabel.AutoSize = true;
+            this.rangedEDBoxLabel.Location = new System.Drawing.Point(250, 24);
+            this.rangedEDBoxLabel.Name = "rangedEDBoxLabel";
+            this.rangedEDBoxLabel.Size = new System.Drawing.Size(22, 13);
+            this.rangedEDBoxLabel.TabIndex = 97;
+            this.rangedEDBoxLabel.Text = "ED";
+            // 
+            // rangedWeaponEDBox
+            // 
+            this.rangedWeaponEDBox.Location = new System.Drawing.Point(215, 21);
+            this.rangedWeaponEDBox.Name = "rangedWeaponEDBox";
+            this.rangedWeaponEDBox.Size = new System.Drawing.Size(34, 20);
+            this.rangedWeaponEDBox.TabIndex = 96;
+            this.rangedWeaponEDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // rangedBaseModLabel
+            // 
+            this.rangedBaseModLabel.AutoSize = true;
+            this.rangedBaseModLabel.Location = new System.Drawing.Point(202, 24);
+            this.rangedBaseModLabel.Name = "rangedBaseModLabel";
+            this.rangedBaseModLabel.Size = new System.Drawing.Size(13, 13);
+            this.rangedBaseModLabel.TabIndex = 95;
+            this.rangedBaseModLabel.Text = "+";
+            // 
+            // rangedWeaponDamageBox
+            // 
+            this.rangedWeaponDamageBox.Location = new System.Drawing.Point(161, 21);
+            this.rangedWeaponDamageBox.Name = "rangedWeaponDamageBox";
+            this.rangedWeaponDamageBox.Size = new System.Drawing.Size(40, 20);
+            this.rangedWeaponDamageBox.TabIndex = 94;
+            this.rangedWeaponDamageBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // rangedWeaponNameBox
+            // 
+            this.rangedWeaponNameBox.Location = new System.Drawing.Point(7, 21);
+            this.rangedWeaponNameBox.Multiline = true;
+            this.rangedWeaponNameBox.Name = "rangedWeaponNameBox";
+            this.rangedWeaponNameBox.Size = new System.Drawing.Size(132, 33);
+            this.rangedWeaponNameBox.TabIndex = 93;
+            // 
+            // weaponValueHeaderLabel
+            // 
+            this.weaponValueHeaderLabel.AutoSize = true;
+            this.weaponValueHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaponValueHeaderLabel.Location = new System.Drawing.Point(585, 4);
+            this.weaponValueHeaderLabel.Name = "weaponValueHeaderLabel";
+            this.weaponValueHeaderLabel.Size = new System.Drawing.Size(39, 13);
+            this.weaponValueHeaderLabel.TabIndex = 92;
+            this.weaponValueHeaderLabel.Text = "Value";
+            // 
+            // weaponTraitsHeaderLabel
+            // 
+            this.weaponTraitsHeaderLabel.AutoSize = true;
+            this.weaponTraitsHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaponTraitsHeaderLabel.Location = new System.Drawing.Point(466, 4);
+            this.weaponTraitsHeaderLabel.Name = "weaponTraitsHeaderLabel";
+            this.weaponTraitsHeaderLabel.Size = new System.Drawing.Size(39, 13);
+            this.weaponTraitsHeaderLabel.TabIndex = 91;
+            this.weaponTraitsHeaderLabel.Text = "Traits";
+            // 
+            // salvoHeaderLabel
+            // 
+            this.salvoHeaderLabel.AutoSize = true;
+            this.salvoHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvoHeaderLabel.Location = new System.Drawing.Point(417, 4);
+            this.salvoHeaderLabel.Name = "salvoHeaderLabel";
+            this.salvoHeaderLabel.Size = new System.Drawing.Size(39, 13);
+            this.salvoHeaderLabel.TabIndex = 90;
+            this.salvoHeaderLabel.Text = "Salvo";
+            // 
+            // weaponRangeHeaderLabel
+            // 
+            this.weaponRangeHeaderLabel.AutoSize = true;
+            this.weaponRangeHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaponRangeHeaderLabel.Location = new System.Drawing.Point(335, 4);
+            this.weaponRangeHeaderLabel.Name = "weaponRangeHeaderLabel";
+            this.weaponRangeHeaderLabel.Size = new System.Drawing.Size(44, 13);
+            this.weaponRangeHeaderLabel.TabIndex = 89;
+            this.weaponRangeHeaderLabel.Text = "Range";
+            // 
+            // apHeaderLabel
+            // 
+            this.apHeaderLabel.AutoSize = true;
+            this.apHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apHeaderLabel.Location = new System.Drawing.Point(286, 4);
+            this.apHeaderLabel.Name = "apHeaderLabel";
+            this.apHeaderLabel.Size = new System.Drawing.Size(23, 13);
+            this.apHeaderLabel.TabIndex = 88;
+            this.apHeaderLabel.Text = "AP";
+            // 
+            // weaponDamageHeaderLabel
+            // 
+            this.weaponDamageHeaderLabel.AutoSize = true;
+            this.weaponDamageHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaponDamageHeaderLabel.Location = new System.Drawing.Point(158, 4);
+            this.weaponDamageHeaderLabel.Name = "weaponDamageHeaderLabel";
+            this.weaponDamageHeaderLabel.Size = new System.Drawing.Size(104, 13);
+            this.weaponDamageHeaderLabel.TabIndex = 87;
+            this.weaponDamageHeaderLabel.Text = "Weapon Damage";
+            // 
+            // rangedWeaponHeaderLabel
+            // 
+            this.rangedWeaponHeaderLabel.AutoSize = true;
+            this.rangedWeaponHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rangedWeaponHeaderLabel.Location = new System.Drawing.Point(6, 4);
+            this.rangedWeaponHeaderLabel.Name = "rangedWeaponHeaderLabel";
+            this.rangedWeaponHeaderLabel.Size = new System.Drawing.Size(102, 13);
+            this.rangedWeaponHeaderLabel.TabIndex = 86;
+            this.rangedWeaponHeaderLabel.Text = "Ranged Weapon";
+            // 
+            // armorHeaderLabel
+            // 
+            this.armorHeaderLabel.AutoSize = true;
+            this.armorHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.armorHeaderLabel.Location = new System.Drawing.Point(-51, 139);
+            this.armorHeaderLabel.Name = "armorHeaderLabel";
+            this.armorHeaderLabel.Size = new System.Drawing.Size(39, 13);
+            this.armorHeaderLabel.TabIndex = 79;
+            this.armorHeaderLabel.Text = "Armor";
+            // 
+            // miscEquipmentHeaderLabel
+            // 
+            this.miscEquipmentHeaderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.miscEquipmentHeaderLabel.AutoSize = true;
+            this.miscEquipmentHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.miscEquipmentHeaderLabel.Location = new System.Drawing.Point(5, 7);
+            this.miscEquipmentHeaderLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.miscEquipmentHeaderLabel.Name = "miscEquipmentHeaderLabel";
+            this.miscEquipmentHeaderLabel.Size = new System.Drawing.Size(318, 13);
+            this.miscEquipmentHeaderLabel.TabIndex = 49;
+            this.miscEquipmentHeaderLabel.Text = "Miscellaneous Equipment (Trinkets, Ammo, Tools, etc.)";
+            // 
+            // equipmentTextBox
+            // 
+            this.equipmentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.equipmentTextBox.Location = new System.Drawing.Point(2, 26);
+            this.equipmentTextBox.Name = "equipmentTextBox";
+            this.equipmentTextBox.Size = new System.Drawing.Size(817, 222);
+            this.equipmentTextBox.TabIndex = 48;
+            this.equipmentTextBox.Text = "";
+            // 
             // psychicpowers
             // 
             this.psychicpowers.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -2011,331 +2748,6 @@
             this.psychicpowers.Size = new System.Drawing.Size(825, 509);
             this.psychicpowers.TabIndex = 3;
             this.psychicpowers.Text = "Psychic Powers";
-            // 
-            // notes
-            // 
-            this.notes.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.notes.Controls.Add(this.notesTextBox);
-            this.notes.Location = new System.Drawing.Point(4, 22);
-            this.notes.Name = "notes";
-            this.notes.Padding = new System.Windows.Forms.Padding(3);
-            this.notes.Size = new System.Drawing.Size(825, 509);
-            this.notes.TabIndex = 4;
-            this.notes.Text = "Notes";
-            // 
-            // notesTextBox
-            // 
-            this.notesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notesTextBox.Location = new System.Drawing.Point(3, 3);
-            this.notesTextBox.Name = "notesTextBox";
-            this.notesTextBox.Size = new System.Drawing.Size(819, 503);
-            this.notesTextBox.TabIndex = 0;
-            this.notesTextBox.Text = "";
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.summary);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(342, 535);
-            this.tabControl2.TabIndex = 0;
-            // 
-            // summary
-            // 
-            this.summary.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.summary.Controls.Add(this.lifetimeBPEarnedLabel);
-            this.summary.Controls.Add(this.rankTraitLabel);
-            this.summary.Controls.Add(this.woundsTotalLabel);
-            this.summary.Controls.Add(this.shockTotalLabel);
-            this.summary.Controls.Add(this.textBox2);
-            this.summary.Controls.Add(this.textBox1);
-            this.summary.Controls.Add(this.damageTrackLabel);
-            this.summary.Controls.Add(this.socialTraitsLabel);
-            this.summary.Controls.Add(this.mentalTraitsLabel);
-            this.summary.Controls.Add(this.combatTraitsLabel);
-            this.summary.Controls.Add(this.wealthTraitLabel);
-            this.summary.Controls.Add(this.resolveTraitLabel);
-            this.summary.Controls.Add(this.corruptionTraitLabel);
-            this.summary.Controls.Add(this.woundsTraitLabel);
-            this.summary.Controls.Add(this.shockTraitLabel);
-            this.summary.Controls.Add(this.soakTraitLabel);
-            this.summary.Controls.Add(this.influenceTraitLabel);
-            this.summary.Controls.Add(this.passiveAwarenessTraitLabel);
-            this.summary.Controls.Add(this.convictionTraitLabel);
-            this.summary.Controls.Add(this.speedTraitLabel);
-            this.summary.Controls.Add(this.resilienceTraitLabel);
-            this.summary.Controls.Add(this.defenceTraitLabel);
-            this.summary.Controls.Add(this.traitsLabel);
-            this.summary.Location = new System.Drawing.Point(4, 22);
-            this.summary.Name = "summary";
-            this.summary.Padding = new System.Windows.Forms.Padding(3);
-            this.summary.Size = new System.Drawing.Size(334, 509);
-            this.summary.TabIndex = 0;
-            this.summary.Text = "Summary";
-            // 
-            // traitsLabel
-            // 
-            this.traitsLabel.AutoSize = true;
-            this.traitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.traitsLabel.Location = new System.Drawing.Point(6, 6);
-            this.traitsLabel.Name = "traitsLabel";
-            this.traitsLabel.Size = new System.Drawing.Size(39, 13);
-            this.traitsLabel.TabIndex = 0;
-            this.traitsLabel.Text = "Traits";
-            // 
-            // defenceTraitLabel
-            // 
-            this.defenceTraitLabel.AutoSize = true;
-            this.defenceTraitLabel.Location = new System.Drawing.Point(6, 128);
-            this.defenceTraitLabel.Name = "defenceTraitLabel";
-            this.defenceTraitLabel.Size = new System.Drawing.Size(48, 13);
-            this.defenceTraitLabel.TabIndex = 1;
-            this.defenceTraitLabel.Text = "Defence";
-            // 
-            // resilienceTraitLabel
-            // 
-            this.resilienceTraitLabel.AutoSize = true;
-            this.resilienceTraitLabel.Location = new System.Drawing.Point(6, 155);
-            this.resilienceTraitLabel.Name = "resilienceTraitLabel";
-            this.resilienceTraitLabel.Size = new System.Drawing.Size(56, 13);
-            this.resilienceTraitLabel.TabIndex = 2;
-            this.resilienceTraitLabel.Text = "Resilience";
-            // 
-            // speedTraitLabel
-            // 
-            this.speedTraitLabel.AutoSize = true;
-            this.speedTraitLabel.Location = new System.Drawing.Point(164, 155);
-            this.speedTraitLabel.Name = "speedTraitLabel";
-            this.speedTraitLabel.Size = new System.Drawing.Size(38, 13);
-            this.speedTraitLabel.TabIndex = 3;
-            this.speedTraitLabel.Text = "Speed";
-            // 
-            // convictionTraitLabel
-            // 
-            this.convictionTraitLabel.AutoSize = true;
-            this.convictionTraitLabel.Location = new System.Drawing.Point(6, 215);
-            this.convictionTraitLabel.Name = "convictionTraitLabel";
-            this.convictionTraitLabel.Size = new System.Drawing.Size(57, 13);
-            this.convictionTraitLabel.TabIndex = 4;
-            this.convictionTraitLabel.Text = "Conviction";
-            // 
-            // passiveAwarenessTraitLabel
-            // 
-            this.passiveAwarenessTraitLabel.AutoSize = true;
-            this.passiveAwarenessTraitLabel.Location = new System.Drawing.Point(6, 240);
-            this.passiveAwarenessTraitLabel.Name = "passiveAwarenessTraitLabel";
-            this.passiveAwarenessTraitLabel.Size = new System.Drawing.Size(99, 13);
-            this.passiveAwarenessTraitLabel.TabIndex = 5;
-            this.passiveAwarenessTraitLabel.Text = "Passive Awareness";
-            // 
-            // influenceTraitLabel
-            // 
-            this.influenceTraitLabel.AutoSize = true;
-            this.influenceTraitLabel.Location = new System.Drawing.Point(6, 299);
-            this.influenceTraitLabel.Name = "influenceTraitLabel";
-            this.influenceTraitLabel.Size = new System.Drawing.Size(51, 13);
-            this.influenceTraitLabel.TabIndex = 6;
-            this.influenceTraitLabel.Text = "Influence";
-            // 
-            // soakTraitLabel
-            // 
-            this.soakTraitLabel.AutoSize = true;
-            this.soakTraitLabel.Location = new System.Drawing.Point(164, 130);
-            this.soakTraitLabel.Name = "soakTraitLabel";
-            this.soakTraitLabel.Size = new System.Drawing.Size(32, 13);
-            this.soakTraitLabel.TabIndex = 7;
-            this.soakTraitLabel.Text = "Soak";
-            // 
-            // shockTraitLabel
-            // 
-            this.shockTraitLabel.AutoSize = true;
-            this.shockTraitLabel.Location = new System.Drawing.Point(6, 65);
-            this.shockTraitLabel.Name = "shockTraitLabel";
-            this.shockTraitLabel.Size = new System.Drawing.Size(38, 13);
-            this.shockTraitLabel.TabIndex = 8;
-            this.shockTraitLabel.Text = "Shock";
-            // 
-            // woundsTraitLabel
-            // 
-            this.woundsTraitLabel.AutoSize = true;
-            this.woundsTraitLabel.Location = new System.Drawing.Point(164, 65);
-            this.woundsTraitLabel.Name = "woundsTraitLabel";
-            this.woundsTraitLabel.Size = new System.Drawing.Size(47, 13);
-            this.woundsTraitLabel.TabIndex = 9;
-            this.woundsTraitLabel.Text = "Wounds";
-            // 
-            // corruptionTraitLabel
-            // 
-            this.corruptionTraitLabel.AutoSize = true;
-            this.corruptionTraitLabel.Location = new System.Drawing.Point(164, 216);
-            this.corruptionTraitLabel.Name = "corruptionTraitLabel";
-            this.corruptionTraitLabel.Size = new System.Drawing.Size(55, 13);
-            this.corruptionTraitLabel.TabIndex = 10;
-            this.corruptionTraitLabel.Text = "Corruption";
-            // 
-            // resolveTraitLabel
-            // 
-            this.resolveTraitLabel.AutoSize = true;
-            this.resolveTraitLabel.Location = new System.Drawing.Point(164, 240);
-            this.resolveTraitLabel.Name = "resolveTraitLabel";
-            this.resolveTraitLabel.Size = new System.Drawing.Size(46, 13);
-            this.resolveTraitLabel.TabIndex = 11;
-            this.resolveTraitLabel.Text = "Resolve";
-            // 
-            // wealthTraitLabel
-            // 
-            this.wealthTraitLabel.AutoSize = true;
-            this.wealthTraitLabel.Location = new System.Drawing.Point(164, 299);
-            this.wealthTraitLabel.Name = "wealthTraitLabel";
-            this.wealthTraitLabel.Size = new System.Drawing.Size(41, 13);
-            this.wealthTraitLabel.TabIndex = 12;
-            this.wealthTraitLabel.Text = "Wealth";
-            // 
-            // combatTraitsLabel
-            // 
-            this.combatTraitsLabel.AutoSize = true;
-            this.combatTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combatTraitsLabel.Location = new System.Drawing.Point(6, 103);
-            this.combatTraitsLabel.Name = "combatTraitsLabel";
-            this.combatTraitsLabel.Size = new System.Drawing.Size(85, 13);
-            this.combatTraitsLabel.TabIndex = 13;
-            this.combatTraitsLabel.Text = "Combat Traits";
-            // 
-            // mentalTraitsLabel
-            // 
-            this.mentalTraitsLabel.AutoSize = true;
-            this.mentalTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mentalTraitsLabel.Location = new System.Drawing.Point(6, 190);
-            this.mentalTraitsLabel.Name = "mentalTraitsLabel";
-            this.mentalTraitsLabel.Size = new System.Drawing.Size(81, 13);
-            this.mentalTraitsLabel.TabIndex = 14;
-            this.mentalTraitsLabel.Text = "Mental Traits";
-            // 
-            // socialTraitsLabel
-            // 
-            this.socialTraitsLabel.AutoSize = true;
-            this.socialTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.socialTraitsLabel.Location = new System.Drawing.Point(6, 274);
-            this.socialTraitsLabel.Name = "socialTraitsLabel";
-            this.socialTraitsLabel.Size = new System.Drawing.Size(78, 13);
-            this.socialTraitsLabel.TabIndex = 15;
-            this.socialTraitsLabel.Text = "Social Traits";
-            // 
-            // damageTrackLabel
-            // 
-            this.damageTrackLabel.AutoSize = true;
-            this.damageTrackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.damageTrackLabel.Location = new System.Drawing.Point(6, 40);
-            this.damageTrackLabel.Name = "damageTrackLabel";
-            this.damageTrackLabel.Size = new System.Drawing.Size(90, 13);
-            this.damageTrackLabel.TabIndex = 16;
-            this.damageTrackLabel.Text = "Damage Track";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(48, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(36, 20);
-            this.textBox1.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(217, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(36, 20);
-            this.textBox2.TabIndex = 18;
-            // 
-            // shockTotalLabel
-            // 
-            this.shockTotalLabel.AutoSize = true;
-            this.shockTotalLabel.Location = new System.Drawing.Point(85, 65);
-            this.shockTotalLabel.Name = "shockTotalLabel";
-            this.shockTotalLabel.Size = new System.Drawing.Size(24, 13);
-            this.shockTotalLabel.TabIndex = 19;
-            this.shockTotalLabel.Text = "/19";
-            // 
-            // woundsTotalLabel
-            // 
-            this.woundsTotalLabel.AutoSize = true;
-            this.woundsTotalLabel.Location = new System.Drawing.Point(254, 65);
-            this.woundsTotalLabel.Name = "woundsTotalLabel";
-            this.woundsTotalLabel.Size = new System.Drawing.Size(24, 13);
-            this.woundsTotalLabel.TabIndex = 20;
-            this.woundsTotalLabel.Text = "/19";
-            // 
-            // rankValueLabel
-            // 
-            this.rankValueLabel.AutoSize = true;
-            this.rankValueLabel.Location = new System.Drawing.Point(3, 165);
-            this.rankValueLabel.Name = "rankValueLabel";
-            this.rankValueLabel.Size = new System.Drawing.Size(33, 13);
-            this.rankValueLabel.TabIndex = 43;
-            this.rankValueLabel.Text = "Rank";
-            // 
-            // rankTraitLabel
-            // 
-            this.rankTraitLabel.AutoSize = true;
-            this.rankTraitLabel.Location = new System.Drawing.Point(6, 324);
-            this.rankTraitLabel.Name = "rankTraitLabel";
-            this.rankTraitLabel.Size = new System.Drawing.Size(33, 13);
-            this.rankTraitLabel.TabIndex = 44;
-            this.rankTraitLabel.Text = "Rank";
-            // 
-            // wealthValueLabel
-            // 
-            this.wealthValueLabel.AutoSize = true;
-            this.wealthValueLabel.Location = new System.Drawing.Point(3, 191);
-            this.wealthValueLabel.Name = "wealthValueLabel";
-            this.wealthValueLabel.Size = new System.Drawing.Size(41, 13);
-            this.wealthValueLabel.TabIndex = 45;
-            this.wealthValueLabel.Text = "Wealth";
-            // 
-            // rankValueBox
-            // 
-            this.rankValueBox.Location = new System.Drawing.Point(61, 163);
-            this.rankValueBox.Name = "rankValueBox";
-            this.rankValueBox.Size = new System.Drawing.Size(56, 20);
-            this.rankValueBox.TabIndex = 46;
-            this.rankValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.rankValueBox.ValueChanged += new System.EventHandler(this.rankValueBox_ValueChanged);
-            // 
-            // wealthValueBox
-            // 
-            this.wealthValueBox.Location = new System.Drawing.Point(61, 189);
-            this.wealthValueBox.Name = "wealthValueBox";
-            this.wealthValueBox.Size = new System.Drawing.Size(56, 20);
-            this.wealthValueBox.TabIndex = 47;
-            this.wealthValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.wealthValueBox.ValueChanged += new System.EventHandler(this.wealthValueBox_ValueChanged);
-            // 
-            // corruptionValueLabel
-            // 
-            this.corruptionValueLabel.AutoSize = true;
-            this.corruptionValueLabel.Location = new System.Drawing.Point(3, 216);
-            this.corruptionValueLabel.Name = "corruptionValueLabel";
-            this.corruptionValueLabel.Size = new System.Drawing.Size(55, 13);
-            this.corruptionValueLabel.TabIndex = 48;
-            this.corruptionValueLabel.Text = "Corruption";
-            // 
-            // corruptionValueBox
-            // 
-            this.corruptionValueBox.Location = new System.Drawing.Point(61, 214);
-            this.corruptionValueBox.Name = "corruptionValueBox";
-            this.corruptionValueBox.Size = new System.Drawing.Size(56, 20);
-            this.corruptionValueBox.TabIndex = 49;
-            this.corruptionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.corruptionValueBox.ValueChanged += new System.EventHandler(this.corruptionValueBox_ValueChanged);
-            // 
-            // lifetimeBPEarnedLabel
-            // 
-            this.lifetimeBPEarnedLabel.AutoSize = true;
-            this.lifetimeBPEarnedLabel.Location = new System.Drawing.Point(6, 359);
-            this.lifetimeBPEarnedLabel.Name = "lifetimeBPEarnedLabel";
-            this.lifetimeBPEarnedLabel.Size = new System.Drawing.Size(63, 13);
-            this.lifetimeBPEarnedLabel.TabIndex = 45;
-            this.lifetimeBPEarnedLabel.Text = "Lifetime BP:";
             // 
             // splitContainer2
             // 
@@ -2654,602 +3066,1349 @@
             this.splitContainer2.SplitterDistance = 259;
             this.splitContainer2.TabIndex = 0;
             // 
-            // powerMultiCheckBox3
-            // 
-            this.powerMultiCheckBox3.AutoSize = true;
-            this.powerMultiCheckBox3.Location = new System.Drawing.Point(568, 102);
-            this.powerMultiCheckBox3.Name = "powerMultiCheckBox3";
-            this.powerMultiCheckBox3.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox3.TabIndex = 147;
-            this.powerMultiCheckBox3.UseVisualStyleBackColor = true;
+            // powerPotencyBox24
+            // 
+            this.powerPotencyBox24.Location = new System.Drawing.Point(758, 918);
+            this.powerPotencyBox24.Multiline = true;
+            this.powerPotencyBox24.Name = "powerPotencyBox24";
+            this.powerPotencyBox24.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox24.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox24.TabIndex = 403;
+            // 
+            // powerPotencyBox23
+            // 
+            this.powerPotencyBox23.Location = new System.Drawing.Point(758, 879);
+            this.powerPotencyBox23.Multiline = true;
+            this.powerPotencyBox23.Name = "powerPotencyBox23";
+            this.powerPotencyBox23.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox23.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox23.TabIndex = 402;
+            // 
+            // powerPotencyBox22
+            // 
+            this.powerPotencyBox22.Location = new System.Drawing.Point(758, 840);
+            this.powerPotencyBox22.Multiline = true;
+            this.powerPotencyBox22.Name = "powerPotencyBox22";
+            this.powerPotencyBox22.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox22.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox22.TabIndex = 401;
+            // 
+            // powerPotencyBox21
+            // 
+            this.powerPotencyBox21.Location = new System.Drawing.Point(758, 801);
+            this.powerPotencyBox21.Multiline = true;
+            this.powerPotencyBox21.Name = "powerPotencyBox21";
+            this.powerPotencyBox21.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox21.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox21.TabIndex = 400;
+            // 
+            // powerPotencyBox20
+            // 
+            this.powerPotencyBox20.Location = new System.Drawing.Point(758, 762);
+            this.powerPotencyBox20.Multiline = true;
+            this.powerPotencyBox20.Name = "powerPotencyBox20";
+            this.powerPotencyBox20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox20.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox20.TabIndex = 399;
+            // 
+            // powerPotencyBox19
+            // 
+            this.powerPotencyBox19.Location = new System.Drawing.Point(758, 723);
+            this.powerPotencyBox19.Multiline = true;
+            this.powerPotencyBox19.Name = "powerPotencyBox19";
+            this.powerPotencyBox19.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox19.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox19.TabIndex = 398;
+            // 
+            // powerPotencyBox18
+            // 
+            this.powerPotencyBox18.Location = new System.Drawing.Point(758, 684);
+            this.powerPotencyBox18.Multiline = true;
+            this.powerPotencyBox18.Name = "powerPotencyBox18";
+            this.powerPotencyBox18.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox18.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox18.TabIndex = 397;
+            // 
+            // powerPotencyBox17
+            // 
+            this.powerPotencyBox17.Location = new System.Drawing.Point(758, 645);
+            this.powerPotencyBox17.Multiline = true;
+            this.powerPotencyBox17.Name = "powerPotencyBox17";
+            this.powerPotencyBox17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox17.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox17.TabIndex = 396;
+            // 
+            // powerPotencyBox16
+            // 
+            this.powerPotencyBox16.Location = new System.Drawing.Point(758, 606);
+            this.powerPotencyBox16.Multiline = true;
+            this.powerPotencyBox16.Name = "powerPotencyBox16";
+            this.powerPotencyBox16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox16.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox16.TabIndex = 395;
+            // 
+            // powerPotencyBox15
+            // 
+            this.powerPotencyBox15.Location = new System.Drawing.Point(758, 567);
+            this.powerPotencyBox15.Multiline = true;
+            this.powerPotencyBox15.Name = "powerPotencyBox15";
+            this.powerPotencyBox15.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox15.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox15.TabIndex = 394;
+            // 
+            // powerPotencyBox14
+            // 
+            this.powerPotencyBox14.Location = new System.Drawing.Point(758, 528);
+            this.powerPotencyBox14.Multiline = true;
+            this.powerPotencyBox14.Name = "powerPotencyBox14";
+            this.powerPotencyBox14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox14.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox14.TabIndex = 393;
+            // 
+            // powerPotencyBox13
+            // 
+            this.powerPotencyBox13.Location = new System.Drawing.Point(758, 489);
+            this.powerPotencyBox13.Multiline = true;
+            this.powerPotencyBox13.Name = "powerPotencyBox13";
+            this.powerPotencyBox13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox13.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox13.TabIndex = 392;
+            // 
+            // powerPotencyBox12
+            // 
+            this.powerPotencyBox12.Location = new System.Drawing.Point(758, 449);
+            this.powerPotencyBox12.Multiline = true;
+            this.powerPotencyBox12.Name = "powerPotencyBox12";
+            this.powerPotencyBox12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox12.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox12.TabIndex = 391;
+            // 
+            // powerPotencyBox11
+            // 
+            this.powerPotencyBox11.Location = new System.Drawing.Point(758, 410);
+            this.powerPotencyBox11.Multiline = true;
+            this.powerPotencyBox11.Name = "powerPotencyBox11";
+            this.powerPotencyBox11.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox11.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox11.TabIndex = 390;
+            // 
+            // powerPotencyBox10
+            // 
+            this.powerPotencyBox10.Location = new System.Drawing.Point(758, 371);
+            this.powerPotencyBox10.Multiline = true;
+            this.powerPotencyBox10.Name = "powerPotencyBox10";
+            this.powerPotencyBox10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox10.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox10.TabIndex = 389;
+            // 
+            // powerPotencyBox9
+            // 
+            this.powerPotencyBox9.Location = new System.Drawing.Point(758, 332);
+            this.powerPotencyBox9.Multiline = true;
+            this.powerPotencyBox9.Name = "powerPotencyBox9";
+            this.powerPotencyBox9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox9.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox9.TabIndex = 388;
+            // 
+            // powerPotencyBox8
+            // 
+            this.powerPotencyBox8.Location = new System.Drawing.Point(758, 293);
+            this.powerPotencyBox8.Multiline = true;
+            this.powerPotencyBox8.Name = "powerPotencyBox8";
+            this.powerPotencyBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox8.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox8.TabIndex = 387;
+            // 
+            // powerPotencyBox7
+            // 
+            this.powerPotencyBox7.Location = new System.Drawing.Point(758, 254);
+            this.powerPotencyBox7.Multiline = true;
+            this.powerPotencyBox7.Name = "powerPotencyBox7";
+            this.powerPotencyBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox7.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox7.TabIndex = 386;
+            // 
+            // powerPotencyBox6
+            // 
+            this.powerPotencyBox6.Location = new System.Drawing.Point(758, 216);
+            this.powerPotencyBox6.Multiline = true;
+            this.powerPotencyBox6.Name = "powerPotencyBox6";
+            this.powerPotencyBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox6.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox6.TabIndex = 385;
+            // 
+            // powerPotencyBox5
+            // 
+            this.powerPotencyBox5.Location = new System.Drawing.Point(758, 177);
+            this.powerPotencyBox5.Multiline = true;
+            this.powerPotencyBox5.Name = "powerPotencyBox5";
+            this.powerPotencyBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox5.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox5.TabIndex = 384;
+            // 
+            // powerPotencyBox4
+            // 
+            this.powerPotencyBox4.Location = new System.Drawing.Point(758, 138);
+            this.powerPotencyBox4.Multiline = true;
+            this.powerPotencyBox4.Name = "powerPotencyBox4";
+            this.powerPotencyBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox4.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox4.TabIndex = 383;
+            // 
+            // powerPotencyBox3
+            // 
+            this.powerPotencyBox3.Location = new System.Drawing.Point(758, 99);
+            this.powerPotencyBox3.Multiline = true;
+            this.powerPotencyBox3.Name = "powerPotencyBox3";
+            this.powerPotencyBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox3.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox3.TabIndex = 382;
+            // 
+            // powerPotencyBox2
+            // 
+            this.powerPotencyBox2.Location = new System.Drawing.Point(758, 60);
+            this.powerPotencyBox2.Multiline = true;
+            this.powerPotencyBox2.Name = "powerPotencyBox2";
+            this.powerPotencyBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox2.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox2.TabIndex = 381;
+            // 
+            // powerPotencyBox1
+            // 
+            this.powerPotencyBox1.Location = new System.Drawing.Point(758, 21);
+            this.powerPotencyBox1.Multiline = true;
+            this.powerPotencyBox1.Name = "powerPotencyBox1";
+            this.powerPotencyBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerPotencyBox1.Size = new System.Drawing.Size(168, 33);
+            this.powerPotencyBox1.TabIndex = 380;
+            // 
+            // powerPotentcyLabel
+            // 
+            this.powerPotentcyLabel.AutoSize = true;
+            this.powerPotentcyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.powerPotentcyLabel.Location = new System.Drawing.Point(755, 3);
+            this.powerPotentcyLabel.Name = "powerPotentcyLabel";
+            this.powerPotentcyLabel.Size = new System.Drawing.Size(53, 13);
+            this.powerPotentcyLabel.TabIndex = 379;
+            this.powerPotentcyLabel.Text = "Potency";
+            // 
+            // powerMultiCheckBox24
+            // 
+            this.powerMultiCheckBox24.AutoSize = true;
+            this.powerMultiCheckBox24.Location = new System.Drawing.Point(568, 922);
+            this.powerMultiCheckBox24.Name = "powerMultiCheckBox24";
+            this.powerMultiCheckBox24.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox24.TabIndex = 378;
+            this.powerMultiCheckBox24.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox24
+            // 
+            this.powerDurationBox24.Location = new System.Drawing.Point(473, 918);
+            this.powerDurationBox24.Name = "powerDurationBox24";
+            this.powerDurationBox24.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox24.TabIndex = 377;
+            // 
+            // powerKeywordBox24
+            // 
+            this.powerKeywordBox24.Location = new System.Drawing.Point(624, 918);
+            this.powerKeywordBox24.Multiline = true;
+            this.powerKeywordBox24.Name = "powerKeywordBox24";
+            this.powerKeywordBox24.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox24.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox24.TabIndex = 376;
+            // 
+            // powerDNBox24
+            // 
+            this.powerDNBox24.Location = new System.Drawing.Point(436, 918);
+            this.powerDNBox24.Name = "powerDNBox24";
+            this.powerDNBox24.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox24.TabIndex = 375;
+            // 
+            // powerRangeBox24
+            // 
+            this.powerRangeBox24.Location = new System.Drawing.Point(357, 918);
+            this.powerRangeBox24.Name = "powerRangeBox24";
+            this.powerRangeBox24.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox24.TabIndex = 374;
+            // 
+            // powerActivationBox24
+            // 
+            this.powerActivationBox24.Location = new System.Drawing.Point(279, 918);
+            this.powerActivationBox24.Name = "powerActivationBox24";
+            this.powerActivationBox24.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox24.TabIndex = 373;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(249, 921);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(22, 13);
+            this.label57.TabIndex = 372;
+            this.label57.Text = "ED";
+            // 
+            // powerEDBox24
+            // 
+            this.powerEDBox24.Location = new System.Drawing.Point(214, 918);
+            this.powerEDBox24.Name = "powerEDBox24";
+            this.powerEDBox24.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox24.TabIndex = 371;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(201, 921);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(13, 13);
+            this.label58.TabIndex = 370;
+            this.label58.Text = "+";
+            // 
+            // powerDamageBox24
+            // 
+            this.powerDamageBox24.Location = new System.Drawing.Point(160, 918);
+            this.powerDamageBox24.Name = "powerDamageBox24";
+            this.powerDamageBox24.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox24.TabIndex = 369;
+            // 
+            // powerNameBox24
+            // 
+            this.powerNameBox24.Location = new System.Drawing.Point(6, 918);
+            this.powerNameBox24.Multiline = true;
+            this.powerNameBox24.Name = "powerNameBox24";
+            this.powerNameBox24.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox24.TabIndex = 368;
+            // 
+            // powerMultiCheckBox23
+            // 
+            this.powerMultiCheckBox23.AutoSize = true;
+            this.powerMultiCheckBox23.Location = new System.Drawing.Point(568, 883);
+            this.powerMultiCheckBox23.Name = "powerMultiCheckBox23";
+            this.powerMultiCheckBox23.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox23.TabIndex = 367;
+            this.powerMultiCheckBox23.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox23
+            // 
+            this.powerDurationBox23.Location = new System.Drawing.Point(473, 879);
+            this.powerDurationBox23.Name = "powerDurationBox23";
+            this.powerDurationBox23.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox23.TabIndex = 366;
+            // 
+            // powerKeywordBox23
+            // 
+            this.powerKeywordBox23.Location = new System.Drawing.Point(624, 879);
+            this.powerKeywordBox23.Multiline = true;
+            this.powerKeywordBox23.Name = "powerKeywordBox23";
+            this.powerKeywordBox23.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox23.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox23.TabIndex = 365;
+            // 
+            // powerDNBox23
+            // 
+            this.powerDNBox23.Location = new System.Drawing.Point(436, 879);
+            this.powerDNBox23.Name = "powerDNBox23";
+            this.powerDNBox23.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox23.TabIndex = 364;
+            // 
+            // powerRangeBox23
+            // 
+            this.powerRangeBox23.Location = new System.Drawing.Point(357, 879);
+            this.powerRangeBox23.Name = "powerRangeBox23";
+            this.powerRangeBox23.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox23.TabIndex = 363;
+            // 
+            // powerActivationBox23
+            // 
+            this.powerActivationBox23.Location = new System.Drawing.Point(279, 879);
+            this.powerActivationBox23.Name = "powerActivationBox23";
+            this.powerActivationBox23.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox23.TabIndex = 362;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(249, 882);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(22, 13);
+            this.label59.TabIndex = 361;
+            this.label59.Text = "ED";
+            // 
+            // powerEDBox23
+            // 
+            this.powerEDBox23.Location = new System.Drawing.Point(214, 879);
+            this.powerEDBox23.Name = "powerEDBox23";
+            this.powerEDBox23.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox23.TabIndex = 360;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(201, 882);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(13, 13);
+            this.label60.TabIndex = 359;
+            this.label60.Text = "+";
+            // 
+            // powerDamageBox23
+            // 
+            this.powerDamageBox23.Location = new System.Drawing.Point(160, 879);
+            this.powerDamageBox23.Name = "powerDamageBox23";
+            this.powerDamageBox23.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox23.TabIndex = 358;
+            // 
+            // powerNameBox23
+            // 
+            this.powerNameBox23.Location = new System.Drawing.Point(6, 879);
+            this.powerNameBox23.Multiline = true;
+            this.powerNameBox23.Name = "powerNameBox23";
+            this.powerNameBox23.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox23.TabIndex = 357;
+            // 
+            // powerMultiCheckBox22
+            // 
+            this.powerMultiCheckBox22.AutoSize = true;
+            this.powerMultiCheckBox22.Location = new System.Drawing.Point(568, 845);
+            this.powerMultiCheckBox22.Name = "powerMultiCheckBox22";
+            this.powerMultiCheckBox22.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox22.TabIndex = 356;
+            this.powerMultiCheckBox22.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox22
+            // 
+            this.powerDurationBox22.Location = new System.Drawing.Point(473, 840);
+            this.powerDurationBox22.Name = "powerDurationBox22";
+            this.powerDurationBox22.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox22.TabIndex = 355;
+            // 
+            // powerKeywordBox22
+            // 
+            this.powerKeywordBox22.Location = new System.Drawing.Point(624, 840);
+            this.powerKeywordBox22.Multiline = true;
+            this.powerKeywordBox22.Name = "powerKeywordBox22";
+            this.powerKeywordBox22.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox22.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox22.TabIndex = 354;
+            // 
+            // powerDNBox22
+            // 
+            this.powerDNBox22.Location = new System.Drawing.Point(436, 840);
+            this.powerDNBox22.Name = "powerDNBox22";
+            this.powerDNBox22.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox22.TabIndex = 353;
+            // 
+            // powerRangeBox22
+            // 
+            this.powerRangeBox22.Location = new System.Drawing.Point(357, 840);
+            this.powerRangeBox22.Name = "powerRangeBox22";
+            this.powerRangeBox22.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox22.TabIndex = 352;
+            // 
+            // powerActivationBox22
+            // 
+            this.powerActivationBox22.Location = new System.Drawing.Point(279, 840);
+            this.powerActivationBox22.Name = "powerActivationBox22";
+            this.powerActivationBox22.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox22.TabIndex = 351;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(249, 844);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(22, 13);
+            this.label61.TabIndex = 350;
+            this.label61.Text = "ED";
+            // 
+            // powerEDBox22
+            // 
+            this.powerEDBox22.Location = new System.Drawing.Point(214, 840);
+            this.powerEDBox22.Name = "powerEDBox22";
+            this.powerEDBox22.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox22.TabIndex = 349;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(201, 844);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(13, 13);
+            this.label62.TabIndex = 348;
+            this.label62.Text = "+";
+            // 
+            // powerDamageBox22
+            // 
+            this.powerDamageBox22.Location = new System.Drawing.Point(160, 840);
+            this.powerDamageBox22.Name = "powerDamageBox22";
+            this.powerDamageBox22.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox22.TabIndex = 347;
+            // 
+            // powerNameBox22
+            // 
+            this.powerNameBox22.Location = new System.Drawing.Point(6, 840);
+            this.powerNameBox22.Multiline = true;
+            this.powerNameBox22.Name = "powerNameBox22";
+            this.powerNameBox22.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox22.TabIndex = 346;
+            // 
+            // powerMultiCheckBox21
+            // 
+            this.powerMultiCheckBox21.AutoSize = true;
+            this.powerMultiCheckBox21.Location = new System.Drawing.Point(568, 805);
+            this.powerMultiCheckBox21.Name = "powerMultiCheckBox21";
+            this.powerMultiCheckBox21.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox21.TabIndex = 345;
+            this.powerMultiCheckBox21.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox21
+            // 
+            this.powerDurationBox21.Location = new System.Drawing.Point(473, 801);
+            this.powerDurationBox21.Name = "powerDurationBox21";
+            this.powerDurationBox21.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox21.TabIndex = 344;
+            // 
+            // powerKeywordBox21
+            // 
+            this.powerKeywordBox21.Location = new System.Drawing.Point(624, 801);
+            this.powerKeywordBox21.Multiline = true;
+            this.powerKeywordBox21.Name = "powerKeywordBox21";
+            this.powerKeywordBox21.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox21.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox21.TabIndex = 343;
+            // 
+            // powerDNBox21
+            // 
+            this.powerDNBox21.Location = new System.Drawing.Point(436, 801);
+            this.powerDNBox21.Name = "powerDNBox21";
+            this.powerDNBox21.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox21.TabIndex = 342;
+            // 
+            // powerRangeBox21
+            // 
+            this.powerRangeBox21.Location = new System.Drawing.Point(357, 801);
+            this.powerRangeBox21.Name = "powerRangeBox21";
+            this.powerRangeBox21.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox21.TabIndex = 341;
+            // 
+            // powerActivationBox21
+            // 
+            this.powerActivationBox21.Location = new System.Drawing.Point(279, 801);
+            this.powerActivationBox21.Name = "powerActivationBox21";
+            this.powerActivationBox21.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox21.TabIndex = 340;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(249, 804);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(22, 13);
+            this.label63.TabIndex = 339;
+            this.label63.Text = "ED";
+            // 
+            // powerEDBox21
+            // 
+            this.powerEDBox21.Location = new System.Drawing.Point(214, 801);
+            this.powerEDBox21.Name = "powerEDBox21";
+            this.powerEDBox21.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox21.TabIndex = 338;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(201, 804);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(13, 13);
+            this.label64.TabIndex = 337;
+            this.label64.Text = "+";
+            // 
+            // powerDamageBox21
+            // 
+            this.powerDamageBox21.Location = new System.Drawing.Point(160, 801);
+            this.powerDamageBox21.Name = "powerDamageBox21";
+            this.powerDamageBox21.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox21.TabIndex = 336;
+            // 
+            // powerNameBox21
+            // 
+            this.powerNameBox21.Location = new System.Drawing.Point(6, 801);
+            this.powerNameBox21.Multiline = true;
+            this.powerNameBox21.Name = "powerNameBox21";
+            this.powerNameBox21.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox21.TabIndex = 335;
+            // 
+            // powerMultiCheckBox20
+            // 
+            this.powerMultiCheckBox20.AutoSize = true;
+            this.powerMultiCheckBox20.Location = new System.Drawing.Point(568, 766);
+            this.powerMultiCheckBox20.Name = "powerMultiCheckBox20";
+            this.powerMultiCheckBox20.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox20.TabIndex = 334;
+            this.powerMultiCheckBox20.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox20
+            // 
+            this.powerDurationBox20.Location = new System.Drawing.Point(473, 762);
+            this.powerDurationBox20.Name = "powerDurationBox20";
+            this.powerDurationBox20.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox20.TabIndex = 333;
+            // 
+            // powerKeywordBox20
+            // 
+            this.powerKeywordBox20.Location = new System.Drawing.Point(624, 762);
+            this.powerKeywordBox20.Multiline = true;
+            this.powerKeywordBox20.Name = "powerKeywordBox20";
+            this.powerKeywordBox20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox20.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox20.TabIndex = 332;
+            // 
+            // powerDNBox20
+            // 
+            this.powerDNBox20.Location = new System.Drawing.Point(436, 762);
+            this.powerDNBox20.Name = "powerDNBox20";
+            this.powerDNBox20.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox20.TabIndex = 331;
+            // 
+            // powerRangeBox20
+            // 
+            this.powerRangeBox20.Location = new System.Drawing.Point(357, 762);
+            this.powerRangeBox20.Name = "powerRangeBox20";
+            this.powerRangeBox20.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox20.TabIndex = 330;
+            // 
+            // powerActivationBox20
+            // 
+            this.powerActivationBox20.Location = new System.Drawing.Point(279, 762);
+            this.powerActivationBox20.Name = "powerActivationBox20";
+            this.powerActivationBox20.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox20.TabIndex = 329;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(249, 765);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(22, 13);
+            this.label51.TabIndex = 328;
+            this.label51.Text = "ED";
+            // 
+            // powerEDBox20
+            // 
+            this.powerEDBox20.Location = new System.Drawing.Point(214, 762);
+            this.powerEDBox20.Name = "powerEDBox20";
+            this.powerEDBox20.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox20.TabIndex = 327;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(201, 765);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(13, 13);
+            this.label52.TabIndex = 326;
+            this.label52.Text = "+";
+            // 
+            // powerDamageBox20
+            // 
+            this.powerDamageBox20.Location = new System.Drawing.Point(160, 762);
+            this.powerDamageBox20.Name = "powerDamageBox20";
+            this.powerDamageBox20.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox20.TabIndex = 325;
+            // 
+            // powerNameBox20
+            // 
+            this.powerNameBox20.Location = new System.Drawing.Point(6, 762);
+            this.powerNameBox20.Multiline = true;
+            this.powerNameBox20.Name = "powerNameBox20";
+            this.powerNameBox20.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox20.TabIndex = 324;
+            // 
+            // powerMultiCheckBox19
+            // 
+            this.powerMultiCheckBox19.AutoSize = true;
+            this.powerMultiCheckBox19.Location = new System.Drawing.Point(568, 727);
+            this.powerMultiCheckBox19.Name = "powerMultiCheckBox19";
+            this.powerMultiCheckBox19.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox19.TabIndex = 323;
+            this.powerMultiCheckBox19.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox19
+            // 
+            this.powerDurationBox19.Location = new System.Drawing.Point(473, 723);
+            this.powerDurationBox19.Name = "powerDurationBox19";
+            this.powerDurationBox19.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox19.TabIndex = 322;
+            // 
+            // powerKeywordBox19
+            // 
+            this.powerKeywordBox19.Location = new System.Drawing.Point(624, 723);
+            this.powerKeywordBox19.Multiline = true;
+            this.powerKeywordBox19.Name = "powerKeywordBox19";
+            this.powerKeywordBox19.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox19.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox19.TabIndex = 321;
+            // 
+            // powerDNBox19
+            // 
+            this.powerDNBox19.Location = new System.Drawing.Point(436, 723);
+            this.powerDNBox19.Name = "powerDNBox19";
+            this.powerDNBox19.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox19.TabIndex = 320;
+            // 
+            // powerRangeBox19
+            // 
+            this.powerRangeBox19.Location = new System.Drawing.Point(357, 723);
+            this.powerRangeBox19.Name = "powerRangeBox19";
+            this.powerRangeBox19.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox19.TabIndex = 319;
+            // 
+            // powerActivationBox19
+            // 
+            this.powerActivationBox19.Location = new System.Drawing.Point(279, 723);
+            this.powerActivationBox19.Name = "powerActivationBox19";
+            this.powerActivationBox19.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox19.TabIndex = 318;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(249, 726);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(22, 13);
+            this.label53.TabIndex = 317;
+            this.label53.Text = "ED";
+            // 
+            // powerEDBox19
+            // 
+            this.powerEDBox19.Location = new System.Drawing.Point(214, 723);
+            this.powerEDBox19.Name = "powerEDBox19";
+            this.powerEDBox19.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox19.TabIndex = 316;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(201, 726);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(13, 13);
+            this.label54.TabIndex = 315;
+            this.label54.Text = "+";
+            // 
+            // powerDamageBox19
             // 
-            // powerDurationBox3
-            // 
-            this.powerDurationBox3.Location = new System.Drawing.Point(473, 98);
-            this.powerDurationBox3.Name = "powerDurationBox3";
-            this.powerDurationBox3.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox3.TabIndex = 146;
+            this.powerDamageBox19.Location = new System.Drawing.Point(160, 723);
+            this.powerDamageBox19.Name = "powerDamageBox19";
+            this.powerDamageBox19.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox19.TabIndex = 314;
+            // 
+            // powerNameBox19
+            // 
+            this.powerNameBox19.Location = new System.Drawing.Point(6, 723);
+            this.powerNameBox19.Multiline = true;
+            this.powerNameBox19.Name = "powerNameBox19";
+            this.powerNameBox19.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox19.TabIndex = 313;
+            // 
+            // powerMultiCheckBox18
+            // 
+            this.powerMultiCheckBox18.AutoSize = true;
+            this.powerMultiCheckBox18.Location = new System.Drawing.Point(568, 689);
+            this.powerMultiCheckBox18.Name = "powerMultiCheckBox18";
+            this.powerMultiCheckBox18.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox18.TabIndex = 312;
+            this.powerMultiCheckBox18.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox18
+            // 
+            this.powerDurationBox18.Location = new System.Drawing.Point(473, 684);
+            this.powerDurationBox18.Name = "powerDurationBox18";
+            this.powerDurationBox18.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox18.TabIndex = 311;
+            // 
+            // powerKeywordBox18
+            // 
+            this.powerKeywordBox18.Location = new System.Drawing.Point(624, 684);
+            this.powerKeywordBox18.Multiline = true;
+            this.powerKeywordBox18.Name = "powerKeywordBox18";
+            this.powerKeywordBox18.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox18.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox18.TabIndex = 310;
+            // 
+            // powerDNBox18
             // 
-            // powerKeywordBox3
-            // 
-            this.powerKeywordBox3.Location = new System.Drawing.Point(624, 98);
-            this.powerKeywordBox3.Multiline = true;
-            this.powerKeywordBox3.Name = "powerKeywordBox3";
-            this.powerKeywordBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox3.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox3.TabIndex = 145;
+            this.powerDNBox18.Location = new System.Drawing.Point(436, 684);
+            this.powerDNBox18.Name = "powerDNBox18";
+            this.powerDNBox18.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox18.TabIndex = 309;
+            // 
+            // powerRangeBox18
             // 
-            // powerDNBox3
+            this.powerRangeBox18.Location = new System.Drawing.Point(357, 684);
+            this.powerRangeBox18.Name = "powerRangeBox18";
+            this.powerRangeBox18.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox18.TabIndex = 308;
             // 
-            this.powerDNBox3.Location = new System.Drawing.Point(436, 98);
-            this.powerDNBox3.Name = "powerDNBox3";
-            this.powerDNBox3.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox3.TabIndex = 144;
+            // powerActivationBox18
+            // 
+            this.powerActivationBox18.Location = new System.Drawing.Point(279, 684);
+            this.powerActivationBox18.Name = "powerActivationBox18";
+            this.powerActivationBox18.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox18.TabIndex = 307;
             // 
-            // powerRangeBox3
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(249, 688);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(22, 13);
+            this.label55.TabIndex = 306;
+            this.label55.Text = "ED";
             // 
-            this.powerRangeBox3.Location = new System.Drawing.Point(357, 98);
-            this.powerRangeBox3.Name = "powerRangeBox3";
-            this.powerRangeBox3.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox3.TabIndex = 143;
+            // powerEDBox18
+            // 
+            this.powerEDBox18.Location = new System.Drawing.Point(214, 684);
+            this.powerEDBox18.Name = "powerEDBox18";
+            this.powerEDBox18.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox18.TabIndex = 305;
             // 
-            // powerActivationBox3
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(201, 688);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(13, 13);
+            this.label56.TabIndex = 304;
+            this.label56.Text = "+";
             // 
-            this.powerActivationBox3.Location = new System.Drawing.Point(279, 98);
-            this.powerActivationBox3.Name = "powerActivationBox3";
-            this.powerActivationBox3.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox3.TabIndex = 142;
+            // powerDamageBox18
             // 
-            // label9
+            this.powerDamageBox18.Location = new System.Drawing.Point(160, 684);
+            this.powerDamageBox18.Name = "powerDamageBox18";
+            this.powerDamageBox18.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox18.TabIndex = 303;
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(249, 101);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 13);
-            this.label9.TabIndex = 141;
-            this.label9.Text = "ED";
+            // powerNameBox18
+            // 
+            this.powerNameBox18.Location = new System.Drawing.Point(6, 684);
+            this.powerNameBox18.Multiline = true;
+            this.powerNameBox18.Name = "powerNameBox18";
+            this.powerNameBox18.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox18.TabIndex = 302;
             // 
-            // powerEDBox3
+            // powerMultiCheckBox17
+            // 
+            this.powerMultiCheckBox17.AutoSize = true;
+            this.powerMultiCheckBox17.Location = new System.Drawing.Point(568, 649);
+            this.powerMultiCheckBox17.Name = "powerMultiCheckBox17";
+            this.powerMultiCheckBox17.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox17.TabIndex = 301;
+            this.powerMultiCheckBox17.UseVisualStyleBackColor = true;
             // 
-            this.powerEDBox3.Location = new System.Drawing.Point(214, 98);
-            this.powerEDBox3.Name = "powerEDBox3";
-            this.powerEDBox3.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox3.TabIndex = 140;
+            // powerDurationBox17
+            // 
+            this.powerDurationBox17.Location = new System.Drawing.Point(473, 645);
+            this.powerDurationBox17.Name = "powerDurationBox17";
+            this.powerDurationBox17.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox17.TabIndex = 300;
             // 
-            // label10
+            // powerKeywordBox17
+            // 
+            this.powerKeywordBox17.Location = new System.Drawing.Point(624, 645);
+            this.powerKeywordBox17.Multiline = true;
+            this.powerKeywordBox17.Name = "powerKeywordBox17";
+            this.powerKeywordBox17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox17.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox17.TabIndex = 299;
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(201, 101);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 139;
-            this.label10.Text = "+";
+            // powerDNBox17
             // 
-            // powerDamageBox3
+            this.powerDNBox17.Location = new System.Drawing.Point(436, 645);
+            this.powerDNBox17.Name = "powerDNBox17";
+            this.powerDNBox17.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox17.TabIndex = 298;
             // 
-            this.powerDamageBox3.Location = new System.Drawing.Point(160, 98);
-            this.powerDamageBox3.Name = "powerDamageBox3";
-            this.powerDamageBox3.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox3.TabIndex = 138;
+            // powerRangeBox17
             // 
-            // powerNameBox3
+            this.powerRangeBox17.Location = new System.Drawing.Point(357, 645);
+            this.powerRangeBox17.Name = "powerRangeBox17";
+            this.powerRangeBox17.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox17.TabIndex = 297;
             // 
-            this.powerNameBox3.Location = new System.Drawing.Point(6, 98);
-            this.powerNameBox3.Multiline = true;
-            this.powerNameBox3.Name = "powerNameBox3";
-            this.powerNameBox3.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox3.TabIndex = 137;
+            // powerActivationBox17
             // 
-            // powerMultiCheckBox2
+            this.powerActivationBox17.Location = new System.Drawing.Point(279, 645);
+            this.powerActivationBox17.Name = "powerActivationBox17";
+            this.powerActivationBox17.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox17.TabIndex = 296;
             // 
-            this.powerMultiCheckBox2.AutoSize = true;
-            this.powerMultiCheckBox2.Location = new System.Drawing.Point(568, 63);
-            this.powerMultiCheckBox2.Name = "powerMultiCheckBox2";
-            this.powerMultiCheckBox2.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox2.TabIndex = 136;
-            this.powerMultiCheckBox2.UseVisualStyleBackColor = true;
+            // label45
             // 
-            // powerDurationBox2
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(249, 648);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(22, 13);
+            this.label45.TabIndex = 295;
+            this.label45.Text = "ED";
             // 
-            this.powerDurationBox2.Location = new System.Drawing.Point(473, 59);
-            this.powerDurationBox2.Name = "powerDurationBox2";
-            this.powerDurationBox2.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox2.TabIndex = 135;
+            // powerEDBox17
             // 
-            // powerKeywordBox2
+            this.powerEDBox17.Location = new System.Drawing.Point(214, 645);
+            this.powerEDBox17.Name = "powerEDBox17";
+            this.powerEDBox17.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox17.TabIndex = 294;
             // 
-            this.powerKeywordBox2.Location = new System.Drawing.Point(624, 59);
-            this.powerKeywordBox2.Multiline = true;
-            this.powerKeywordBox2.Name = "powerKeywordBox2";
-            this.powerKeywordBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox2.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox2.TabIndex = 134;
-            // 
-            // powerDNBox2
+            // label46
             // 
-            this.powerDNBox2.Location = new System.Drawing.Point(436, 59);
-            this.powerDNBox2.Name = "powerDNBox2";
-            this.powerDNBox2.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox2.TabIndex = 133;
-            // 
-            // powerRangeBox2
-            // 
-            this.powerRangeBox2.Location = new System.Drawing.Point(357, 59);
-            this.powerRangeBox2.Name = "powerRangeBox2";
-            this.powerRangeBox2.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox2.TabIndex = 132;
-            // 
-            // powerActivationBox2
-            // 
-            this.powerActivationBox2.Location = new System.Drawing.Point(279, 59);
-            this.powerActivationBox2.Name = "powerActivationBox2";
-            this.powerActivationBox2.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox2.TabIndex = 131;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(249, 62);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 13);
-            this.label11.TabIndex = 130;
-            this.label11.Text = "ED";
-            // 
-            // powerEDBox2
-            // 
-            this.powerEDBox2.Location = new System.Drawing.Point(214, 59);
-            this.powerEDBox2.Name = "powerEDBox2";
-            this.powerEDBox2.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox2.TabIndex = 129;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(201, 62);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 13);
-            this.label12.TabIndex = 128;
-            this.label12.Text = "+";
-            // 
-            // powerDamageBox2
-            // 
-            this.powerDamageBox2.Location = new System.Drawing.Point(160, 59);
-            this.powerDamageBox2.Name = "powerDamageBox2";
-            this.powerDamageBox2.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox2.TabIndex = 127;
-            // 
-            // powerNameBox2
-            // 
-            this.powerNameBox2.Location = new System.Drawing.Point(6, 59);
-            this.powerNameBox2.Multiline = true;
-            this.powerNameBox2.Name = "powerNameBox2";
-            this.powerNameBox2.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox2.TabIndex = 126;
-            // 
-            // powerMultiCheckBox1
-            // 
-            this.powerMultiCheckBox1.AutoSize = true;
-            this.powerMultiCheckBox1.Location = new System.Drawing.Point(568, 24);
-            this.powerMultiCheckBox1.Name = "powerMultiCheckBox1";
-            this.powerMultiCheckBox1.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox1.TabIndex = 125;
-            this.powerMultiCheckBox1.UseVisualStyleBackColor = true;
-            this.powerMultiCheckBox1.CheckedChanged += new System.EventHandler(this.powerMultiCheckBox1_CheckedChanged);
-            // 
-            // label13
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(201, 648);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(13, 13);
+            this.label46.TabIndex = 293;
+            this.label46.Text = "+";
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(540, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 13);
-            this.label13.TabIndex = 124;
-            this.label13.Text = "Multi-Target";
+            // powerDamageBox17
             // 
-            // powerDurationBox1
-            // 
-            this.powerDurationBox1.Location = new System.Drawing.Point(473, 20);
-            this.powerDurationBox1.Name = "powerDurationBox1";
-            this.powerDurationBox1.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox1.TabIndex = 123;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(472, 3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 13);
-            this.label14.TabIndex = 122;
-            this.label14.Text = "Duration";
-            // 
-            // powerKeywordBox1
-            // 
-            this.powerKeywordBox1.Location = new System.Drawing.Point(624, 20);
-            this.powerKeywordBox1.Multiline = true;
-            this.powerKeywordBox1.Name = "powerKeywordBox1";
-            this.powerKeywordBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox1.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox1.TabIndex = 121;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(621, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 13);
-            this.label15.TabIndex = 120;
-            this.label15.Text = "Keywords";
-            // 
-            // powerDNBox1
-            // 
-            this.powerDNBox1.Location = new System.Drawing.Point(436, 20);
-            this.powerDNBox1.Name = "powerDNBox1";
-            this.powerDNBox1.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox1.TabIndex = 119;
-            // 
-            // powerRangeBox1
-            // 
-            this.powerRangeBox1.Location = new System.Drawing.Point(357, 20);
-            this.powerRangeBox1.Name = "powerRangeBox1";
-            this.powerRangeBox1.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox1.TabIndex = 118;
-            // 
-            // powerActivationBox1
-            // 
-            this.powerActivationBox1.Location = new System.Drawing.Point(279, 20);
-            this.powerActivationBox1.Name = "powerActivationBox1";
-            this.powerActivationBox1.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox1.TabIndex = 117;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(249, 23);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(22, 13);
-            this.label16.TabIndex = 116;
-            this.label16.Text = "ED";
-            // 
-            // powerEDBox1
-            // 
-            this.powerEDBox1.Location = new System.Drawing.Point(214, 20);
-            this.powerEDBox1.Name = "powerEDBox1";
-            this.powerEDBox1.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox1.TabIndex = 115;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(201, 23);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(13, 13);
-            this.label17.TabIndex = 114;
-            this.label17.Text = "+";
-            // 
-            // powerDamageBox1
-            // 
-            this.powerDamageBox1.Location = new System.Drawing.Point(160, 20);
-            this.powerDamageBox1.Name = "powerDamageBox1";
-            this.powerDamageBox1.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox1.TabIndex = 113;
-            // 
-            // powerNameBox1
-            // 
-            this.powerNameBox1.Location = new System.Drawing.Point(6, 20);
-            this.powerNameBox1.Multiline = true;
-            this.powerNameBox1.Name = "powerNameBox1";
-            this.powerNameBox1.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox1.TabIndex = 112;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(433, 3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(25, 13);
-            this.label18.TabIndex = 111;
-            this.label18.Text = "DN";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(354, 3);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(44, 13);
-            this.label19.TabIndex = 110;
-            this.label19.Text = "Range";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(278, 3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 13);
-            this.label20.TabIndex = 109;
-            this.label20.Text = "Activation";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(157, 3);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(53, 13);
-            this.label21.TabIndex = 108;
-            this.label21.Text = "Damage";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(5, 3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 13);
-            this.label22.TabIndex = 107;
-            this.label22.Text = "Power Name";
-            // 
-            // powerMultiCheckBox6
-            // 
-            this.powerMultiCheckBox6.AutoSize = true;
-            this.powerMultiCheckBox6.Location = new System.Drawing.Point(568, 219);
-            this.powerMultiCheckBox6.Name = "powerMultiCheckBox6";
-            this.powerMultiCheckBox6.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox6.TabIndex = 180;
-            this.powerMultiCheckBox6.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox6
-            // 
-            this.powerDurationBox6.Location = new System.Drawing.Point(473, 215);
-            this.powerDurationBox6.Name = "powerDurationBox6";
-            this.powerDurationBox6.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox6.TabIndex = 179;
-            // 
-            // powerKeywordBox6
-            // 
-            this.powerKeywordBox6.Location = new System.Drawing.Point(624, 215);
-            this.powerKeywordBox6.Multiline = true;
-            this.powerKeywordBox6.Name = "powerKeywordBox6";
-            this.powerKeywordBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox6.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox6.TabIndex = 178;
-            // 
-            // powerDNBox6
-            // 
-            this.powerDNBox6.Location = new System.Drawing.Point(436, 215);
-            this.powerDNBox6.Name = "powerDNBox6";
-            this.powerDNBox6.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox6.TabIndex = 177;
-            // 
-            // powerRangeBox6
-            // 
-            this.powerRangeBox6.Location = new System.Drawing.Point(357, 215);
-            this.powerRangeBox6.Name = "powerRangeBox6";
-            this.powerRangeBox6.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox6.TabIndex = 176;
-            // 
-            // powerActivationBox6
-            // 
-            this.powerActivationBox6.Location = new System.Drawing.Point(279, 215);
-            this.powerActivationBox6.Name = "powerActivationBox6";
-            this.powerActivationBox6.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox6.TabIndex = 175;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(249, 218);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(22, 13);
-            this.label23.TabIndex = 174;
-            this.label23.Text = "ED";
-            // 
-            // powerEDBox6
-            // 
-            this.powerEDBox6.Location = new System.Drawing.Point(214, 215);
-            this.powerEDBox6.Name = "powerEDBox6";
-            this.powerEDBox6.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox6.TabIndex = 173;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(201, 218);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(13, 13);
-            this.label24.TabIndex = 172;
-            this.label24.Text = "+";
-            // 
-            // powerDamageBox6
-            // 
-            this.powerDamageBox6.Location = new System.Drawing.Point(160, 215);
-            this.powerDamageBox6.Name = "powerDamageBox6";
-            this.powerDamageBox6.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox6.TabIndex = 171;
-            // 
-            // powerNameBox6
-            // 
-            this.powerNameBox6.Location = new System.Drawing.Point(6, 215);
-            this.powerNameBox6.Multiline = true;
-            this.powerNameBox6.Name = "powerNameBox6";
-            this.powerNameBox6.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox6.TabIndex = 170;
-            // 
-            // powerMultiCheckBox5
-            // 
-            this.powerMultiCheckBox5.AutoSize = true;
-            this.powerMultiCheckBox5.Location = new System.Drawing.Point(568, 180);
-            this.powerMultiCheckBox5.Name = "powerMultiCheckBox5";
-            this.powerMultiCheckBox5.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox5.TabIndex = 169;
-            this.powerMultiCheckBox5.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox5
-            // 
-            this.powerDurationBox5.Location = new System.Drawing.Point(473, 176);
-            this.powerDurationBox5.Name = "powerDurationBox5";
-            this.powerDurationBox5.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox5.TabIndex = 168;
-            // 
-            // powerKeywordBox5
-            // 
-            this.powerKeywordBox5.Location = new System.Drawing.Point(624, 176);
-            this.powerKeywordBox5.Multiline = true;
-            this.powerKeywordBox5.Name = "powerKeywordBox5";
-            this.powerKeywordBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox5.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox5.TabIndex = 167;
-            // 
-            // powerDNBox5
-            // 
-            this.powerDNBox5.Location = new System.Drawing.Point(436, 176);
-            this.powerDNBox5.Name = "powerDNBox5";
-            this.powerDNBox5.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox5.TabIndex = 166;
-            // 
-            // powerRangeBox5
-            // 
-            this.powerRangeBox5.Location = new System.Drawing.Point(357, 176);
-            this.powerRangeBox5.Name = "powerRangeBox5";
-            this.powerRangeBox5.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox5.TabIndex = 165;
-            // 
-            // powerActivationBox5
-            // 
-            this.powerActivationBox5.Location = new System.Drawing.Point(279, 176);
-            this.powerActivationBox5.Name = "powerActivationBox5";
-            this.powerActivationBox5.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox5.TabIndex = 164;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(249, 179);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(22, 13);
-            this.label25.TabIndex = 163;
-            this.label25.Text = "ED";
-            // 
-            // powerEDBox5
-            // 
-            this.powerEDBox5.Location = new System.Drawing.Point(214, 176);
-            this.powerEDBox5.Name = "powerEDBox5";
-            this.powerEDBox5.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox5.TabIndex = 162;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(201, 179);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(13, 13);
-            this.label26.TabIndex = 161;
-            this.label26.Text = "+";
-            // 
-            // powerDamageBox5
-            // 
-            this.powerDamageBox5.Location = new System.Drawing.Point(160, 176);
-            this.powerDamageBox5.Name = "powerDamageBox5";
-            this.powerDamageBox5.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox5.TabIndex = 160;
-            // 
-            // powerNameBox5
-            // 
-            this.powerNameBox5.Location = new System.Drawing.Point(6, 176);
-            this.powerNameBox5.Multiline = true;
-            this.powerNameBox5.Name = "powerNameBox5";
-            this.powerNameBox5.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox5.TabIndex = 159;
-            // 
-            // powerMultiCheckBox4
-            // 
-            this.powerMultiCheckBox4.AutoSize = true;
-            this.powerMultiCheckBox4.Location = new System.Drawing.Point(568, 142);
-            this.powerMultiCheckBox4.Name = "powerMultiCheckBox4";
-            this.powerMultiCheckBox4.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox4.TabIndex = 158;
-            this.powerMultiCheckBox4.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox4
-            // 
-            this.powerDurationBox4.Location = new System.Drawing.Point(473, 137);
-            this.powerDurationBox4.Name = "powerDurationBox4";
-            this.powerDurationBox4.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox4.TabIndex = 157;
-            // 
-            // powerKeywordBox4
-            // 
-            this.powerKeywordBox4.Location = new System.Drawing.Point(624, 137);
-            this.powerKeywordBox4.Multiline = true;
-            this.powerKeywordBox4.Name = "powerKeywordBox4";
-            this.powerKeywordBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox4.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox4.TabIndex = 156;
-            // 
-            // powerDNBox4
-            // 
-            this.powerDNBox4.Location = new System.Drawing.Point(436, 137);
-            this.powerDNBox4.Name = "powerDNBox4";
-            this.powerDNBox4.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox4.TabIndex = 155;
-            // 
-            // powerRangeBox4
-            // 
-            this.powerRangeBox4.Location = new System.Drawing.Point(357, 137);
-            this.powerRangeBox4.Name = "powerRangeBox4";
-            this.powerRangeBox4.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox4.TabIndex = 154;
-            // 
-            // powerActivationBox4
-            // 
-            this.powerActivationBox4.Location = new System.Drawing.Point(279, 137);
-            this.powerActivationBox4.Name = "powerActivationBox4";
-            this.powerActivationBox4.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox4.TabIndex = 153;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(249, 141);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(22, 13);
-            this.label27.TabIndex = 152;
-            this.label27.Text = "ED";
-            // 
-            // powerEDBox4
-            // 
-            this.powerEDBox4.Location = new System.Drawing.Point(214, 137);
-            this.powerEDBox4.Name = "powerEDBox4";
-            this.powerEDBox4.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox4.TabIndex = 151;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(201, 141);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(13, 13);
-            this.label28.TabIndex = 150;
-            this.label28.Text = "+";
-            // 
-            // powerDamageBox4
-            // 
-            this.powerDamageBox4.Location = new System.Drawing.Point(160, 137);
-            this.powerDamageBox4.Name = "powerDamageBox4";
-            this.powerDamageBox4.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox4.TabIndex = 149;
-            // 
-            // powerNameBox4
-            // 
-            this.powerNameBox4.Location = new System.Drawing.Point(6, 137);
-            this.powerNameBox4.Multiline = true;
-            this.powerNameBox4.Name = "powerNameBox4";
-            this.powerNameBox4.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox4.TabIndex = 148;
+            this.powerDamageBox17.Location = new System.Drawing.Point(160, 645);
+            this.powerDamageBox17.Name = "powerDamageBox17";
+            this.powerDamageBox17.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox17.TabIndex = 292;
+            // 
+            // powerNameBox17
+            // 
+            this.powerNameBox17.Location = new System.Drawing.Point(6, 645);
+            this.powerNameBox17.Multiline = true;
+            this.powerNameBox17.Name = "powerNameBox17";
+            this.powerNameBox17.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox17.TabIndex = 291;
+            // 
+            // powerMultiCheckBox16
+            // 
+            this.powerMultiCheckBox16.AutoSize = true;
+            this.powerMultiCheckBox16.Location = new System.Drawing.Point(568, 610);
+            this.powerMultiCheckBox16.Name = "powerMultiCheckBox16";
+            this.powerMultiCheckBox16.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox16.TabIndex = 290;
+            this.powerMultiCheckBox16.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox16
+            // 
+            this.powerDurationBox16.Location = new System.Drawing.Point(473, 606);
+            this.powerDurationBox16.Name = "powerDurationBox16";
+            this.powerDurationBox16.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox16.TabIndex = 289;
+            // 
+            // powerKeywordBox16
+            // 
+            this.powerKeywordBox16.Location = new System.Drawing.Point(624, 606);
+            this.powerKeywordBox16.Multiline = true;
+            this.powerKeywordBox16.Name = "powerKeywordBox16";
+            this.powerKeywordBox16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox16.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox16.TabIndex = 288;
+            // 
+            // powerDNBox16
+            // 
+            this.powerDNBox16.Location = new System.Drawing.Point(436, 606);
+            this.powerDNBox16.Name = "powerDNBox16";
+            this.powerDNBox16.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox16.TabIndex = 287;
+            // 
+            // powerRangeBox16
+            // 
+            this.powerRangeBox16.Location = new System.Drawing.Point(357, 606);
+            this.powerRangeBox16.Name = "powerRangeBox16";
+            this.powerRangeBox16.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox16.TabIndex = 286;
+            // 
+            // powerActivationBox16
+            // 
+            this.powerActivationBox16.Location = new System.Drawing.Point(279, 606);
+            this.powerActivationBox16.Name = "powerActivationBox16";
+            this.powerActivationBox16.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox16.TabIndex = 285;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(249, 609);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(22, 13);
+            this.label47.TabIndex = 284;
+            this.label47.Text = "ED";
+            // 
+            // powerEDBox16
+            // 
+            this.powerEDBox16.Location = new System.Drawing.Point(214, 606);
+            this.powerEDBox16.Name = "powerEDBox16";
+            this.powerEDBox16.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox16.TabIndex = 283;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(201, 609);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(13, 13);
+            this.label48.TabIndex = 282;
+            this.label48.Text = "+";
+            // 
+            // powerDamageBox16
+            // 
+            this.powerDamageBox16.Location = new System.Drawing.Point(160, 606);
+            this.powerDamageBox16.Name = "powerDamageBox16";
+            this.powerDamageBox16.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox16.TabIndex = 281;
+            // 
+            // powerNameBox16
+            // 
+            this.powerNameBox16.Location = new System.Drawing.Point(6, 606);
+            this.powerNameBox16.Multiline = true;
+            this.powerNameBox16.Name = "powerNameBox16";
+            this.powerNameBox16.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox16.TabIndex = 280;
+            // 
+            // powerMultiCheckBox15
+            // 
+            this.powerMultiCheckBox15.AutoSize = true;
+            this.powerMultiCheckBox15.Location = new System.Drawing.Point(568, 572);
+            this.powerMultiCheckBox15.Name = "powerMultiCheckBox15";
+            this.powerMultiCheckBox15.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox15.TabIndex = 279;
+            this.powerMultiCheckBox15.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox15
+            // 
+            this.powerDurationBox15.Location = new System.Drawing.Point(473, 567);
+            this.powerDurationBox15.Name = "powerDurationBox15";
+            this.powerDurationBox15.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox15.TabIndex = 278;
+            // 
+            // powerKeywordBox15
+            // 
+            this.powerKeywordBox15.Location = new System.Drawing.Point(624, 567);
+            this.powerKeywordBox15.Multiline = true;
+            this.powerKeywordBox15.Name = "powerKeywordBox15";
+            this.powerKeywordBox15.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox15.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox15.TabIndex = 277;
+            // 
+            // powerDNBox15
+            // 
+            this.powerDNBox15.Location = new System.Drawing.Point(436, 567);
+            this.powerDNBox15.Name = "powerDNBox15";
+            this.powerDNBox15.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox15.TabIndex = 276;
+            // 
+            // powerRangeBox15
+            // 
+            this.powerRangeBox15.Location = new System.Drawing.Point(357, 567);
+            this.powerRangeBox15.Name = "powerRangeBox15";
+            this.powerRangeBox15.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox15.TabIndex = 275;
+            // 
+            // powerActivationBox15
+            // 
+            this.powerActivationBox15.Location = new System.Drawing.Point(279, 567);
+            this.powerActivationBox15.Name = "powerActivationBox15";
+            this.powerActivationBox15.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox15.TabIndex = 274;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(249, 571);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(22, 13);
+            this.label49.TabIndex = 273;
+            this.label49.Text = "ED";
+            // 
+            // powerEDBox15
+            // 
+            this.powerEDBox15.Location = new System.Drawing.Point(214, 567);
+            this.powerEDBox15.Name = "powerEDBox15";
+            this.powerEDBox15.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox15.TabIndex = 272;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(201, 571);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(13, 13);
+            this.label50.TabIndex = 271;
+            this.label50.Text = "+";
+            // 
+            // powerDamageBox15
+            // 
+            this.powerDamageBox15.Location = new System.Drawing.Point(160, 567);
+            this.powerDamageBox15.Name = "powerDamageBox15";
+            this.powerDamageBox15.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox15.TabIndex = 270;
+            // 
+            // powerNameBox15
+            // 
+            this.powerNameBox15.Location = new System.Drawing.Point(6, 567);
+            this.powerNameBox15.Multiline = true;
+            this.powerNameBox15.Name = "powerNameBox15";
+            this.powerNameBox15.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox15.TabIndex = 269;
+            // 
+            // powerMultiCheckBox14
+            // 
+            this.powerMultiCheckBox14.AutoSize = true;
+            this.powerMultiCheckBox14.Location = new System.Drawing.Point(568, 532);
+            this.powerMultiCheckBox14.Name = "powerMultiCheckBox14";
+            this.powerMultiCheckBox14.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox14.TabIndex = 268;
+            this.powerMultiCheckBox14.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox14
+            // 
+            this.powerDurationBox14.Location = new System.Drawing.Point(473, 528);
+            this.powerDurationBox14.Name = "powerDurationBox14";
+            this.powerDurationBox14.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox14.TabIndex = 267;
+            // 
+            // powerKeywordBox14
+            // 
+            this.powerKeywordBox14.Location = new System.Drawing.Point(624, 528);
+            this.powerKeywordBox14.Multiline = true;
+            this.powerKeywordBox14.Name = "powerKeywordBox14";
+            this.powerKeywordBox14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox14.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox14.TabIndex = 266;
+            // 
+            // powerDNBox14
+            // 
+            this.powerDNBox14.Location = new System.Drawing.Point(436, 528);
+            this.powerDNBox14.Name = "powerDNBox14";
+            this.powerDNBox14.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox14.TabIndex = 265;
+            // 
+            // powerRangeBox14
+            // 
+            this.powerRangeBox14.Location = new System.Drawing.Point(357, 528);
+            this.powerRangeBox14.Name = "powerRangeBox14";
+            this.powerRangeBox14.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox14.TabIndex = 264;
+            // 
+            // powerActivationBox14
+            // 
+            this.powerActivationBox14.Location = new System.Drawing.Point(279, 528);
+            this.powerActivationBox14.Name = "powerActivationBox14";
+            this.powerActivationBox14.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox14.TabIndex = 263;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(249, 531);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(22, 13);
+            this.label39.TabIndex = 262;
+            this.label39.Text = "ED";
+            // 
+            // powerEDBox14
+            // 
+            this.powerEDBox14.Location = new System.Drawing.Point(214, 528);
+            this.powerEDBox14.Name = "powerEDBox14";
+            this.powerEDBox14.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox14.TabIndex = 261;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(201, 531);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(13, 13);
+            this.label40.TabIndex = 260;
+            this.label40.Text = "+";
+            // 
+            // powerDamageBox14
+            // 
+            this.powerDamageBox14.Location = new System.Drawing.Point(160, 528);
+            this.powerDamageBox14.Name = "powerDamageBox14";
+            this.powerDamageBox14.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox14.TabIndex = 259;
+            // 
+            // powerNameBox14
+            // 
+            this.powerNameBox14.Location = new System.Drawing.Point(6, 528);
+            this.powerNameBox14.Multiline = true;
+            this.powerNameBox14.Name = "powerNameBox14";
+            this.powerNameBox14.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox14.TabIndex = 258;
+            // 
+            // powerMultiCheckBox13
+            // 
+            this.powerMultiCheckBox13.AutoSize = true;
+            this.powerMultiCheckBox13.Location = new System.Drawing.Point(568, 493);
+            this.powerMultiCheckBox13.Name = "powerMultiCheckBox13";
+            this.powerMultiCheckBox13.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox13.TabIndex = 257;
+            this.powerMultiCheckBox13.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox13
+            // 
+            this.powerDurationBox13.Location = new System.Drawing.Point(473, 489);
+            this.powerDurationBox13.Name = "powerDurationBox13";
+            this.powerDurationBox13.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox13.TabIndex = 256;
+            // 
+            // powerKeywordBox13
+            // 
+            this.powerKeywordBox13.Location = new System.Drawing.Point(624, 489);
+            this.powerKeywordBox13.Multiline = true;
+            this.powerKeywordBox13.Name = "powerKeywordBox13";
+            this.powerKeywordBox13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox13.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox13.TabIndex = 255;
+            // 
+            // powerDNBox13
+            // 
+            this.powerDNBox13.Location = new System.Drawing.Point(436, 489);
+            this.powerDNBox13.Name = "powerDNBox13";
+            this.powerDNBox13.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox13.TabIndex = 254;
+            // 
+            // powerRangeBox13
+            // 
+            this.powerRangeBox13.Location = new System.Drawing.Point(357, 489);
+            this.powerRangeBox13.Name = "powerRangeBox13";
+            this.powerRangeBox13.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox13.TabIndex = 253;
+            // 
+            // powerActivationBox13
+            // 
+            this.powerActivationBox13.Location = new System.Drawing.Point(279, 489);
+            this.powerActivationBox13.Name = "powerActivationBox13";
+            this.powerActivationBox13.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox13.TabIndex = 252;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(249, 492);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(22, 13);
+            this.label41.TabIndex = 251;
+            this.label41.Text = "ED";
+            // 
+            // powerEDBox13
+            // 
+            this.powerEDBox13.Location = new System.Drawing.Point(214, 489);
+            this.powerEDBox13.Name = "powerEDBox13";
+            this.powerEDBox13.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox13.TabIndex = 250;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(201, 492);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(13, 13);
+            this.label42.TabIndex = 249;
+            this.label42.Text = "+";
+            // 
+            // powerDamageBox13
+            // 
+            this.powerDamageBox13.Location = new System.Drawing.Point(160, 489);
+            this.powerDamageBox13.Name = "powerDamageBox13";
+            this.powerDamageBox13.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox13.TabIndex = 248;
+            // 
+            // powerNameBox13
+            // 
+            this.powerNameBox13.Location = new System.Drawing.Point(6, 489);
+            this.powerNameBox13.Multiline = true;
+            this.powerNameBox13.Name = "powerNameBox13";
+            this.powerNameBox13.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox13.TabIndex = 247;
+            // 
+            // powerMultiCheckBox12
+            // 
+            this.powerMultiCheckBox12.AutoSize = true;
+            this.powerMultiCheckBox12.Location = new System.Drawing.Point(568, 455);
+            this.powerMultiCheckBox12.Name = "powerMultiCheckBox12";
+            this.powerMultiCheckBox12.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox12.TabIndex = 246;
+            this.powerMultiCheckBox12.UseVisualStyleBackColor = true;
+            // 
+            // powerDurationBox12
+            // 
+            this.powerDurationBox12.Location = new System.Drawing.Point(473, 450);
+            this.powerDurationBox12.Name = "powerDurationBox12";
+            this.powerDurationBox12.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox12.TabIndex = 245;
+            // 
+            // powerKeywordBox12
+            // 
+            this.powerKeywordBox12.Location = new System.Drawing.Point(624, 450);
+            this.powerKeywordBox12.Multiline = true;
+            this.powerKeywordBox12.Name = "powerKeywordBox12";
+            this.powerKeywordBox12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox12.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox12.TabIndex = 244;
+            // 
+            // powerDNBox12
+            // 
+            this.powerDNBox12.Location = new System.Drawing.Point(436, 450);
+            this.powerDNBox12.Name = "powerDNBox12";
+            this.powerDNBox12.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox12.TabIndex = 243;
+            // 
+            // powerRangeBox12
+            // 
+            this.powerRangeBox12.Location = new System.Drawing.Point(357, 450);
+            this.powerRangeBox12.Name = "powerRangeBox12";
+            this.powerRangeBox12.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox12.TabIndex = 242;
+            // 
+            // powerActivationBox12
+            // 
+            this.powerActivationBox12.Location = new System.Drawing.Point(279, 450);
+            this.powerActivationBox12.Name = "powerActivationBox12";
+            this.powerActivationBox12.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox12.TabIndex = 241;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(249, 454);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(22, 13);
+            this.label43.TabIndex = 240;
+            this.label43.Text = "ED";
+            // 
+            // powerEDBox12
+            // 
+            this.powerEDBox12.Location = new System.Drawing.Point(214, 450);
+            this.powerEDBox12.Name = "powerEDBox12";
+            this.powerEDBox12.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox12.TabIndex = 239;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(201, 454);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(13, 13);
+            this.label44.TabIndex = 238;
+            this.label44.Text = "+";
+            // 
+            // powerDamageBox12
+            // 
+            this.powerDamageBox12.Location = new System.Drawing.Point(160, 450);
+            this.powerDamageBox12.Name = "powerDamageBox12";
+            this.powerDamageBox12.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox12.TabIndex = 237;
+            // 
+            // powerNameBox12
+            // 
+            this.powerNameBox12.Location = new System.Drawing.Point(6, 450);
+            this.powerNameBox12.Multiline = true;
+            this.powerNameBox12.Name = "powerNameBox12";
+            this.powerNameBox12.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox12.TabIndex = 236;
             // 
             // powerMultiCheckBox11
             // 
@@ -3681,1134 +4840,602 @@
             this.powerNameBox7.Size = new System.Drawing.Size(132, 33);
             this.powerNameBox7.TabIndex = 181;
             // 
-            // powerMultiCheckBox14
-            // 
-            this.powerMultiCheckBox14.AutoSize = true;
-            this.powerMultiCheckBox14.Location = new System.Drawing.Point(568, 532);
-            this.powerMultiCheckBox14.Name = "powerMultiCheckBox14";
-            this.powerMultiCheckBox14.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox14.TabIndex = 268;
-            this.powerMultiCheckBox14.UseVisualStyleBackColor = true;
+            // powerMultiCheckBox6
+            // 
+            this.powerMultiCheckBox6.AutoSize = true;
+            this.powerMultiCheckBox6.Location = new System.Drawing.Point(568, 219);
+            this.powerMultiCheckBox6.Name = "powerMultiCheckBox6";
+            this.powerMultiCheckBox6.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox6.TabIndex = 180;
+            this.powerMultiCheckBox6.UseVisualStyleBackColor = true;
             // 
-            // powerDurationBox14
-            // 
-            this.powerDurationBox14.Location = new System.Drawing.Point(473, 528);
-            this.powerDurationBox14.Name = "powerDurationBox14";
-            this.powerDurationBox14.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox14.TabIndex = 267;
+            // powerDurationBox6
+            // 
+            this.powerDurationBox6.Location = new System.Drawing.Point(473, 215);
+            this.powerDurationBox6.Name = "powerDurationBox6";
+            this.powerDurationBox6.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox6.TabIndex = 179;
             // 
-            // powerKeywordBox14
-            // 
-            this.powerKeywordBox14.Location = new System.Drawing.Point(624, 528);
-            this.powerKeywordBox14.Multiline = true;
-            this.powerKeywordBox14.Name = "powerKeywordBox14";
-            this.powerKeywordBox14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox14.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox14.TabIndex = 266;
+            // powerKeywordBox6
+            // 
+            this.powerKeywordBox6.Location = new System.Drawing.Point(624, 215);
+            this.powerKeywordBox6.Multiline = true;
+            this.powerKeywordBox6.Name = "powerKeywordBox6";
+            this.powerKeywordBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox6.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox6.TabIndex = 178;
             // 
-            // powerDNBox14
+            // powerDNBox6
             // 
-            this.powerDNBox14.Location = new System.Drawing.Point(436, 528);
-            this.powerDNBox14.Name = "powerDNBox14";
-            this.powerDNBox14.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox14.TabIndex = 265;
+            this.powerDNBox6.Location = new System.Drawing.Point(436, 215);
+            this.powerDNBox6.Name = "powerDNBox6";
+            this.powerDNBox6.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox6.TabIndex = 177;
             // 
-            // powerRangeBox14
+            // powerRangeBox6
             // 
-            this.powerRangeBox14.Location = new System.Drawing.Point(357, 528);
-            this.powerRangeBox14.Name = "powerRangeBox14";
-            this.powerRangeBox14.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox14.TabIndex = 264;
+            this.powerRangeBox6.Location = new System.Drawing.Point(357, 215);
+            this.powerRangeBox6.Name = "powerRangeBox6";
+            this.powerRangeBox6.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox6.TabIndex = 176;
             // 
-            // powerActivationBox14
+            // powerActivationBox6
             // 
-            this.powerActivationBox14.Location = new System.Drawing.Point(279, 528);
-            this.powerActivationBox14.Name = "powerActivationBox14";
-            this.powerActivationBox14.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox14.TabIndex = 263;
+            this.powerActivationBox6.Location = new System.Drawing.Point(279, 215);
+            this.powerActivationBox6.Name = "powerActivationBox6";
+            this.powerActivationBox6.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox6.TabIndex = 175;
             // 
-            // label39
+            // label23
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(249, 531);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(22, 13);
-            this.label39.TabIndex = 262;
-            this.label39.Text = "ED";
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(249, 218);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(22, 13);
+            this.label23.TabIndex = 174;
+            this.label23.Text = "ED";
             // 
-            // powerEDBox14
+            // powerEDBox6
             // 
-            this.powerEDBox14.Location = new System.Drawing.Point(214, 528);
-            this.powerEDBox14.Name = "powerEDBox14";
-            this.powerEDBox14.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox14.TabIndex = 261;
+            this.powerEDBox6.Location = new System.Drawing.Point(214, 215);
+            this.powerEDBox6.Name = "powerEDBox6";
+            this.powerEDBox6.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox6.TabIndex = 173;
             // 
-            // label40
+            // label24
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(201, 531);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(13, 13);
-            this.label40.TabIndex = 260;
-            this.label40.Text = "+";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(201, 218);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(13, 13);
+            this.label24.TabIndex = 172;
+            this.label24.Text = "+";
             // 
-            // powerDamageBox14
+            // powerDamageBox6
             // 
-            this.powerDamageBox14.Location = new System.Drawing.Point(160, 528);
-            this.powerDamageBox14.Name = "powerDamageBox14";
-            this.powerDamageBox14.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox14.TabIndex = 259;
+            this.powerDamageBox6.Location = new System.Drawing.Point(160, 215);
+            this.powerDamageBox6.Name = "powerDamageBox6";
+            this.powerDamageBox6.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox6.TabIndex = 171;
             // 
-            // powerNameBox14
+            // powerNameBox6
             // 
-            this.powerNameBox14.Location = new System.Drawing.Point(6, 528);
-            this.powerNameBox14.Multiline = true;
-            this.powerNameBox14.Name = "powerNameBox14";
-            this.powerNameBox14.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox14.TabIndex = 258;
+            this.powerNameBox6.Location = new System.Drawing.Point(6, 215);
+            this.powerNameBox6.Multiline = true;
+            this.powerNameBox6.Name = "powerNameBox6";
+            this.powerNameBox6.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox6.TabIndex = 170;
             // 
-            // powerMultiCheckBox13
+            // powerMultiCheckBox5
             // 
-            this.powerMultiCheckBox13.AutoSize = true;
-            this.powerMultiCheckBox13.Location = new System.Drawing.Point(568, 493);
-            this.powerMultiCheckBox13.Name = "powerMultiCheckBox13";
-            this.powerMultiCheckBox13.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox13.TabIndex = 257;
-            this.powerMultiCheckBox13.UseVisualStyleBackColor = true;
+            this.powerMultiCheckBox5.AutoSize = true;
+            this.powerMultiCheckBox5.Location = new System.Drawing.Point(568, 180);
+            this.powerMultiCheckBox5.Name = "powerMultiCheckBox5";
+            this.powerMultiCheckBox5.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox5.TabIndex = 169;
+            this.powerMultiCheckBox5.UseVisualStyleBackColor = true;
             // 
-            // powerDurationBox13
+            // powerDurationBox5
             // 
-            this.powerDurationBox13.Location = new System.Drawing.Point(473, 489);
-            this.powerDurationBox13.Name = "powerDurationBox13";
-            this.powerDurationBox13.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox13.TabIndex = 256;
+            this.powerDurationBox5.Location = new System.Drawing.Point(473, 176);
+            this.powerDurationBox5.Name = "powerDurationBox5";
+            this.powerDurationBox5.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox5.TabIndex = 168;
             // 
-            // powerKeywordBox13
+            // powerKeywordBox5
             // 
-            this.powerKeywordBox13.Location = new System.Drawing.Point(624, 489);
-            this.powerKeywordBox13.Multiline = true;
-            this.powerKeywordBox13.Name = "powerKeywordBox13";
-            this.powerKeywordBox13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox13.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox13.TabIndex = 255;
+            this.powerKeywordBox5.Location = new System.Drawing.Point(624, 176);
+            this.powerKeywordBox5.Multiline = true;
+            this.powerKeywordBox5.Name = "powerKeywordBox5";
+            this.powerKeywordBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox5.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox5.TabIndex = 167;
             // 
-            // powerDNBox13
+            // powerDNBox5
             // 
-            this.powerDNBox13.Location = new System.Drawing.Point(436, 489);
-            this.powerDNBox13.Name = "powerDNBox13";
-            this.powerDNBox13.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox13.TabIndex = 254;
+            this.powerDNBox5.Location = new System.Drawing.Point(436, 176);
+            this.powerDNBox5.Name = "powerDNBox5";
+            this.powerDNBox5.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox5.TabIndex = 166;
             // 
-            // powerRangeBox13
+            // powerRangeBox5
             // 
-            this.powerRangeBox13.Location = new System.Drawing.Point(357, 489);
-            this.powerRangeBox13.Name = "powerRangeBox13";
-            this.powerRangeBox13.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox13.TabIndex = 253;
+            this.powerRangeBox5.Location = new System.Drawing.Point(357, 176);
+            this.powerRangeBox5.Name = "powerRangeBox5";
+            this.powerRangeBox5.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox5.TabIndex = 165;
             // 
-            // powerActivationBox13
+            // powerActivationBox5
             // 
-            this.powerActivationBox13.Location = new System.Drawing.Point(279, 489);
-            this.powerActivationBox13.Name = "powerActivationBox13";
-            this.powerActivationBox13.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox13.TabIndex = 252;
+            this.powerActivationBox5.Location = new System.Drawing.Point(279, 176);
+            this.powerActivationBox5.Name = "powerActivationBox5";
+            this.powerActivationBox5.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox5.TabIndex = 164;
             // 
-            // label41
+            // label25
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(249, 492);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(22, 13);
-            this.label41.TabIndex = 251;
-            this.label41.Text = "ED";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(249, 179);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(22, 13);
+            this.label25.TabIndex = 163;
+            this.label25.Text = "ED";
             // 
-            // powerEDBox13
+            // powerEDBox5
             // 
-            this.powerEDBox13.Location = new System.Drawing.Point(214, 489);
-            this.powerEDBox13.Name = "powerEDBox13";
-            this.powerEDBox13.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox13.TabIndex = 250;
+            this.powerEDBox5.Location = new System.Drawing.Point(214, 176);
+            this.powerEDBox5.Name = "powerEDBox5";
+            this.powerEDBox5.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox5.TabIndex = 162;
             // 
-            // label42
+            // label26
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(201, 492);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(13, 13);
-            this.label42.TabIndex = 249;
-            this.label42.Text = "+";
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(201, 179);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(13, 13);
+            this.label26.TabIndex = 161;
+            this.label26.Text = "+";
             // 
-            // powerDamageBox13
+            // powerDamageBox5
             // 
-            this.powerDamageBox13.Location = new System.Drawing.Point(160, 489);
-            this.powerDamageBox13.Name = "powerDamageBox13";
-            this.powerDamageBox13.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox13.TabIndex = 248;
+            this.powerDamageBox5.Location = new System.Drawing.Point(160, 176);
+            this.powerDamageBox5.Name = "powerDamageBox5";
+            this.powerDamageBox5.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox5.TabIndex = 160;
             // 
-            // powerNameBox13
+            // powerNameBox5
             // 
-            this.powerNameBox13.Location = new System.Drawing.Point(6, 489);
-            this.powerNameBox13.Multiline = true;
-            this.powerNameBox13.Name = "powerNameBox13";
-            this.powerNameBox13.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox13.TabIndex = 247;
+            this.powerNameBox5.Location = new System.Drawing.Point(6, 176);
+            this.powerNameBox5.Multiline = true;
+            this.powerNameBox5.Name = "powerNameBox5";
+            this.powerNameBox5.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox5.TabIndex = 159;
             // 
-            // powerMultiCheckBox12
+            // powerMultiCheckBox4
             // 
-            this.powerMultiCheckBox12.AutoSize = true;
-            this.powerMultiCheckBox12.Location = new System.Drawing.Point(568, 455);
-            this.powerMultiCheckBox12.Name = "powerMultiCheckBox12";
-            this.powerMultiCheckBox12.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox12.TabIndex = 246;
-            this.powerMultiCheckBox12.UseVisualStyleBackColor = true;
+            this.powerMultiCheckBox4.AutoSize = true;
+            this.powerMultiCheckBox4.Location = new System.Drawing.Point(568, 142);
+            this.powerMultiCheckBox4.Name = "powerMultiCheckBox4";
+            this.powerMultiCheckBox4.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox4.TabIndex = 158;
+            this.powerMultiCheckBox4.UseVisualStyleBackColor = true;
             // 
-            // powerDurationBox12
+            // powerDurationBox4
             // 
-            this.powerDurationBox12.Location = new System.Drawing.Point(473, 450);
-            this.powerDurationBox12.Name = "powerDurationBox12";
-            this.powerDurationBox12.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox12.TabIndex = 245;
+            this.powerDurationBox4.Location = new System.Drawing.Point(473, 137);
+            this.powerDurationBox4.Name = "powerDurationBox4";
+            this.powerDurationBox4.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox4.TabIndex = 157;
             // 
-            // powerKeywordBox12
+            // powerKeywordBox4
             // 
-            this.powerKeywordBox12.Location = new System.Drawing.Point(624, 450);
-            this.powerKeywordBox12.Multiline = true;
-            this.powerKeywordBox12.Name = "powerKeywordBox12";
-            this.powerKeywordBox12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox12.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox12.TabIndex = 244;
+            this.powerKeywordBox4.Location = new System.Drawing.Point(624, 137);
+            this.powerKeywordBox4.Multiline = true;
+            this.powerKeywordBox4.Name = "powerKeywordBox4";
+            this.powerKeywordBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox4.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox4.TabIndex = 156;
             // 
-            // powerDNBox12
+            // powerDNBox4
             // 
-            this.powerDNBox12.Location = new System.Drawing.Point(436, 450);
-            this.powerDNBox12.Name = "powerDNBox12";
-            this.powerDNBox12.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox12.TabIndex = 243;
+            this.powerDNBox4.Location = new System.Drawing.Point(436, 137);
+            this.powerDNBox4.Name = "powerDNBox4";
+            this.powerDNBox4.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox4.TabIndex = 155;
             // 
-            // powerRangeBox12
+            // powerRangeBox4
             // 
-            this.powerRangeBox12.Location = new System.Drawing.Point(357, 450);
-            this.powerRangeBox12.Name = "powerRangeBox12";
-            this.powerRangeBox12.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox12.TabIndex = 242;
+            this.powerRangeBox4.Location = new System.Drawing.Point(357, 137);
+            this.powerRangeBox4.Name = "powerRangeBox4";
+            this.powerRangeBox4.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox4.TabIndex = 154;
             // 
-            // powerActivationBox12
+            // powerActivationBox4
             // 
-            this.powerActivationBox12.Location = new System.Drawing.Point(279, 450);
-            this.powerActivationBox12.Name = "powerActivationBox12";
-            this.powerActivationBox12.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox12.TabIndex = 241;
+            this.powerActivationBox4.Location = new System.Drawing.Point(279, 137);
+            this.powerActivationBox4.Name = "powerActivationBox4";
+            this.powerActivationBox4.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox4.TabIndex = 153;
             // 
-            // label43
+            // label27
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(249, 454);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(22, 13);
-            this.label43.TabIndex = 240;
-            this.label43.Text = "ED";
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(249, 141);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(22, 13);
+            this.label27.TabIndex = 152;
+            this.label27.Text = "ED";
             // 
-            // powerEDBox12
+            // powerEDBox4
             // 
-            this.powerEDBox12.Location = new System.Drawing.Point(214, 450);
-            this.powerEDBox12.Name = "powerEDBox12";
-            this.powerEDBox12.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox12.TabIndex = 239;
+            this.powerEDBox4.Location = new System.Drawing.Point(214, 137);
+            this.powerEDBox4.Name = "powerEDBox4";
+            this.powerEDBox4.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox4.TabIndex = 151;
             // 
-            // label44
+            // label28
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(201, 454);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(13, 13);
-            this.label44.TabIndex = 238;
-            this.label44.Text = "+";
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(201, 141);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(13, 13);
+            this.label28.TabIndex = 150;
+            this.label28.Text = "+";
             // 
-            // powerDamageBox12
+            // powerDamageBox4
             // 
-            this.powerDamageBox12.Location = new System.Drawing.Point(160, 450);
-            this.powerDamageBox12.Name = "powerDamageBox12";
-            this.powerDamageBox12.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox12.TabIndex = 237;
+            this.powerDamageBox4.Location = new System.Drawing.Point(160, 137);
+            this.powerDamageBox4.Name = "powerDamageBox4";
+            this.powerDamageBox4.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox4.TabIndex = 149;
             // 
-            // powerNameBox12
+            // powerNameBox4
             // 
-            this.powerNameBox12.Location = new System.Drawing.Point(6, 450);
-            this.powerNameBox12.Multiline = true;
-            this.powerNameBox12.Name = "powerNameBox12";
-            this.powerNameBox12.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox12.TabIndex = 236;
+            this.powerNameBox4.Location = new System.Drawing.Point(6, 137);
+            this.powerNameBox4.Multiline = true;
+            this.powerNameBox4.Name = "powerNameBox4";
+            this.powerNameBox4.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox4.TabIndex = 148;
             // 
-            // powerMultiCheckBox17
+            // powerMultiCheckBox3
             // 
-            this.powerMultiCheckBox17.AutoSize = true;
-            this.powerMultiCheckBox17.Location = new System.Drawing.Point(568, 649);
-            this.powerMultiCheckBox17.Name = "powerMultiCheckBox17";
-            this.powerMultiCheckBox17.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox17.TabIndex = 301;
-            this.powerMultiCheckBox17.UseVisualStyleBackColor = true;
+            this.powerMultiCheckBox3.AutoSize = true;
+            this.powerMultiCheckBox3.Location = new System.Drawing.Point(568, 102);
+            this.powerMultiCheckBox3.Name = "powerMultiCheckBox3";
+            this.powerMultiCheckBox3.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox3.TabIndex = 147;
+            this.powerMultiCheckBox3.UseVisualStyleBackColor = true;
             // 
-            // powerDurationBox17
+            // powerDurationBox3
             // 
-            this.powerDurationBox17.Location = new System.Drawing.Point(473, 645);
-            this.powerDurationBox17.Name = "powerDurationBox17";
-            this.powerDurationBox17.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox17.TabIndex = 300;
+            this.powerDurationBox3.Location = new System.Drawing.Point(473, 98);
+            this.powerDurationBox3.Name = "powerDurationBox3";
+            this.powerDurationBox3.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox3.TabIndex = 146;
             // 
-            // powerKeywordBox17
+            // powerKeywordBox3
             // 
-            this.powerKeywordBox17.Location = new System.Drawing.Point(624, 645);
-            this.powerKeywordBox17.Multiline = true;
-            this.powerKeywordBox17.Name = "powerKeywordBox17";
-            this.powerKeywordBox17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox17.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox17.TabIndex = 299;
+            this.powerKeywordBox3.Location = new System.Drawing.Point(624, 98);
+            this.powerKeywordBox3.Multiline = true;
+            this.powerKeywordBox3.Name = "powerKeywordBox3";
+            this.powerKeywordBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox3.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox3.TabIndex = 145;
             // 
-            // powerDNBox17
+            // powerDNBox3
             // 
-            this.powerDNBox17.Location = new System.Drawing.Point(436, 645);
-            this.powerDNBox17.Name = "powerDNBox17";
-            this.powerDNBox17.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox17.TabIndex = 298;
+            this.powerDNBox3.Location = new System.Drawing.Point(436, 98);
+            this.powerDNBox3.Name = "powerDNBox3";
+            this.powerDNBox3.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox3.TabIndex = 144;
             // 
-            // powerRangeBox17
+            // powerRangeBox3
             // 
-            this.powerRangeBox17.Location = new System.Drawing.Point(357, 645);
-            this.powerRangeBox17.Name = "powerRangeBox17";
-            this.powerRangeBox17.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox17.TabIndex = 297;
+            this.powerRangeBox3.Location = new System.Drawing.Point(357, 98);
+            this.powerRangeBox3.Name = "powerRangeBox3";
+            this.powerRangeBox3.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox3.TabIndex = 143;
             // 
-            // powerActivationBox17
+            // powerActivationBox3
             // 
-            this.powerActivationBox17.Location = new System.Drawing.Point(279, 645);
-            this.powerActivationBox17.Name = "powerActivationBox17";
-            this.powerActivationBox17.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox17.TabIndex = 296;
+            this.powerActivationBox3.Location = new System.Drawing.Point(279, 98);
+            this.powerActivationBox3.Name = "powerActivationBox3";
+            this.powerActivationBox3.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox3.TabIndex = 142;
             // 
-            // label45
+            // label9
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(249, 648);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(22, 13);
-            this.label45.TabIndex = 295;
-            this.label45.Text = "ED";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(249, 101);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 13);
+            this.label9.TabIndex = 141;
+            this.label9.Text = "ED";
             // 
-            // powerEDBox17
+            // powerEDBox3
             // 
-            this.powerEDBox17.Location = new System.Drawing.Point(214, 645);
-            this.powerEDBox17.Name = "powerEDBox17";
-            this.powerEDBox17.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox17.TabIndex = 294;
+            this.powerEDBox3.Location = new System.Drawing.Point(214, 98);
+            this.powerEDBox3.Name = "powerEDBox3";
+            this.powerEDBox3.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox3.TabIndex = 140;
             // 
-            // label46
+            // label10
             // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(201, 648);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(13, 13);
-            this.label46.TabIndex = 293;
-            this.label46.Text = "+";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(201, 101);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 13);
+            this.label10.TabIndex = 139;
+            this.label10.Text = "+";
             // 
-            // powerDamageBox17
+            // powerDamageBox3
             // 
-            this.powerDamageBox17.Location = new System.Drawing.Point(160, 645);
-            this.powerDamageBox17.Name = "powerDamageBox17";
-            this.powerDamageBox17.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox17.TabIndex = 292;
+            this.powerDamageBox3.Location = new System.Drawing.Point(160, 98);
+            this.powerDamageBox3.Name = "powerDamageBox3";
+            this.powerDamageBox3.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox3.TabIndex = 138;
             // 
-            // powerNameBox17
+            // powerNameBox3
             // 
-            this.powerNameBox17.Location = new System.Drawing.Point(6, 645);
-            this.powerNameBox17.Multiline = true;
-            this.powerNameBox17.Name = "powerNameBox17";
-            this.powerNameBox17.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox17.TabIndex = 291;
+            this.powerNameBox3.Location = new System.Drawing.Point(6, 98);
+            this.powerNameBox3.Multiline = true;
+            this.powerNameBox3.Name = "powerNameBox3";
+            this.powerNameBox3.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox3.TabIndex = 137;
             // 
-            // powerMultiCheckBox16
+            // powerMultiCheckBox2
             // 
-            this.powerMultiCheckBox16.AutoSize = true;
-            this.powerMultiCheckBox16.Location = new System.Drawing.Point(568, 610);
-            this.powerMultiCheckBox16.Name = "powerMultiCheckBox16";
-            this.powerMultiCheckBox16.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox16.TabIndex = 290;
-            this.powerMultiCheckBox16.UseVisualStyleBackColor = true;
+            this.powerMultiCheckBox2.AutoSize = true;
+            this.powerMultiCheckBox2.Location = new System.Drawing.Point(568, 63);
+            this.powerMultiCheckBox2.Name = "powerMultiCheckBox2";
+            this.powerMultiCheckBox2.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox2.TabIndex = 136;
+            this.powerMultiCheckBox2.UseVisualStyleBackColor = true;
             // 
-            // powerDurationBox16
+            // powerDurationBox2
             // 
-            this.powerDurationBox16.Location = new System.Drawing.Point(473, 606);
-            this.powerDurationBox16.Name = "powerDurationBox16";
-            this.powerDurationBox16.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox16.TabIndex = 289;
+            this.powerDurationBox2.Location = new System.Drawing.Point(473, 59);
+            this.powerDurationBox2.Name = "powerDurationBox2";
+            this.powerDurationBox2.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox2.TabIndex = 135;
             // 
-            // powerKeywordBox16
+            // powerKeywordBox2
             // 
-            this.powerKeywordBox16.Location = new System.Drawing.Point(624, 606);
-            this.powerKeywordBox16.Multiline = true;
-            this.powerKeywordBox16.Name = "powerKeywordBox16";
-            this.powerKeywordBox16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox16.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox16.TabIndex = 288;
+            this.powerKeywordBox2.Location = new System.Drawing.Point(624, 59);
+            this.powerKeywordBox2.Multiline = true;
+            this.powerKeywordBox2.Name = "powerKeywordBox2";
+            this.powerKeywordBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox2.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox2.TabIndex = 134;
             // 
-            // powerDNBox16
+            // powerDNBox2
             // 
-            this.powerDNBox16.Location = new System.Drawing.Point(436, 606);
-            this.powerDNBox16.Name = "powerDNBox16";
-            this.powerDNBox16.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox16.TabIndex = 287;
+            this.powerDNBox2.Location = new System.Drawing.Point(436, 59);
+            this.powerDNBox2.Name = "powerDNBox2";
+            this.powerDNBox2.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox2.TabIndex = 133;
             // 
-            // powerRangeBox16
+            // powerRangeBox2
             // 
-            this.powerRangeBox16.Location = new System.Drawing.Point(357, 606);
-            this.powerRangeBox16.Name = "powerRangeBox16";
-            this.powerRangeBox16.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox16.TabIndex = 286;
+            this.powerRangeBox2.Location = new System.Drawing.Point(357, 59);
+            this.powerRangeBox2.Name = "powerRangeBox2";
+            this.powerRangeBox2.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox2.TabIndex = 132;
             // 
-            // powerActivationBox16
+            // powerActivationBox2
             // 
-            this.powerActivationBox16.Location = new System.Drawing.Point(279, 606);
-            this.powerActivationBox16.Name = "powerActivationBox16";
-            this.powerActivationBox16.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox16.TabIndex = 285;
+            this.powerActivationBox2.Location = new System.Drawing.Point(279, 59);
+            this.powerActivationBox2.Name = "powerActivationBox2";
+            this.powerActivationBox2.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox2.TabIndex = 131;
             // 
-            // label47
+            // label11
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(249, 609);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(22, 13);
-            this.label47.TabIndex = 284;
-            this.label47.Text = "ED";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(249, 62);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(22, 13);
+            this.label11.TabIndex = 130;
+            this.label11.Text = "ED";
             // 
-            // powerEDBox16
+            // powerEDBox2
             // 
-            this.powerEDBox16.Location = new System.Drawing.Point(214, 606);
-            this.powerEDBox16.Name = "powerEDBox16";
-            this.powerEDBox16.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox16.TabIndex = 283;
+            this.powerEDBox2.Location = new System.Drawing.Point(214, 59);
+            this.powerEDBox2.Name = "powerEDBox2";
+            this.powerEDBox2.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox2.TabIndex = 129;
             // 
-            // label48
+            // label12
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(201, 609);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(13, 13);
-            this.label48.TabIndex = 282;
-            this.label48.Text = "+";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(201, 62);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 13);
+            this.label12.TabIndex = 128;
+            this.label12.Text = "+";
             // 
-            // powerDamageBox16
+            // powerDamageBox2
             // 
-            this.powerDamageBox16.Location = new System.Drawing.Point(160, 606);
-            this.powerDamageBox16.Name = "powerDamageBox16";
-            this.powerDamageBox16.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox16.TabIndex = 281;
+            this.powerDamageBox2.Location = new System.Drawing.Point(160, 59);
+            this.powerDamageBox2.Name = "powerDamageBox2";
+            this.powerDamageBox2.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox2.TabIndex = 127;
             // 
-            // powerNameBox16
+            // powerNameBox2
             // 
-            this.powerNameBox16.Location = new System.Drawing.Point(6, 606);
-            this.powerNameBox16.Multiline = true;
-            this.powerNameBox16.Name = "powerNameBox16";
-            this.powerNameBox16.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox16.TabIndex = 280;
+            this.powerNameBox2.Location = new System.Drawing.Point(6, 59);
+            this.powerNameBox2.Multiline = true;
+            this.powerNameBox2.Name = "powerNameBox2";
+            this.powerNameBox2.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox2.TabIndex = 126;
             // 
-            // powerMultiCheckBox15
+            // powerMultiCheckBox1
             // 
-            this.powerMultiCheckBox15.AutoSize = true;
-            this.powerMultiCheckBox15.Location = new System.Drawing.Point(568, 572);
-            this.powerMultiCheckBox15.Name = "powerMultiCheckBox15";
-            this.powerMultiCheckBox15.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox15.TabIndex = 279;
-            this.powerMultiCheckBox15.UseVisualStyleBackColor = true;
+            this.powerMultiCheckBox1.AutoSize = true;
+            this.powerMultiCheckBox1.Location = new System.Drawing.Point(568, 24);
+            this.powerMultiCheckBox1.Name = "powerMultiCheckBox1";
+            this.powerMultiCheckBox1.Size = new System.Drawing.Size(15, 14);
+            this.powerMultiCheckBox1.TabIndex = 125;
+            this.powerMultiCheckBox1.UseVisualStyleBackColor = true;
+            this.powerMultiCheckBox1.CheckedChanged += new System.EventHandler(this.powerMultiCheckBox1_CheckedChanged);
             // 
-            // powerDurationBox15
+            // label13
             // 
-            this.powerDurationBox15.Location = new System.Drawing.Point(473, 567);
-            this.powerDurationBox15.Name = "powerDurationBox15";
-            this.powerDurationBox15.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox15.TabIndex = 278;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(540, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 13);
+            this.label13.TabIndex = 124;
+            this.label13.Text = "Multi-Target";
             // 
-            // powerKeywordBox15
+            // powerDurationBox1
             // 
-            this.powerKeywordBox15.Location = new System.Drawing.Point(624, 567);
-            this.powerKeywordBox15.Multiline = true;
-            this.powerKeywordBox15.Name = "powerKeywordBox15";
-            this.powerKeywordBox15.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox15.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox15.TabIndex = 277;
+            this.powerDurationBox1.Location = new System.Drawing.Point(473, 20);
+            this.powerDurationBox1.Name = "powerDurationBox1";
+            this.powerDurationBox1.Size = new System.Drawing.Size(62, 20);
+            this.powerDurationBox1.TabIndex = 123;
             // 
-            // powerDNBox15
+            // label14
             // 
-            this.powerDNBox15.Location = new System.Drawing.Point(436, 567);
-            this.powerDNBox15.Name = "powerDNBox15";
-            this.powerDNBox15.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox15.TabIndex = 276;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(472, 3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 13);
+            this.label14.TabIndex = 122;
+            this.label14.Text = "Duration";
+            // 
+            // powerKeywordBox1
             // 
-            // powerRangeBox15
-            // 
-            this.powerRangeBox15.Location = new System.Drawing.Point(357, 567);
-            this.powerRangeBox15.Name = "powerRangeBox15";
-            this.powerRangeBox15.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox15.TabIndex = 275;
-            // 
-            // powerActivationBox15
-            // 
-            this.powerActivationBox15.Location = new System.Drawing.Point(279, 567);
-            this.powerActivationBox15.Name = "powerActivationBox15";
-            this.powerActivationBox15.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox15.TabIndex = 274;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(249, 571);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(22, 13);
-            this.label49.TabIndex = 273;
-            this.label49.Text = "ED";
-            // 
-            // powerEDBox15
-            // 
-            this.powerEDBox15.Location = new System.Drawing.Point(214, 567);
-            this.powerEDBox15.Name = "powerEDBox15";
-            this.powerEDBox15.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox15.TabIndex = 272;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(201, 571);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(13, 13);
-            this.label50.TabIndex = 271;
-            this.label50.Text = "+";
-            // 
-            // powerDamageBox15
-            // 
-            this.powerDamageBox15.Location = new System.Drawing.Point(160, 567);
-            this.powerDamageBox15.Name = "powerDamageBox15";
-            this.powerDamageBox15.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox15.TabIndex = 270;
-            // 
-            // powerNameBox15
-            // 
-            this.powerNameBox15.Location = new System.Drawing.Point(6, 567);
-            this.powerNameBox15.Multiline = true;
-            this.powerNameBox15.Name = "powerNameBox15";
-            this.powerNameBox15.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox15.TabIndex = 269;
-            // 
-            // powerMultiCheckBox20
-            // 
-            this.powerMultiCheckBox20.AutoSize = true;
-            this.powerMultiCheckBox20.Location = new System.Drawing.Point(568, 766);
-            this.powerMultiCheckBox20.Name = "powerMultiCheckBox20";
-            this.powerMultiCheckBox20.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox20.TabIndex = 334;
-            this.powerMultiCheckBox20.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox20
-            // 
-            this.powerDurationBox20.Location = new System.Drawing.Point(473, 762);
-            this.powerDurationBox20.Name = "powerDurationBox20";
-            this.powerDurationBox20.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox20.TabIndex = 333;
-            // 
-            // powerKeywordBox20
-            // 
-            this.powerKeywordBox20.Location = new System.Drawing.Point(624, 762);
-            this.powerKeywordBox20.Multiline = true;
-            this.powerKeywordBox20.Name = "powerKeywordBox20";
-            this.powerKeywordBox20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox20.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox20.TabIndex = 332;
-            // 
-            // powerDNBox20
-            // 
-            this.powerDNBox20.Location = new System.Drawing.Point(436, 762);
-            this.powerDNBox20.Name = "powerDNBox20";
-            this.powerDNBox20.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox20.TabIndex = 331;
-            // 
-            // powerRangeBox20
-            // 
-            this.powerRangeBox20.Location = new System.Drawing.Point(357, 762);
-            this.powerRangeBox20.Name = "powerRangeBox20";
-            this.powerRangeBox20.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox20.TabIndex = 330;
-            // 
-            // powerActivationBox20
-            // 
-            this.powerActivationBox20.Location = new System.Drawing.Point(279, 762);
-            this.powerActivationBox20.Name = "powerActivationBox20";
-            this.powerActivationBox20.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox20.TabIndex = 329;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(249, 765);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(22, 13);
-            this.label51.TabIndex = 328;
-            this.label51.Text = "ED";
-            // 
-            // powerEDBox20
-            // 
-            this.powerEDBox20.Location = new System.Drawing.Point(214, 762);
-            this.powerEDBox20.Name = "powerEDBox20";
-            this.powerEDBox20.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox20.TabIndex = 327;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(201, 765);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(13, 13);
-            this.label52.TabIndex = 326;
-            this.label52.Text = "+";
-            // 
-            // powerDamageBox20
-            // 
-            this.powerDamageBox20.Location = new System.Drawing.Point(160, 762);
-            this.powerDamageBox20.Name = "powerDamageBox20";
-            this.powerDamageBox20.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox20.TabIndex = 325;
-            // 
-            // powerNameBox20
-            // 
-            this.powerNameBox20.Location = new System.Drawing.Point(6, 762);
-            this.powerNameBox20.Multiline = true;
-            this.powerNameBox20.Name = "powerNameBox20";
-            this.powerNameBox20.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox20.TabIndex = 324;
-            // 
-            // powerMultiCheckBox19
-            // 
-            this.powerMultiCheckBox19.AutoSize = true;
-            this.powerMultiCheckBox19.Location = new System.Drawing.Point(568, 727);
-            this.powerMultiCheckBox19.Name = "powerMultiCheckBox19";
-            this.powerMultiCheckBox19.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox19.TabIndex = 323;
-            this.powerMultiCheckBox19.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox19
-            // 
-            this.powerDurationBox19.Location = new System.Drawing.Point(473, 723);
-            this.powerDurationBox19.Name = "powerDurationBox19";
-            this.powerDurationBox19.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox19.TabIndex = 322;
-            // 
-            // powerKeywordBox19
-            // 
-            this.powerKeywordBox19.Location = new System.Drawing.Point(624, 723);
-            this.powerKeywordBox19.Multiline = true;
-            this.powerKeywordBox19.Name = "powerKeywordBox19";
-            this.powerKeywordBox19.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox19.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox19.TabIndex = 321;
-            // 
-            // powerDNBox19
-            // 
-            this.powerDNBox19.Location = new System.Drawing.Point(436, 723);
-            this.powerDNBox19.Name = "powerDNBox19";
-            this.powerDNBox19.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox19.TabIndex = 320;
-            // 
-            // powerRangeBox19
-            // 
-            this.powerRangeBox19.Location = new System.Drawing.Point(357, 723);
-            this.powerRangeBox19.Name = "powerRangeBox19";
-            this.powerRangeBox19.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox19.TabIndex = 319;
-            // 
-            // powerActivationBox19
-            // 
-            this.powerActivationBox19.Location = new System.Drawing.Point(279, 723);
-            this.powerActivationBox19.Name = "powerActivationBox19";
-            this.powerActivationBox19.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox19.TabIndex = 318;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(249, 726);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(22, 13);
-            this.label53.TabIndex = 317;
-            this.label53.Text = "ED";
-            // 
-            // powerEDBox19
-            // 
-            this.powerEDBox19.Location = new System.Drawing.Point(214, 723);
-            this.powerEDBox19.Name = "powerEDBox19";
-            this.powerEDBox19.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox19.TabIndex = 316;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(201, 726);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(13, 13);
-            this.label54.TabIndex = 315;
-            this.label54.Text = "+";
-            // 
-            // powerDamageBox19
-            // 
-            this.powerDamageBox19.Location = new System.Drawing.Point(160, 723);
-            this.powerDamageBox19.Name = "powerDamageBox19";
-            this.powerDamageBox19.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox19.TabIndex = 314;
-            // 
-            // powerNameBox19
-            // 
-            this.powerNameBox19.Location = new System.Drawing.Point(6, 723);
-            this.powerNameBox19.Multiline = true;
-            this.powerNameBox19.Name = "powerNameBox19";
-            this.powerNameBox19.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox19.TabIndex = 313;
-            // 
-            // powerMultiCheckBox18
-            // 
-            this.powerMultiCheckBox18.AutoSize = true;
-            this.powerMultiCheckBox18.Location = new System.Drawing.Point(568, 689);
-            this.powerMultiCheckBox18.Name = "powerMultiCheckBox18";
-            this.powerMultiCheckBox18.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox18.TabIndex = 312;
-            this.powerMultiCheckBox18.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox18
-            // 
-            this.powerDurationBox18.Location = new System.Drawing.Point(473, 684);
-            this.powerDurationBox18.Name = "powerDurationBox18";
-            this.powerDurationBox18.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox18.TabIndex = 311;
-            // 
-            // powerKeywordBox18
-            // 
-            this.powerKeywordBox18.Location = new System.Drawing.Point(624, 684);
-            this.powerKeywordBox18.Multiline = true;
-            this.powerKeywordBox18.Name = "powerKeywordBox18";
-            this.powerKeywordBox18.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox18.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox18.TabIndex = 310;
-            // 
-            // powerDNBox18
-            // 
-            this.powerDNBox18.Location = new System.Drawing.Point(436, 684);
-            this.powerDNBox18.Name = "powerDNBox18";
-            this.powerDNBox18.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox18.TabIndex = 309;
-            // 
-            // powerRangeBox18
-            // 
-            this.powerRangeBox18.Location = new System.Drawing.Point(357, 684);
-            this.powerRangeBox18.Name = "powerRangeBox18";
-            this.powerRangeBox18.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox18.TabIndex = 308;
-            // 
-            // powerActivationBox18
-            // 
-            this.powerActivationBox18.Location = new System.Drawing.Point(279, 684);
-            this.powerActivationBox18.Name = "powerActivationBox18";
-            this.powerActivationBox18.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox18.TabIndex = 307;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(249, 688);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(22, 13);
-            this.label55.TabIndex = 306;
-            this.label55.Text = "ED";
-            // 
-            // powerEDBox18
-            // 
-            this.powerEDBox18.Location = new System.Drawing.Point(214, 684);
-            this.powerEDBox18.Name = "powerEDBox18";
-            this.powerEDBox18.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox18.TabIndex = 305;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(201, 688);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(13, 13);
-            this.label56.TabIndex = 304;
-            this.label56.Text = "+";
-            // 
-            // powerDamageBox18
-            // 
-            this.powerDamageBox18.Location = new System.Drawing.Point(160, 684);
-            this.powerDamageBox18.Name = "powerDamageBox18";
-            this.powerDamageBox18.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox18.TabIndex = 303;
-            // 
-            // powerNameBox18
-            // 
-            this.powerNameBox18.Location = new System.Drawing.Point(6, 684);
-            this.powerNameBox18.Multiline = true;
-            this.powerNameBox18.Name = "powerNameBox18";
-            this.powerNameBox18.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox18.TabIndex = 302;
-            // 
-            // powerMultiCheckBox24
-            // 
-            this.powerMultiCheckBox24.AutoSize = true;
-            this.powerMultiCheckBox24.Location = new System.Drawing.Point(568, 922);
-            this.powerMultiCheckBox24.Name = "powerMultiCheckBox24";
-            this.powerMultiCheckBox24.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox24.TabIndex = 378;
-            this.powerMultiCheckBox24.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox24
-            // 
-            this.powerDurationBox24.Location = new System.Drawing.Point(473, 918);
-            this.powerDurationBox24.Name = "powerDurationBox24";
-            this.powerDurationBox24.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox24.TabIndex = 377;
-            // 
-            // powerKeywordBox24
-            // 
-            this.powerKeywordBox24.Location = new System.Drawing.Point(624, 918);
-            this.powerKeywordBox24.Multiline = true;
-            this.powerKeywordBox24.Name = "powerKeywordBox24";
-            this.powerKeywordBox24.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox24.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox24.TabIndex = 376;
-            // 
-            // powerDNBox24
-            // 
-            this.powerDNBox24.Location = new System.Drawing.Point(436, 918);
-            this.powerDNBox24.Name = "powerDNBox24";
-            this.powerDNBox24.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox24.TabIndex = 375;
-            // 
-            // powerRangeBox24
-            // 
-            this.powerRangeBox24.Location = new System.Drawing.Point(357, 918);
-            this.powerRangeBox24.Name = "powerRangeBox24";
-            this.powerRangeBox24.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox24.TabIndex = 374;
-            // 
-            // powerActivationBox24
-            // 
-            this.powerActivationBox24.Location = new System.Drawing.Point(279, 918);
-            this.powerActivationBox24.Name = "powerActivationBox24";
-            this.powerActivationBox24.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox24.TabIndex = 373;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(249, 921);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(22, 13);
-            this.label57.TabIndex = 372;
-            this.label57.Text = "ED";
-            // 
-            // powerEDBox24
-            // 
-            this.powerEDBox24.Location = new System.Drawing.Point(214, 918);
-            this.powerEDBox24.Name = "powerEDBox24";
-            this.powerEDBox24.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox24.TabIndex = 371;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(201, 921);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(13, 13);
-            this.label58.TabIndex = 370;
-            this.label58.Text = "+";
-            // 
-            // powerDamageBox24
-            // 
-            this.powerDamageBox24.Location = new System.Drawing.Point(160, 918);
-            this.powerDamageBox24.Name = "powerDamageBox24";
-            this.powerDamageBox24.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox24.TabIndex = 369;
-            // 
-            // powerNameBox24
-            // 
-            this.powerNameBox24.Location = new System.Drawing.Point(6, 918);
-            this.powerNameBox24.Multiline = true;
-            this.powerNameBox24.Name = "powerNameBox24";
-            this.powerNameBox24.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox24.TabIndex = 368;
-            // 
-            // powerMultiCheckBox23
-            // 
-            this.powerMultiCheckBox23.AutoSize = true;
-            this.powerMultiCheckBox23.Location = new System.Drawing.Point(568, 883);
-            this.powerMultiCheckBox23.Name = "powerMultiCheckBox23";
-            this.powerMultiCheckBox23.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox23.TabIndex = 367;
-            this.powerMultiCheckBox23.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox23
-            // 
-            this.powerDurationBox23.Location = new System.Drawing.Point(473, 879);
-            this.powerDurationBox23.Name = "powerDurationBox23";
-            this.powerDurationBox23.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox23.TabIndex = 366;
-            // 
-            // powerKeywordBox23
-            // 
-            this.powerKeywordBox23.Location = new System.Drawing.Point(624, 879);
-            this.powerKeywordBox23.Multiline = true;
-            this.powerKeywordBox23.Name = "powerKeywordBox23";
-            this.powerKeywordBox23.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox23.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox23.TabIndex = 365;
-            // 
-            // powerDNBox23
-            // 
-            this.powerDNBox23.Location = new System.Drawing.Point(436, 879);
-            this.powerDNBox23.Name = "powerDNBox23";
-            this.powerDNBox23.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox23.TabIndex = 364;
-            // 
-            // powerRangeBox23
-            // 
-            this.powerRangeBox23.Location = new System.Drawing.Point(357, 879);
-            this.powerRangeBox23.Name = "powerRangeBox23";
-            this.powerRangeBox23.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox23.TabIndex = 363;
-            // 
-            // powerActivationBox23
-            // 
-            this.powerActivationBox23.Location = new System.Drawing.Point(279, 879);
-            this.powerActivationBox23.Name = "powerActivationBox23";
-            this.powerActivationBox23.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox23.TabIndex = 362;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(249, 882);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(22, 13);
-            this.label59.TabIndex = 361;
-            this.label59.Text = "ED";
-            // 
-            // powerEDBox23
-            // 
-            this.powerEDBox23.Location = new System.Drawing.Point(214, 879);
-            this.powerEDBox23.Name = "powerEDBox23";
-            this.powerEDBox23.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox23.TabIndex = 360;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(201, 882);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(13, 13);
-            this.label60.TabIndex = 359;
-            this.label60.Text = "+";
-            // 
-            // powerDamageBox23
-            // 
-            this.powerDamageBox23.Location = new System.Drawing.Point(160, 879);
-            this.powerDamageBox23.Name = "powerDamageBox23";
-            this.powerDamageBox23.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox23.TabIndex = 358;
-            // 
-            // powerNameBox23
-            // 
-            this.powerNameBox23.Location = new System.Drawing.Point(6, 879);
-            this.powerNameBox23.Multiline = true;
-            this.powerNameBox23.Name = "powerNameBox23";
-            this.powerNameBox23.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox23.TabIndex = 357;
-            // 
-            // powerMultiCheckBox22
-            // 
-            this.powerMultiCheckBox22.AutoSize = true;
-            this.powerMultiCheckBox22.Location = new System.Drawing.Point(568, 845);
-            this.powerMultiCheckBox22.Name = "powerMultiCheckBox22";
-            this.powerMultiCheckBox22.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox22.TabIndex = 356;
-            this.powerMultiCheckBox22.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox22
-            // 
-            this.powerDurationBox22.Location = new System.Drawing.Point(473, 840);
-            this.powerDurationBox22.Name = "powerDurationBox22";
-            this.powerDurationBox22.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox22.TabIndex = 355;
-            // 
-            // powerKeywordBox22
-            // 
-            this.powerKeywordBox22.Location = new System.Drawing.Point(624, 840);
-            this.powerKeywordBox22.Multiline = true;
-            this.powerKeywordBox22.Name = "powerKeywordBox22";
-            this.powerKeywordBox22.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox22.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox22.TabIndex = 354;
-            // 
-            // powerDNBox22
-            // 
-            this.powerDNBox22.Location = new System.Drawing.Point(436, 840);
-            this.powerDNBox22.Name = "powerDNBox22";
-            this.powerDNBox22.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox22.TabIndex = 353;
-            // 
-            // powerRangeBox22
-            // 
-            this.powerRangeBox22.Location = new System.Drawing.Point(357, 840);
-            this.powerRangeBox22.Name = "powerRangeBox22";
-            this.powerRangeBox22.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox22.TabIndex = 352;
-            // 
-            // powerActivationBox22
-            // 
-            this.powerActivationBox22.Location = new System.Drawing.Point(279, 840);
-            this.powerActivationBox22.Name = "powerActivationBox22";
-            this.powerActivationBox22.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox22.TabIndex = 351;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(249, 844);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(22, 13);
-            this.label61.TabIndex = 350;
-            this.label61.Text = "ED";
-            // 
-            // powerEDBox22
-            // 
-            this.powerEDBox22.Location = new System.Drawing.Point(214, 840);
-            this.powerEDBox22.Name = "powerEDBox22";
-            this.powerEDBox22.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox22.TabIndex = 349;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(201, 844);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(13, 13);
-            this.label62.TabIndex = 348;
-            this.label62.Text = "+";
-            // 
-            // powerDamageBox22
-            // 
-            this.powerDamageBox22.Location = new System.Drawing.Point(160, 840);
-            this.powerDamageBox22.Name = "powerDamageBox22";
-            this.powerDamageBox22.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox22.TabIndex = 347;
-            // 
-            // powerNameBox22
-            // 
-            this.powerNameBox22.Location = new System.Drawing.Point(6, 840);
-            this.powerNameBox22.Multiline = true;
-            this.powerNameBox22.Name = "powerNameBox22";
-            this.powerNameBox22.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox22.TabIndex = 346;
-            // 
-            // powerMultiCheckBox21
-            // 
-            this.powerMultiCheckBox21.AutoSize = true;
-            this.powerMultiCheckBox21.Location = new System.Drawing.Point(568, 805);
-            this.powerMultiCheckBox21.Name = "powerMultiCheckBox21";
-            this.powerMultiCheckBox21.Size = new System.Drawing.Size(15, 14);
-            this.powerMultiCheckBox21.TabIndex = 345;
-            this.powerMultiCheckBox21.UseVisualStyleBackColor = true;
-            // 
-            // powerDurationBox21
-            // 
-            this.powerDurationBox21.Location = new System.Drawing.Point(473, 801);
-            this.powerDurationBox21.Name = "powerDurationBox21";
-            this.powerDurationBox21.Size = new System.Drawing.Size(62, 20);
-            this.powerDurationBox21.TabIndex = 344;
-            // 
-            // powerKeywordBox21
-            // 
-            this.powerKeywordBox21.Location = new System.Drawing.Point(624, 801);
-            this.powerKeywordBox21.Multiline = true;
-            this.powerKeywordBox21.Name = "powerKeywordBox21";
-            this.powerKeywordBox21.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerKeywordBox21.Size = new System.Drawing.Size(118, 33);
-            this.powerKeywordBox21.TabIndex = 343;
-            // 
-            // powerDNBox21
-            // 
-            this.powerDNBox21.Location = new System.Drawing.Point(436, 801);
-            this.powerDNBox21.Name = "powerDNBox21";
-            this.powerDNBox21.Size = new System.Drawing.Size(22, 20);
-            this.powerDNBox21.TabIndex = 342;
-            // 
-            // powerRangeBox21
-            // 
-            this.powerRangeBox21.Location = new System.Drawing.Point(357, 801);
-            this.powerRangeBox21.Name = "powerRangeBox21";
-            this.powerRangeBox21.Size = new System.Drawing.Size(63, 20);
-            this.powerRangeBox21.TabIndex = 341;
-            // 
-            // powerActivationBox21
-            // 
-            this.powerActivationBox21.Location = new System.Drawing.Point(279, 801);
-            this.powerActivationBox21.Name = "powerActivationBox21";
-            this.powerActivationBox21.Size = new System.Drawing.Size(63, 20);
-            this.powerActivationBox21.TabIndex = 340;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(249, 804);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(22, 13);
-            this.label63.TabIndex = 339;
-            this.label63.Text = "ED";
-            // 
-            // powerEDBox21
-            // 
-            this.powerEDBox21.Location = new System.Drawing.Point(214, 801);
-            this.powerEDBox21.Name = "powerEDBox21";
-            this.powerEDBox21.Size = new System.Drawing.Size(34, 20);
-            this.powerEDBox21.TabIndex = 338;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(201, 804);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(13, 13);
-            this.label64.TabIndex = 337;
-            this.label64.Text = "+";
-            // 
-            // powerDamageBox21
-            // 
-            this.powerDamageBox21.Location = new System.Drawing.Point(160, 801);
-            this.powerDamageBox21.Name = "powerDamageBox21";
-            this.powerDamageBox21.Size = new System.Drawing.Size(40, 20);
-            this.powerDamageBox21.TabIndex = 336;
-            // 
-            // powerNameBox21
-            // 
-            this.powerNameBox21.Location = new System.Drawing.Point(6, 801);
-            this.powerNameBox21.Multiline = true;
-            this.powerNameBox21.Name = "powerNameBox21";
-            this.powerNameBox21.Size = new System.Drawing.Size(132, 33);
-            this.powerNameBox21.TabIndex = 335;
-            // 
-            // powersTextBox
-            // 
-            this.powersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.powersTextBox.Location = new System.Drawing.Point(2, 26);
-            this.powersTextBox.Name = "powersTextBox";
-            this.powersTextBox.Size = new System.Drawing.Size(817, 222);
-            this.powersTextBox.TabIndex = 0;
-            this.powersTextBox.Text = "";
+            this.powerKeywordBox1.Location = new System.Drawing.Point(624, 20);
+            this.powerKeywordBox1.Multiline = true;
+            this.powerKeywordBox1.Name = "powerKeywordBox1";
+            this.powerKeywordBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.powerKeywordBox1.Size = new System.Drawing.Size(118, 33);
+            this.powerKeywordBox1.TabIndex = 121;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(621, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.TabIndex = 120;
+            this.label15.Text = "Keywords";
+            // 
+            // powerDNBox1
+            // 
+            this.powerDNBox1.Location = new System.Drawing.Point(436, 20);
+            this.powerDNBox1.Name = "powerDNBox1";
+            this.powerDNBox1.Size = new System.Drawing.Size(22, 20);
+            this.powerDNBox1.TabIndex = 119;
+            // 
+            // powerRangeBox1
+            // 
+            this.powerRangeBox1.Location = new System.Drawing.Point(357, 20);
+            this.powerRangeBox1.Name = "powerRangeBox1";
+            this.powerRangeBox1.Size = new System.Drawing.Size(63, 20);
+            this.powerRangeBox1.TabIndex = 118;
+            // 
+            // powerActivationBox1
+            // 
+            this.powerActivationBox1.Location = new System.Drawing.Point(279, 20);
+            this.powerActivationBox1.Name = "powerActivationBox1";
+            this.powerActivationBox1.Size = new System.Drawing.Size(63, 20);
+            this.powerActivationBox1.TabIndex = 117;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(249, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(22, 13);
+            this.label16.TabIndex = 116;
+            this.label16.Text = "ED";
+            // 
+            // powerEDBox1
+            // 
+            this.powerEDBox1.Location = new System.Drawing.Point(214, 20);
+            this.powerEDBox1.Name = "powerEDBox1";
+            this.powerEDBox1.Size = new System.Drawing.Size(34, 20);
+            this.powerEDBox1.TabIndex = 115;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(201, 23);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(13, 13);
+            this.label17.TabIndex = 114;
+            this.label17.Text = "+";
+            // 
+            // powerDamageBox1
+            // 
+            this.powerDamageBox1.Location = new System.Drawing.Point(160, 20);
+            this.powerDamageBox1.Name = "powerDamageBox1";
+            this.powerDamageBox1.Size = new System.Drawing.Size(40, 20);
+            this.powerDamageBox1.TabIndex = 113;
+            // 
+            // powerNameBox1
+            // 
+            this.powerNameBox1.Location = new System.Drawing.Point(6, 20);
+            this.powerNameBox1.Multiline = true;
+            this.powerNameBox1.Name = "powerNameBox1";
+            this.powerNameBox1.Size = new System.Drawing.Size(132, 33);
+            this.powerNameBox1.TabIndex = 112;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(433, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(25, 13);
+            this.label18.TabIndex = 111;
+            this.label18.Text = "DN";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(354, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 13);
+            this.label19.TabIndex = 110;
+            this.label19.Text = "Range";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(278, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(64, 13);
+            this.label20.TabIndex = 109;
+            this.label20.Text = "Activation";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(157, 3);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 13);
+            this.label21.TabIndex = 108;
+            this.label21.Text = "Damage";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(5, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 107;
+            this.label22.Text = "Power Name";
             // 
             // label65
             // 
@@ -4823,753 +5450,324 @@
             this.label65.TabIndex = 108;
             this.label65.Text = "Power Notes";
             // 
-            // powerPotentcyLabel
+            // powersTextBox
             // 
-            this.powerPotentcyLabel.AutoSize = true;
-            this.powerPotentcyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.powerPotentcyLabel.Location = new System.Drawing.Point(755, 3);
-            this.powerPotentcyLabel.Name = "powerPotentcyLabel";
-            this.powerPotentcyLabel.Size = new System.Drawing.Size(53, 13);
-            this.powerPotentcyLabel.TabIndex = 379;
-            this.powerPotentcyLabel.Text = "Potency";
-            // 
-            // powerPotencyBox6
-            // 
-            this.powerPotencyBox6.Location = new System.Drawing.Point(758, 216);
-            this.powerPotencyBox6.Multiline = true;
-            this.powerPotencyBox6.Name = "powerPotencyBox6";
-            this.powerPotencyBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox6.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox6.TabIndex = 385;
-            // 
-            // powerPotencyBox5
-            // 
-            this.powerPotencyBox5.Location = new System.Drawing.Point(758, 177);
-            this.powerPotencyBox5.Multiline = true;
-            this.powerPotencyBox5.Name = "powerPotencyBox5";
-            this.powerPotencyBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox5.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox5.TabIndex = 384;
-            // 
-            // powerPotencyBox4
-            // 
-            this.powerPotencyBox4.Location = new System.Drawing.Point(758, 138);
-            this.powerPotencyBox4.Multiline = true;
-            this.powerPotencyBox4.Name = "powerPotencyBox4";
-            this.powerPotencyBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox4.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox4.TabIndex = 383;
-            // 
-            // powerPotencyBox3
-            // 
-            this.powerPotencyBox3.Location = new System.Drawing.Point(758, 99);
-            this.powerPotencyBox3.Multiline = true;
-            this.powerPotencyBox3.Name = "powerPotencyBox3";
-            this.powerPotencyBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox3.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox3.TabIndex = 382;
-            // 
-            // powerPotencyBox2
-            // 
-            this.powerPotencyBox2.Location = new System.Drawing.Point(758, 60);
-            this.powerPotencyBox2.Multiline = true;
-            this.powerPotencyBox2.Name = "powerPotencyBox2";
-            this.powerPotencyBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox2.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox2.TabIndex = 381;
-            // 
-            // powerPotencyBox1
-            // 
-            this.powerPotencyBox1.Location = new System.Drawing.Point(758, 21);
-            this.powerPotencyBox1.Multiline = true;
-            this.powerPotencyBox1.Name = "powerPotencyBox1";
-            this.powerPotencyBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox1.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox1.TabIndex = 380;
-            // 
-            // powerPotencyBox12
-            // 
-            this.powerPotencyBox12.Location = new System.Drawing.Point(758, 449);
-            this.powerPotencyBox12.Multiline = true;
-            this.powerPotencyBox12.Name = "powerPotencyBox12";
-            this.powerPotencyBox12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox12.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox12.TabIndex = 391;
-            // 
-            // powerPotencyBox11
-            // 
-            this.powerPotencyBox11.Location = new System.Drawing.Point(758, 410);
-            this.powerPotencyBox11.Multiline = true;
-            this.powerPotencyBox11.Name = "powerPotencyBox11";
-            this.powerPotencyBox11.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox11.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox11.TabIndex = 390;
-            // 
-            // powerPotencyBox10
-            // 
-            this.powerPotencyBox10.Location = new System.Drawing.Point(758, 371);
-            this.powerPotencyBox10.Multiline = true;
-            this.powerPotencyBox10.Name = "powerPotencyBox10";
-            this.powerPotencyBox10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox10.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox10.TabIndex = 389;
-            // 
-            // powerPotencyBox9
-            // 
-            this.powerPotencyBox9.Location = new System.Drawing.Point(758, 332);
-            this.powerPotencyBox9.Multiline = true;
-            this.powerPotencyBox9.Name = "powerPotencyBox9";
-            this.powerPotencyBox9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox9.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox9.TabIndex = 388;
-            // 
-            // powerPotencyBox8
-            // 
-            this.powerPotencyBox8.Location = new System.Drawing.Point(758, 293);
-            this.powerPotencyBox8.Multiline = true;
-            this.powerPotencyBox8.Name = "powerPotencyBox8";
-            this.powerPotencyBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox8.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox8.TabIndex = 387;
-            // 
-            // powerPotencyBox7
-            // 
-            this.powerPotencyBox7.Location = new System.Drawing.Point(758, 254);
-            this.powerPotencyBox7.Multiline = true;
-            this.powerPotencyBox7.Name = "powerPotencyBox7";
-            this.powerPotencyBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox7.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox7.TabIndex = 386;
-            // 
-            // powerPotencyBox18
-            // 
-            this.powerPotencyBox18.Location = new System.Drawing.Point(758, 684);
-            this.powerPotencyBox18.Multiline = true;
-            this.powerPotencyBox18.Name = "powerPotencyBox18";
-            this.powerPotencyBox18.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox18.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox18.TabIndex = 397;
-            // 
-            // powerPotencyBox17
-            // 
-            this.powerPotencyBox17.Location = new System.Drawing.Point(758, 645);
-            this.powerPotencyBox17.Multiline = true;
-            this.powerPotencyBox17.Name = "powerPotencyBox17";
-            this.powerPotencyBox17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox17.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox17.TabIndex = 396;
-            // 
-            // powerPotencyBox16
-            // 
-            this.powerPotencyBox16.Location = new System.Drawing.Point(758, 606);
-            this.powerPotencyBox16.Multiline = true;
-            this.powerPotencyBox16.Name = "powerPotencyBox16";
-            this.powerPotencyBox16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox16.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox16.TabIndex = 395;
-            // 
-            // powerPotencyBox15
-            // 
-            this.powerPotencyBox15.Location = new System.Drawing.Point(758, 567);
-            this.powerPotencyBox15.Multiline = true;
-            this.powerPotencyBox15.Name = "powerPotencyBox15";
-            this.powerPotencyBox15.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox15.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox15.TabIndex = 394;
-            // 
-            // powerPotencyBox14
-            // 
-            this.powerPotencyBox14.Location = new System.Drawing.Point(758, 528);
-            this.powerPotencyBox14.Multiline = true;
-            this.powerPotencyBox14.Name = "powerPotencyBox14";
-            this.powerPotencyBox14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox14.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox14.TabIndex = 393;
-            // 
-            // powerPotencyBox13
-            // 
-            this.powerPotencyBox13.Location = new System.Drawing.Point(758, 489);
-            this.powerPotencyBox13.Multiline = true;
-            this.powerPotencyBox13.Name = "powerPotencyBox13";
-            this.powerPotencyBox13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox13.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox13.TabIndex = 392;
-            // 
-            // powerPotencyBox24
-            // 
-            this.powerPotencyBox24.Location = new System.Drawing.Point(758, 918);
-            this.powerPotencyBox24.Multiline = true;
-            this.powerPotencyBox24.Name = "powerPotencyBox24";
-            this.powerPotencyBox24.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox24.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox24.TabIndex = 403;
-            // 
-            // powerPotencyBox23
-            // 
-            this.powerPotencyBox23.Location = new System.Drawing.Point(758, 879);
-            this.powerPotencyBox23.Multiline = true;
-            this.powerPotencyBox23.Name = "powerPotencyBox23";
-            this.powerPotencyBox23.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox23.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox23.TabIndex = 402;
-            // 
-            // powerPotencyBox22
-            // 
-            this.powerPotencyBox22.Location = new System.Drawing.Point(758, 840);
-            this.powerPotencyBox22.Multiline = true;
-            this.powerPotencyBox22.Name = "powerPotencyBox22";
-            this.powerPotencyBox22.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox22.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox22.TabIndex = 401;
-            // 
-            // powerPotencyBox21
-            // 
-            this.powerPotencyBox21.Location = new System.Drawing.Point(758, 801);
-            this.powerPotencyBox21.Multiline = true;
-            this.powerPotencyBox21.Name = "powerPotencyBox21";
-            this.powerPotencyBox21.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox21.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox21.TabIndex = 400;
-            // 
-            // powerPotencyBox20
-            // 
-            this.powerPotencyBox20.Location = new System.Drawing.Point(758, 762);
-            this.powerPotencyBox20.Multiline = true;
-            this.powerPotencyBox20.Name = "powerPotencyBox20";
-            this.powerPotencyBox20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox20.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox20.TabIndex = 399;
-            // 
-            // powerPotencyBox19
-            // 
-            this.powerPotencyBox19.Location = new System.Drawing.Point(758, 723);
-            this.powerPotencyBox19.Multiline = true;
-            this.powerPotencyBox19.Name = "powerPotencyBox19";
-            this.powerPotencyBox19.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.powerPotencyBox19.Size = new System.Drawing.Size(168, 33);
-            this.powerPotencyBox19.TabIndex = 398;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.AutoScroll = true;
-            this.splitContainer3.Panel1.Controls.Add(this.armorNameLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.armorRatingBox);
-            this.splitContainer3.Panel1.Controls.Add(this.armorRatingHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.armorKeywordsBox);
-            this.splitContainer3.Panel1.Controls.Add(this.armorValueBox);
-            this.splitContainer3.Panel1.Controls.Add(this.armorTraitsBox);
-            this.splitContainer3.Panel1.Controls.Add(this.armorNameBox);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponKeywordsBox);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponValueBox);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponTraitsBox);
-            this.splitContainer3.Panel1.Controls.Add(this.MeleeWeaponRangeBox);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponAPBox);
-            this.splitContainer3.Panel1.Controls.Add(this.label2);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponEDBox);
-            this.splitContainer3.Panel1.Controls.Add(this.label3);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponDamageBox);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponNameBox);
-            this.splitContainer3.Panel1.Controls.Add(this.meleeWeaponHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponKeywordsBox);
-            this.splitContainer3.Panel1.Controls.Add(this.keywordsHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponValueBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponTraitBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponSalvoBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponRangeBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponAPBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedEDBoxLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponEDBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedBaseModLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponDamageBox);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponNameBox);
-            this.splitContainer3.Panel1.Controls.Add(this.weaponValueHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.weaponTraitsHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.salvoHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.weaponRangeHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.apHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.weaponDamageHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.rangedWeaponHeaderLabel);
-            this.splitContainer3.Panel1.Controls.Add(this.armorHeaderLabel);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.miscEquipmentHeaderLabel);
-            this.splitContainer3.Panel2.Controls.Add(this.equipmentTextBox);
-            this.splitContainer3.Size = new System.Drawing.Size(819, 503);
-            this.splitContainer3.SplitterDistance = 251;
-            this.splitContainer3.TabIndex = 48;
-            // 
-            // armorHeaderLabel
-            // 
-            this.armorHeaderLabel.AutoSize = true;
-            this.armorHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.armorHeaderLabel.Location = new System.Drawing.Point(-51, 139);
-            this.armorHeaderLabel.Name = "armorHeaderLabel";
-            this.armorHeaderLabel.Size = new System.Drawing.Size(39, 13);
-            this.armorHeaderLabel.TabIndex = 79;
-            this.armorHeaderLabel.Text = "Armor";
-            // 
-            // miscEquipmentHeaderLabel
-            // 
-            this.miscEquipmentHeaderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.powersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.miscEquipmentHeaderLabel.AutoSize = true;
-            this.miscEquipmentHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.miscEquipmentHeaderLabel.Location = new System.Drawing.Point(5, 7);
-            this.miscEquipmentHeaderLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
-            this.miscEquipmentHeaderLabel.Name = "miscEquipmentHeaderLabel";
-            this.miscEquipmentHeaderLabel.Size = new System.Drawing.Size(318, 13);
-            this.miscEquipmentHeaderLabel.TabIndex = 49;
-            this.miscEquipmentHeaderLabel.Text = "Miscellaneous Equipment (Trinkets, Ammo, Tools, etc.)";
-            // 
-            // equipmentTextBox
-            // 
-            this.equipmentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.equipmentTextBox.Location = new System.Drawing.Point(2, 26);
-            this.equipmentTextBox.Name = "equipmentTextBox";
-            this.equipmentTextBox.Size = new System.Drawing.Size(817, 222);
-            this.equipmentTextBox.TabIndex = 48;
-            this.equipmentTextBox.Text = "";
-            // 
-            // armorRatingBox
-            // 
-            this.armorRatingBox.Location = new System.Drawing.Point(161, 147);
-            this.armorRatingBox.Name = "armorRatingBox";
-            this.armorRatingBox.Size = new System.Drawing.Size(57, 20);
-            this.armorRatingBox.TabIndex = 121;
-            this.armorRatingBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.armorRatingBox.ValueChanged += new System.EventHandler(this.armorRatingBox_ValueChanged);
-            // 
-            // armorRatingHeaderLabel
-            // 
-            this.armorRatingHeaderLabel.AutoSize = true;
-            this.armorRatingHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.armorRatingHeaderLabel.Location = new System.Drawing.Point(158, 130);
-            this.armorRatingHeaderLabel.Name = "armorRatingHeaderLabel";
-            this.armorRatingHeaderLabel.Size = new System.Drawing.Size(80, 13);
-            this.armorRatingHeaderLabel.TabIndex = 120;
-            this.armorRatingHeaderLabel.Text = "Armor Rating";
-            // 
-            // armorKeywordsBox
-            // 
-            this.armorKeywordsBox.Location = new System.Drawing.Point(692, 146);
-            this.armorKeywordsBox.Multiline = true;
-            this.armorKeywordsBox.Name = "armorKeywordsBox";
-            this.armorKeywordsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.armorKeywordsBox.Size = new System.Drawing.Size(118, 33);
-            this.armorKeywordsBox.TabIndex = 119;
-            // 
-            // armorValueBox
-            // 
-            this.armorValueBox.Location = new System.Drawing.Point(588, 146);
-            this.armorValueBox.Name = "armorValueBox";
-            this.armorValueBox.Size = new System.Drawing.Size(89, 20);
-            this.armorValueBox.TabIndex = 118;
-            // 
-            // armorTraitsBox
-            // 
-            this.armorTraitsBox.Location = new System.Drawing.Point(469, 146);
-            this.armorTraitsBox.Multiline = true;
-            this.armorTraitsBox.Name = "armorTraitsBox";
-            this.armorTraitsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.armorTraitsBox.Size = new System.Drawing.Size(105, 33);
-            this.armorTraitsBox.TabIndex = 117;
-            // 
-            // armorNameBox
-            // 
-            this.armorNameBox.Location = new System.Drawing.Point(7, 146);
-            this.armorNameBox.Multiline = true;
-            this.armorNameBox.Name = "armorNameBox";
-            this.armorNameBox.Size = new System.Drawing.Size(132, 33);
-            this.armorNameBox.TabIndex = 116;
-            // 
-            // meleeWeaponKeywordsBox
-            // 
-            this.meleeWeaponKeywordsBox.Location = new System.Drawing.Point(692, 84);
-            this.meleeWeaponKeywordsBox.Multiline = true;
-            this.meleeWeaponKeywordsBox.Name = "meleeWeaponKeywordsBox";
-            this.meleeWeaponKeywordsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.meleeWeaponKeywordsBox.Size = new System.Drawing.Size(118, 33);
-            this.meleeWeaponKeywordsBox.TabIndex = 115;
-            // 
-            // meleeWeaponValueBox
-            // 
-            this.meleeWeaponValueBox.Location = new System.Drawing.Point(588, 84);
-            this.meleeWeaponValueBox.Name = "meleeWeaponValueBox";
-            this.meleeWeaponValueBox.Size = new System.Drawing.Size(89, 20);
-            this.meleeWeaponValueBox.TabIndex = 114;
-            // 
-            // meleeWeaponTraitsBox
-            // 
-            this.meleeWeaponTraitsBox.Location = new System.Drawing.Point(469, 84);
-            this.meleeWeaponTraitsBox.Multiline = true;
-            this.meleeWeaponTraitsBox.Name = "meleeWeaponTraitsBox";
-            this.meleeWeaponTraitsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.meleeWeaponTraitsBox.Size = new System.Drawing.Size(105, 33);
-            this.meleeWeaponTraitsBox.TabIndex = 113;
-            // 
-            // MeleeWeaponRangeBox
-            // 
-            this.MeleeWeaponRangeBox.Location = new System.Drawing.Point(338, 84);
-            this.MeleeWeaponRangeBox.Multiline = true;
-            this.MeleeWeaponRangeBox.Name = "MeleeWeaponRangeBox";
-            this.MeleeWeaponRangeBox.Size = new System.Drawing.Size(63, 30);
-            this.MeleeWeaponRangeBox.TabIndex = 112;
-            // 
-            // meleeWeaponAPBox
-            // 
-            this.meleeWeaponAPBox.Location = new System.Drawing.Point(287, 84);
-            this.meleeWeaponAPBox.Name = "meleeWeaponAPBox";
-            this.meleeWeaponAPBox.Size = new System.Drawing.Size(34, 20);
-            this.meleeWeaponAPBox.TabIndex = 111;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "ED";
-            // 
-            // meleeWeaponEDBox
-            // 
-            this.meleeWeaponEDBox.Location = new System.Drawing.Point(215, 84);
-            this.meleeWeaponEDBox.Name = "meleeWeaponEDBox";
-            this.meleeWeaponEDBox.Size = new System.Drawing.Size(34, 20);
-            this.meleeWeaponEDBox.TabIndex = 109;
-            this.meleeWeaponEDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
-            this.label3.TabIndex = 108;
-            this.label3.Text = "+";
-            // 
-            // meleeWeaponDamageBox
-            // 
-            this.meleeWeaponDamageBox.Location = new System.Drawing.Point(161, 84);
-            this.meleeWeaponDamageBox.Name = "meleeWeaponDamageBox";
-            this.meleeWeaponDamageBox.Size = new System.Drawing.Size(40, 20);
-            this.meleeWeaponDamageBox.TabIndex = 107;
-            this.meleeWeaponDamageBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // meleeWeaponNameBox
-            // 
-            this.meleeWeaponNameBox.Location = new System.Drawing.Point(7, 84);
-            this.meleeWeaponNameBox.Multiline = true;
-            this.meleeWeaponNameBox.Name = "meleeWeaponNameBox";
-            this.meleeWeaponNameBox.Size = new System.Drawing.Size(132, 33);
-            this.meleeWeaponNameBox.TabIndex = 106;
-            // 
-            // meleeWeaponHeaderLabel
-            // 
-            this.meleeWeaponHeaderLabel.AutoSize = true;
-            this.meleeWeaponHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.meleeWeaponHeaderLabel.Location = new System.Drawing.Point(6, 67);
-            this.meleeWeaponHeaderLabel.Name = "meleeWeaponHeaderLabel";
-            this.meleeWeaponHeaderLabel.Size = new System.Drawing.Size(92, 13);
-            this.meleeWeaponHeaderLabel.TabIndex = 105;
-            this.meleeWeaponHeaderLabel.Text = "Melee Weapon";
-            // 
-            // rangedWeaponKeywordsBox
-            // 
-            this.rangedWeaponKeywordsBox.Location = new System.Drawing.Point(692, 21);
-            this.rangedWeaponKeywordsBox.Multiline = true;
-            this.rangedWeaponKeywordsBox.Name = "rangedWeaponKeywordsBox";
-            this.rangedWeaponKeywordsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.rangedWeaponKeywordsBox.Size = new System.Drawing.Size(118, 33);
-            this.rangedWeaponKeywordsBox.TabIndex = 104;
-            // 
-            // keywordsHeaderLabel
-            // 
-            this.keywordsHeaderLabel.AutoSize = true;
-            this.keywordsHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keywordsHeaderLabel.Location = new System.Drawing.Point(689, 4);
-            this.keywordsHeaderLabel.Name = "keywordsHeaderLabel";
-            this.keywordsHeaderLabel.Size = new System.Drawing.Size(61, 13);
-            this.keywordsHeaderLabel.TabIndex = 103;
-            this.keywordsHeaderLabel.Text = "Keywords";
-            // 
-            // rangedWeaponValueBox
-            // 
-            this.rangedWeaponValueBox.Location = new System.Drawing.Point(588, 21);
-            this.rangedWeaponValueBox.Name = "rangedWeaponValueBox";
-            this.rangedWeaponValueBox.Size = new System.Drawing.Size(89, 20);
-            this.rangedWeaponValueBox.TabIndex = 102;
-            // 
-            // rangedWeaponTraitBox
-            // 
-            this.rangedWeaponTraitBox.Location = new System.Drawing.Point(469, 21);
-            this.rangedWeaponTraitBox.Multiline = true;
-            this.rangedWeaponTraitBox.Name = "rangedWeaponTraitBox";
-            this.rangedWeaponTraitBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.rangedWeaponTraitBox.Size = new System.Drawing.Size(105, 33);
-            this.rangedWeaponTraitBox.TabIndex = 101;
-            // 
-            // rangedWeaponSalvoBox
-            // 
-            this.rangedWeaponSalvoBox.Location = new System.Drawing.Point(420, 21);
-            this.rangedWeaponSalvoBox.Name = "rangedWeaponSalvoBox";
-            this.rangedWeaponSalvoBox.Size = new System.Drawing.Size(28, 20);
-            this.rangedWeaponSalvoBox.TabIndex = 100;
-            // 
-            // rangedWeaponRangeBox
-            // 
-            this.rangedWeaponRangeBox.Location = new System.Drawing.Point(338, 21);
-            this.rangedWeaponRangeBox.Name = "rangedWeaponRangeBox";
-            this.rangedWeaponRangeBox.Size = new System.Drawing.Size(63, 20);
-            this.rangedWeaponRangeBox.TabIndex = 99;
-            // 
-            // rangedWeaponAPBox
-            // 
-            this.rangedWeaponAPBox.Location = new System.Drawing.Point(287, 21);
-            this.rangedWeaponAPBox.Name = "rangedWeaponAPBox";
-            this.rangedWeaponAPBox.Size = new System.Drawing.Size(34, 20);
-            this.rangedWeaponAPBox.TabIndex = 98;
-            // 
-            // rangedEDBoxLabel
-            // 
-            this.rangedEDBoxLabel.AutoSize = true;
-            this.rangedEDBoxLabel.Location = new System.Drawing.Point(250, 24);
-            this.rangedEDBoxLabel.Name = "rangedEDBoxLabel";
-            this.rangedEDBoxLabel.Size = new System.Drawing.Size(22, 13);
-            this.rangedEDBoxLabel.TabIndex = 97;
-            this.rangedEDBoxLabel.Text = "ED";
-            // 
-            // rangedWeaponEDBox
-            // 
-            this.rangedWeaponEDBox.Location = new System.Drawing.Point(215, 21);
-            this.rangedWeaponEDBox.Name = "rangedWeaponEDBox";
-            this.rangedWeaponEDBox.Size = new System.Drawing.Size(34, 20);
-            this.rangedWeaponEDBox.TabIndex = 96;
-            this.rangedWeaponEDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // rangedBaseModLabel
-            // 
-            this.rangedBaseModLabel.AutoSize = true;
-            this.rangedBaseModLabel.Location = new System.Drawing.Point(202, 24);
-            this.rangedBaseModLabel.Name = "rangedBaseModLabel";
-            this.rangedBaseModLabel.Size = new System.Drawing.Size(13, 13);
-            this.rangedBaseModLabel.TabIndex = 95;
-            this.rangedBaseModLabel.Text = "+";
-            // 
-            // rangedWeaponDamageBox
-            // 
-            this.rangedWeaponDamageBox.Location = new System.Drawing.Point(161, 21);
-            this.rangedWeaponDamageBox.Name = "rangedWeaponDamageBox";
-            this.rangedWeaponDamageBox.Size = new System.Drawing.Size(40, 20);
-            this.rangedWeaponDamageBox.TabIndex = 94;
-            this.rangedWeaponDamageBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // rangedWeaponNameBox
-            // 
-            this.rangedWeaponNameBox.Location = new System.Drawing.Point(7, 21);
-            this.rangedWeaponNameBox.Multiline = true;
-            this.rangedWeaponNameBox.Name = "rangedWeaponNameBox";
-            this.rangedWeaponNameBox.Size = new System.Drawing.Size(132, 33);
-            this.rangedWeaponNameBox.TabIndex = 93;
-            // 
-            // weaponValueHeaderLabel
-            // 
-            this.weaponValueHeaderLabel.AutoSize = true;
-            this.weaponValueHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponValueHeaderLabel.Location = new System.Drawing.Point(585, 4);
-            this.weaponValueHeaderLabel.Name = "weaponValueHeaderLabel";
-            this.weaponValueHeaderLabel.Size = new System.Drawing.Size(39, 13);
-            this.weaponValueHeaderLabel.TabIndex = 92;
-            this.weaponValueHeaderLabel.Text = "Value";
-            // 
-            // weaponTraitsHeaderLabel
-            // 
-            this.weaponTraitsHeaderLabel.AutoSize = true;
-            this.weaponTraitsHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponTraitsHeaderLabel.Location = new System.Drawing.Point(466, 4);
-            this.weaponTraitsHeaderLabel.Name = "weaponTraitsHeaderLabel";
-            this.weaponTraitsHeaderLabel.Size = new System.Drawing.Size(39, 13);
-            this.weaponTraitsHeaderLabel.TabIndex = 91;
-            this.weaponTraitsHeaderLabel.Text = "Traits";
-            // 
-            // salvoHeaderLabel
-            // 
-            this.salvoHeaderLabel.AutoSize = true;
-            this.salvoHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvoHeaderLabel.Location = new System.Drawing.Point(417, 4);
-            this.salvoHeaderLabel.Name = "salvoHeaderLabel";
-            this.salvoHeaderLabel.Size = new System.Drawing.Size(39, 13);
-            this.salvoHeaderLabel.TabIndex = 90;
-            this.salvoHeaderLabel.Text = "Salvo";
-            // 
-            // weaponRangeHeaderLabel
-            // 
-            this.weaponRangeHeaderLabel.AutoSize = true;
-            this.weaponRangeHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponRangeHeaderLabel.Location = new System.Drawing.Point(335, 4);
-            this.weaponRangeHeaderLabel.Name = "weaponRangeHeaderLabel";
-            this.weaponRangeHeaderLabel.Size = new System.Drawing.Size(44, 13);
-            this.weaponRangeHeaderLabel.TabIndex = 89;
-            this.weaponRangeHeaderLabel.Text = "Range";
-            // 
-            // apHeaderLabel
-            // 
-            this.apHeaderLabel.AutoSize = true;
-            this.apHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apHeaderLabel.Location = new System.Drawing.Point(286, 4);
-            this.apHeaderLabel.Name = "apHeaderLabel";
-            this.apHeaderLabel.Size = new System.Drawing.Size(23, 13);
-            this.apHeaderLabel.TabIndex = 88;
-            this.apHeaderLabel.Text = "AP";
-            // 
-            // weaponDamageHeaderLabel
-            // 
-            this.weaponDamageHeaderLabel.AutoSize = true;
-            this.weaponDamageHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponDamageHeaderLabel.Location = new System.Drawing.Point(158, 4);
-            this.weaponDamageHeaderLabel.Name = "weaponDamageHeaderLabel";
-            this.weaponDamageHeaderLabel.Size = new System.Drawing.Size(104, 13);
-            this.weaponDamageHeaderLabel.TabIndex = 87;
-            this.weaponDamageHeaderLabel.Text = "Weapon Damage";
-            // 
-            // rangedWeaponHeaderLabel
-            // 
-            this.rangedWeaponHeaderLabel.AutoSize = true;
-            this.rangedWeaponHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rangedWeaponHeaderLabel.Location = new System.Drawing.Point(6, 4);
-            this.rangedWeaponHeaderLabel.Name = "rangedWeaponHeaderLabel";
-            this.rangedWeaponHeaderLabel.Size = new System.Drawing.Size(102, 13);
-            this.rangedWeaponHeaderLabel.TabIndex = 86;
-            this.rangedWeaponHeaderLabel.Text = "Ranged Weapon";
-            // 
-            // attModiferLabel
-            // 
-            this.attModiferLabel.AutoSize = true;
-            this.attModiferLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attModiferLabel.Location = new System.Drawing.Point(402, 6);
-            this.attModiferLabel.Name = "attModiferLabel";
-            this.attModiferLabel.Size = new System.Drawing.Size(110, 13);
-            this.attModiferLabel.TabIndex = 50;
-            this.attModiferLabel.Text = "Attribute Modifiers";
-            // 
-            // attSpeedModifier
-            // 
-            this.attSpeedModifier.Location = new System.Drawing.Point(405, 213);
-            this.attSpeedModifier.Name = "attSpeedModifier";
-            this.attSpeedModifier.ReadOnly = true;
-            this.attSpeedModifier.Size = new System.Drawing.Size(47, 20);
-            this.attSpeedModifier.TabIndex = 58;
-            this.attSpeedModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attSpeedModifier.ValueChanged += new System.EventHandler(this.attSpeedModifier_ValueChanged);
-            // 
-            // attInitiativeModifier
-            // 
-            this.attInitiativeModifier.Location = new System.Drawing.Point(405, 188);
-            this.attInitiativeModifier.Name = "attInitiativeModifier";
-            this.attInitiativeModifier.ReadOnly = true;
-            this.attInitiativeModifier.Size = new System.Drawing.Size(47, 20);
-            this.attInitiativeModifier.TabIndex = 57;
-            this.attInitiativeModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attInitiativeModifier.ValueChanged += new System.EventHandler(this.attInitiativeModifier_ValueChanged);
-            // 
-            // attFellowshipModifier
-            // 
-            this.attFellowshipModifier.Location = new System.Drawing.Point(405, 163);
-            this.attFellowshipModifier.Name = "attFellowshipModifier";
-            this.attFellowshipModifier.ReadOnly = true;
-            this.attFellowshipModifier.Size = new System.Drawing.Size(47, 20);
-            this.attFellowshipModifier.TabIndex = 56;
-            this.attFellowshipModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attFellowshipModifier.ValueChanged += new System.EventHandler(this.attFellowshipModifier_ValueChanged);
-            // 
-            // attWillpowerModifier
-            // 
-            this.attWillpowerModifier.Location = new System.Drawing.Point(405, 138);
-            this.attWillpowerModifier.Name = "attWillpowerModifier";
-            this.attWillpowerModifier.ReadOnly = true;
-            this.attWillpowerModifier.Size = new System.Drawing.Size(47, 20);
-            this.attWillpowerModifier.TabIndex = 55;
-            this.attWillpowerModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attWillpowerModifier.ValueChanged += new System.EventHandler(this.attWillpowerModifier_ValueChanged);
-            // 
-            // attIntellectModifier
-            // 
-            this.attIntellectModifier.Location = new System.Drawing.Point(405, 113);
-            this.attIntellectModifier.Name = "attIntellectModifier";
-            this.attIntellectModifier.ReadOnly = true;
-            this.attIntellectModifier.Size = new System.Drawing.Size(47, 20);
-            this.attIntellectModifier.TabIndex = 54;
-            this.attIntellectModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attIntellectModifier.ValueChanged += new System.EventHandler(this.attIntellectModifier_ValueChanged);
-            // 
-            // attToughnessModifier
-            // 
-            this.attToughnessModifier.Location = new System.Drawing.Point(405, 88);
-            this.attToughnessModifier.Name = "attToughnessModifier";
-            this.attToughnessModifier.ReadOnly = true;
-            this.attToughnessModifier.Size = new System.Drawing.Size(47, 20);
-            this.attToughnessModifier.TabIndex = 53;
-            this.attToughnessModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attToughnessModifier.ValueChanged += new System.EventHandler(this.attToughnessModifier_ValueChanged);
-            // 
-            // attAgilityModifier
-            // 
-            this.attAgilityModifier.Location = new System.Drawing.Point(405, 63);
-            this.attAgilityModifier.Name = "attAgilityModifier";
-            this.attAgilityModifier.ReadOnly = true;
-            this.attAgilityModifier.Size = new System.Drawing.Size(47, 20);
-            this.attAgilityModifier.TabIndex = 52;
-            this.attAgilityModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attAgilityModifier.ValueChanged += new System.EventHandler(this.attAgilityModifier_ValueChanged);
-            // 
-            // attStrengthModifier
-            // 
-            this.attStrengthModifier.Location = new System.Drawing.Point(405, 38);
-            this.attStrengthModifier.Name = "attStrengthModifier";
-            this.attStrengthModifier.ReadOnly = true;
-            this.attStrengthModifier.Size = new System.Drawing.Size(47, 20);
-            this.attStrengthModifier.TabIndex = 51;
-            this.attStrengthModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.attStrengthModifier.ValueChanged += new System.EventHandler(this.attStrengthModifier_ValueChanged);
-            // 
-            // influenceValueBox
-            // 
-            this.influenceValueBox.Location = new System.Drawing.Point(61, 241);
-            this.influenceValueBox.Name = "influenceValueBox";
-            this.influenceValueBox.Size = new System.Drawing.Size(56, 20);
-            this.influenceValueBox.TabIndex = 60;
-            this.influenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.influenceValueBox.ValueChanged += new System.EventHandler(this.influenceValueBox_ValueChanged);
-            // 
-            // InfluenceValueLabel
-            // 
-            this.InfluenceValueLabel.AutoSize = true;
-            this.InfluenceValueLabel.Location = new System.Drawing.Point(3, 238);
-            this.InfluenceValueLabel.Name = "InfluenceValueLabel";
-            this.InfluenceValueLabel.Size = new System.Drawing.Size(51, 26);
-            this.InfluenceValueLabel.TabIndex = 59;
-            this.InfluenceValueLabel.Text = "Bonus\r\nInfluence";
-            // 
-            // armorNameLabel
-            // 
-            this.armorNameLabel.AutoSize = true;
-            this.armorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.armorNameLabel.Location = new System.Drawing.Point(6, 130);
-            this.armorNameLabel.Name = "armorNameLabel";
-            this.armorNameLabel.Size = new System.Drawing.Size(39, 13);
-            this.armorNameLabel.TabIndex = 122;
-            this.armorNameLabel.Text = "Armor";
+            this.powersTextBox.Location = new System.Drawing.Point(2, 26);
+            this.powersTextBox.Name = "powersTextBox";
+            this.powersTextBox.Size = new System.Drawing.Size(817, 222);
+            this.powersTextBox.TabIndex = 0;
+            this.powersTextBox.Text = "";
+            // 
+            // notes
+            // 
+            this.notes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.notes.Controls.Add(this.notesTextBox);
+            this.notes.Location = new System.Drawing.Point(4, 22);
+            this.notes.Name = "notes";
+            this.notes.Padding = new System.Windows.Forms.Padding(3);
+            this.notes.Size = new System.Drawing.Size(825, 509);
+            this.notes.TabIndex = 4;
+            this.notes.Text = "Notes";
+            // 
+            // notesTextBox
+            // 
+            this.notesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notesTextBox.Location = new System.Drawing.Point(3, 3);
+            this.notesTextBox.Name = "notesTextBox";
+            this.notesTextBox.Size = new System.Drawing.Size(819, 503);
+            this.notesTextBox.TabIndex = 0;
+            this.notesTextBox.Text = "";
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.summary);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(342, 535);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // summary
+            // 
+            this.summary.AutoScroll = true;
+            this.summary.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.summary.Controls.Add(this.lifetimeBPEarnedLabel);
+            this.summary.Controls.Add(this.rankTraitLabel);
+            this.summary.Controls.Add(this.woundsTotalLabel);
+            this.summary.Controls.Add(this.shockTotalLabel);
+            this.summary.Controls.Add(this.textBox2);
+            this.summary.Controls.Add(this.textBox1);
+            this.summary.Controls.Add(this.damageTrackLabel);
+            this.summary.Controls.Add(this.socialTraitsLabel);
+            this.summary.Controls.Add(this.mentalTraitsLabel);
+            this.summary.Controls.Add(this.combatTraitsLabel);
+            this.summary.Controls.Add(this.wealthTraitLabel);
+            this.summary.Controls.Add(this.resolveTraitLabel);
+            this.summary.Controls.Add(this.corruptionTraitLabel);
+            this.summary.Controls.Add(this.woundsTraitLabel);
+            this.summary.Controls.Add(this.shockTraitLabel);
+            this.summary.Controls.Add(this.soakTraitLabel);
+            this.summary.Controls.Add(this.influenceTraitLabel);
+            this.summary.Controls.Add(this.passiveAwarenessTraitLabel);
+            this.summary.Controls.Add(this.convictionTraitLabel);
+            this.summary.Controls.Add(this.speedTraitLabel);
+            this.summary.Controls.Add(this.resilienceTraitLabel);
+            this.summary.Controls.Add(this.defenceTraitLabel);
+            this.summary.Controls.Add(this.traitsLabel);
+            this.summary.Location = new System.Drawing.Point(4, 22);
+            this.summary.Name = "summary";
+            this.summary.Padding = new System.Windows.Forms.Padding(3);
+            this.summary.Size = new System.Drawing.Size(334, 509);
+            this.summary.TabIndex = 0;
+            this.summary.Text = "Summary";
+            // 
+            // lifetimeBPEarnedLabel
+            // 
+            this.lifetimeBPEarnedLabel.AutoSize = true;
+            this.lifetimeBPEarnedLabel.Location = new System.Drawing.Point(6, 359);
+            this.lifetimeBPEarnedLabel.Name = "lifetimeBPEarnedLabel";
+            this.lifetimeBPEarnedLabel.Size = new System.Drawing.Size(63, 13);
+            this.lifetimeBPEarnedLabel.TabIndex = 45;
+            this.lifetimeBPEarnedLabel.Text = "Lifetime BP:";
+            // 
+            // rankTraitLabel
+            // 
+            this.rankTraitLabel.AutoSize = true;
+            this.rankTraitLabel.Location = new System.Drawing.Point(6, 324);
+            this.rankTraitLabel.Name = "rankTraitLabel";
+            this.rankTraitLabel.Size = new System.Drawing.Size(33, 13);
+            this.rankTraitLabel.TabIndex = 44;
+            this.rankTraitLabel.Text = "Rank";
+            // 
+            // woundsTotalLabel
+            // 
+            this.woundsTotalLabel.AutoSize = true;
+            this.woundsTotalLabel.Location = new System.Drawing.Point(96, 67);
+            this.woundsTotalLabel.Name = "woundsTotalLabel";
+            this.woundsTotalLabel.Size = new System.Drawing.Size(24, 13);
+            this.woundsTotalLabel.TabIndex = 20;
+            this.woundsTotalLabel.Text = "/19";
+            // 
+            // shockTotalLabel
+            // 
+            this.shockTotalLabel.AutoSize = true;
+            this.shockTotalLabel.Location = new System.Drawing.Point(243, 67);
+            this.shockTotalLabel.Name = "shockTotalLabel";
+            this.shockTotalLabel.Size = new System.Drawing.Size(24, 13);
+            this.shockTotalLabel.TabIndex = 19;
+            this.shockTotalLabel.Text = "/19";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(59, 64);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(36, 20);
+            this.textBox2.TabIndex = 18;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(206, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(36, 20);
+            this.textBox1.TabIndex = 17;
+            // 
+            // damageTrackLabel
+            // 
+            this.damageTrackLabel.AutoSize = true;
+            this.damageTrackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.damageTrackLabel.Location = new System.Drawing.Point(6, 40);
+            this.damageTrackLabel.Name = "damageTrackLabel";
+            this.damageTrackLabel.Size = new System.Drawing.Size(90, 13);
+            this.damageTrackLabel.TabIndex = 16;
+            this.damageTrackLabel.Text = "Damage Track";
+            // 
+            // socialTraitsLabel
+            // 
+            this.socialTraitsLabel.AutoSize = true;
+            this.socialTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socialTraitsLabel.Location = new System.Drawing.Point(6, 274);
+            this.socialTraitsLabel.Name = "socialTraitsLabel";
+            this.socialTraitsLabel.Size = new System.Drawing.Size(78, 13);
+            this.socialTraitsLabel.TabIndex = 15;
+            this.socialTraitsLabel.Text = "Social Traits";
+            // 
+            // mentalTraitsLabel
+            // 
+            this.mentalTraitsLabel.AutoSize = true;
+            this.mentalTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mentalTraitsLabel.Location = new System.Drawing.Point(6, 190);
+            this.mentalTraitsLabel.Name = "mentalTraitsLabel";
+            this.mentalTraitsLabel.Size = new System.Drawing.Size(81, 13);
+            this.mentalTraitsLabel.TabIndex = 14;
+            this.mentalTraitsLabel.Text = "Mental Traits";
+            // 
+            // combatTraitsLabel
+            // 
+            this.combatTraitsLabel.AutoSize = true;
+            this.combatTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatTraitsLabel.Location = new System.Drawing.Point(6, 103);
+            this.combatTraitsLabel.Name = "combatTraitsLabel";
+            this.combatTraitsLabel.Size = new System.Drawing.Size(85, 13);
+            this.combatTraitsLabel.TabIndex = 13;
+            this.combatTraitsLabel.Text = "Combat Traits";
+            // 
+            // wealthTraitLabel
+            // 
+            this.wealthTraitLabel.AutoSize = true;
+            this.wealthTraitLabel.Location = new System.Drawing.Point(164, 299);
+            this.wealthTraitLabel.Name = "wealthTraitLabel";
+            this.wealthTraitLabel.Size = new System.Drawing.Size(41, 13);
+            this.wealthTraitLabel.TabIndex = 12;
+            this.wealthTraitLabel.Text = "Wealth";
+            // 
+            // resolveTraitLabel
+            // 
+            this.resolveTraitLabel.AutoSize = true;
+            this.resolveTraitLabel.Location = new System.Drawing.Point(164, 240);
+            this.resolveTraitLabel.Name = "resolveTraitLabel";
+            this.resolveTraitLabel.Size = new System.Drawing.Size(46, 13);
+            this.resolveTraitLabel.TabIndex = 11;
+            this.resolveTraitLabel.Text = "Resolve";
+            // 
+            // corruptionTraitLabel
+            // 
+            this.corruptionTraitLabel.AutoSize = true;
+            this.corruptionTraitLabel.Location = new System.Drawing.Point(164, 216);
+            this.corruptionTraitLabel.Name = "corruptionTraitLabel";
+            this.corruptionTraitLabel.Size = new System.Drawing.Size(55, 13);
+            this.corruptionTraitLabel.TabIndex = 10;
+            this.corruptionTraitLabel.Text = "Corruption";
+            // 
+            // woundsTraitLabel
+            // 
+            this.woundsTraitLabel.AutoSize = true;
+            this.woundsTraitLabel.Location = new System.Drawing.Point(6, 67);
+            this.woundsTraitLabel.Name = "woundsTraitLabel";
+            this.woundsTraitLabel.Size = new System.Drawing.Size(47, 13);
+            this.woundsTraitLabel.TabIndex = 9;
+            this.woundsTraitLabel.Text = "Wounds";
+            // 
+            // shockTraitLabel
+            // 
+            this.shockTraitLabel.AutoSize = true;
+            this.shockTraitLabel.Location = new System.Drawing.Point(164, 67);
+            this.shockTraitLabel.Name = "shockTraitLabel";
+            this.shockTraitLabel.Size = new System.Drawing.Size(38, 13);
+            this.shockTraitLabel.TabIndex = 8;
+            this.shockTraitLabel.Text = "Shock";
+            // 
+            // soakTraitLabel
+            // 
+            this.soakTraitLabel.AutoSize = true;
+            this.soakTraitLabel.Location = new System.Drawing.Point(164, 130);
+            this.soakTraitLabel.Name = "soakTraitLabel";
+            this.soakTraitLabel.Size = new System.Drawing.Size(32, 13);
+            this.soakTraitLabel.TabIndex = 7;
+            this.soakTraitLabel.Text = "Soak";
+            // 
+            // influenceTraitLabel
+            // 
+            this.influenceTraitLabel.AutoSize = true;
+            this.influenceTraitLabel.Location = new System.Drawing.Point(6, 299);
+            this.influenceTraitLabel.Name = "influenceTraitLabel";
+            this.influenceTraitLabel.Size = new System.Drawing.Size(51, 13);
+            this.influenceTraitLabel.TabIndex = 6;
+            this.influenceTraitLabel.Text = "Influence";
+            // 
+            // passiveAwarenessTraitLabel
+            // 
+            this.passiveAwarenessTraitLabel.AutoSize = true;
+            this.passiveAwarenessTraitLabel.Location = new System.Drawing.Point(6, 240);
+            this.passiveAwarenessTraitLabel.Name = "passiveAwarenessTraitLabel";
+            this.passiveAwarenessTraitLabel.Size = new System.Drawing.Size(99, 13);
+            this.passiveAwarenessTraitLabel.TabIndex = 5;
+            this.passiveAwarenessTraitLabel.Text = "Passive Awareness";
+            // 
+            // convictionTraitLabel
+            // 
+            this.convictionTraitLabel.AutoSize = true;
+            this.convictionTraitLabel.Location = new System.Drawing.Point(6, 215);
+            this.convictionTraitLabel.Name = "convictionTraitLabel";
+            this.convictionTraitLabel.Size = new System.Drawing.Size(57, 13);
+            this.convictionTraitLabel.TabIndex = 4;
+            this.convictionTraitLabel.Text = "Conviction";
+            // 
+            // speedTraitLabel
+            // 
+            this.speedTraitLabel.AutoSize = true;
+            this.speedTraitLabel.Location = new System.Drawing.Point(164, 155);
+            this.speedTraitLabel.Name = "speedTraitLabel";
+            this.speedTraitLabel.Size = new System.Drawing.Size(38, 13);
+            this.speedTraitLabel.TabIndex = 3;
+            this.speedTraitLabel.Text = "Speed";
+            // 
+            // resilienceTraitLabel
+            // 
+            this.resilienceTraitLabel.AutoSize = true;
+            this.resilienceTraitLabel.Location = new System.Drawing.Point(6, 155);
+            this.resilienceTraitLabel.Name = "resilienceTraitLabel";
+            this.resilienceTraitLabel.Size = new System.Drawing.Size(56, 13);
+            this.resilienceTraitLabel.TabIndex = 2;
+            this.resilienceTraitLabel.Text = "Resilience";
+            // 
+            // defenceTraitLabel
+            // 
+            this.defenceTraitLabel.AutoSize = true;
+            this.defenceTraitLabel.Location = new System.Drawing.Point(6, 128);
+            this.defenceTraitLabel.Name = "defenceTraitLabel";
+            this.defenceTraitLabel.Size = new System.Drawing.Size(48, 13);
+            this.defenceTraitLabel.TabIndex = 1;
+            this.defenceTraitLabel.Text = "Defence";
+            // 
+            // traitsLabel
+            // 
+            this.traitsLabel.AutoSize = true;
+            this.traitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.traitsLabel.Location = new System.Drawing.Point(6, 6);
+            this.traitsLabel.Name = "traitsLabel";
+            this.traitsLabel.Size = new System.Drawing.Size(39, 13);
+            this.traitsLabel.TabIndex = 0;
+            this.traitsLabel.Text = "Traits";
+            // 
+            // shockValueBox
+            // 
+            this.shockValueBox.Location = new System.Drawing.Point(189, 315);
+            this.shockValueBox.Name = "shockValueBox";
+            this.shockValueBox.Size = new System.Drawing.Size(56, 20);
+            this.shockValueBox.TabIndex = 77;
+            this.shockValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.shockValueBox.ValueChanged += new System.EventHandler(this.shockValueBox_ValueChanged);
+            // 
+            // shockBonusLabel
+            // 
+            this.shockBonusLabel.AutoSize = true;
+            this.shockBonusLabel.Location = new System.Drawing.Point(129, 317);
+            this.shockBonusLabel.Name = "shockBonusLabel";
+            this.shockBonusLabel.Size = new System.Drawing.Size(38, 13);
+            this.shockBonusLabel.TabIndex = 76;
+            this.shockBonusLabel.Text = "Shock";
+            // 
+            // woundsValueBox
+            // 
+            this.woundsValueBox.Location = new System.Drawing.Point(57, 315);
+            this.woundsValueBox.Name = "woundsValueBox";
+            this.woundsValueBox.Size = new System.Drawing.Size(56, 20);
+            this.woundsValueBox.TabIndex = 75;
+            this.woundsValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.woundsValueBox.ValueChanged += new System.EventHandler(this.woundsValueBox_ValueChanged);
+            // 
+            // woundsBonusLabel
+            // 
+            this.woundsBonusLabel.AutoSize = true;
+            this.woundsBonusLabel.Location = new System.Drawing.Point(0, 317);
+            this.woundsBonusLabel.Name = "woundsBonusLabel";
+            this.woundsBonusLabel.Size = new System.Drawing.Size(47, 13);
+            this.woundsBonusLabel.TabIndex = 74;
+            this.woundsBonusLabel.Text = "Wounds";
             // 
             // mainForm
             // 
@@ -5597,6 +5795,24 @@
             this.tabControl1.ResumeLayout(false);
             this.core.ResumeLayout(false);
             this.core.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.influenceValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resolveValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passiveAwarenessValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.convictionValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resilienceValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soakValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenceValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attSpeedModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attInitiativeModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attFellowshipModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attWillpowerModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attIntellectModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attToughnessModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attAgilityModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attStrengthModifier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corruptionValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wealthValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rankValueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attInitiative)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attFellowship)).EndInit();
@@ -5626,20 +5842,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.skillAwareness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillAthletics)).EndInit();
             this.equipment.ResumeLayout(false);
-            this.psychicpowers.ResumeLayout(false);
-            this.notes.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.summary.ResumeLayout(false);
-            this.summary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rankValueBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wealthValueBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corruptionValueBox)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -5647,15 +5849,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.armorRatingBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attSpeedModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attInitiativeModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attFellowshipModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attWillpowerModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attIntellectModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attToughnessModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attAgilityModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attStrengthModifier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.influenceValueBox)).EndInit();
+            this.psychicpowers.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.notes.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.summary.ResumeLayout(false);
+            this.summary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shockValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.woundsValueBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6181,9 +6387,26 @@
         private System.Windows.Forms.NumericUpDown attAgilityModifier;
         private System.Windows.Forms.NumericUpDown attStrengthModifier;
         private System.Windows.Forms.Label attModiferLabel;
-        private System.Windows.Forms.NumericUpDown influenceValueBox;
-        private System.Windows.Forms.Label InfluenceValueLabel;
+        private System.Windows.Forms.NumericUpDown defenceValueBox;
+        private System.Windows.Forms.Label defenceBonusLabel;
         private System.Windows.Forms.Label armorNameLabel;
+        private System.Windows.Forms.NumericUpDown soakValueBox;
+        private System.Windows.Forms.Label soakBonusLabel;
+        private System.Windows.Forms.Label rankAndBonusLabel;
+        private System.Windows.Forms.NumericUpDown influenceValueBox;
+        private System.Windows.Forms.NumericUpDown resolveValueBox;
+        private System.Windows.Forms.Label influenceBonusLabel;
+        private System.Windows.Forms.Label resolveBonusLabel;
+        private System.Windows.Forms.NumericUpDown passiveAwarenessValueBox;
+        private System.Windows.Forms.Label passiveAwarenessBonusLabel;
+        private System.Windows.Forms.NumericUpDown convictionValueBox;
+        private System.Windows.Forms.Label convictionBonusLabel;
+        private System.Windows.Forms.NumericUpDown resilienceValueBox;
+        private System.Windows.Forms.Label resilienceBonusLabel;
+        private System.Windows.Forms.NumericUpDown shockValueBox;
+        private System.Windows.Forms.Label shockBonusLabel;
+        private System.Windows.Forms.NumericUpDown woundsValueBox;
+        private System.Windows.Forms.Label woundsBonusLabel;
     }
 }
 

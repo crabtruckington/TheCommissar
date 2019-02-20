@@ -88,24 +88,27 @@ namespace TheCommissar
             bpSpentRaceLabel.Text = "BP Spent on Race: " + Convert.ToString(bpSpentOnRace);
             bpSpentArchetypeLabel.Text = "BP Spent on Archetype: " + Convert.ToString(bpSpentOnArchetype);
 
+            //values need to be updated before summary tab is updated
+            updateAttribValues();
+            updateSkillValues();
+
             // update derived stats (traits) in summary tab
-            shockTotalLabel.Text = "/" + (Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + tierSelection));
-            woundsTotalLabel.Text = "/" + (Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + tierSelection));
-            defenceTraitLabel.Text = "Defence: " + Convert.ToString(Convert.ToInt32(attInitiativeTotal.Text) - 1);
-            resilienceTraitLabel.Text = "Resilience: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + 1 + Convert.ToInt32(armorRatingBox.Value));
-            soakTraitLabel.Text = "Soak: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text));
+            shockTotalLabel.Text = "/ " + (Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + tierSelection + Convert.ToInt32(shockValueBox.Value)));
+            woundsTotalLabel.Text = "/ " + (Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + tierSelection + Convert.ToInt32(woundsValueBox.Value)));
+            defenceTraitLabel.Text = "Defence: " + Convert.ToString(Convert.ToInt32(attInitiativeTotal.Text) - 1 + Convert.ToInt32(defenceValueBox.Value));
+            resilienceTraitLabel.Text = "Resilience: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + 1 + Convert.ToInt32(armorRatingBox.Value) + Convert.ToInt32(resilienceValueBox.Value));
+            soakTraitLabel.Text = "Soak: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + Convert.ToInt32(soakValueBox.Value));
             speedTraitLabel.Text = "Speed: " + attSpeedTotal.Text;
-            convictionTraitLabel.Text = "Conviction: " + attWillpowerTotal.Text;
-            passiveAwarenessTraitLabel.Text = "Passive Awareness: " + Convert.ToString(Convert.ToInt32(awarenessRatingLabel.Text) / 2);
+            convictionTraitLabel.Text = "Conviction: " + Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + Convert.ToInt32(convictionValueBox.Value));
+            passiveAwarenessTraitLabel.Text = "Passive Awareness: " + Convert.ToString((Convert.ToInt32(awarenessRatingLabel.Text) / 2) + Convert.ToInt32(passiveAwarenessValueBox.Value));
             corruptionTraitLabel.Text = "Corruption: " + Convert.ToString(corruptionValueBox.Value);
-            resolveTraitLabel.Text = "Resolve: " + Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) - 1);
+            resolveTraitLabel.Text = "Resolve: " + Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) - 1 + Convert.ToInt32(resolveValueBox.Value));
             influenceTraitLabel.Text = "Influence: " + Convert.ToString(Convert.ToInt32(attFellowshipTotal.Text) - 1 + influenceValueBox.Value);
             rankTraitLabel.Text = "Rank: " + Convert.ToString(rankValueBox.Value);
             wealthTraitLabel.Text = "Wealth: " + Convert.ToString(wealthValueBox.Value + tierSelection);
             lifetimeBPEarnedLabel.Text = "Lifetime BP: " + Convert.ToString(totalBPGained - totalBPRemoved);
 
-            updateAttribValues();
-            updateSkillValues();
+            
         }
 
         public void updateAttribBuildPoints (int OldValue, int NewValue)
@@ -481,7 +484,47 @@ namespace TheCommissar
             updateBuildPoints(0);
         }
 
-        private void influenceValueBox_ValueChanged(object sender, EventArgs e)
+        private void defenceValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void influenceValueBox_ValueChanged_1(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void resolveValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void passiveAwarenessValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void convictionValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void resilienceValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void soakValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void woundsValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void shockValueBox_ValueChanged(object sender, EventArgs e)
         {
             updateBuildPoints(0);
         }
@@ -1271,7 +1314,17 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(rankValueBox.Value));
                 sw.WriteLine(Convert.ToString(wealthValueBox.Value));
                 sw.WriteLine(Convert.ToString(corruptionValueBox.Value));
+                sw.WriteLine(Convert.ToString(defenceValueBox.Value));
+                //new stuff below defence
+                sw.WriteLine(Convert.ToString(soakValueBox.Value));
+                sw.WriteLine(Convert.ToString(woundsValueBox.Value));
+                sw.WriteLine(Convert.ToString(resilienceValueBox.Value));
+                sw.WriteLine(Convert.ToString(convictionValueBox.Value));
+                sw.WriteLine(Convert.ToString(passiveAwarenessValueBox.Value));
+                sw.WriteLine(Convert.ToString(resolveValueBox.Value));
                 sw.WriteLine(Convert.ToString(influenceValueBox.Value));
+                sw.WriteLine(Convert.ToString(shockValueBox.Value));
+                //new stuff above strength modifier
                 sw.WriteLine(Convert.ToString(attStrengthModifier.Value));
                 sw.WriteLine(Convert.ToString(attAgilityModifier.Value));
                 sw.WriteLine(Convert.ToString(attToughnessModifier.Value));
@@ -1784,7 +1837,21 @@ namespace TheCommissar
                 rankValueBox.Value = Convert.ToInt32(sr.ReadLine());
                 wealthValueBox.Value = Convert.ToInt32(sr.ReadLine());
                 corruptionValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                defenceValueBox.Value = Convert.ToInt32(sr.ReadLine());
+
+
+                //newest addition
+                soakValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                woundsValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                resilienceValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                convictionValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                passiveAwarenessValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                resolveValueBox.Value = Convert.ToInt32(sr.ReadLine());
                 influenceValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                shockValueBox.Value = Convert.ToInt32(sr.ReadLine());
+                //newest addition
+
+
                 attStrengthModifier.Value = Convert.ToInt32(sr.ReadLine());
                 attAgilityModifier.Value = Convert.ToInt32(sr.ReadLine());
                 attToughnessModifier.Value = Convert.ToInt32(sr.ReadLine());
@@ -4433,7 +4500,7 @@ namespace TheCommissar
             }
         }
 
-        
+
     }
 }
 
