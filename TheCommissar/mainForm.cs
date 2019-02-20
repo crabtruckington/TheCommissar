@@ -696,6 +696,37 @@ namespace TheCommissar
             talentBox.Items.Remove(talentBox.SelectedItem);
         }
 
+        private void addAugButton_Click(object sender, EventArgs e)
+        {
+            cyberneticsForm cyber = new cyberneticsForm();
+            DialogResult dr = cyber.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                cyber.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                string results = cyber.returnAugDetails();
+                augmeticsBox.Items.Add(results);
+            }
+        }
+
+        private void removeAugButton_Click(object sender, EventArgs e)
+        {
+            augmeticsBox.Items.Remove(augmeticsBox.SelectedItem);
+        }
+
+        private void augmeticsBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cyberneticsForm cyber = new cyberneticsForm();
+            var results = new Tuple<string, string, string>("", "", "");
+            results = cyber.getAugDetails(Convert.ToString(augmeticsBox.SelectedItem));
+            augRaceLabel.Text = results.Item2;
+            augDetailsLabel.Text = results.Item3;
+        }
+
+
+
         //private bool tierMaxValidation(int raisedValue, string type)
         //{
         //    if (type == "skill")
@@ -928,26 +959,119 @@ namespace TheCommissar
             updateSkillBuildPoints(prevValue, newValue);
         }
 
+        private void skillAthleticsBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillAwarenessBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillBallisticBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillCunningBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillDeceptionBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillInsightBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillIntimidationBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillInvestigationBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillLeadershipBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillMedicaeBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillPersuasionBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillPilotBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillPsychicBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillScholarBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillAgilityBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillSurvivalBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillTechBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillWeaponSkillBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+
+
+
         public void updateSkillValues()
         {
-            athleticsRatingLabel.Text = Convert.ToString(skillAthletics.Value + Convert.ToInt32(attStrengthTotal.Text));
-            awarenessRatingLabel.Text = Convert.ToString(skillAwareness.Value + Convert.ToInt32(attIntellectTotal.Text));
-            ballisticRatingLabel.Text = Convert.ToString(skillBallstic.Value + Convert.ToInt32(attAgilityTotal.Text));
-            cunningRatingLabel.Text = Convert.ToString(skillCunning.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            deceptionRatingLabel.Text = Convert.ToString(skillDeception.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            insightRatingLabel.Text = Convert.ToString(skillInsight.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            intimidationRatingLabel.Text = Convert.ToString(skillIntimidation.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            investigationRatingLabel.Text = Convert.ToString(skillInvestigation.Value + Convert.ToInt32(attIntellectTotal.Text));
-            leadershipRatingLabel.Text = Convert.ToString(skillLeadership.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            medicaeRatingLabel.Text = Convert.ToString(skillMedicae.Value + Convert.ToInt32(attIntellectTotal.Text));
-            persuasionRatingLabel.Text = Convert.ToString(skillPersuasion.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            pilotRatingLabel.Text = Convert.ToString(skillPilot.Value + Convert.ToInt32(attAgilityTotal.Text));
-            psychicRatingLabel.Text = Convert.ToString(skillPsychic.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            scholarRatingLabel.Text = Convert.ToString(skillScholar.Value + Convert.ToInt32(attIntellectTotal.Text));
-            stealthRatingLabel.Text = Convert.ToString(skillStealth.Value + Convert.ToInt32(attAgilityTotal.Text));
-            survivalRatingLabel.Text = Convert.ToString(skillSurvival.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            techRatingLabel.Text = Convert.ToString(skillTech.Value + Convert.ToInt32(attIntellectTotal.Text));
-            weaponSkillRatingLabel.Text = Convert.ToString(skillWeaponSkill.Value + Convert.ToInt32(attInitiativeTotal.Text));
+            athleticsRatingLabel.Text = Convert.ToString(skillAthletics.Value +  skillAthleticsBonus.Value + Convert.ToInt32(attStrengthTotal.Text));
+            awarenessRatingLabel.Text = Convert.ToString(skillAwareness.Value + skillAwarenessBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            ballisticRatingLabel.Text = Convert.ToString(skillBallstic.Value + skillBallisticBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
+            cunningRatingLabel.Text = Convert.ToString(skillCunning.Value + +skillCunningBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            deceptionRatingLabel.Text = Convert.ToString(skillDeception.Value + skillDeceptionBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            insightRatingLabel.Text = Convert.ToString(skillInsight.Value + skillInsightBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            intimidationRatingLabel.Text = Convert.ToString(skillIntimidation.Value + skillIntimidationBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
+            investigationRatingLabel.Text = Convert.ToString(skillInvestigation.Value + skillInvestigationBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            leadershipRatingLabel.Text = Convert.ToString(skillLeadership.Value + skillLeadershipBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            medicaeRatingLabel.Text = Convert.ToString(skillMedicae.Value + skillMedicaeBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            persuasionRatingLabel.Text = Convert.ToString(skillPersuasion.Value + skillPersuasionBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            pilotRatingLabel.Text = Convert.ToString(skillPilot.Value + skillPilotBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
+            psychicRatingLabel.Text = Convert.ToString(skillPsychic.Value + skillPsychicBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
+            scholarRatingLabel.Text = Convert.ToString(skillScholar.Value + skillScholarBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            stealthRatingLabel.Text = Convert.ToString(skillStealth.Value + skillStealthBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
+            survivalRatingLabel.Text = Convert.ToString(skillSurvival.Value + skillSurvivalBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
+            techRatingLabel.Text = Convert.ToString(skillTech.Value + skillTechBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            weaponSkillRatingLabel.Text = Convert.ToString(skillWeaponSkill.Value + skillWeaponSkillBonus.Value + Convert.ToInt32(attInitiativeTotal.Text));
         }
 
         public void updateAttribValues()
@@ -1282,6 +1406,7 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(attInitiative.Value));
                 //speed is unique as a derived stat
                 sw.WriteLine(Convert.ToString(attSpeedTotal.Text));
+
                 sw.WriteLine(Convert.ToString(skillAthletics.Value));
                 sw.WriteLine(Convert.ToString(skillAwareness.Value));
                 sw.WriteLine(Convert.ToString(skillBallstic.Value));
@@ -1300,6 +1425,25 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(skillSurvival.Value));
                 sw.WriteLine(Convert.ToString(skillTech.Value));
                 sw.WriteLine(Convert.ToString(skillWeaponSkill.Value));
+                sw.WriteLine(Convert.ToString(skillAthleticsBonus.Value));
+                sw.WriteLine(Convert.ToString(skillAwarenessBonus.Value));
+                sw.WriteLine(Convert.ToString(skillBallisticBonus.Value));
+                sw.WriteLine(Convert.ToString(skillCunningBonus.Value));
+                sw.WriteLine(Convert.ToString(skillDeceptionBonus.Value));
+                sw.WriteLine(Convert.ToString(skillInsightBonus.Value));
+                sw.WriteLine(Convert.ToString(skillIntimidationBonus.Value));
+                sw.WriteLine(Convert.ToString(skillInvestigationBonus.Value));
+                sw.WriteLine(Convert.ToString(skillLeadershipBonus.Value));
+                sw.WriteLine(Convert.ToString(skillMedicaeBonus.Value));
+                sw.WriteLine(Convert.ToString(skillPersuasionBonus.Value));
+                sw.WriteLine(Convert.ToString(skillPilotBonus.Value));
+                sw.WriteLine(Convert.ToString(skillPsychicBonus.Value));
+                sw.WriteLine(Convert.ToString(skillScholarBonus.Value));
+                sw.WriteLine(Convert.ToString(skillStealthBonus.Value));
+                sw.WriteLine(Convert.ToString(skillSurvivalBonus.Value));
+                sw.WriteLine(Convert.ToString(skillTechBonus.Value));
+                sw.WriteLine(Convert.ToString(skillWeaponSkillBonus.Value));
+
                 sw.WriteLine(Convert.ToString(athleticsBonusBox.Text));
                 sw.WriteLine(Convert.ToString(awarenessBonusBox.Text));
                 sw.WriteLine(Convert.ToString(ballisticBonusBox.Text));
@@ -1758,6 +1902,14 @@ namespace TheCommissar
                 {
                     sw.WriteLine(item.ToString());
                 }
+
+                //new augmetics stuff
+                sw.WriteLine("?????Augmetics?????");
+                foreach(var item in augmeticsBox.Items)
+                {
+                    sw.WriteLine(item.ToString());
+                }
+
                 sw.WriteLine("?????Equipment?????");
                 sw.WriteLine(Convert.ToString(equipmentTextBox.Text));
                 sw.WriteLine("?????Powers?????");
@@ -1818,6 +1970,25 @@ namespace TheCommissar
                 skillSurvival.Value = Convert.ToInt32(sr.ReadLine());
                 skillTech.Value = Convert.ToInt32(sr.ReadLine());
                 skillWeaponSkill.Value = Convert.ToInt32(sr.ReadLine());
+                skillAthleticsBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillAwarenessBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillBallisticBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillCunningBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillDeceptionBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillInsightBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillIntimidationBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillInvestigationBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillLeadershipBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillMedicaeBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillPersuasionBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillPilotBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillPsychicBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillScholarBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillStealthBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillSurvivalBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillTechBonus.Value = Convert.ToInt32(sr.ReadLine());
+                skillWeaponSkillBonus.Value = Convert.ToInt32(sr.ReadLine());
+
                 athleticsBonusBox.Text = sr.ReadLine();
                 awarenessBonusBox.Text = sr.ReadLine();
                 ballisticBonusBox.Text = sr.ReadLine();
@@ -4475,14 +4646,25 @@ namespace TheCommissar
 
                 // special boxes
                 talentBox.Items.Clear();
-                while (line != "?????Equipment?????")
+                while (line != "?????Augmetics?????")
                 {
                     line = sr.ReadLine();
-                    if (line != "?????Equipment?????")
+                    if (line != "?????Augmetics?????")
                     {
                         talentBox.Items.Add(line);
                     }
                 }
+
+                augmeticsBox.Items.Clear();
+                while(line != "?????Equipment?????")
+                {
+                    line = sr.ReadLine();
+                    if (line != "?????Equipment?????")
+                    {
+                        augmeticsBox.Items.Add(line);
+                    }
+                }
+            
                 equipmentTextBox.Text = "";
                 while (line != "?????Powers?????")
                 {
@@ -4516,7 +4698,7 @@ namespace TheCommissar
             }
         }
 
-
+        
     }
 }
 

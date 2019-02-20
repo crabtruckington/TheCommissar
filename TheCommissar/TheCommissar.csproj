@@ -67,6 +67,12 @@
     <Compile Include="bpModForm.Designer.cs">
       <DependentUpon>bpModForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="cyberneticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cyberneticsForm.Designer.cs">
+      <DependentUpon>cyberneticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="bpModForm.resx">
       <DependentUpon>bpModForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cyberneticsForm.resx">
+      <DependentUpon>cyberneticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>

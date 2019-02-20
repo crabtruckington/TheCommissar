@@ -48,6 +48,10 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.core = new System.Windows.Forms.TabPage();
+            this.shockValueBox = new System.Windows.Forms.NumericUpDown();
+            this.shockBonusLabel = new System.Windows.Forms.Label();
+            this.woundsValueBox = new System.Windows.Forms.NumericUpDown();
+            this.woundsBonusLabel = new System.Windows.Forms.Label();
             this.rankAndBonusLabel = new System.Windows.Forms.Label();
             this.influenceValueBox = new System.Windows.Forms.NumericUpDown();
             this.resolveValueBox = new System.Windows.Forms.NumericUpDown();
@@ -119,6 +123,25 @@
             this.attStrengthLabel = new System.Windows.Forms.Label();
             this.attributesLabel = new System.Windows.Forms.Label();
             this.skills = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.skillWeaponSkillBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillTechBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillSurvivalBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillStealthBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillScholarBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillPsychicBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillPilotBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillPersuasionBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillMedicaeBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillLeadershipBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillInvestigationBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillIntimidationBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillInsightBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillDeceptionBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillCunningBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillBallisticBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillAwarenessBonus = new System.Windows.Forms.NumericUpDown();
+            this.skillAthleticsBonus = new System.Windows.Forms.NumericUpDown();
             this.weaponSkillBonusBox = new System.Windows.Forms.TextBox();
             this.weaponSkillRatingLabel = new System.Windows.Forms.Label();
             this.skillWeaponSkill = new System.Windows.Forms.NumericUpDown();
@@ -187,7 +210,7 @@
             this.awarenessRatingLabel = new System.Windows.Forms.Label();
             this.skillAwareness = new System.Windows.Forms.NumericUpDown();
             this.awarenessLabel = new System.Windows.Forms.Label();
-            this.skillBonusLabel = new System.Windows.Forms.Label();
+            this.skillNotesLabel = new System.Windows.Forms.Label();
             this.skillRatingLabel = new System.Windows.Forms.Label();
             this.athleticsBonusBox = new System.Windows.Forms.TextBox();
             this.athleticsRatingLabel = new System.Windows.Forms.Label();
@@ -236,6 +259,14 @@
             this.armorHeaderLabel = new System.Windows.Forms.Label();
             this.miscEquipmentHeaderLabel = new System.Windows.Forms.Label();
             this.equipmentTextBox = new System.Windows.Forms.RichTextBox();
+            this.cyberAndAugments = new System.Windows.Forms.TabPage();
+            this.augDetailsLabel = new System.Windows.Forms.Label();
+            this.augRaceLabel = new System.Windows.Forms.Label();
+            this.augHeaderLabel = new System.Windows.Forms.Label();
+            this.removeAugButton = new System.Windows.Forms.Button();
+            this.addAugButton = new System.Windows.Forms.Button();
+            this.augmeticsBox = new System.Windows.Forms.ListBox();
+            this.augmeticHeaderLabel = new System.Windows.Forms.Label();
             this.psychicpowers = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.powerPotencyBox24 = new System.Windows.Forms.TextBox();
@@ -564,10 +595,6 @@
             this.resilienceTraitLabel = new System.Windows.Forms.Label();
             this.defenceTraitLabel = new System.Windows.Forms.Label();
             this.traitsLabel = new System.Windows.Forms.Label();
-            this.shockValueBox = new System.Windows.Forms.NumericUpDown();
-            this.shockBonusLabel = new System.Windows.Forms.Label();
-            this.woundsValueBox = new System.Windows.Forms.NumericUpDown();
-            this.woundsBonusLabel = new System.Windows.Forms.Label();
             this.calcValuesToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -577,6 +604,8 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.core.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shockValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.woundsValueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.influenceValueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resolveValueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passiveAwarenessValueBox)).BeginInit();
@@ -604,6 +633,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.attAgility)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attStrength)).BeginInit();
             this.skills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skillWeaponSkillBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillTechBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillSurvivalBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillStealthBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillScholarBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillPsychicBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillPilotBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillPersuasionBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillMedicaeBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillLeadershipBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillInvestigationBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillIntimidationBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillInsightBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillDeceptionBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillCunningBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillBallisticBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillAwarenessBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillAthleticsBonus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillWeaponSkill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillTech)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillSurvival)).BeginInit();
@@ -628,6 +675,7 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.armorRatingBox)).BeginInit();
+            this.cyberAndAugments.SuspendLayout();
             this.psychicpowers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -636,8 +684,6 @@
             this.notes.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.summary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shockValueBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.woundsValueBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -784,6 +830,7 @@
             this.tabControl1.Controls.Add(this.core);
             this.tabControl1.Controls.Add(this.skills);
             this.tabControl1.Controls.Add(this.equipment);
+            this.tabControl1.Controls.Add(this.cyberAndAugments);
             this.tabControl1.Controls.Add(this.psychicpowers);
             this.tabControl1.Controls.Add(this.notes);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -877,6 +924,42 @@
             this.core.Size = new System.Drawing.Size(825, 509);
             this.core.TabIndex = 0;
             this.core.Text = "Core";
+            // 
+            // shockValueBox
+            // 
+            this.shockValueBox.Location = new System.Drawing.Point(189, 315);
+            this.shockValueBox.Name = "shockValueBox";
+            this.shockValueBox.Size = new System.Drawing.Size(56, 20);
+            this.shockValueBox.TabIndex = 77;
+            this.shockValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.shockValueBox.ValueChanged += new System.EventHandler(this.shockValueBox_ValueChanged);
+            // 
+            // shockBonusLabel
+            // 
+            this.shockBonusLabel.AutoSize = true;
+            this.shockBonusLabel.Location = new System.Drawing.Point(129, 317);
+            this.shockBonusLabel.Name = "shockBonusLabel";
+            this.shockBonusLabel.Size = new System.Drawing.Size(38, 13);
+            this.shockBonusLabel.TabIndex = 76;
+            this.shockBonusLabel.Text = "Shock";
+            // 
+            // woundsValueBox
+            // 
+            this.woundsValueBox.Location = new System.Drawing.Point(57, 315);
+            this.woundsValueBox.Name = "woundsValueBox";
+            this.woundsValueBox.Size = new System.Drawing.Size(56, 20);
+            this.woundsValueBox.TabIndex = 75;
+            this.woundsValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.woundsValueBox.ValueChanged += new System.EventHandler(this.woundsValueBox_ValueChanged);
+            // 
+            // woundsBonusLabel
+            // 
+            this.woundsBonusLabel.AutoSize = true;
+            this.woundsBonusLabel.Location = new System.Drawing.Point(0, 317);
+            this.woundsBonusLabel.Name = "woundsBonusLabel";
+            this.woundsBonusLabel.Size = new System.Drawing.Size(47, 13);
+            this.woundsBonusLabel.TabIndex = 74;
+            this.woundsBonusLabel.Text = "Wounds";
             // 
             // rankAndBonusLabel
             // 
@@ -1573,6 +1656,25 @@
             // skills
             // 
             this.skills.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.skills.Controls.Add(this.label1);
+            this.skills.Controls.Add(this.skillWeaponSkillBonus);
+            this.skills.Controls.Add(this.skillTechBonus);
+            this.skills.Controls.Add(this.skillSurvivalBonus);
+            this.skills.Controls.Add(this.skillStealthBonus);
+            this.skills.Controls.Add(this.skillScholarBonus);
+            this.skills.Controls.Add(this.skillPsychicBonus);
+            this.skills.Controls.Add(this.skillPilotBonus);
+            this.skills.Controls.Add(this.skillPersuasionBonus);
+            this.skills.Controls.Add(this.skillMedicaeBonus);
+            this.skills.Controls.Add(this.skillLeadershipBonus);
+            this.skills.Controls.Add(this.skillInvestigationBonus);
+            this.skills.Controls.Add(this.skillIntimidationBonus);
+            this.skills.Controls.Add(this.skillInsightBonus);
+            this.skills.Controls.Add(this.skillDeceptionBonus);
+            this.skills.Controls.Add(this.skillCunningBonus);
+            this.skills.Controls.Add(this.skillBallisticBonus);
+            this.skills.Controls.Add(this.skillAwarenessBonus);
+            this.skills.Controls.Add(this.skillAthleticsBonus);
             this.skills.Controls.Add(this.weaponSkillBonusBox);
             this.skills.Controls.Add(this.weaponSkillRatingLabel);
             this.skills.Controls.Add(this.skillWeaponSkill);
@@ -1641,7 +1743,7 @@
             this.skills.Controls.Add(this.awarenessRatingLabel);
             this.skills.Controls.Add(this.skillAwareness);
             this.skills.Controls.Add(this.awarenessLabel);
-            this.skills.Controls.Add(this.skillBonusLabel);
+            this.skills.Controls.Add(this.skillNotesLabel);
             this.skills.Controls.Add(this.skillRatingLabel);
             this.skills.Controls.Add(this.athleticsBonusBox);
             this.skills.Controls.Add(this.athleticsRatingLabel);
@@ -1655,11 +1757,183 @@
             this.skills.TabIndex = 1;
             this.skills.Text = "Skills";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(273, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "Bonus";
+            // 
+            // skillWeaponSkillBonus
+            // 
+            this.skillWeaponSkillBonus.Location = new System.Drawing.Point(276, 476);
+            this.skillWeaponSkillBonus.Name = "skillWeaponSkillBonus";
+            this.skillWeaponSkillBonus.ReadOnly = true;
+            this.skillWeaponSkillBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillWeaponSkillBonus.TabIndex = 92;
+            this.skillWeaponSkillBonus.ValueChanged += new System.EventHandler(this.skillWeaponSkillBonus_ValueChanged);
+            // 
+            // skillTechBonus
+            // 
+            this.skillTechBonus.Location = new System.Drawing.Point(276, 450);
+            this.skillTechBonus.Name = "skillTechBonus";
+            this.skillTechBonus.ReadOnly = true;
+            this.skillTechBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillTechBonus.TabIndex = 91;
+            this.skillTechBonus.ValueChanged += new System.EventHandler(this.skillTechBonus_ValueChanged);
+            // 
+            // skillSurvivalBonus
+            // 
+            this.skillSurvivalBonus.Location = new System.Drawing.Point(276, 424);
+            this.skillSurvivalBonus.Name = "skillSurvivalBonus";
+            this.skillSurvivalBonus.ReadOnly = true;
+            this.skillSurvivalBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillSurvivalBonus.TabIndex = 90;
+            this.skillSurvivalBonus.ValueChanged += new System.EventHandler(this.skillSurvivalBonus_ValueChanged);
+            // 
+            // skillStealthBonus
+            // 
+            this.skillStealthBonus.Location = new System.Drawing.Point(276, 398);
+            this.skillStealthBonus.Name = "skillStealthBonus";
+            this.skillStealthBonus.ReadOnly = true;
+            this.skillStealthBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillStealthBonus.TabIndex = 89;
+            this.skillStealthBonus.ValueChanged += new System.EventHandler(this.skillAgilityBonus_ValueChanged);
+            // 
+            // skillScholarBonus
+            // 
+            this.skillScholarBonus.Location = new System.Drawing.Point(276, 372);
+            this.skillScholarBonus.Name = "skillScholarBonus";
+            this.skillScholarBonus.ReadOnly = true;
+            this.skillScholarBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillScholarBonus.TabIndex = 88;
+            this.skillScholarBonus.ValueChanged += new System.EventHandler(this.skillScholarBonus_ValueChanged);
+            // 
+            // skillPsychicBonus
+            // 
+            this.skillPsychicBonus.Location = new System.Drawing.Point(276, 346);
+            this.skillPsychicBonus.Name = "skillPsychicBonus";
+            this.skillPsychicBonus.ReadOnly = true;
+            this.skillPsychicBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillPsychicBonus.TabIndex = 87;
+            this.skillPsychicBonus.ValueChanged += new System.EventHandler(this.skillPsychicBonus_ValueChanged);
+            // 
+            // skillPilotBonus
+            // 
+            this.skillPilotBonus.Location = new System.Drawing.Point(276, 320);
+            this.skillPilotBonus.Name = "skillPilotBonus";
+            this.skillPilotBonus.ReadOnly = true;
+            this.skillPilotBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillPilotBonus.TabIndex = 86;
+            this.skillPilotBonus.ValueChanged += new System.EventHandler(this.skillPilotBonus_ValueChanged);
+            // 
+            // skillPersuasionBonus
+            // 
+            this.skillPersuasionBonus.Location = new System.Drawing.Point(276, 294);
+            this.skillPersuasionBonus.Name = "skillPersuasionBonus";
+            this.skillPersuasionBonus.ReadOnly = true;
+            this.skillPersuasionBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillPersuasionBonus.TabIndex = 85;
+            this.skillPersuasionBonus.ValueChanged += new System.EventHandler(this.skillPersuasionBonus_ValueChanged);
+            // 
+            // skillMedicaeBonus
+            // 
+            this.skillMedicaeBonus.Location = new System.Drawing.Point(276, 268);
+            this.skillMedicaeBonus.Name = "skillMedicaeBonus";
+            this.skillMedicaeBonus.ReadOnly = true;
+            this.skillMedicaeBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillMedicaeBonus.TabIndex = 84;
+            this.skillMedicaeBonus.ValueChanged += new System.EventHandler(this.skillMedicaeBonus_ValueChanged);
+            // 
+            // skillLeadershipBonus
+            // 
+            this.skillLeadershipBonus.Location = new System.Drawing.Point(276, 242);
+            this.skillLeadershipBonus.Name = "skillLeadershipBonus";
+            this.skillLeadershipBonus.ReadOnly = true;
+            this.skillLeadershipBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillLeadershipBonus.TabIndex = 83;
+            this.skillLeadershipBonus.ValueChanged += new System.EventHandler(this.skillLeadershipBonus_ValueChanged);
+            // 
+            // skillInvestigationBonus
+            // 
+            this.skillInvestigationBonus.Location = new System.Drawing.Point(276, 216);
+            this.skillInvestigationBonus.Name = "skillInvestigationBonus";
+            this.skillInvestigationBonus.ReadOnly = true;
+            this.skillInvestigationBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillInvestigationBonus.TabIndex = 82;
+            this.skillInvestigationBonus.ValueChanged += new System.EventHandler(this.skillInvestigationBonus_ValueChanged);
+            // 
+            // skillIntimidationBonus
+            // 
+            this.skillIntimidationBonus.Location = new System.Drawing.Point(276, 190);
+            this.skillIntimidationBonus.Name = "skillIntimidationBonus";
+            this.skillIntimidationBonus.ReadOnly = true;
+            this.skillIntimidationBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillIntimidationBonus.TabIndex = 81;
+            this.skillIntimidationBonus.ValueChanged += new System.EventHandler(this.skillIntimidationBonus_ValueChanged);
+            // 
+            // skillInsightBonus
+            // 
+            this.skillInsightBonus.Location = new System.Drawing.Point(276, 164);
+            this.skillInsightBonus.Name = "skillInsightBonus";
+            this.skillInsightBonus.ReadOnly = true;
+            this.skillInsightBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillInsightBonus.TabIndex = 80;
+            this.skillInsightBonus.ValueChanged += new System.EventHandler(this.skillInsightBonus_ValueChanged);
+            // 
+            // skillDeceptionBonus
+            // 
+            this.skillDeceptionBonus.Location = new System.Drawing.Point(276, 138);
+            this.skillDeceptionBonus.Name = "skillDeceptionBonus";
+            this.skillDeceptionBonus.ReadOnly = true;
+            this.skillDeceptionBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillDeceptionBonus.TabIndex = 79;
+            this.skillDeceptionBonus.ValueChanged += new System.EventHandler(this.skillDeceptionBonus_ValueChanged);
+            // 
+            // skillCunningBonus
+            // 
+            this.skillCunningBonus.Location = new System.Drawing.Point(276, 112);
+            this.skillCunningBonus.Name = "skillCunningBonus";
+            this.skillCunningBonus.ReadOnly = true;
+            this.skillCunningBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillCunningBonus.TabIndex = 78;
+            this.skillCunningBonus.ValueChanged += new System.EventHandler(this.skillCunningBonus_ValueChanged);
+            // 
+            // skillBallisticBonus
+            // 
+            this.skillBallisticBonus.Location = new System.Drawing.Point(276, 86);
+            this.skillBallisticBonus.Name = "skillBallisticBonus";
+            this.skillBallisticBonus.ReadOnly = true;
+            this.skillBallisticBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillBallisticBonus.TabIndex = 77;
+            this.skillBallisticBonus.ValueChanged += new System.EventHandler(this.skillBallisticBonus_ValueChanged);
+            // 
+            // skillAwarenessBonus
+            // 
+            this.skillAwarenessBonus.Location = new System.Drawing.Point(276, 60);
+            this.skillAwarenessBonus.Name = "skillAwarenessBonus";
+            this.skillAwarenessBonus.ReadOnly = true;
+            this.skillAwarenessBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillAwarenessBonus.TabIndex = 76;
+            this.skillAwarenessBonus.ValueChanged += new System.EventHandler(this.skillAwarenessBonus_ValueChanged);
+            // 
+            // skillAthleticsBonus
+            // 
+            this.skillAthleticsBonus.Location = new System.Drawing.Point(276, 34);
+            this.skillAthleticsBonus.Name = "skillAthleticsBonus";
+            this.skillAthleticsBonus.ReadOnly = true;
+            this.skillAthleticsBonus.Size = new System.Drawing.Size(45, 20);
+            this.skillAthleticsBonus.TabIndex = 75;
+            this.skillAthleticsBonus.ValueChanged += new System.EventHandler(this.skillAthleticsBonus_ValueChanged);
+            // 
             // weaponSkillBonusBox
             // 
-            this.weaponSkillBonusBox.Location = new System.Drawing.Point(295, 475);
+            this.weaponSkillBonusBox.Location = new System.Drawing.Point(350, 475);
             this.weaponSkillBonusBox.Name = "weaponSkillBonusBox";
-            this.weaponSkillBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.weaponSkillBonusBox.Size = new System.Drawing.Size(456, 20);
             this.weaponSkillBonusBox.TabIndex = 74;
             // 
             // weaponSkillRatingLabel
@@ -1668,13 +1942,13 @@
             this.weaponSkillRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weaponSkillRatingLabel.Location = new System.Drawing.Point(238, 478);
             this.weaponSkillRatingLabel.Name = "weaponSkillRatingLabel";
-            this.weaponSkillRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.weaponSkillRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.weaponSkillRatingLabel.TabIndex = 73;
-            this.weaponSkillRatingLabel.Text = "label35";
+            this.weaponSkillRatingLabel.Text = "99";
             // 
             // skillWeaponSkill
             // 
-            this.skillWeaponSkill.Location = new System.Drawing.Point(187, 476);
+            this.skillWeaponSkill.Location = new System.Drawing.Point(182, 476);
             this.skillWeaponSkill.Name = "skillWeaponSkill";
             this.skillWeaponSkill.ReadOnly = true;
             this.skillWeaponSkill.Size = new System.Drawing.Size(45, 20);
@@ -1692,9 +1966,9 @@
             // 
             // techBonusBox
             // 
-            this.techBonusBox.Location = new System.Drawing.Point(295, 449);
+            this.techBonusBox.Location = new System.Drawing.Point(350, 449);
             this.techBonusBox.Name = "techBonusBox";
-            this.techBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.techBonusBox.Size = new System.Drawing.Size(456, 20);
             this.techBonusBox.TabIndex = 70;
             // 
             // techRatingLabel
@@ -1703,13 +1977,13 @@
             this.techRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.techRatingLabel.Location = new System.Drawing.Point(238, 452);
             this.techRatingLabel.Name = "techRatingLabel";
-            this.techRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.techRatingLabel.Size = new System.Drawing.Size(28, 13);
             this.techRatingLabel.TabIndex = 69;
-            this.techRatingLabel.Text = "label33";
+            this.techRatingLabel.Text = "999";
             // 
             // skillTech
             // 
-            this.skillTech.Location = new System.Drawing.Point(187, 450);
+            this.skillTech.Location = new System.Drawing.Point(182, 450);
             this.skillTech.Name = "skillTech";
             this.skillTech.ReadOnly = true;
             this.skillTech.Size = new System.Drawing.Size(45, 20);
@@ -1727,9 +2001,9 @@
             // 
             // survivalBonusBox
             // 
-            this.survivalBonusBox.Location = new System.Drawing.Point(295, 423);
+            this.survivalBonusBox.Location = new System.Drawing.Point(350, 423);
             this.survivalBonusBox.Name = "survivalBonusBox";
-            this.survivalBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.survivalBonusBox.Size = new System.Drawing.Size(456, 20);
             this.survivalBonusBox.TabIndex = 66;
             // 
             // survivalRatingLabel
@@ -1738,13 +2012,13 @@
             this.survivalRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.survivalRatingLabel.Location = new System.Drawing.Point(238, 426);
             this.survivalRatingLabel.Name = "survivalRatingLabel";
-            this.survivalRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.survivalRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.survivalRatingLabel.TabIndex = 65;
-            this.survivalRatingLabel.Text = "label31";
+            this.survivalRatingLabel.Text = "99";
             // 
             // skillSurvival
             // 
-            this.skillSurvival.Location = new System.Drawing.Point(187, 424);
+            this.skillSurvival.Location = new System.Drawing.Point(182, 424);
             this.skillSurvival.Name = "skillSurvival";
             this.skillSurvival.ReadOnly = true;
             this.skillSurvival.Size = new System.Drawing.Size(45, 20);
@@ -1762,9 +2036,9 @@
             // 
             // stealthBonusBox
             // 
-            this.stealthBonusBox.Location = new System.Drawing.Point(295, 397);
+            this.stealthBonusBox.Location = new System.Drawing.Point(350, 397);
             this.stealthBonusBox.Name = "stealthBonusBox";
-            this.stealthBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.stealthBonusBox.Size = new System.Drawing.Size(456, 20);
             this.stealthBonusBox.TabIndex = 62;
             // 
             // stealthRatingLabel
@@ -1773,13 +2047,13 @@
             this.stealthRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stealthRatingLabel.Location = new System.Drawing.Point(238, 400);
             this.stealthRatingLabel.Name = "stealthRatingLabel";
-            this.stealthRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.stealthRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.stealthRatingLabel.TabIndex = 61;
-            this.stealthRatingLabel.Text = "label29";
+            this.stealthRatingLabel.Text = "99";
             // 
             // skillStealth
             // 
-            this.skillStealth.Location = new System.Drawing.Point(187, 398);
+            this.skillStealth.Location = new System.Drawing.Point(182, 398);
             this.skillStealth.Name = "skillStealth";
             this.skillStealth.ReadOnly = true;
             this.skillStealth.Size = new System.Drawing.Size(45, 20);
@@ -1797,9 +2071,9 @@
             // 
             // scholarBonusBox
             // 
-            this.scholarBonusBox.Location = new System.Drawing.Point(295, 371);
+            this.scholarBonusBox.Location = new System.Drawing.Point(350, 371);
             this.scholarBonusBox.Name = "scholarBonusBox";
-            this.scholarBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.scholarBonusBox.Size = new System.Drawing.Size(456, 20);
             this.scholarBonusBox.TabIndex = 58;
             // 
             // scholarRatingLabel
@@ -1808,13 +2082,13 @@
             this.scholarRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scholarRatingLabel.Location = new System.Drawing.Point(238, 374);
             this.scholarRatingLabel.Name = "scholarRatingLabel";
-            this.scholarRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.scholarRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.scholarRatingLabel.TabIndex = 57;
-            this.scholarRatingLabel.Text = "label27";
+            this.scholarRatingLabel.Text = "99";
             // 
             // skillScholar
             // 
-            this.skillScholar.Location = new System.Drawing.Point(187, 372);
+            this.skillScholar.Location = new System.Drawing.Point(182, 372);
             this.skillScholar.Name = "skillScholar";
             this.skillScholar.ReadOnly = true;
             this.skillScholar.Size = new System.Drawing.Size(45, 20);
@@ -1832,9 +2106,9 @@
             // 
             // psychicBonusBox
             // 
-            this.psychicBonusBox.Location = new System.Drawing.Point(295, 345);
+            this.psychicBonusBox.Location = new System.Drawing.Point(350, 345);
             this.psychicBonusBox.Name = "psychicBonusBox";
-            this.psychicBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.psychicBonusBox.Size = new System.Drawing.Size(456, 20);
             this.psychicBonusBox.TabIndex = 54;
             // 
             // psychicRatingLabel
@@ -1843,13 +2117,13 @@
             this.psychicRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.psychicRatingLabel.Location = new System.Drawing.Point(238, 348);
             this.psychicRatingLabel.Name = "psychicRatingLabel";
-            this.psychicRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.psychicRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.psychicRatingLabel.TabIndex = 53;
-            this.psychicRatingLabel.Text = "label25";
+            this.psychicRatingLabel.Text = "99";
             // 
             // skillPsychic
             // 
-            this.skillPsychic.Location = new System.Drawing.Point(187, 346);
+            this.skillPsychic.Location = new System.Drawing.Point(182, 346);
             this.skillPsychic.Name = "skillPsychic";
             this.skillPsychic.ReadOnly = true;
             this.skillPsychic.Size = new System.Drawing.Size(45, 20);
@@ -1867,9 +2141,9 @@
             // 
             // pilotBonusBox
             // 
-            this.pilotBonusBox.Location = new System.Drawing.Point(295, 319);
+            this.pilotBonusBox.Location = new System.Drawing.Point(350, 319);
             this.pilotBonusBox.Name = "pilotBonusBox";
-            this.pilotBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.pilotBonusBox.Size = new System.Drawing.Size(456, 20);
             this.pilotBonusBox.TabIndex = 50;
             // 
             // pilotRatingLabel
@@ -1878,13 +2152,13 @@
             this.pilotRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pilotRatingLabel.Location = new System.Drawing.Point(238, 322);
             this.pilotRatingLabel.Name = "pilotRatingLabel";
-            this.pilotRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.pilotRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.pilotRatingLabel.TabIndex = 49;
-            this.pilotRatingLabel.Text = "label23";
+            this.pilotRatingLabel.Text = "99";
             // 
             // skillPilot
             // 
-            this.skillPilot.Location = new System.Drawing.Point(187, 320);
+            this.skillPilot.Location = new System.Drawing.Point(182, 320);
             this.skillPilot.Name = "skillPilot";
             this.skillPilot.ReadOnly = true;
             this.skillPilot.Size = new System.Drawing.Size(45, 20);
@@ -1902,9 +2176,9 @@
             // 
             // persuasionBonusBox
             // 
-            this.persuasionBonusBox.Location = new System.Drawing.Point(295, 293);
+            this.persuasionBonusBox.Location = new System.Drawing.Point(350, 293);
             this.persuasionBonusBox.Name = "persuasionBonusBox";
-            this.persuasionBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.persuasionBonusBox.Size = new System.Drawing.Size(456, 20);
             this.persuasionBonusBox.TabIndex = 46;
             // 
             // persuasionRatingLabel
@@ -1913,13 +2187,13 @@
             this.persuasionRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.persuasionRatingLabel.Location = new System.Drawing.Point(238, 296);
             this.persuasionRatingLabel.Name = "persuasionRatingLabel";
-            this.persuasionRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.persuasionRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.persuasionRatingLabel.TabIndex = 45;
-            this.persuasionRatingLabel.Text = "label21";
+            this.persuasionRatingLabel.Text = "99";
             // 
             // skillPersuasion
             // 
-            this.skillPersuasion.Location = new System.Drawing.Point(187, 294);
+            this.skillPersuasion.Location = new System.Drawing.Point(182, 294);
             this.skillPersuasion.Name = "skillPersuasion";
             this.skillPersuasion.ReadOnly = true;
             this.skillPersuasion.Size = new System.Drawing.Size(45, 20);
@@ -1937,9 +2211,9 @@
             // 
             // medicaeBonusBox
             // 
-            this.medicaeBonusBox.Location = new System.Drawing.Point(295, 267);
+            this.medicaeBonusBox.Location = new System.Drawing.Point(350, 267);
             this.medicaeBonusBox.Name = "medicaeBonusBox";
-            this.medicaeBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.medicaeBonusBox.Size = new System.Drawing.Size(456, 20);
             this.medicaeBonusBox.TabIndex = 42;
             // 
             // medicaeRatingLabel
@@ -1948,13 +2222,13 @@
             this.medicaeRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.medicaeRatingLabel.Location = new System.Drawing.Point(238, 270);
             this.medicaeRatingLabel.Name = "medicaeRatingLabel";
-            this.medicaeRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.medicaeRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.medicaeRatingLabel.TabIndex = 41;
-            this.medicaeRatingLabel.Text = "label19";
+            this.medicaeRatingLabel.Text = "99";
             // 
             // skillMedicae
             // 
-            this.skillMedicae.Location = new System.Drawing.Point(187, 268);
+            this.skillMedicae.Location = new System.Drawing.Point(182, 268);
             this.skillMedicae.Name = "skillMedicae";
             this.skillMedicae.ReadOnly = true;
             this.skillMedicae.Size = new System.Drawing.Size(45, 20);
@@ -1972,9 +2246,9 @@
             // 
             // leadershipBonusBox
             // 
-            this.leadershipBonusBox.Location = new System.Drawing.Point(295, 241);
+            this.leadershipBonusBox.Location = new System.Drawing.Point(350, 241);
             this.leadershipBonusBox.Name = "leadershipBonusBox";
-            this.leadershipBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.leadershipBonusBox.Size = new System.Drawing.Size(456, 20);
             this.leadershipBonusBox.TabIndex = 38;
             // 
             // leadershipRatingLabel
@@ -1983,13 +2257,13 @@
             this.leadershipRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.leadershipRatingLabel.Location = new System.Drawing.Point(238, 244);
             this.leadershipRatingLabel.Name = "leadershipRatingLabel";
-            this.leadershipRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.leadershipRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.leadershipRatingLabel.TabIndex = 37;
-            this.leadershipRatingLabel.Text = "label17";
+            this.leadershipRatingLabel.Text = "99";
             // 
             // skillLeadership
             // 
-            this.skillLeadership.Location = new System.Drawing.Point(187, 242);
+            this.skillLeadership.Location = new System.Drawing.Point(182, 242);
             this.skillLeadership.Name = "skillLeadership";
             this.skillLeadership.ReadOnly = true;
             this.skillLeadership.Size = new System.Drawing.Size(45, 20);
@@ -2007,9 +2281,9 @@
             // 
             // investigationBonusBox
             // 
-            this.investigationBonusBox.Location = new System.Drawing.Point(295, 215);
+            this.investigationBonusBox.Location = new System.Drawing.Point(350, 215);
             this.investigationBonusBox.Name = "investigationBonusBox";
-            this.investigationBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.investigationBonusBox.Size = new System.Drawing.Size(456, 20);
             this.investigationBonusBox.TabIndex = 34;
             // 
             // investigationRatingLabel
@@ -2018,13 +2292,13 @@
             this.investigationRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.investigationRatingLabel.Location = new System.Drawing.Point(238, 218);
             this.investigationRatingLabel.Name = "investigationRatingLabel";
-            this.investigationRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.investigationRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.investigationRatingLabel.TabIndex = 33;
-            this.investigationRatingLabel.Text = "label15";
+            this.investigationRatingLabel.Text = "99";
             // 
             // skillInvestigation
             // 
-            this.skillInvestigation.Location = new System.Drawing.Point(187, 216);
+            this.skillInvestigation.Location = new System.Drawing.Point(182, 216);
             this.skillInvestigation.Name = "skillInvestigation";
             this.skillInvestigation.ReadOnly = true;
             this.skillInvestigation.Size = new System.Drawing.Size(45, 20);
@@ -2042,9 +2316,9 @@
             // 
             // intimidationBonusBox
             // 
-            this.intimidationBonusBox.Location = new System.Drawing.Point(295, 189);
+            this.intimidationBonusBox.Location = new System.Drawing.Point(350, 189);
             this.intimidationBonusBox.Name = "intimidationBonusBox";
-            this.intimidationBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.intimidationBonusBox.Size = new System.Drawing.Size(456, 20);
             this.intimidationBonusBox.TabIndex = 30;
             // 
             // intimidationRatingLabel
@@ -2053,13 +2327,13 @@
             this.intimidationRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.intimidationRatingLabel.Location = new System.Drawing.Point(238, 192);
             this.intimidationRatingLabel.Name = "intimidationRatingLabel";
-            this.intimidationRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.intimidationRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.intimidationRatingLabel.TabIndex = 29;
-            this.intimidationRatingLabel.Text = "label13";
+            this.intimidationRatingLabel.Text = "99";
             // 
             // skillIntimidation
             // 
-            this.skillIntimidation.Location = new System.Drawing.Point(187, 190);
+            this.skillIntimidation.Location = new System.Drawing.Point(182, 190);
             this.skillIntimidation.Name = "skillIntimidation";
             this.skillIntimidation.ReadOnly = true;
             this.skillIntimidation.Size = new System.Drawing.Size(45, 20);
@@ -2077,9 +2351,9 @@
             // 
             // insightBonusBox
             // 
-            this.insightBonusBox.Location = new System.Drawing.Point(295, 163);
+            this.insightBonusBox.Location = new System.Drawing.Point(350, 163);
             this.insightBonusBox.Name = "insightBonusBox";
-            this.insightBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.insightBonusBox.Size = new System.Drawing.Size(456, 20);
             this.insightBonusBox.TabIndex = 26;
             // 
             // insightRatingLabel
@@ -2088,13 +2362,13 @@
             this.insightRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insightRatingLabel.Location = new System.Drawing.Point(238, 166);
             this.insightRatingLabel.Name = "insightRatingLabel";
-            this.insightRatingLabel.Size = new System.Drawing.Size(48, 13);
+            this.insightRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.insightRatingLabel.TabIndex = 25;
-            this.insightRatingLabel.Text = "label11";
+            this.insightRatingLabel.Text = "99";
             // 
             // skillInsight
             // 
-            this.skillInsight.Location = new System.Drawing.Point(187, 164);
+            this.skillInsight.Location = new System.Drawing.Point(182, 164);
             this.skillInsight.Name = "skillInsight";
             this.skillInsight.ReadOnly = true;
             this.skillInsight.Size = new System.Drawing.Size(45, 20);
@@ -2112,9 +2386,9 @@
             // 
             // deceptionBonusBox
             // 
-            this.deceptionBonusBox.Location = new System.Drawing.Point(295, 137);
+            this.deceptionBonusBox.Location = new System.Drawing.Point(350, 137);
             this.deceptionBonusBox.Name = "deceptionBonusBox";
-            this.deceptionBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.deceptionBonusBox.Size = new System.Drawing.Size(456, 20);
             this.deceptionBonusBox.TabIndex = 22;
             // 
             // deceptionRatingLabel
@@ -2123,13 +2397,13 @@
             this.deceptionRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deceptionRatingLabel.Location = new System.Drawing.Point(238, 140);
             this.deceptionRatingLabel.Name = "deceptionRatingLabel";
-            this.deceptionRatingLabel.Size = new System.Drawing.Size(41, 13);
+            this.deceptionRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.deceptionRatingLabel.TabIndex = 21;
-            this.deceptionRatingLabel.Text = "label9";
+            this.deceptionRatingLabel.Text = "99";
             // 
             // skillDeception
             // 
-            this.skillDeception.Location = new System.Drawing.Point(187, 138);
+            this.skillDeception.Location = new System.Drawing.Point(182, 138);
             this.skillDeception.Name = "skillDeception";
             this.skillDeception.ReadOnly = true;
             this.skillDeception.Size = new System.Drawing.Size(45, 20);
@@ -2147,9 +2421,9 @@
             // 
             // cunningBonusBox
             // 
-            this.cunningBonusBox.Location = new System.Drawing.Point(295, 111);
+            this.cunningBonusBox.Location = new System.Drawing.Point(350, 111);
             this.cunningBonusBox.Name = "cunningBonusBox";
-            this.cunningBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.cunningBonusBox.Size = new System.Drawing.Size(456, 20);
             this.cunningBonusBox.TabIndex = 18;
             // 
             // cunningRatingLabel
@@ -2158,13 +2432,13 @@
             this.cunningRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cunningRatingLabel.Location = new System.Drawing.Point(238, 114);
             this.cunningRatingLabel.Name = "cunningRatingLabel";
-            this.cunningRatingLabel.Size = new System.Drawing.Size(41, 13);
+            this.cunningRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.cunningRatingLabel.TabIndex = 17;
-            this.cunningRatingLabel.Text = "label7";
+            this.cunningRatingLabel.Text = "99";
             // 
             // skillCunning
             // 
-            this.skillCunning.Location = new System.Drawing.Point(187, 112);
+            this.skillCunning.Location = new System.Drawing.Point(182, 112);
             this.skillCunning.Name = "skillCunning";
             this.skillCunning.ReadOnly = true;
             this.skillCunning.Size = new System.Drawing.Size(45, 20);
@@ -2182,9 +2456,9 @@
             // 
             // ballisticBonusBox
             // 
-            this.ballisticBonusBox.Location = new System.Drawing.Point(295, 85);
+            this.ballisticBonusBox.Location = new System.Drawing.Point(350, 85);
             this.ballisticBonusBox.Name = "ballisticBonusBox";
-            this.ballisticBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.ballisticBonusBox.Size = new System.Drawing.Size(456, 20);
             this.ballisticBonusBox.TabIndex = 14;
             // 
             // ballisticRatingLabel
@@ -2193,13 +2467,13 @@
             this.ballisticRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ballisticRatingLabel.Location = new System.Drawing.Point(238, 88);
             this.ballisticRatingLabel.Name = "ballisticRatingLabel";
-            this.ballisticRatingLabel.Size = new System.Drawing.Size(41, 13);
+            this.ballisticRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.ballisticRatingLabel.TabIndex = 13;
-            this.ballisticRatingLabel.Text = "label5";
+            this.ballisticRatingLabel.Text = "99";
             // 
             // skillBallstic
             // 
-            this.skillBallstic.Location = new System.Drawing.Point(187, 86);
+            this.skillBallstic.Location = new System.Drawing.Point(182, 86);
             this.skillBallstic.Name = "skillBallstic";
             this.skillBallstic.ReadOnly = true;
             this.skillBallstic.Size = new System.Drawing.Size(45, 20);
@@ -2217,9 +2491,9 @@
             // 
             // awarenessBonusBox
             // 
-            this.awarenessBonusBox.Location = new System.Drawing.Point(295, 59);
+            this.awarenessBonusBox.Location = new System.Drawing.Point(350, 59);
             this.awarenessBonusBox.Name = "awarenessBonusBox";
-            this.awarenessBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.awarenessBonusBox.Size = new System.Drawing.Size(456, 20);
             this.awarenessBonusBox.TabIndex = 10;
             // 
             // awarenessRatingLabel
@@ -2228,13 +2502,13 @@
             this.awarenessRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.awarenessRatingLabel.Location = new System.Drawing.Point(238, 62);
             this.awarenessRatingLabel.Name = "awarenessRatingLabel";
-            this.awarenessRatingLabel.Size = new System.Drawing.Size(41, 13);
+            this.awarenessRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.awarenessRatingLabel.TabIndex = 9;
-            this.awarenessRatingLabel.Text = "label2";
+            this.awarenessRatingLabel.Text = "99";
             // 
             // skillAwareness
             // 
-            this.skillAwareness.Location = new System.Drawing.Point(187, 60);
+            this.skillAwareness.Location = new System.Drawing.Point(182, 60);
             this.skillAwareness.Name = "skillAwareness";
             this.skillAwareness.ReadOnly = true;
             this.skillAwareness.Size = new System.Drawing.Size(45, 20);
@@ -2250,21 +2524,21 @@
             this.awarenessLabel.TabIndex = 7;
             this.awarenessLabel.Text = "Awareness (Intellect)";
             // 
-            // skillBonusLabel
+            // skillNotesLabel
             // 
-            this.skillBonusLabel.AutoSize = true;
-            this.skillBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skillBonusLabel.Location = new System.Drawing.Point(292, 4);
-            this.skillBonusLabel.Name = "skillBonusLabel";
-            this.skillBonusLabel.Size = new System.Drawing.Size(83, 13);
-            this.skillBonusLabel.TabIndex = 6;
-            this.skillBonusLabel.Text = "Skill Bonuses";
+            this.skillNotesLabel.AutoSize = true;
+            this.skillNotesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skillNotesLabel.Location = new System.Drawing.Point(347, 4);
+            this.skillNotesLabel.Name = "skillNotesLabel";
+            this.skillNotesLabel.Size = new System.Drawing.Size(40, 13);
+            this.skillNotesLabel.TabIndex = 6;
+            this.skillNotesLabel.Text = "Notes";
             // 
             // skillRatingLabel
             // 
             this.skillRatingLabel.AutoSize = true;
             this.skillRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skillRatingLabel.Location = new System.Drawing.Point(184, 4);
+            this.skillRatingLabel.Location = new System.Drawing.Point(179, 4);
             this.skillRatingLabel.Name = "skillRatingLabel";
             this.skillRatingLabel.Size = new System.Drawing.Size(72, 13);
             this.skillRatingLabel.TabIndex = 5;
@@ -2272,9 +2546,9 @@
             // 
             // athleticsBonusBox
             // 
-            this.athleticsBonusBox.Location = new System.Drawing.Point(295, 33);
+            this.athleticsBonusBox.Location = new System.Drawing.Point(350, 33);
             this.athleticsBonusBox.Name = "athleticsBonusBox";
-            this.athleticsBonusBox.Size = new System.Drawing.Size(511, 20);
+            this.athleticsBonusBox.Size = new System.Drawing.Size(456, 20);
             this.athleticsBonusBox.TabIndex = 4;
             // 
             // athleticsRatingLabel
@@ -2283,9 +2557,9 @@
             this.athleticsRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.athleticsRatingLabel.Location = new System.Drawing.Point(238, 36);
             this.athleticsRatingLabel.Name = "athleticsRatingLabel";
-            this.athleticsRatingLabel.Size = new System.Drawing.Size(41, 13);
+            this.athleticsRatingLabel.Size = new System.Drawing.Size(21, 13);
             this.athleticsRatingLabel.TabIndex = 3;
-            this.athleticsRatingLabel.Text = "label3";
+            this.athleticsRatingLabel.Text = "99";
             // 
             // skillLabel
             // 
@@ -2299,7 +2573,7 @@
             // 
             // skillAthletics
             // 
-            this.skillAthletics.Location = new System.Drawing.Point(187, 34);
+            this.skillAthletics.Location = new System.Drawing.Point(182, 34);
             this.skillAthletics.Name = "skillAthletics";
             this.skillAthletics.ReadOnly = true;
             this.skillAthletics.Size = new System.Drawing.Size(45, 20);
@@ -2739,6 +3013,90 @@
             this.equipmentTextBox.Size = new System.Drawing.Size(817, 222);
             this.equipmentTextBox.TabIndex = 48;
             this.equipmentTextBox.Text = "";
+            // 
+            // cyberAndAugments
+            // 
+            this.cyberAndAugments.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cyberAndAugments.Controls.Add(this.augDetailsLabel);
+            this.cyberAndAugments.Controls.Add(this.augRaceLabel);
+            this.cyberAndAugments.Controls.Add(this.augHeaderLabel);
+            this.cyberAndAugments.Controls.Add(this.removeAugButton);
+            this.cyberAndAugments.Controls.Add(this.addAugButton);
+            this.cyberAndAugments.Controls.Add(this.augmeticsBox);
+            this.cyberAndAugments.Controls.Add(this.augmeticHeaderLabel);
+            this.cyberAndAugments.Location = new System.Drawing.Point(4, 22);
+            this.cyberAndAugments.Name = "cyberAndAugments";
+            this.cyberAndAugments.Padding = new System.Windows.Forms.Padding(3);
+            this.cyberAndAugments.Size = new System.Drawing.Size(825, 509);
+            this.cyberAndAugments.TabIndex = 5;
+            this.cyberAndAugments.Text = "Cybernetics";
+            // 
+            // augDetailsLabel
+            // 
+            this.augDetailsLabel.AutoSize = true;
+            this.augDetailsLabel.Location = new System.Drawing.Point(240, 90);
+            this.augDetailsLabel.Name = "augDetailsLabel";
+            this.augDetailsLabel.Size = new System.Drawing.Size(42, 13);
+            this.augDetailsLabel.TabIndex = 45;
+            this.augDetailsLabel.Text = "Details:";
+            // 
+            // augRaceLabel
+            // 
+            this.augRaceLabel.AutoSize = true;
+            this.augRaceLabel.Location = new System.Drawing.Point(241, 64);
+            this.augRaceLabel.Name = "augRaceLabel";
+            this.augRaceLabel.Size = new System.Drawing.Size(36, 13);
+            this.augRaceLabel.TabIndex = 44;
+            this.augRaceLabel.Text = "Race:";
+            // 
+            // augHeaderLabel
+            // 
+            this.augHeaderLabel.AutoSize = true;
+            this.augHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.augHeaderLabel.Location = new System.Drawing.Point(240, 37);
+            this.augHeaderLabel.Name = "augHeaderLabel";
+            this.augHeaderLabel.Size = new System.Drawing.Size(91, 13);
+            this.augHeaderLabel.TabIndex = 43;
+            this.augHeaderLabel.Text = "Implant Details";
+            // 
+            // removeAugButton
+            // 
+            this.removeAugButton.Location = new System.Drawing.Point(126, 359);
+            this.removeAugButton.Name = "removeAugButton";
+            this.removeAugButton.Size = new System.Drawing.Size(94, 23);
+            this.removeAugButton.TabIndex = 42;
+            this.removeAugButton.Text = "Remove";
+            this.removeAugButton.UseVisualStyleBackColor = true;
+            this.removeAugButton.Click += new System.EventHandler(this.removeAugButton_Click);
+            // 
+            // addAugButton
+            // 
+            this.addAugButton.Location = new System.Drawing.Point(6, 359);
+            this.addAugButton.Name = "addAugButton";
+            this.addAugButton.Size = new System.Drawing.Size(94, 23);
+            this.addAugButton.TabIndex = 41;
+            this.addAugButton.Text = "Add Modification";
+            this.addAugButton.UseVisualStyleBackColor = true;
+            this.addAugButton.Click += new System.EventHandler(this.addAugButton_Click);
+            // 
+            // augmeticsBox
+            // 
+            this.augmeticsBox.FormattingEnabled = true;
+            this.augmeticsBox.Location = new System.Drawing.Point(6, 37);
+            this.augmeticsBox.Name = "augmeticsBox";
+            this.augmeticsBox.Size = new System.Drawing.Size(214, 316);
+            this.augmeticsBox.TabIndex = 40;
+            this.augmeticsBox.SelectedIndexChanged += new System.EventHandler(this.augmeticsBox_SelectedIndexChanged);
+            // 
+            // augmeticHeaderLabel
+            // 
+            this.augmeticHeaderLabel.AutoSize = true;
+            this.augmeticHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.augmeticHeaderLabel.Location = new System.Drawing.Point(3, 8);
+            this.augmeticHeaderLabel.Name = "augmeticHeaderLabel";
+            this.augmeticHeaderLabel.Size = new System.Drawing.Size(160, 13);
+            this.augmeticHeaderLabel.TabIndex = 39;
+            this.augmeticHeaderLabel.Text = "Augmetics and Cybernetics";
             // 
             // psychicpowers
             // 
@@ -5735,42 +6093,6 @@
             this.traitsLabel.TabIndex = 0;
             this.traitsLabel.Text = "Traits";
             // 
-            // shockValueBox
-            // 
-            this.shockValueBox.Location = new System.Drawing.Point(189, 315);
-            this.shockValueBox.Name = "shockValueBox";
-            this.shockValueBox.Size = new System.Drawing.Size(56, 20);
-            this.shockValueBox.TabIndex = 77;
-            this.shockValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.shockValueBox.ValueChanged += new System.EventHandler(this.shockValueBox_ValueChanged);
-            // 
-            // shockBonusLabel
-            // 
-            this.shockBonusLabel.AutoSize = true;
-            this.shockBonusLabel.Location = new System.Drawing.Point(129, 317);
-            this.shockBonusLabel.Name = "shockBonusLabel";
-            this.shockBonusLabel.Size = new System.Drawing.Size(38, 13);
-            this.shockBonusLabel.TabIndex = 76;
-            this.shockBonusLabel.Text = "Shock";
-            // 
-            // woundsValueBox
-            // 
-            this.woundsValueBox.Location = new System.Drawing.Point(57, 315);
-            this.woundsValueBox.Name = "woundsValueBox";
-            this.woundsValueBox.Size = new System.Drawing.Size(56, 20);
-            this.woundsValueBox.TabIndex = 75;
-            this.woundsValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.woundsValueBox.ValueChanged += new System.EventHandler(this.woundsValueBox_ValueChanged);
-            // 
-            // woundsBonusLabel
-            // 
-            this.woundsBonusLabel.AutoSize = true;
-            this.woundsBonusLabel.Location = new System.Drawing.Point(0, 317);
-            this.woundsBonusLabel.Name = "woundsBonusLabel";
-            this.woundsBonusLabel.Size = new System.Drawing.Size(47, 13);
-            this.woundsBonusLabel.TabIndex = 74;
-            this.woundsBonusLabel.Text = "Wounds";
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5797,6 +6119,8 @@
             this.tabControl1.ResumeLayout(false);
             this.core.ResumeLayout(false);
             this.core.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shockValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.woundsValueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.influenceValueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resolveValueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passiveAwarenessValueBox)).EndInit();
@@ -5825,6 +6149,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.attStrength)).EndInit();
             this.skills.ResumeLayout(false);
             this.skills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skillWeaponSkillBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillTechBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillSurvivalBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillStealthBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillScholarBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillPsychicBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillPilotBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillPersuasionBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillMedicaeBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillLeadershipBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillInvestigationBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillIntimidationBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillInsightBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillDeceptionBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillCunningBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillBallisticBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillAwarenessBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillAthleticsBonus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillWeaponSkill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillTech)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillSurvival)).EndInit();
@@ -5851,6 +6193,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.armorRatingBox)).EndInit();
+            this.cyberAndAugments.ResumeLayout(false);
+            this.cyberAndAugments.PerformLayout();
             this.psychicpowers.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
@@ -5862,8 +6206,6 @@
             this.tabControl2.ResumeLayout(false);
             this.summary.ResumeLayout(false);
             this.summary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shockValueBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.woundsValueBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5994,7 +6336,7 @@
         private System.Windows.Forms.Label awarenessRatingLabel;
         private System.Windows.Forms.NumericUpDown skillAwareness;
         private System.Windows.Forms.Label awarenessLabel;
-        private System.Windows.Forms.Label skillBonusLabel;
+        private System.Windows.Forms.Label skillNotesLabel;
         private System.Windows.Forms.Label skillRatingLabel;
         private System.Windows.Forms.TextBox athleticsBonusBox;
         private System.Windows.Forms.Label athleticsRatingLabel;
@@ -6410,6 +6752,33 @@
         private System.Windows.Forms.NumericUpDown woundsValueBox;
         private System.Windows.Forms.Label woundsBonusLabel;
         private System.Windows.Forms.ToolTip calcValuesToolTip;
+        private System.Windows.Forms.NumericUpDown skillWeaponSkillBonus;
+        private System.Windows.Forms.NumericUpDown skillTechBonus;
+        private System.Windows.Forms.NumericUpDown skillSurvivalBonus;
+        private System.Windows.Forms.NumericUpDown skillStealthBonus;
+        private System.Windows.Forms.NumericUpDown skillScholarBonus;
+        private System.Windows.Forms.NumericUpDown skillPsychicBonus;
+        private System.Windows.Forms.NumericUpDown skillPilotBonus;
+        private System.Windows.Forms.NumericUpDown skillPersuasionBonus;
+        private System.Windows.Forms.NumericUpDown skillMedicaeBonus;
+        private System.Windows.Forms.NumericUpDown skillLeadershipBonus;
+        private System.Windows.Forms.NumericUpDown skillInvestigationBonus;
+        private System.Windows.Forms.NumericUpDown skillIntimidationBonus;
+        private System.Windows.Forms.NumericUpDown skillInsightBonus;
+        private System.Windows.Forms.NumericUpDown skillDeceptionBonus;
+        private System.Windows.Forms.NumericUpDown skillCunningBonus;
+        private System.Windows.Forms.NumericUpDown skillBallisticBonus;
+        private System.Windows.Forms.NumericUpDown skillAwarenessBonus;
+        private System.Windows.Forms.NumericUpDown skillAthleticsBonus;
+        private System.Windows.Forms.TabPage cyberAndAugments;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button removeAugButton;
+        private System.Windows.Forms.Button addAugButton;
+        private System.Windows.Forms.ListBox augmeticsBox;
+        private System.Windows.Forms.Label augmeticHeaderLabel;
+        private System.Windows.Forms.Label augDetailsLabel;
+        private System.Windows.Forms.Label augRaceLabel;
+        private System.Windows.Forms.Label augHeaderLabel;
     }
 }
 

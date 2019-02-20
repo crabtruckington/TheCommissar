@@ -10,3 +10,4 @@ F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\The
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.exe
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.pdb
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.csprojAssemblyReference.cache
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.cyberneticsForm.resources
