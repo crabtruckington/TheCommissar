@@ -11,3 +11,4 @@ F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCo
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.bpModForm.resources
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.csprojAssemblyReference.cache
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.cyberneticsForm.resources
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Debug\TheCommissar.powerForm.resources
