@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -567,6 +568,7 @@
             this.shockBonusLabel = new System.Windows.Forms.Label();
             this.woundsValueBox = new System.Windows.Forms.NumericUpDown();
             this.woundsBonusLabel = new System.Windows.Forms.Label();
+            this.calcValuesToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -6407,6 +6409,7 @@
         private System.Windows.Forms.Label shockBonusLabel;
         private System.Windows.Forms.NumericUpDown woundsValueBox;
         private System.Windows.Forms.Label woundsBonusLabel;
+        private System.Windows.Forms.ToolTip calcValuesToolTip;
     }
 }
 
