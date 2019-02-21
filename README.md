@@ -6,7 +6,7 @@ An **unofficial** Warhammer: Wrath and Glory character creator
 
 1) Buy a copy of the Wrath & Glory core rulebook
 
-2) Download the latest release, located [here](https://github.com/crabtruckington/TheCommissar/blob/master/TheCommissar/bin/Release/TheCommissar.zip) . Alternatively, navigate to the bin directory and download it manually. 
+2) Download the latest release, located **[here](https://github.com/crabtruckington/TheCommissar/releases/latest)**. Alternatively, navigate to the bin directory and download it manually. 
 
 3) Unzip the files to a directory of your choosing, and then launch **TheCommissar.exe**. Make sure you either run as administrator or have write permissions to the directory for saving.
 
