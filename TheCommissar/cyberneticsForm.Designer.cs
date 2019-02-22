@@ -43,7 +43,7 @@
             "Bionic Reconstruction",
             "Augmetic Arms",
             "Auger Eye",
-            "Night's Eye",
+            "Night\'s Eye",
             "Pict Recorder Eye",
             "Reticule Eye",
             "Telescopic Eye",
@@ -138,6 +138,7 @@
             this.Controls.Add(this.augHeaderLabel);
             this.Controls.Add(this.augSelectBox);
             this.Name = "cyberneticsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Augments and Cybernetics";
             this.Load += new System.EventHandler(this.cyberneticsForm_Load);
             this.ResumeLayout(false);

@@ -73,6 +73,12 @@
     <Compile Include="cyberneticsForm.Designer.cs">
       <DependentUpon>cyberneticsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="equipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="equipForm.Designer.cs">
+      <DependentUpon>equipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="powerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cyberneticsForm.resx">
       <DependentUpon>cyberneticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="equipForm.resx">
+      <DependentUpon>equipForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="powerForm.resx">
       <DependentUpon>powerForm.cs</DependentUpon>

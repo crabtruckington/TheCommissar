@@ -24,6 +24,8 @@ namespace TheCommissar
         int bpSpentOnArchetype = 0;
         int bpSpentOnPowers = 0;
         int tierSelection = 1;
+        int armorFromEquip = 0;
+        string objectives = "Objectives: ";
         string raceSelection = "";
         string archetypeSelection = "";
 
@@ -87,7 +89,7 @@ namespace TheCommissar
             shockTotalLabel.Text = "/ " + (Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + tierSelection + Convert.ToInt32(shockValueBox.Value)));
             woundsTotalLabel.Text = "/ " + (Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + tierSelection + Convert.ToInt32(woundsValueBox.Value)));
             defenceTraitLabel.Text = "Defence: " + Convert.ToString(Convert.ToInt32(attInitiativeTotal.Text) - 1 + Convert.ToInt32(defenceValueBox.Value));
-            resilienceTraitLabel.Text = "Resilience: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + 1 + Convert.ToInt32(armorRatingBox.Value) + Convert.ToInt32(resilienceValueBox.Value));
+            resilienceTraitLabel.Text = "Resilience: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + 1 + armorFromEquip + Convert.ToInt32(resilienceValueBox.Value));
             soakTraitLabel.Text = "Soak: " + Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + Convert.ToInt32(soakValueBox.Value));
             speedTraitLabel.Text = "Speed: " + attSpeedTotal.Text;
             convictionTraitLabel.Text = "Conviction: " + Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + Convert.ToInt32(convictionValueBox.Value));
@@ -98,12 +100,13 @@ namespace TheCommissar
             rankTraitLabel.Text = "Rank: " + Convert.ToString(rankValueBox.Value);
             wealthTraitLabel.Text = "Wealth: " + Convert.ToString(wealthValueBox.Value + tierSelection);
             lifetimeBPEarnedLabel.Text = "Lifetime BP: " + Convert.ToString(totalBPGained - totalBPRemoved);
+            objectiveLabel.Text = objectives;
 
             // update tooltips for summary tab
             calcValuesToolTip.SetToolTip(shockTotalLabel, "Willpower " + attWillpowerTotal.Text + " + Tier " + Convert.ToString(tierSelection) + " + Bonus " + Convert.ToString(shockValueBox.Value));
             calcValuesToolTip.SetToolTip(woundsTotalLabel, "Toughness " + attToughnessTotal.Text + " + Tier " + Convert.ToString(tierSelection) + " + Bonus " + Convert.ToString(woundsValueBox.Value));
             calcValuesToolTip.SetToolTip(defenceTraitLabel, "Initiative " + attInitiativeTotal.Text + " - 1 + Bonus " + Convert.ToString(defenceValueBox.Value));
-            calcValuesToolTip.SetToolTip(resilienceTraitLabel, "Toughness " + attToughnessTotal.Text + " + 1 + Armor " + Convert.ToString(armorRatingBox.Value) + " + Bonus " + Convert.ToInt32(resilienceValueBox.Value));
+            calcValuesToolTip.SetToolTip(resilienceTraitLabel, "Toughness " + attToughnessTotal.Text + " + 1 + Armor " + armorFromEquip + " + Bonus " + Convert.ToInt32(resilienceValueBox.Value));
             calcValuesToolTip.SetToolTip(soakTraitLabel, "Toughness " + attToughnessTotal.Text + " + Bonus " + Convert.ToString(soakValueBox.Value));
             calcValuesToolTip.SetToolTip(speedTraitLabel, "Speed " + attSpeedTotal.Text);
             calcValuesToolTip.SetToolTip(convictionTraitLabel, "Willpower " + attWillpowerTotal.Text + " + Bonus " + Convert.ToString(convictionValueBox.Value));
@@ -719,7 +722,10 @@ namespace TheCommissar
             augRaceLabel.Text = results.Item2;
             augDetailsLabel.Text = results.Item3;
         }
+
+
         //adding powers
+
         private void addPowerButton_Click(object sender, EventArgs e)
         {
             powerForm powers = new powerForm();
@@ -762,6 +768,123 @@ namespace TheCommissar
             powerKeywordsLabel.Text = results.Item2.Item4;
         }
 
+        // adding Equipment
+
+        private void equipTreeBox_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            equipForm equip = new equipForm();
+            var curItem = equipTreeBox.SelectedNode;
+            
+
+            if (curItem.Parent != null)
+            {
+                var result = equip.getEquipValues(curItem.Text);
+                equipDamageLabel.Text = result.Item1.Item2;
+                equipAPLabel.Text = result.Item1.Item3;
+                equipRangeLabel.Text = result.Item1.Item4;
+                equipSalvoLabel.Text = result.Item1.Item5;
+                equipArmorRatingLabel.Text = result.Item2.Item1;
+                equipValueLabel.Text = result.Item2.Item2;
+                equipKeywordsLabel.Text = result.Item2.Item3;
+                equipTraitsLabel.Text = result.Item2.Item4;
+
+                if (equipKeywordsLabel.Text.Contains(Environment.NewLine))
+                {
+                    equipTraitsLabel.Visible = false;
+                    equipKeywordsLabel.Text += Environment.NewLine + Environment.NewLine + equipTraitsLabel.Text;
+                }
+                else
+                {
+                    equipTraitsLabel.Visible = true;
+                }
+            }
+            else
+            {
+                equipTraitsLabel.Visible = true;
+                equipDamageLabel.Text = "Damage: ";
+                equipAPLabel.Text = "AP: ";
+                equipRangeLabel.Text = "Range: ";
+                equipSalvoLabel.Text = "Salvo: ";
+                equipArmorRatingLabel.Text = "Armor: ";
+                equipValueLabel.Text = "Value: ";
+                equipKeywordsLabel.Text = "Keywords: ";
+                equipTraitsLabel.Text = "Traits: ";
+            }
+        }
+
+        private void addEquipButton_Click(object sender, EventArgs e)
+        {
+            equipForm equip = new equipForm();
+            DialogResult dr = equip.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                equip.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                string equipSelected = equip.returnEquipDetails();
+                var results = equip.getEquipValues(equipSelected);
+
+                if (results.Item2.Item5 == "ranged")
+                {
+                    TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Ranged Weapons"));
+                    if (rootNode != null)
+                    {
+                        rootNode.Nodes.Add(results.Item1.Item1);
+                        rootNode.Expand();
+                    }
+                }
+                else if (results.Item2.Item5 == "melee")
+                {
+                    TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Melee Weapons"));
+                    if (rootNode != null)
+                    {
+                        rootNode.Nodes.Add(results.Item1.Item1);
+                        rootNode.Expand();
+                    }
+                }
+                else if (results.Item2.Item5 == "armor")
+                {
+                    TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Armor"));
+                    if (rootNode != null)
+                    {
+                        rootNode.Nodes.Add(results.Item1.Item1);
+                        rootNode.Expand();
+
+                        //get the armor value and set it so we can do things with it later
+                        string armorValueNumber = results.Item2.Item1.Substring(results.Item2.Item1.Length - 1);
+                        int armorValue = Convert.ToInt32((armorValueNumber));
+                        armorFromEquip += armorValue;
+                    }
+                }
+                else
+                {
+
+                }
+                updateBuildPoints(0);
+            }
+
+        }
+
+        private void removeEquipButton_Click(object sender, EventArgs e)
+        {
+            equipForm equip = new equipForm();
+            var curItem = equipTreeBox.SelectedNode;
+
+
+            if (curItem.Parent != null)
+            {
+                if (curItem.Parent.Text == "Armor")
+                {
+                    var results = equip.getEquipValues(curItem.Text);
+                    string armorValueNumber = results.Item2.Item1.Substring(results.Item2.Item1.Length - 1);
+                    int armorValue = Convert.ToInt32((armorValueNumber));
+                    armorFromEquip -= armorValue;
+                }
+                curItem.Remove();
+                updateBuildPoints(0);
+            }
+        }
 
 
 
@@ -1327,51 +1450,168 @@ namespace TheCommissar
 
         private void archetypeSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selectedArchetype = archetypeSelect.SelectedItem.ToString();
+
             bpSpentOnArchetype = 0;
-            if (archetypeSelect.SelectedItem.ToString() == "Ministorum Priest" || archetypeSelect.SelectedItem.ToString() == "Sister Hospitaller" || 
-                archetypeSelect.SelectedItem.ToString() == "Imperial Guardsman" || archetypeSelect.SelectedItem.ToString() == "Inquisitional Acolyte" ||
-                archetypeSelect.SelectedItem.ToString() == "Inquisitorial Adept" || archetypeSelect.SelectedItem.ToString() == "Hive Ganger" ||
-                archetypeSelect.SelectedItem.ToString() == "Cultist" || archetypeSelect.SelectedItem.ToString() == "Eldar Corsair" ||
-                archetypeSelect.SelectedItem.ToString() == "Ork Boy" || archetypeSelect.SelectedItem.ToString() == "Necron Warrior")
+            if (selectedArchetype == "Ministorum Priest" || selectedArchetype == "Sister Hospitaller" || 
+                selectedArchetype == "Imperial Guardsman" || selectedArchetype == "Inquisitional Acolyte" ||
+                selectedArchetype == "Inquisitorial Adept" || selectedArchetype == "Hive Ganger" ||
+                selectedArchetype == "Cultist" || selectedArchetype == "Eldar Corsair" ||
+                selectedArchetype == "Ork Boy" || selectedArchetype == "Necron Warrior")
             {
                 bpSpentOnArchetype = 0;
+
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Scavvy")
+            if (selectedArchetype == "Scavvy")
             {
                 bpSpentOnArchetype = 10;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Death Cult Assassin" || archetypeSelect.SelectedItem.ToString() == "Space Marine Scout")
+            if (selectedArchetype == "Death Cult Assassin" || selectedArchetype == "Space Marine Scout")
             {
                 bpSpentOnArchetype = 20;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Tempestus Scion" || archetypeSelect.SelectedItem.ToString() == "Eldar Ranger" ||
-                archetypeSelect.SelectedItem.ToString() == "Ork Kommando" || archetypeSelect.SelectedItem.ToString() == "Desperado")
+            if (selectedArchetype == "Tempestus Scion" || selectedArchetype == "Eldar Ranger" ||
+                selectedArchetype == "Ork Kommando" || selectedArchetype == "Desperado")
             {
                 bpSpentOnArchetype = 30;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Sister of Battle" || archetypeSelect.SelectedItem.ToString() == "Rogue Trader" ||
-                archetypeSelect.SelectedItem.ToString() == "Skitarius" || archetypeSelect.SelectedItem.ToString() == "Crusader")
+            if (selectedArchetype == "Sister of Battle" || selectedArchetype == "Rogue Trader" ||
+                selectedArchetype == "Skitarius" || selectedArchetype == "Crusader")
             {
                 bpSpentOnArchetype = 40;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Sanctioned Psyker" || archetypeSelect.SelectedItem.ToString() == "Rogue Psyker" ||
-                archetypeSelect.SelectedItem.ToString() == "Imperial Commisar" || archetypeSelect.SelectedItem.ToString() == "Tactical Space Marine" ||
-                archetypeSelect.SelectedItem.ToString() == "Necron Cryptek")
+            if (selectedArchetype == "Sanctioned Psyker" || selectedArchetype == "Rogue Psyker" ||
+                selectedArchetype == "Imperial Commisar" || selectedArchetype == "Tactical Space Marine" ||
+                selectedArchetype == "Necron Cryptek")
             {
                 bpSpentOnArchetype = 50;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Primaris Marine Intercessor" || archetypeSelect.SelectedItem.ToString() == "Tech-Priest" ||
-                archetypeSelect.SelectedItem.ToString() == "Heretek" || archetypeSelect.SelectedItem.ToString() == "Ork Nob")
+            if (selectedArchetype == "Primaris Marine Intercessor" || selectedArchetype == "Tech-Priest" ||
+                selectedArchetype == "Heretek" || selectedArchetype == "Ork Nob")
             {
                 bpSpentOnArchetype = 60;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Inquisitor")
+            if (selectedArchetype == "Inquisitor")
             {
                 bpSpentOnArchetype = 70;
             }
-            if (archetypeSelect.SelectedItem.ToString() == "Eldar Warlock" || archetypeSelect.SelectedItem.ToString() == "Necron Nemesor")
+            if (selectedArchetype == "Eldar Warlock" || selectedArchetype == "Necron Nemesor")
             {
                 bpSpentOnArchetype = 80;
+            }
+
+
+            // update Objectives
+            if (selectedArchetype == "Ministorum Priest" || selectedArchetype == "Death Cult Assassin" || selectedArchetype == "Crusader")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1: Extoll the virtues of worshipping the God-Emperor" + Environment.NewLine +
+                                                                                            "     to an unbeliever." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2: Proclaim your enemy to be a heretic unworthy" + Environment.NewLine +
+                                                                                            "     of the Emperor's Light." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3: Bear witness to an act that you consider a" + Environment.NewLine +
+                                                                                            "     miracle of the divine emperor.";
+            }
+            if (selectedArchetype == "Sister Hospitaller" || selectedArchetype == "Sister of Battle")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1: Describe how faith and/or sacrifice in the" + Environment.NewLine +
+                                                                                            "     Emperor's name brings success." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2: Invoke an Imperial Saint (Saint Alicia Dominica" + Environment.NewLine +
+                                                                                            "     are two examples) to bless your achievements." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Bear witness to an act that you consider" + Environment.NewLine +
+                                                                                            "     a miracle of the divine Emperor.";
+            }
+            if (selectedArchetype == "Imperial Guardsman" || selectedArchetype == "Tempestus Scion" || selectedArchetype == "Imperial Commissar")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Express confidence (or the opposite!) in" + Environment.NewLine +
+                                                                                            "     the virtue of overwhelming numbers and firepower." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Explain how the Imperial Infrantryman's" + Environment.NewLine +
+                                                                                            "     Uplifting Primer has a lesson appropriate" + Environment.NewLine +
+                                                                                            "     to the current situation." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Reminisce about your far-flung home world and" + Environment.NewLine +
+                                                                                            "     compare it to the current situation.";
+            }
+            if (selectedArchetype == "Space Marine Scout" || selectedArchetype == "Tactical Space Marine" || selectedArchetype == "Primaris Marine Intercessor")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Call upon your Chapter's Primarch as you" + Environment.NewLine +
+                                                                                            "     defeat an enemy." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Describe how the Codex Astartes applies" + Environment.NewLine +
+                                                                                            "     (or does not apply) to the current situation." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Reminisce upon the traditions of your Chapter" + Environment.NewLine +
+                                                                                            "     (and the Chapter's Homeworld, if any, and" + Environment.NewLine +
+                                                                                            "     compare it to the current situation.";
+            }
+            if (selectedArchetype == "Inquisitional Acolyte" || selectedArchetype == "Inquisitorial Adept" || selectedArchetype == "Sanctioned Psyker" ||
+                selectedArchetype == "Inquisitor" || selectedArchetype == "Rogue Trader")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Solve a problem using wealth, influence, psychic" + Environment.NewLine +
+                                                                                            "     abilities, or guile instead of threats or force." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Compare the current situation to a far-flung exotic" + Environment.NewLine +
+                                                                                            "     world (within or beyond the Imperium) that you have" + Environment.NewLine +
+                                                                                            "     visited." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Display a symbol of your authority, and use it to" + Environment.NewLine +
+                                                                                            "     firmly establish your position in an interaction" + Environment.NewLine +
+                                                                                            "     with an NPC.";
+            }
+            if (selectedArchetype == "Skitarius" || selectedArchetype == "Tech-Priest")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Praise the Omnissiah as you commune with a" + Environment.NewLine +
+                                                                                            "     machine-spirit (a successful Tech test counts" + Environment.NewLine +
+                                                                                            "     for this." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Calculate the odds of any given task and" + Environment.NewLine +
+                                                                                            "     provide an estime of either survival or" + Environment.NewLine +
+                                                                                            "     success (or both)." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Reminisce about a Forge World you have visited" + Environment.NewLine +
+                                                                                            "     and compare it to the current location.";
+            }
+            if (selectedArchetype == "Hive Ganger" || selectedArchetype == "Scavvy" || selectedArchetype == "Desperado")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Compare the current situation to a crime you" + Environment.NewLine +
+                                                                                            "     once observed (or participated in)." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Verbally estimate the potential value of an" + Environment.NewLine +
+                                                                                            "     item (or person!) if it were in your possession." + Environment.NewLine +
+                                                                                            "     This may be as subtle or as overt as you wish." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Describe a desperate act of survival you attempted" + Environment.NewLine +
+                                                                                            "     under difficult circumstances.";
+            }
+            if (selectedArchetype == "Cultist" || selectedArchetype == "Chaos Space Marine" || selectedArchetype == "Heretek" || selectedArchetype == "Rogue Psyker")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Describe the benefit (or lack thereof!) of" + Environment.NewLine +
+                                                                                            "     gaining the attention of the Ruinous Powers." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Proclaim how a flaw of the Imperium shall lead" + Environment.NewLine +
+                                                                                            "     to its downfall." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Bear witness to an act that you consider a sign" + Environment.NewLine +
+                                                                                            "     of the Ruinous Powers' favour (or contempt).";
+            }
+            if (selectedArchetype == "Eldar Corsair" || selectedArchetype == "Eldar Ranger" || selectedArchetype == "Eldar Warlock")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Unfavourably evaluate a facet of another species" + Environment.NewLine +
+                                                                                            "     against Eldar culture, technology or art." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Call upon one of the gods of the Edlar as you" + Environment.NewLine +
+                                                                                            "     accomplish a difficult task or defeat an enemy." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Reminisce upon the traditions of an Eldar Craftworld," + Environment.NewLine +
+                                                                                            "     and compare it to the current situation.";
+            }
+            if (selectedArchetype == "Ork Boy" || selectedArchetype == "Ork Kommando" || selectedArchetype == "Ork Nob")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Reminisce on the traditions of your Ork Clan," + Environment.NewLine +
+                                                                                            "     and compare them to your current situation." + Environment.NewLine + Environment.NewLine +
+                                                                                            "2. Use your size, physical might, or reputation" + Environment.NewLine +
+                                                                                            "     in a fearsome manner." + Environment.NewLine + Environment.NewLine +
+                                                                                            "3. Sincerely express your desire for a brutal," + Environment.NewLine +
+                                                                                            "     uncompromising combat.";
+            }
+
+            if (selectedArchetype == "Necron Warrior" || selectedArchetype ==  "Necron Nemesor" || selectedArchetype == "Necron Cryptek")
+            {
+                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Remind another Necron of the Overlords" + Environment.NewLine +
+                                                                                          "     wisdom and infallibility in a difficult" + Environment.NewLine +
+                                                                                          "     situation." + Environment.NewLine + Environment.NewLine +
+                                                                                          "2. Attempt to remember a detail of your past" + Environment.NewLine +
+                                                                                          "     life, in specific reference to the current" + Environment.NewLine +
+                                                                                          "     situation." + Environment.NewLine + Environment.NewLine +
+                                                                                          "3. Willing make a sacrific (Ammo, equipment," + Environment.NewLine +
+                                                                                          "     or even your own wellbeing!) for the benefit" + Environment.NewLine +
+                                                                                          "     of another Necron or the mission.";
             }
 
             archetypeSelection = archetypeSelect.SelectedItem.ToString();
@@ -1434,6 +1674,7 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(raceSelection));
                 sw.WriteLine(Convert.ToString(archetypeSelection));
                 sw.WriteLine(Convert.ToString(tierSelect.SelectedIndex));
+                sw.WriteLine(Convert.ToString(armorFromEquip));
                 sw.WriteLine(Convert.ToString(speciesSelect.SelectedIndex));
                 sw.WriteLine(Convert.ToString(archetypeSelect.SelectedIndex));
                 sw.WriteLine(Convert.ToString(attStrength.Value));
@@ -1535,48 +1776,28 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(attFellowshipModifier.Value));
                 sw.WriteLine(Convert.ToString(attInitiativeModifier.Value));
                 sw.WriteLine(Convert.ToString(attSpeedModifier.Value));
-                sw.WriteLine("?????RangedWeaponName?????");
-                sw.WriteLine(Convert.ToString(rangedWeaponNameBox.Text));
-                sw.WriteLine("?????RangedWeaponNameEnd?????");
-                sw.WriteLine(Convert.ToString(rangedWeaponDamageBox.Text));
-                sw.WriteLine(Convert.ToString(rangedWeaponEDBox.Text));
-                sw.WriteLine(Convert.ToString(rangedWeaponAPBox.Text));
-                sw.WriteLine(Convert.ToString(rangedWeaponRangeBox.Text));
-                sw.WriteLine(Convert.ToString(rangedWeaponSalvoBox.Text));
-                sw.WriteLine("?????RangedWeaponTraits?????");
-                sw.WriteLine(Convert.ToString(rangedWeaponTraitBox.Text));
-                sw.WriteLine("?????RangedWeaponTraitsEnd?????");
-                sw.WriteLine(Convert.ToString(rangedWeaponValueBox.Text));
-                sw.WriteLine("?????RangedWeaponKeywords?????");
-                sw.WriteLine(Convert.ToString(rangedWeaponKeywordsBox.Text));
-                sw.WriteLine("?????RangedWeaponKeywordsEnd?????");
-                sw.WriteLine("?????MeleeWeaponName?????");
-                sw.WriteLine(Convert.ToString(meleeWeaponNameBox.Text));
-                sw.WriteLine("?????MeleeWeaponNameEnd?????");
-                sw.WriteLine(Convert.ToString(meleeWeaponDamageBox.Text));
-                sw.WriteLine(Convert.ToString(meleeWeaponEDBox.Text));
-                sw.WriteLine(Convert.ToString(meleeWeaponAPBox.Text));
-                sw.WriteLine("?????MeleeWeaponRange?????");
-                sw.WriteLine(Convert.ToString(MeleeWeaponRangeBox.Text));
-                sw.WriteLine("?????MeleeWeaponRangeEnd?????");
-                sw.WriteLine("?????MeleeWeaponTraits?????");
-                sw.WriteLine(Convert.ToString(meleeWeaponTraitsBox.Text));
-                sw.WriteLine("?????MeleeWeaponTraitsEnd?????");
-                sw.WriteLine(Convert.ToString(meleeWeaponValueBox.Text));
-                sw.WriteLine("?????MeleeWeaponKeywords?????");
-                sw.WriteLine(Convert.ToString(meleeWeaponKeywordsBox.Text));
-                sw.WriteLine("?????MeleeWeaponKeywordsEnd?????");
-                sw.WriteLine("?????ArmorName?????");
-                sw.WriteLine(Convert.ToString(armorNameBox.Text));
-                sw.WriteLine("?????ArmorNameEnd?????");
-                sw.WriteLine(Convert.ToString(armorRatingBox.Value));
-                sw.WriteLine("?????ArmorTraits?????");
-                sw.WriteLine(Convert.ToString(armorTraitsBox.Text));
-                sw.WriteLine("?????ArmorTraitsEnd?????");
-                sw.WriteLine(Convert.ToString(armorValueBox.Text));
-                sw.WriteLine("?????ArmorKeywords?????");
-                sw.WriteLine(Convert.ToString(armorKeywordsBox.Text));
-                sw.WriteLine("?????ArmorKeywordsEnd?????");
+
+
+
+
+                sw.WriteLine("?????Equipment?????");
+                foreach (TreeNode item in equipTreeBox.Nodes)
+                {
+                    if (item !=  null)
+                    {
+                        if (item.Nodes.Count > 0)
+                        {
+                            foreach (TreeNode n in item.Nodes)
+                            {
+                                sw.WriteLine(n.Parent.Text);
+                                sw.WriteLine(n.Text);
+                            }
+                        }
+                    }
+                }
+
+
+
 
 
                 // talents and special tabs
@@ -1623,13 +1844,14 @@ namespace TheCommissar
             {
                 StreamReader sr = new StreamReader(openFileDialog.FileName);
                 string line = "";
-                int counter = 0;
+                //int counter = 0;
 
                 nameBox.Text = sr.ReadLine();
                 tierSelection = Convert.ToInt32(sr.ReadLine());
                 raceSelection = sr.ReadLine();
                 archetypeSelection = sr.ReadLine();
                 tierSelect.SelectedIndex = Convert.ToInt32(sr.ReadLine());
+                armorFromEquip = Convert.ToInt32(sr.ReadLine());
                 speciesSelect.SelectedIndex = Convert.ToInt32(sr.ReadLine());
                 archetypeSelect.SelectedIndex = Convert.ToInt32(sr.ReadLine());
                 attStrength.Value = Convert.ToInt32(sr.ReadLine());
@@ -1731,204 +1953,64 @@ namespace TheCommissar
                 attInitiativeModifier.Value = Convert.ToInt32(sr.ReadLine());
                 attSpeedModifier.Value = Convert.ToInt32(sr.ReadLine());
 
-                line = sr.ReadLine();
-                counter = 0;
-                rangedWeaponNameBox.Text = "";
-                while (line != "?????RangedWeaponNameEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????RangedWeaponNameEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            rangedWeaponNameBox.Text += Environment.NewLine;
-                        }
-                        rangedWeaponNameBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
 
-                rangedWeaponDamageBox.Text = sr.ReadLine();
-                rangedWeaponEDBox.Text = sr.ReadLine();
-                rangedWeaponAPBox.Text = sr.ReadLine();
-                rangedWeaponRangeBox.Text = sr.ReadLine();
-                rangedWeaponSalvoBox.Text = sr.ReadLine();
 
-                line = sr.ReadLine();
-                counter = 0;
-                rangedWeaponTraitBox.Text = "";
-                while (line != "?????RangedWeaponTraitsEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????RangedWeaponTraitsEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            rangedWeaponTraitBox.Text += Environment.NewLine;
-                        }
-                        rangedWeaponTraitBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
 
-                rangedWeaponValueBox.Text = sr.ReadLine();
+           
 
-                line = sr.ReadLine();
-                counter = 0;
-                rangedWeaponKeywordsBox.Text = "";
-                while (line != "?????RangedWeaponKeywordsEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????RangedWeaponKeywordsEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            rangedWeaponKeywordsBox.Text += Environment.NewLine;
-                        }
-                        rangedWeaponKeywordsBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
-
-                line = sr.ReadLine();
-                counter = 0;
-                meleeWeaponNameBox.Text = "";
-                while (line != "?????MeleeWeaponNameEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????MeleeWeaponNameEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            meleeWeaponNameBox.Text += Environment.NewLine;
-                        }
-                        meleeWeaponNameBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
-
-                meleeWeaponDamageBox.Text = sr.ReadLine();
-                meleeWeaponEDBox.Text = sr.ReadLine();
-                meleeWeaponAPBox.Text = sr.ReadLine();
-
-                line = sr.ReadLine();
-                counter = 0;
-                MeleeWeaponRangeBox.Text = "";
-                while (line != "?????MeleeWeaponRangeEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????MeleeWeaponRangeEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            MeleeWeaponRangeBox.Text += Environment.NewLine;
-                        }
-                        MeleeWeaponRangeBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
-
-                line = sr.ReadLine();
-                counter = 0;
-                meleeWeaponTraitsBox.Text = "";
-                while (line != "?????MeleeWeaponTraitsEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????MeleeWeaponTraitsEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            meleeWeaponTraitsBox.Text += Environment.NewLine;
-                        }
-                        meleeWeaponTraitsBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
-
-                meleeWeaponValueBox.Text = sr.ReadLine();
-
-                line = sr.ReadLine();
-                counter = 0;
-                meleeWeaponKeywordsBox.Text = "";
-                while (line != "?????MeleeWeaponKeywordsEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????MeleeWeaponKeywordsEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            meleeWeaponKeywordsBox.Text += Environment.NewLine;
-                        }
-                        meleeWeaponKeywordsBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
-
-                line = sr.ReadLine();
-                counter = 0;
-                armorNameBox.Text = "";
-                while (line != "?????ArmorNameEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????ArmorNameEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            armorNameBox.Text += Environment.NewLine;
-                        }
-                        armorNameBox.Text += (line);
-                        
-                    }
-                    counter += 1;
-                }
-
-                armorRatingBox.Value = Convert.ToInt32(sr.ReadLine());
-
-                line = sr.ReadLine();
-                counter = 0;
-                armorTraitsBox.Text = "";
-                while (line != "?????ArmorTraitsEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????ArmorTraitsEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            armorTraitsBox.Text += Environment.NewLine;
-                        }
-                        armorTraitsBox.Text += (line);                        
-                    }
-                    counter += 1;
-                }
-
-                armorValueBox.Text = sr.ReadLine();
-
-                line = sr.ReadLine();
-                counter = 0;
-                armorKeywordsBox.Text = "";
-                while (line != "?????ArmorKeywordsEnd?????")
-                {
-                    line = sr.ReadLine();
-                    if (line != "?????ArmorKeywordsEnd?????")
-                    {
-                        if (counter != 0)
-                        {
-                            armorKeywordsBox.Text += Environment.NewLine;
-                        }
-                        armorKeywordsBox.Text += (line);
-                    }
-                    counter += 1;
-                }
 
                 // special boxes
                 sr.ReadLine();
+                foreach(TreeNode item in equipTreeBox.Nodes)
+                {
+                    if (item != null)
+                    {
+                        if (item.Nodes.Count > 0)
+                        {
+                            item.Nodes.Clear();
+                        }
+                            
+                    }
+                }
+                while (line != "?????Powers?????")
+                {
+                    line = sr.ReadLine();
+                    if (line != "?????Powers?????")
+                    {
+                        if (line == "Ranged Weapons")
+                        {
+                            TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Ranged Weapons"));
+                            if (rootNode != null)
+                            {
+                                line = sr.ReadLine();
+                                rootNode.Nodes.Add(line);
+                                rootNode.Expand();
+                            }
+                        }
+                        if (line == "Melee Weapons")
+                        {
+                            TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Melee Weapons"));
+                            if (rootNode != null)
+                            {
+                                line = sr.ReadLine();
+                                rootNode.Nodes.Add(line);
+                                rootNode.Expand();
+                            }
+                        }
+                        if (line == "Armor")
+                        {
+                            TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Armor"));
+                            if (rootNode != null)
+                            {
+                                line = sr.ReadLine();
+                                rootNode.Nodes.Add(line);
+                                rootNode.Expand();
+                            }
+                        }
+                    }
+                }
+
+                //sr.ReadLine();
                 powerBox.Items.Clear();
                 while (line != "?????Talents?????")
                 {

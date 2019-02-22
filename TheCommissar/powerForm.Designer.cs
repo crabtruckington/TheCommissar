@@ -232,6 +232,7 @@
             this.Controls.Add(this.selectedPowerDetailLabel);
             this.Controls.Add(this.powerSelectBox);
             this.Name = "powerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Psychic Power";
             this.ResumeLayout(false);
             this.PerformLayout();
