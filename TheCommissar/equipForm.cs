@@ -834,6 +834,18 @@ namespace TheCommissar
                 traits = "Traits: Blast (Medium)";
                 type = "ranged";
             }
+            else if (name == "Gauss Rifle")
+            {
+                damage = "Damage: 10 + 1ED";
+                ap = "AP: -2";
+                range = "Range: 24m";
+                salvo = "Salvo: 1";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Uncommon)";
+                keywords = "Keywords: Plasma, Necron";
+                traits = "Traits: Brutal";
+                type = "ranged";
+            }
 
             //melee weapons
             else if (name == "Astartes Combat Knife")
@@ -1244,6 +1256,18 @@ namespace TheCommissar
                 traits = "Traits: Force, Waaagh!";
                 type = "melee";
             }
+            else if (name == "Axe Bayonet")
+            {
+                damage = "Damage: 2 + 1ED";
+                ap = "AP: 0";
+                range = "Range: --";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: Blade, Necron";
+                traits = "Traits: None";
+                type = "melee";
+            }
 
             //armor
             else if (name == "Bodyglove")
@@ -1582,6 +1606,18 @@ namespace TheCommissar
                 traits = "Traits: None";
                 type = "armor";
             }
+            else if (name == "Necron Dermal Plating")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: 2";
+                value = "Value: 2 (Uncommon)";
+                keywords = "Keywords: Integrated, Necron";
+                traits = "Traits: None";
+                type = "armor";
+            }
             else
             {
                 damage = "Damage: ";
@@ -1716,6 +1752,7 @@ namespace TheCommissar
             rangedWeaponsList.Add("Slugga");
             rangedWeaponsList.Add("Snazzgun");
             rangedWeaponsList.Add("Stikkbomb");
+            rangedWeaponsList.Add("Gauss Rifle");
 
             //melee weapons
             meleeWeaponsList.Add("Astartes Combat Knife");
@@ -1752,6 +1789,7 @@ namespace TheCommissar
             meleeWeaponsList.Add("Choppa");
             meleeWeaponsList.Add("Power Klaw");
             meleeWeaponsList.Add("Weirdboy Staff");
+            meleeWeaponsList.Add("Axe Bayonet");
 
             //armor
             armorList.Add("Bodyglove");
@@ -1782,6 +1820,7 @@ namespace TheCommissar
             armorList.Add("Eavy Armour");
             armorList.Add("Mega Armour");
             armorList.Add("Ork Flak");
+            armorList.Add("Necron Dermal Plating");
         }
 
 

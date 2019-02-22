@@ -1609,7 +1609,7 @@ namespace TheCommissar
                                                                                           "2. Attempt to remember a detail of your past" + Environment.NewLine +
                                                                                           "     life, in specific reference to the current" + Environment.NewLine +
                                                                                           "     situation." + Environment.NewLine + Environment.NewLine +
-                                                                                          "3. Willing make a sacrific (Ammo, equipment," + Environment.NewLine +
+                                                                                          "3. Willingly make a sacrific (Ammo, equipment," + Environment.NewLine +
                                                                                           "     or even your own wellbeing!) for the benefit" + Environment.NewLine +
                                                                                           "     of another Necron or the mission.";
             }
