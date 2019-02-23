@@ -16,15 +16,29 @@ namespace TheCommissar
         List<string> rangedWeaponsList = new List<string>();
         List<string> meleeWeaponsList = new List<string>();
         List<string> armorList = new List<string>();
+        List<string> weaponModList = new List<string>();
+        List<string> toolsList = new List<string>();
 
 
-        public equipForm()
+        public equipForm(int type)
         {
             InitializeComponent();
 
-            equipBoxFilter.SelectedIndex = 0;
-            createEquipLists();
-            updateEquipSelections();
+            if (type == 0)
+            {
+                equipBoxFilter.SelectedIndex = 0;
+                createEquipLists();
+                updateEquipSelections();
+            }
+            if (type == 1)
+            {
+                equipBoxFilter.Items.Clear();
+                equipBoxFilter.Items.Add("Weapon Mods");
+                equipBoxFilter.SelectedIndex = 0;
+                equipBoxFilter.Enabled = false;
+                createEquipLists();
+                updateEquipSelections();
+            }
 
 
         }
@@ -1618,6 +1632,796 @@ namespace TheCommissar
                 traits = "Traits: None";
                 type = "armor";
             }
+            
+            
+            // new stuff, ammo and tools
+
+            else if (name == "Ammunition Bandolier")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: 2 additional Reloads";
+                type = "tools";
+            }
+            else if (name == "Ammunition Backpack")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: 10 additional Reloads";
+                type = "tools";
+            }
+            else if (name == "Hellfire Bolt Rounds")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Very Rare)";
+                keywords = "Keywords: Imperium, Adeptus Astartes";
+                traits = "Description: +2ED, +3ED vs Organic targets";
+                type = "tools";
+            }
+            else if (name == "Kraken Bolt Rounds")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Very Rare)";
+                keywords = "Keywords: Imperium, Adeptus Astartes";
+                traits = "Description: AP -2";
+                type = "tools";
+            }
+            else if (name == "Manstopper Rounds")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: Imperium, Scum";
+                traits = "Traits: +1ED";
+                type = "tools";
+            }
+            else if (name == "Reloads")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Ammunition";
+                type = "tools";
+            }
+            else if (name == "Vengeance Bolt Rounds")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Very Rare)";
+                keywords = "Keywords: Imperium, Adeptus Astartes";
+                traits = "Description: Weapon gains Spread," + Environment.NewLine + "defender loses Cover bonus";
+                type = "tools";
+            }
+            else if (name == "9-70 Entrenching Tool")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: Halves time to dig holes";
+                type = "tools";
+            }
+            else if (name == "Auspex")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: Imperium, Adeptus Mechanicus";
+                traits = "Description: +2d to Awareness tests";
+                type = "tools";
+            }
+            else if (name == "Auto-Quill")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 4 (Uncommon)";
+                keywords = "Keywords: Imperium";
+                traits = "Description: +2d to forge documents";
+                type = "tools";
+            }
+            else if (name == "Ballistic Appeasement Auto-Reliquary")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 6 (Very Rare";
+                keywords = "Keywords: Imperium, Adeptus Astartes, Primaris";
+                traits = "Description: Clear weapon jams as a free action";
+                type = "tools";
+            }
+            else if (name == "Clothing")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: Varies, see P.307";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Varies, see P.307";
+                type = "tools";
+            }
+            else if (name == "Combi-Tool")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: See P.307";
+                type = "tools";
+            }
+            else if (name == "Chameleoline Cloak")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: +1d Stealth," + Environment.NewLine + "+1d Defence when in shadows";
+                type = "tools";
+            }
+            else if (name == "Chaplet Ecclesiasticus")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: Imperium, Adeptus Ministorum" + Environment.NewLine + "Adepta Sororitas";
+                traits = "Description: Can be used as a garrotte";
+                type = "tools";
+            }
+            else if (name == "Chrono")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Common)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: A Watch";
+                type = "tools";
+            }
+            else if (name == "Data-Slate")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: Imperium";
+                traits = "Description: Can read and store data";
+                type = "tools";
+            }
+            else if (name == "Diagnostor")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Very Rare)";
+                keywords = "Keywords: Imperium";
+                traits = "Description: +1d Medicae when diagnosing," + Environment.NewLine + "+1d Awareness and Investigation when" + Environment.NewLine + "when investigating cause of death";
+                type = "tools";
+            }
+            else if (name == "Grav-Chute")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: Can hover for 1 minute," + Environment.NewLine + "slow falls. See P.308";
+                type = "tools";
+            }
+            else if (name == "Munitorum-Issue Mess Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: +1d bonus to Survival to" + Environment.NewLine + "find food";
+                type = "tools";
+            }
+            else if (name == "Jump Pack")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Can jump for twice Movement" + Environment.NewLine + "distance. See P.308";
+                type = "tools";
+            }
+            else if (name == "Magnoculars")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: No distance penalties" + Environment.NewLine + "on Awareness tests";
+                type = "tools";
+            }
+            else if (name == "Medikit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Contains basic medical supplies";
+                type = "tools";
+            }
+            else if (name == "Chirurgeon's Tools Medkit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: Imperium, Adepta Sororitas";
+                traits = "Description: +2d Medicae tests to stabalize" + Environment.NewLine + "a dying person";
+                type = "tools";
+            }
+            else if (name == "Martyr's Gift Variant Medkit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 6 (Rare)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: +1d Medicae. See P.309";
+                type = "tools";
+            }
+            else if (name == "Missionary Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Rare)";
+                keywords = "Keywords: Imperium, Adeptus Ministorum";
+                traits = "Description: +1d Persuassion to convert" + Environment.NewLine + "people to the Imperial Creed";
+                type = "tools";
+            }
+            else if (name == "Periculum Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: Imperium, <Any>";
+                traits = "Traits: Contains Chrono, Data-Slate, Magnoculars" + Environment.NewLine + "2 Ration Packs, Respirator, Vox-beads";
+                type = "tools";
+            }
+            else if (name == "Preysense Goggles")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: No penalties for Darkness or Fog";
+                type = "tools";
+            }
+            else if (name == "Psychic Focus")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Traits: +1d Psychic Mastery tests";
+                type = "tools";
+            }
+            else if (name == "Ration Packs")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 1 (Common)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: 1 day of rations";
+                type = "tools";
+            }
+            else if (name == "Respirator")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Traits: 2 hours of oxygen";
+                type = "tools";
+            }
+            else if (name == "Rule of the Sororitas")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Uncommon)";
+                keywords = "Keywords: Imperium, Adepta Sororitas";
+                traits = "Description: Adeptus Sororitas bible";
+                type = "tools";
+            }
+            else if (name == "Sacred Machine Oil")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: Imperium, Adeptus Mechanicus";
+                traits = "Description: May ignore the first complication" + Environment.NewLine + "in combat";
+                type = "tools";
+            }
+            else if (name == "Slate Monitron")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: Shows wearers vital signs";
+                type = "tools";
+            }
+            else if (name == "Stimm")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 4 (Uncommon)";
+                keywords = "Keywords: Imperium, Scum";
+                traits = "Description: Heals 1d3+6 Shock, requires" + Environment.NewLine + "on a successful Medicae test";
+                type = "tools";
+            }
+            else if (name == "Survival Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: +1d to Survival tests";
+                type = "tools";
+            }
+            else if (name == "Symbol of Authority")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: +1d bonus to Leadership and" + Environment.NewLine + "Intimidation vs. appropriate targets";
+                type = "tools";
+            }
+            else if (name == "Uplifting Primer")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: Soldiers field guide";
+                type = "tools";
+            }
+            else if (name == "Void Suit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Space suit, 5 hours of oxygen";
+                type = "tools";
+            }
+            else if (name == "Vox-beads")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Can transmit audio 1km";
+                type = "tools";
+            }
+            else if (name == "Small Vox Unit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 4 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Can transmit audio 10km";
+                type = "tools";
+            }
+            else if (name == "Large Vox Unit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Can transmit audio 100km";
+                type = "tools";
+            }
+            else if (name == "Writing Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: Imperium";
+                traits = "Description: Writing utensils, scrolls";
+                type = "tools";
+            }
+            else if (name == "Bonesinger Shard")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 6 (Rare)";
+                keywords = "Keywords: Aeldari";
+                traits = "Description: Repair tool";
+                type = "tools";
+            }
+            else if (name == "Spirit Stone")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Very Rare)";
+                keywords = "Keywords: Aeldari";
+                traits = "Description: See P.311";
+                type = "tools";
+            }
+            else if (name == "Webway Keystone")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Unique)";
+                keywords = "Keywords: Aeldari";
+                traits = "Description: Manipulate webway portals with" + Environment.NewLine + "a 5DN Tech test";
+                type = "tools";
+            }
+            else if (name == "Ammo Grot")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: Ork";
+                traits = "Description: Lootgoblin that holds 2 ammo." + Environment.NewLine + "See P.311";
+                type = "tools";
+            }
+            else if (name == "Dok Bag")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Very Rare)";
+                keywords = "Keywords: Ork";
+                traits = "Description: A Medkit ";
+                type = "tools";
+            }
+            else if (name == "Fightin' Juice")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 4 (Rare)";
+                keywords = "Keywords: Ork";
+                traits = "Description: Removes all Shock, +2d bonus" + Environment.NewLine + "to Melee attacks, +1 to the result of all" + Environment.NewLine + " Defiance checks";
+                type = "tools";
+            }
+            else if (name == "Mek Toolz")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: Ork";
+                traits = "Description: Ork Tools";
+                type = "tools";
+            }
+
+
+            //new stuff, weapon mods
+
+
+            else if (name == "Ammunition Drum")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Common)";
+                keywords = "Keywords: Imperium, Scum";
+                traits = "Description: +1 Reload";
+                type = "mods";
+            }
+            else if (name == "Autoloader")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: Imperium";
+                traits = "Description: Reloading the weapon is" + Environment.NewLine + "is a Free Action";
+                type = "mods";
+            }
+            else if (name == "Bayonet Lug")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 1 (Common)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Can attach a bayonet";
+                type = "mods";
+            }
+            else if (name == "Chain Bayonet Lug")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 4 (Rare)";
+                keywords = "Keywords: Imperium, Chaos";
+                traits = "Description: Can attach a Chain bayonet";
+                type = "mods";
+            }
+            else if (name == "Combi-Weapon")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 6 (Rare)";
+                keywords = "Keywords: Imperium, Chaos, Scum";
+                traits = "Description: Combine 2 weapons, see P.298";
+                type = "mods";
+            }
+            else if (name == "Duelling Grip")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: +1d to attacks. Can only be" + Environment.NewLine + "attached to pistols and one-handed melee weapons";
+                type = "mods";
+            }
+            else if (name == "Distinction")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: Unique weapon. +1d to Intimidation";
+                type = "mods";
+            }
+            else if (name == "Gene-Grip Bio-Veritor")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Rare)";
+                keywords = "Keywords: Imperium";
+                traits = "Description: Bio-safety switch";
+                type = "mods";
+            }
+            else if (name == "Master-Crafted")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 7 (Very Rare)";
+                keywords = "Keywords: <Any>";
+                traits = "Description: A true work of art. Adds Steadfast" + Environment.NewLine + "trait, +2d bonus to attacks with this weapon";
+                type = "mods";
+            }
+            else if (name == "Megathoule Accelerator")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 6 (Very Rare)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: +2 Salvo, loses Steadfast trait";
+                type = "mods";
+            }
+            else if (name == "Monoscope")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 4 (Rare)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: Reduce range penalties by 2DN";
+                type = "mods";
+            }
+            else if (name == "Percussive Muzzle Brake")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: Imperium, Scum";
+                traits = "Description: Cannot apply to Heavy weapons." + Environment.NewLine + "Salvo +1";
+                type = "mods";
+            }
+            else if (name == "Preysense Sight")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 6 (Rare)";
+                keywords = "Keywords: Imperium, Scum, <Any>";
+                traits = "Description: Night Vision scope";
+                type = "mods";
+            }
+            else if (name == "Red-Dot Sight")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Uncommon)";
+                keywords = "Keywords: Imperium, Scum";
+                traits = "Description: +1d bonus to ranged attacks";
+                type = "mods";
+            }
+            else if (name == "Silencer")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 3 (Uncommon)";
+                keywords = "Keywords: Imperium, Scum, <Any>";
+                traits = "Description: +4DN to tests to hear the weapon";
+                type = "mods";
+            }
+
             else
             {
                 damage = "Damage: ";
@@ -1631,6 +2435,8 @@ namespace TheCommissar
                 type = "armor";
             }
 
+
+
             result = Tuple.Create(Tuple.Create(name, damage, ap, range, salvo), Tuple.Create(armor, value, keywords, traits, type));
             return result;
         }
@@ -1641,46 +2447,74 @@ namespace TheCommissar
             equipSelectBox.Items.Clear();
 
             // add all items
-            if (equipBoxFilter.SelectedIndex == 0)
+            if (equipBoxFilter.Items.Count > 1)
             {
-                foreach (string item in rangedWeaponsList)
+                if (equipBoxFilter.SelectedIndex == 0)
                 {
-                    equipSelectBox.Items.Add(item);
+                    foreach (string item in rangedWeaponsList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
+                    foreach (string item in meleeWeaponsList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
+                    foreach (string item in armorList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
+                    foreach (string item in toolsList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
                 }
-                foreach (string item in meleeWeaponsList)
+
+                //add ranged weapons
+                if (equipBoxFilter.SelectedIndex == 1)
                 {
-                    equipSelectBox.Items.Add(item);
+                    foreach (string item in rangedWeaponsList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
                 }
-                foreach (string item in armorList)
+
+                //add melee weapons
+                if (equipBoxFilter.SelectedIndex == 2)
                 {
-                    equipSelectBox.Items.Add(item);
+                    foreach (string item in meleeWeaponsList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
+                }
+
+                //add armor
+                if (equipBoxFilter.SelectedIndex == 3)
+                {
+                    foreach (string item in armorList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
+                }
+
+                //add tools and ammo
+                if (equipBoxFilter.SelectedIndex == 4)
+                {
+                    foreach (string item in toolsList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
                 }
             }
 
-            //add ranged weapons
-            if (equipBoxFilter.SelectedIndex == 1)
+            // we are in mod selection
+            else
             {
-                foreach (string item in rangedWeaponsList)
+                if (equipBoxFilter.SelectedIndex == 0)
                 {
-                    equipSelectBox.Items.Add(item);
-                }
-            }
-
-            //add melee weapons
-            if (equipBoxFilter.SelectedIndex == 2)
-            {
-                foreach (string item in meleeWeaponsList)
-                {
-                    equipSelectBox.Items.Add(item);
-                }
-            }
-
-            //add armor
-            if (equipBoxFilter.SelectedIndex == 3)
-            {
-                foreach (string item in armorList)
-                {
-                    equipSelectBox.Items.Add(item);
+                    foreach (string item in weaponModList)
+                    {
+                        equipSelectBox.Items.Add(item);
+                    }
                 }
             }
         }
@@ -1821,6 +2655,74 @@ namespace TheCommissar
             armorList.Add("Mega Armour");
             armorList.Add("Ork Flak");
             armorList.Add("Necron Dermal Plating");
+
+            //mods list
+            weaponModList.Add("Ammunition Drum");
+            weaponModList.Add("Autoloader");
+            weaponModList.Add("Bayonet Lug");
+            weaponModList.Add("Chain Bayonet Lug");
+            weaponModList.Add("Combi-Weapon");
+            weaponModList.Add("Duelling Grip");
+            weaponModList.Add("Distinction");
+            weaponModList.Add("Gene-Grip Bio-Veritor");
+            weaponModList.Add("Master-Crafted");
+            weaponModList.Add("Megathoule Accelerator");
+            weaponModList.Add("Monoscope");
+            weaponModList.Add("Percussive Muzzle Brake");
+            weaponModList.Add("Preysense Sight");
+            weaponModList.Add("Red-Dot Sight");
+            weaponModList.Add("Silencer");
+
+            //tools and ammo
+            toolsList.Add("Ammunition Bandolier");
+            toolsList.Add("Ammunition Backpack");
+            toolsList.Add("Hellfi re Bolt Rounds");
+            toolsList.Add("Kraken Bolt Rounds");
+            toolsList.Add("Manstopper Rounds");
+            toolsList.Add("Reloads");
+            toolsList.Add("Vengeance Bolt Rounds");
+            toolsList.Add("9-70 Entrenching Tool");
+            toolsList.Add("Auspex");
+            toolsList.Add("Auto-Quill");
+            toolsList.Add("Ballistic Appeasement Auto-Reliquary");
+            toolsList.Add("Clothing");
+            toolsList.Add("Combi-Tool");
+            toolsList.Add("Chameleoline Cloak");
+            toolsList.Add("Chaplet Ecclesiasticus");
+            toolsList.Add("Chrono");
+            toolsList.Add("Data-Slate");
+            toolsList.Add("Diagnostor");
+            toolsList.Add("Grav-Chute");
+            toolsList.Add("Munitorum-Issue Mess Kit");
+            toolsList.Add("Jump Pack");
+            toolsList.Add("Magnoculars");
+            toolsList.Add("Medikit");
+            toolsList.Add("Chirurgeon's Tools Medkit");
+            toolsList.Add("Martyr's Gift Variant Medkit");
+            toolsList.Add("Missionary Kit");
+            toolsList.Add("Periculum Kit");
+            toolsList.Add("Preysense Goggles");
+            toolsList.Add("Psychic Focus");
+            toolsList.Add("Ration Packs");
+            toolsList.Add("Respirator");
+            toolsList.Add("Rule of the Sororitas");
+            toolsList.Add("Sacred Machine Oil");
+            toolsList.Add("Slate Monitron");
+            toolsList.Add("Stimm");
+            toolsList.Add("Survival Kit");
+            toolsList.Add("Symbol of Authority");
+            toolsList.Add("Uplifting Primer");
+            toolsList.Add("Void Suit");
+            toolsList.Add("Vox");
+            toolsList.Add("Writing Kit");
+            toolsList.Add("Bonesinger Shard");
+            toolsList.Add("Spirit Stone");
+            toolsList.Add("Webway Keystone");
+            toolsList.Add("Ammo Grot");
+            toolsList.Add("Dok Bag");
+            toolsList.Add("Fightin' Juice");
+            toolsList.Add("Mek Toolz");
+
         }
 
 

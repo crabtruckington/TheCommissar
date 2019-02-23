@@ -768,11 +768,49 @@ namespace TheCommissar
             powerKeywordsLabel.Text = results.Item2.Item4;
         }
 
+        // adding weapon mods
+        private void equipTreeBox_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                equipTreeBox.SelectedNode = e.Node;
+                if (e.Node.Parent != null)
+                {
+                    if (e.Node.Parent.Text == "Ranged Weapons" || e.Node.Parent.Text == "Melee Weapons")
+                    {
+                        equipModMenu.Show(Cursor.Position);
+                    }
+                }
+            }
+        }
+
+
+        private void addModToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            equipForm equip = new equipForm(1);
+            var curItem = equipTreeBox.SelectedNode;
+
+            DialogResult dr = equip.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                equip.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                string equipSelected = equip.returnEquipDetails();
+                var results = equip.getEquipValues(equipSelected);
+
+                curItem.Nodes.Add(results.Item1.Item1);
+                curItem.Expand();
+            }
+        }
+
+
         // adding Equipment
 
         private void equipTreeBox_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            equipForm equip = new equipForm();
+            equipForm equip = new equipForm(0);
             var curItem = equipTreeBox.SelectedNode;
             
 
@@ -814,7 +852,7 @@ namespace TheCommissar
 
         private void addEquipButton_Click(object sender, EventArgs e)
         {
-            equipForm equip = new equipForm();
+            equipForm equip = new equipForm(0);
             DialogResult dr = equip.ShowDialog(this);
             if (dr == DialogResult.Cancel)
             {
@@ -857,6 +895,17 @@ namespace TheCommissar
                         armorFromEquip += armorValue;
                     }
                 }
+
+                // new tools stuff
+                else if (results.Item2.Item5 == "tools")
+                {
+                    TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Ammo and Tools"));
+                    if (rootNode != null)
+                    {
+                        rootNode.Nodes.Add(results.Item1.Item1);
+                        rootNode.Expand();                     
+                    }
+                }
                 else
                 {
 
@@ -868,7 +917,7 @@ namespace TheCommissar
 
         private void removeEquipButton_Click(object sender, EventArgs e)
         {
-            equipForm equip = new equipForm();
+            equipForm equip = new equipForm(0);
             var curItem = equipTreeBox.SelectedNode;
 
 
@@ -1777,9 +1826,6 @@ namespace TheCommissar
                 sw.WriteLine(Convert.ToString(attInitiativeModifier.Value));
                 sw.WriteLine(Convert.ToString(attSpeedModifier.Value));
 
-
-
-
                 sw.WriteLine("?????Equipment?????");
                 foreach (TreeNode item in equipTreeBox.Nodes)
                 {
@@ -1791,15 +1837,21 @@ namespace TheCommissar
                             {
                                 sw.WriteLine(n.Parent.Text);
                                 sw.WriteLine(n.Text);
+                                
+                                if (item.Nodes.Count > 0)
+                                {
+                                    foreach (TreeNode m in n.Nodes)
+                                    {
+                                        sw.WriteLine("WeaponMod");
+                                        sw.WriteLine(m.Parent.Text);
+                                        sw.WriteLine(m.Text);
+                                    }
+                                }
+                                
                             }
                         }
                     }
                 }
-
-
-
-
-
                 // talents and special tabs
                 sw.WriteLine("?????Powers?????");
                 foreach (var item in powerBox.Items)
@@ -1829,7 +1881,6 @@ namespace TheCommissar
                 sw.Close();
             }
         }
-
 
         //loading routine, this is absolutely disgusting and there has to be a better way to do it
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2005,6 +2056,41 @@ namespace TheCommissar
                                 line = sr.ReadLine();
                                 rootNode.Nodes.Add(line);
                                 rootNode.Expand();
+                            }
+                        }
+                        if (line == "Ammo and Tools")
+                        {
+                            TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Ammo and Tools"));
+                            if (rootNode != null)
+                            {
+                                line = sr.ReadLine();
+                                rootNode.Nodes.Add(line);
+                                rootNode.Expand();
+                            }
+                        }
+
+                        // weapon mods are a little lower, take a little trip
+                        if (line == "WeaponMod")
+                        {
+                            string modName;
+                            string weaponBeingModded;
+
+                            weaponBeingModded = sr.ReadLine();
+                            modName = sr.ReadLine();
+
+                            List<TreeNode> treeNodes = new List<TreeNode>();
+
+                            treeNodes = equipTreeBox.Nodes.Cast<TreeNode>().ToList();
+
+
+                            foreach (TreeNode node in treeNodes)
+                            {
+                                TreeNode rootNode = node.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals(weaponBeingModded));
+                                if (rootNode != null)
+                                {
+                                    rootNode.Nodes.Add(modName);
+                                    rootNode.Expand();
+                                }
                             }
                         }
                     }

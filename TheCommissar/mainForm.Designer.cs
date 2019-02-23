@@ -32,6 +32,7 @@
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Ranged Weapons");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Melee Weapons");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Armor");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Ammo and Tools");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -222,6 +223,20 @@
             this.skillAthletics = new System.Windows.Forms.NumericUpDown();
             this.athleticsLabel = new System.Windows.Forms.Label();
             this.equipment = new System.Windows.Forms.TabPage();
+            this.equipTreeBox = new System.Windows.Forms.TreeView();
+            this.equipDamageLabel = new System.Windows.Forms.Label();
+            this.equipArmorRatingLabel = new System.Windows.Forms.Label();
+            this.equipKeywordsLabel = new System.Windows.Forms.Label();
+            this.equipValueLabel = new System.Windows.Forms.Label();
+            this.equipTraitsLabel = new System.Windows.Forms.Label();
+            this.equipSalvoLabel = new System.Windows.Forms.Label();
+            this.equipRangeLabel = new System.Windows.Forms.Label();
+            this.equipAPLabel = new System.Windows.Forms.Label();
+            this.removeEquipButton = new System.Windows.Forms.Button();
+            this.addEquipButton = new System.Windows.Forms.Button();
+            this.equipmentLabel = new System.Windows.Forms.Label();
+            this.miscEquipmentHeaderLabel = new System.Windows.Forms.Label();
+            this.equipmentTextBox = new System.Windows.Forms.RichTextBox();
             this.cyberAndAugments = new System.Windows.Forms.TabPage();
             this.augDetailsLabel = new System.Windows.Forms.Label();
             this.augRaceLabel = new System.Windows.Forms.Label();
@@ -249,6 +264,7 @@
             this.notesTextBox = new System.Windows.Forms.RichTextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.summary = new System.Windows.Forms.TabPage();
+            this.objectiveLabel = new System.Windows.Forms.Label();
             this.lifetimeBPEarnedLabel = new System.Windows.Forms.Label();
             this.rankTraitLabel = new System.Windows.Forms.Label();
             this.woundsTotalLabel = new System.Windows.Forms.Label();
@@ -273,22 +289,9 @@
             this.defenceTraitLabel = new System.Windows.Forms.Label();
             this.traitsLabel = new System.Windows.Forms.Label();
             this.calcValuesToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.miscEquipmentHeaderLabel = new System.Windows.Forms.Label();
-            this.equipmentTextBox = new System.Windows.Forms.RichTextBox();
-            this.equipDamageLabel = new System.Windows.Forms.Label();
-            this.equipArmorRatingLabel = new System.Windows.Forms.Label();
-            this.equipKeywordsLabel = new System.Windows.Forms.Label();
-            this.equipValueLabel = new System.Windows.Forms.Label();
-            this.equipTraitsLabel = new System.Windows.Forms.Label();
-            this.equipSalvoLabel = new System.Windows.Forms.Label();
-            this.equipRangeLabel = new System.Windows.Forms.Label();
-            this.equipAPLabel = new System.Windows.Forms.Label();
-            this.removeEquipButton = new System.Windows.Forms.Button();
-            this.addEquipButton = new System.Windows.Forms.Button();
-            this.equipmentLabel = new System.Windows.Forms.Label();
-            this.equipTreeBox = new System.Windows.Forms.TreeView();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.objectiveLabel = new System.Windows.Forms.Label();
+            this.equipModMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -368,6 +371,7 @@
             this.notes.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.summary.SuspendLayout();
+            this.equipModMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -2306,6 +2310,164 @@
             this.equipment.TabIndex = 2;
             this.equipment.Text = "Equipment";
             // 
+            // equipTreeBox
+            // 
+            this.equipTreeBox.Location = new System.Drawing.Point(6, 37);
+            this.equipTreeBox.Name = "equipTreeBox";
+            treeNode1.Name = "rangedWeaponNode";
+            treeNode1.Text = "Ranged Weapons";
+            treeNode2.Name = "meleeWeaponNode";
+            treeNode2.Text = "Melee Weapons";
+            treeNode3.Name = "armorNode";
+            treeNode3.Text = "Armor";
+            treeNode4.Name = "toolsNode";
+            treeNode4.Text = "Ammo and Tools";
+            this.equipTreeBox.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            this.equipTreeBox.ShowRootLines = false;
+            this.equipTreeBox.Size = new System.Drawing.Size(214, 316);
+            this.equipTreeBox.TabIndex = 134;
+            this.equipTreeBox.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.equipTreeBox_AfterSelect);
+            this.equipTreeBox.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.equipTreeBox_NodeMouseClick);
+            // 
+            // equipDamageLabel
+            // 
+            this.equipDamageLabel.AutoSize = true;
+            this.equipDamageLabel.Location = new System.Drawing.Point(226, 37);
+            this.equipDamageLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipDamageLabel.Name = "equipDamageLabel";
+            this.equipDamageLabel.Size = new System.Drawing.Size(53, 13);
+            this.equipDamageLabel.TabIndex = 133;
+            this.equipDamageLabel.Text = "Damage: ";
+            // 
+            // equipArmorRatingLabel
+            // 
+            this.equipArmorRatingLabel.AutoSize = true;
+            this.equipArmorRatingLabel.Location = new System.Drawing.Point(226, 137);
+            this.equipArmorRatingLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipArmorRatingLabel.Name = "equipArmorRatingLabel";
+            this.equipArmorRatingLabel.Size = new System.Drawing.Size(37, 13);
+            this.equipArmorRatingLabel.TabIndex = 132;
+            this.equipArmorRatingLabel.Text = "Armor:";
+            // 
+            // equipKeywordsLabel
+            // 
+            this.equipKeywordsLabel.AutoSize = true;
+            this.equipKeywordsLabel.Location = new System.Drawing.Point(226, 187);
+            this.equipKeywordsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipKeywordsLabel.Name = "equipKeywordsLabel";
+            this.equipKeywordsLabel.Size = new System.Drawing.Size(56, 13);
+            this.equipKeywordsLabel.TabIndex = 131;
+            this.equipKeywordsLabel.Text = "Keywords:";
+            // 
+            // equipValueLabel
+            // 
+            this.equipValueLabel.AutoSize = true;
+            this.equipValueLabel.Location = new System.Drawing.Point(226, 162);
+            this.equipValueLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipValueLabel.Name = "equipValueLabel";
+            this.equipValueLabel.Size = new System.Drawing.Size(37, 13);
+            this.equipValueLabel.TabIndex = 130;
+            this.equipValueLabel.Text = "Value:";
+            // 
+            // equipTraitsLabel
+            // 
+            this.equipTraitsLabel.AutoSize = true;
+            this.equipTraitsLabel.Location = new System.Drawing.Point(226, 212);
+            this.equipTraitsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipTraitsLabel.Name = "equipTraitsLabel";
+            this.equipTraitsLabel.Size = new System.Drawing.Size(39, 13);
+            this.equipTraitsLabel.TabIndex = 129;
+            this.equipTraitsLabel.Text = "Traits: ";
+            // 
+            // equipSalvoLabel
+            // 
+            this.equipSalvoLabel.AutoSize = true;
+            this.equipSalvoLabel.Location = new System.Drawing.Point(226, 112);
+            this.equipSalvoLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipSalvoLabel.Name = "equipSalvoLabel";
+            this.equipSalvoLabel.Size = new System.Drawing.Size(40, 13);
+            this.equipSalvoLabel.TabIndex = 128;
+            this.equipSalvoLabel.Text = "Salvo: ";
+            // 
+            // equipRangeLabel
+            // 
+            this.equipRangeLabel.AutoSize = true;
+            this.equipRangeLabel.Location = new System.Drawing.Point(226, 87);
+            this.equipRangeLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipRangeLabel.Name = "equipRangeLabel";
+            this.equipRangeLabel.Size = new System.Drawing.Size(45, 13);
+            this.equipRangeLabel.TabIndex = 127;
+            this.equipRangeLabel.Text = "Range: ";
+            // 
+            // equipAPLabel
+            // 
+            this.equipAPLabel.AutoSize = true;
+            this.equipAPLabel.Location = new System.Drawing.Point(226, 62);
+            this.equipAPLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipAPLabel.Name = "equipAPLabel";
+            this.equipAPLabel.Size = new System.Drawing.Size(27, 13);
+            this.equipAPLabel.TabIndex = 126;
+            this.equipAPLabel.Text = "AP: ";
+            // 
+            // removeEquipButton
+            // 
+            this.removeEquipButton.Location = new System.Drawing.Point(126, 359);
+            this.removeEquipButton.Name = "removeEquipButton";
+            this.removeEquipButton.Size = new System.Drawing.Size(94, 23);
+            this.removeEquipButton.TabIndex = 125;
+            this.removeEquipButton.Text = "Remove";
+            this.removeEquipButton.UseVisualStyleBackColor = true;
+            this.removeEquipButton.Click += new System.EventHandler(this.removeEquipButton_Click);
+            // 
+            // addEquipButton
+            // 
+            this.addEquipButton.Location = new System.Drawing.Point(6, 359);
+            this.addEquipButton.Name = "addEquipButton";
+            this.addEquipButton.Size = new System.Drawing.Size(94, 23);
+            this.addEquipButton.TabIndex = 124;
+            this.addEquipButton.Text = "Add Equipment";
+            this.addEquipButton.UseVisualStyleBackColor = true;
+            this.addEquipButton.Click += new System.EventHandler(this.addEquipButton_Click);
+            // 
+            // equipmentLabel
+            // 
+            this.equipmentLabel.AutoSize = true;
+            this.equipmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equipmentLabel.Location = new System.Drawing.Point(3, 8);
+            this.equipmentLabel.Name = "equipmentLabel";
+            this.equipmentLabel.Size = new System.Drawing.Size(66, 13);
+            this.equipmentLabel.TabIndex = 123;
+            this.equipmentLabel.Text = "Equipment";
+            // 
+            // miscEquipmentHeaderLabel
+            // 
+            this.miscEquipmentHeaderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.miscEquipmentHeaderLabel.AutoSize = true;
+            this.miscEquipmentHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.miscEquipmentHeaderLabel.Location = new System.Drawing.Point(479, 9);
+            this.miscEquipmentHeaderLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.miscEquipmentHeaderLabel.Name = "miscEquipmentHeaderLabel";
+            this.miscEquipmentHeaderLabel.Size = new System.Drawing.Size(318, 13);
+            this.miscEquipmentHeaderLabel.TabIndex = 51;
+            this.miscEquipmentHeaderLabel.Text = "Miscellaneous Equipment (Trinkets, Ammo, Tools, etc.)";
+            // 
+            // equipmentTextBox
+            // 
+            this.equipmentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.equipmentTextBox.Location = new System.Drawing.Point(482, 37);
+            this.equipmentTextBox.Name = "equipmentTextBox";
+            this.equipmentTextBox.Size = new System.Drawing.Size(337, 466);
+            this.equipmentTextBox.TabIndex = 50;
+            this.equipmentTextBox.Text = "";
+            // 
             // cyberAndAugments
             // 
             this.cyberAndAugments.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -2624,6 +2786,15 @@
             this.summary.TabIndex = 0;
             this.summary.Text = "Summary";
             // 
+            // objectiveLabel
+            // 
+            this.objectiveLabel.AutoSize = true;
+            this.objectiveLabel.Location = new System.Drawing.Point(6, 394);
+            this.objectiveLabel.Name = "objectiveLabel";
+            this.objectiveLabel.Size = new System.Drawing.Size(60, 13);
+            this.objectiveLabel.TabIndex = 46;
+            this.objectiveLabel.Text = "Objectives:";
+            // 
             // lifetimeBPEarnedLabel
             // 
             this.lifetimeBPEarnedLabel.AutoSize = true;
@@ -2832,167 +3003,19 @@
             this.traitsLabel.TabIndex = 0;
             this.traitsLabel.Text = "Traits";
             // 
-            // miscEquipmentHeaderLabel
+            // equipModMenu
             // 
-            this.miscEquipmentHeaderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.miscEquipmentHeaderLabel.AutoSize = true;
-            this.miscEquipmentHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.miscEquipmentHeaderLabel.Location = new System.Drawing.Point(479, 9);
-            this.miscEquipmentHeaderLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
-            this.miscEquipmentHeaderLabel.Name = "miscEquipmentHeaderLabel";
-            this.miscEquipmentHeaderLabel.Size = new System.Drawing.Size(318, 13);
-            this.miscEquipmentHeaderLabel.TabIndex = 51;
-            this.miscEquipmentHeaderLabel.Text = "Miscellaneous Equipment (Trinkets, Ammo, Tools, etc.)";
+            this.equipModMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addModToolStripMenuItem});
+            this.equipModMenu.Name = "contextMenuStrip1";
+            this.equipModMenu.Size = new System.Drawing.Size(125, 26);
             // 
-            // equipmentTextBox
+            // addModToolStripMenuItem
             // 
-            this.equipmentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.equipmentTextBox.Location = new System.Drawing.Point(482, 37);
-            this.equipmentTextBox.Name = "equipmentTextBox";
-            this.equipmentTextBox.Size = new System.Drawing.Size(337, 466);
-            this.equipmentTextBox.TabIndex = 50;
-            this.equipmentTextBox.Text = "";
-            // 
-            // equipDamageLabel
-            // 
-            this.equipDamageLabel.AutoSize = true;
-            this.equipDamageLabel.Location = new System.Drawing.Point(226, 37);
-            this.equipDamageLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipDamageLabel.Name = "equipDamageLabel";
-            this.equipDamageLabel.Size = new System.Drawing.Size(53, 13);
-            this.equipDamageLabel.TabIndex = 133;
-            this.equipDamageLabel.Text = "Damage: ";
-            // 
-            // equipArmorRatingLabel
-            // 
-            this.equipArmorRatingLabel.AutoSize = true;
-            this.equipArmorRatingLabel.Location = new System.Drawing.Point(226, 137);
-            this.equipArmorRatingLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipArmorRatingLabel.Name = "equipArmorRatingLabel";
-            this.equipArmorRatingLabel.Size = new System.Drawing.Size(37, 13);
-            this.equipArmorRatingLabel.TabIndex = 132;
-            this.equipArmorRatingLabel.Text = "Armor:";
-            // 
-            // equipKeywordsLabel
-            // 
-            this.equipKeywordsLabel.AutoSize = true;
-            this.equipKeywordsLabel.Location = new System.Drawing.Point(226, 187);
-            this.equipKeywordsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipKeywordsLabel.Name = "equipKeywordsLabel";
-            this.equipKeywordsLabel.Size = new System.Drawing.Size(56, 13);
-            this.equipKeywordsLabel.TabIndex = 131;
-            this.equipKeywordsLabel.Text = "Keywords:";
-            // 
-            // equipValueLabel
-            // 
-            this.equipValueLabel.AutoSize = true;
-            this.equipValueLabel.Location = new System.Drawing.Point(226, 162);
-            this.equipValueLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipValueLabel.Name = "equipValueLabel";
-            this.equipValueLabel.Size = new System.Drawing.Size(37, 13);
-            this.equipValueLabel.TabIndex = 130;
-            this.equipValueLabel.Text = "Value:";
-            // 
-            // equipTraitsLabel
-            // 
-            this.equipTraitsLabel.AutoSize = true;
-            this.equipTraitsLabel.Location = new System.Drawing.Point(226, 212);
-            this.equipTraitsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipTraitsLabel.Name = "equipTraitsLabel";
-            this.equipTraitsLabel.Size = new System.Drawing.Size(39, 13);
-            this.equipTraitsLabel.TabIndex = 129;
-            this.equipTraitsLabel.Text = "Traits: ";
-            // 
-            // equipSalvoLabel
-            // 
-            this.equipSalvoLabel.AutoSize = true;
-            this.equipSalvoLabel.Location = new System.Drawing.Point(226, 112);
-            this.equipSalvoLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipSalvoLabel.Name = "equipSalvoLabel";
-            this.equipSalvoLabel.Size = new System.Drawing.Size(40, 13);
-            this.equipSalvoLabel.TabIndex = 128;
-            this.equipSalvoLabel.Text = "Salvo: ";
-            // 
-            // equipRangeLabel
-            // 
-            this.equipRangeLabel.AutoSize = true;
-            this.equipRangeLabel.Location = new System.Drawing.Point(226, 87);
-            this.equipRangeLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipRangeLabel.Name = "equipRangeLabel";
-            this.equipRangeLabel.Size = new System.Drawing.Size(45, 13);
-            this.equipRangeLabel.TabIndex = 127;
-            this.equipRangeLabel.Text = "Range: ";
-            // 
-            // equipAPLabel
-            // 
-            this.equipAPLabel.AutoSize = true;
-            this.equipAPLabel.Location = new System.Drawing.Point(226, 62);
-            this.equipAPLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipAPLabel.Name = "equipAPLabel";
-            this.equipAPLabel.Size = new System.Drawing.Size(27, 13);
-            this.equipAPLabel.TabIndex = 126;
-            this.equipAPLabel.Text = "AP: ";
-            // 
-            // removeEquipButton
-            // 
-            this.removeEquipButton.Location = new System.Drawing.Point(126, 359);
-            this.removeEquipButton.Name = "removeEquipButton";
-            this.removeEquipButton.Size = new System.Drawing.Size(94, 23);
-            this.removeEquipButton.TabIndex = 125;
-            this.removeEquipButton.Text = "Remove";
-            this.removeEquipButton.UseVisualStyleBackColor = true;
-            this.removeEquipButton.Click += new System.EventHandler(this.removeEquipButton_Click);
-            // 
-            // addEquipButton
-            // 
-            this.addEquipButton.Location = new System.Drawing.Point(6, 359);
-            this.addEquipButton.Name = "addEquipButton";
-            this.addEquipButton.Size = new System.Drawing.Size(94, 23);
-            this.addEquipButton.TabIndex = 124;
-            this.addEquipButton.Text = "Add Equipment";
-            this.addEquipButton.UseVisualStyleBackColor = true;
-            this.addEquipButton.Click += new System.EventHandler(this.addEquipButton_Click);
-            // 
-            // equipmentLabel
-            // 
-            this.equipmentLabel.AutoSize = true;
-            this.equipmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equipmentLabel.Location = new System.Drawing.Point(3, 8);
-            this.equipmentLabel.Name = "equipmentLabel";
-            this.equipmentLabel.Size = new System.Drawing.Size(66, 13);
-            this.equipmentLabel.TabIndex = 123;
-            this.equipmentLabel.Text = "Equipment";
-            // 
-            // equipTreeBox
-            // 
-            this.equipTreeBox.Location = new System.Drawing.Point(6, 37);
-            this.equipTreeBox.Name = "equipTreeBox";
-            treeNode1.Name = "rangedWeaponNode";
-            treeNode1.Text = "Ranged Weapons";
-            treeNode2.Name = "meleeWeaponNode";
-            treeNode2.Text = "Melee Weapons";
-            treeNode3.Name = "armorNode";
-            treeNode3.Text = "Armor";
-            this.equipTreeBox.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            this.equipTreeBox.Size = new System.Drawing.Size(214, 316);
-            this.equipTreeBox.TabIndex = 134;
-            this.equipTreeBox.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.equipTreeBox_AfterSelect);
-            // 
-            // objectiveLabel
-            // 
-            this.objectiveLabel.AutoSize = true;
-            this.objectiveLabel.Location = new System.Drawing.Point(6, 394);
-            this.objectiveLabel.Name = "objectiveLabel";
-            this.objectiveLabel.Size = new System.Drawing.Size(60, 13);
-            this.objectiveLabel.TabIndex = 46;
-            this.objectiveLabel.Text = "Objectives:";
+            this.addModToolStripMenuItem.Name = "addModToolStripMenuItem";
+            this.addModToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.addModToolStripMenuItem.Text = "Add Mod";
+            this.addModToolStripMenuItem.Click += new System.EventHandler(this.addModToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -3097,6 +3120,7 @@
             this.tabControl2.ResumeLayout(false);
             this.summary.ResumeLayout(false);
             this.summary.PerformLayout();
+            this.equipModMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3360,6 +3384,8 @@
         private System.Windows.Forms.RichTextBox equipmentTextBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Label objectiveLabel;
+        private System.Windows.Forms.ContextMenuStrip equipModMenu;
+        private System.Windows.Forms.ToolStripMenuItem addModToolStripMenuItem;
     }
 }
 

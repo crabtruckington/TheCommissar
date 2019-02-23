@@ -172,7 +172,8 @@
             "All",
             "Ranged Weapons",
             "Melee Weapons",
-            "Armor"});
+            "Armor",
+            "Tools and Ammo"});
             this.equipBoxFilter.Location = new System.Drawing.Point(12, 12);
             this.equipBoxFilter.Name = "equipBoxFilter";
             this.equipBoxFilter.Size = new System.Drawing.Size(279, 21);
