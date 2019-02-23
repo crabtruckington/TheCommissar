@@ -2301,7 +2301,7 @@ namespace TheCommissar
                 traits = "Description: Combine 2 weapons, see P.298";
                 type = "mods";
             }
-            else if (name == "Duelling Grip")
+            else if (name == "Dueling Grip")
             {
                 damage = "Damage: N/A";
                 ap = "AP: N/A";
@@ -2310,7 +2310,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: +1d to attacks. Can only be" + Environment.NewLine + "attached to pistols and one-handed melee weapons";
+                traits = "Description: +1d to attacks. Can only be" + Environment.NewLine + "attached to pistols and one-handed" + Environment.NewLine + "melee weapons";
                 type = "mods";
             }
             else if (name == "Distinction")
@@ -2662,7 +2662,7 @@ namespace TheCommissar
             weaponModList.Add("Bayonet Lug");
             weaponModList.Add("Chain Bayonet Lug");
             weaponModList.Add("Combi-Weapon");
-            weaponModList.Add("Duelling Grip");
+            weaponModList.Add("Dueling Grip");
             weaponModList.Add("Distinction");
             weaponModList.Add("Gene-Grip Bio-Veritor");
             weaponModList.Add("Master-Crafted");
@@ -2676,7 +2676,7 @@ namespace TheCommissar
             //tools and ammo
             toolsList.Add("Ammunition Bandolier");
             toolsList.Add("Ammunition Backpack");
-            toolsList.Add("Hellfi re Bolt Rounds");
+            toolsList.Add("Hellfire Bolt Rounds");
             toolsList.Add("Kraken Bolt Rounds");
             toolsList.Add("Manstopper Rounds");
             toolsList.Add("Reloads");
@@ -2713,7 +2713,9 @@ namespace TheCommissar
             toolsList.Add("Symbol of Authority");
             toolsList.Add("Uplifting Primer");
             toolsList.Add("Void Suit");
-            toolsList.Add("Vox");
+            toolsList.Add("Vox-beads");
+            toolsList.Add("Small Vox Unit");
+            toolsList.Add("Large Vox Unit");
             toolsList.Add("Writing Kit");
             toolsList.Add("Bonesinger Shard");
             toolsList.Add("Spirit Stone");
