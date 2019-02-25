@@ -2160,7 +2160,56 @@ namespace TheCommissar
             }
         }
 
+        private void newCharacterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+            string message = "Are you sure you want to create a new character? All unsaved changes will be lost.";
+            string caption = "New Character Confirmation";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+                mainForm form = new mainForm();
+                form.Show();
+                this.Dispose(false);
+            }
+
+            else
+            {
+                
+            }
+
+        }
+
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mainForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            string message = "Are you sure you wish to close TheCommissar? All unsaved changes will be lost.";
+            string caption = "Close Confirmation";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+                
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
 

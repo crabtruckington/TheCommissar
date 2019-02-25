@@ -293,6 +293,7 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.equipModMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -389,6 +390,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newCharacterToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.toolStripSeparator2,
@@ -400,27 +402,28 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(100, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -433,7 +436,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // statusStrip1
@@ -3018,6 +3021,13 @@
             this.addModToolStripMenuItem.Text = "Add Mod";
             this.addModToolStripMenuItem.Click += new System.EventHandler(this.addModToolStripMenuItem_Click);
             // 
+            // newCharacterToolStripMenuItem
+            // 
+            this.newCharacterToolStripMenuItem.Name = "newCharacterToolStripMenuItem";
+            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCharacterToolStripMenuItem.Text = "New";
+            this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharacterToolStripMenuItem_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3034,6 +3044,7 @@
             this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "mainForm";
             this.Text = "The Commissar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing_1);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -3388,6 +3399,7 @@
         private System.Windows.Forms.Label objectiveLabel;
         private System.Windows.Forms.ContextMenuStrip equipModMenu;
         private System.Windows.Forms.ToolStripMenuItem addModToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newCharacterToolStripMenuItem;
     }
 }
 
