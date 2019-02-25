@@ -33,6 +33,7 @@
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Melee Weapons");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Armor");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Ammo and Tools");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -626,7 +627,7 @@
             this.shockValueBox.Location = new System.Drawing.Point(189, 315);
             this.shockValueBox.Name = "shockValueBox";
             this.shockValueBox.Size = new System.Drawing.Size(56, 20);
-            this.shockValueBox.TabIndex = 77;
+            this.shockValueBox.TabIndex = 16;
             this.shockValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.shockValueBox.ValueChanged += new System.EventHandler(this.shockValueBox_ValueChanged);
             // 
@@ -644,7 +645,7 @@
             this.woundsValueBox.Location = new System.Drawing.Point(57, 315);
             this.woundsValueBox.Name = "woundsValueBox";
             this.woundsValueBox.Size = new System.Drawing.Size(56, 20);
-            this.woundsValueBox.TabIndex = 75;
+            this.woundsValueBox.TabIndex = 10;
             this.woundsValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.woundsValueBox.ValueChanged += new System.EventHandler(this.woundsValueBox_ValueChanged);
             // 
@@ -672,7 +673,7 @@
             this.influenceValueBox.Location = new System.Drawing.Point(189, 289);
             this.influenceValueBox.Name = "influenceValueBox";
             this.influenceValueBox.Size = new System.Drawing.Size(56, 20);
-            this.influenceValueBox.TabIndex = 72;
+            this.influenceValueBox.TabIndex = 15;
             this.influenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.influenceValueBox.ValueChanged += new System.EventHandler(this.influenceValueBox_ValueChanged_1);
             // 
@@ -681,7 +682,7 @@
             this.resolveValueBox.Location = new System.Drawing.Point(189, 262);
             this.resolveValueBox.Name = "resolveValueBox";
             this.resolveValueBox.Size = new System.Drawing.Size(56, 20);
-            this.resolveValueBox.TabIndex = 71;
+            this.resolveValueBox.TabIndex = 14;
             this.resolveValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.resolveValueBox.ValueChanged += new System.EventHandler(this.resolveValueBox_ValueChanged);
             // 
@@ -708,7 +709,7 @@
             this.passiveAwarenessValueBox.Location = new System.Drawing.Point(189, 235);
             this.passiveAwarenessValueBox.Name = "passiveAwarenessValueBox";
             this.passiveAwarenessValueBox.Size = new System.Drawing.Size(56, 20);
-            this.passiveAwarenessValueBox.TabIndex = 68;
+            this.passiveAwarenessValueBox.TabIndex = 13;
             this.passiveAwarenessValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.passiveAwarenessValueBox.ValueChanged += new System.EventHandler(this.passiveAwarenessValueBox_ValueChanged);
             // 
@@ -726,7 +727,7 @@
             this.convictionValueBox.Location = new System.Drawing.Point(189, 210);
             this.convictionValueBox.Name = "convictionValueBox";
             this.convictionValueBox.Size = new System.Drawing.Size(56, 20);
-            this.convictionValueBox.TabIndex = 66;
+            this.convictionValueBox.TabIndex = 12;
             this.convictionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.convictionValueBox.ValueChanged += new System.EventHandler(this.convictionValueBox_ValueChanged);
             // 
@@ -744,7 +745,7 @@
             this.resilienceValueBox.Location = new System.Drawing.Point(189, 184);
             this.resilienceValueBox.Name = "resilienceValueBox";
             this.resilienceValueBox.Size = new System.Drawing.Size(56, 20);
-            this.resilienceValueBox.TabIndex = 64;
+            this.resilienceValueBox.TabIndex = 11;
             this.resilienceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.resilienceValueBox.ValueChanged += new System.EventHandler(this.resilienceValueBox_ValueChanged);
             // 
@@ -753,7 +754,7 @@
             this.soakValueBox.Location = new System.Drawing.Point(57, 289);
             this.soakValueBox.Name = "soakValueBox";
             this.soakValueBox.Size = new System.Drawing.Size(56, 20);
-            this.soakValueBox.TabIndex = 63;
+            this.soakValueBox.TabIndex = 9;
             this.soakValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.soakValueBox.ValueChanged += new System.EventHandler(this.soakValueBox_ValueChanged);
             // 
@@ -780,7 +781,7 @@
             this.defenceValueBox.Location = new System.Drawing.Point(57, 262);
             this.defenceValueBox.Name = "defenceValueBox";
             this.defenceValueBox.Size = new System.Drawing.Size(56, 20);
-            this.defenceValueBox.TabIndex = 60;
+            this.defenceValueBox.TabIndex = 8;
             this.defenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.defenceValueBox.ValueChanged += new System.EventHandler(this.defenceValueBox_ValueChanged);
             // 
@@ -799,7 +800,7 @@
             this.attSpeedModifier.Name = "attSpeedModifier";
             this.attSpeedModifier.ReadOnly = true;
             this.attSpeedModifier.Size = new System.Drawing.Size(47, 20);
-            this.attSpeedModifier.TabIndex = 58;
+            this.attSpeedModifier.TabIndex = 32;
             this.attSpeedModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attSpeedModifier.ValueChanged += new System.EventHandler(this.attSpeedModifier_ValueChanged);
             // 
@@ -809,7 +810,7 @@
             this.attInitiativeModifier.Name = "attInitiativeModifier";
             this.attInitiativeModifier.ReadOnly = true;
             this.attInitiativeModifier.Size = new System.Drawing.Size(47, 20);
-            this.attInitiativeModifier.TabIndex = 57;
+            this.attInitiativeModifier.TabIndex = 30;
             this.attInitiativeModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attInitiativeModifier.ValueChanged += new System.EventHandler(this.attInitiativeModifier_ValueChanged);
             // 
@@ -819,7 +820,7 @@
             this.attFellowshipModifier.Name = "attFellowshipModifier";
             this.attFellowshipModifier.ReadOnly = true;
             this.attFellowshipModifier.Size = new System.Drawing.Size(47, 20);
-            this.attFellowshipModifier.TabIndex = 56;
+            this.attFellowshipModifier.TabIndex = 28;
             this.attFellowshipModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attFellowshipModifier.ValueChanged += new System.EventHandler(this.attFellowshipModifier_ValueChanged);
             // 
@@ -829,7 +830,7 @@
             this.attWillpowerModifier.Name = "attWillpowerModifier";
             this.attWillpowerModifier.ReadOnly = true;
             this.attWillpowerModifier.Size = new System.Drawing.Size(47, 20);
-            this.attWillpowerModifier.TabIndex = 55;
+            this.attWillpowerModifier.TabIndex = 26;
             this.attWillpowerModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attWillpowerModifier.ValueChanged += new System.EventHandler(this.attWillpowerModifier_ValueChanged);
             // 
@@ -839,7 +840,7 @@
             this.attIntellectModifier.Name = "attIntellectModifier";
             this.attIntellectModifier.ReadOnly = true;
             this.attIntellectModifier.Size = new System.Drawing.Size(47, 20);
-            this.attIntellectModifier.TabIndex = 54;
+            this.attIntellectModifier.TabIndex = 24;
             this.attIntellectModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attIntellectModifier.ValueChanged += new System.EventHandler(this.attIntellectModifier_ValueChanged);
             // 
@@ -849,7 +850,7 @@
             this.attToughnessModifier.Name = "attToughnessModifier";
             this.attToughnessModifier.ReadOnly = true;
             this.attToughnessModifier.Size = new System.Drawing.Size(47, 20);
-            this.attToughnessModifier.TabIndex = 53;
+            this.attToughnessModifier.TabIndex = 22;
             this.attToughnessModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attToughnessModifier.ValueChanged += new System.EventHandler(this.attToughnessModifier_ValueChanged);
             // 
@@ -859,7 +860,7 @@
             this.attAgilityModifier.Name = "attAgilityModifier";
             this.attAgilityModifier.ReadOnly = true;
             this.attAgilityModifier.Size = new System.Drawing.Size(47, 20);
-            this.attAgilityModifier.TabIndex = 52;
+            this.attAgilityModifier.TabIndex = 20;
             this.attAgilityModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attAgilityModifier.ValueChanged += new System.EventHandler(this.attAgilityModifier_ValueChanged);
             // 
@@ -869,7 +870,7 @@
             this.attStrengthModifier.Name = "attStrengthModifier";
             this.attStrengthModifier.ReadOnly = true;
             this.attStrengthModifier.Size = new System.Drawing.Size(47, 20);
-            this.attStrengthModifier.TabIndex = 51;
+            this.attStrengthModifier.TabIndex = 18;
             this.attStrengthModifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attStrengthModifier.ValueChanged += new System.EventHandler(this.attStrengthModifier_ValueChanged);
             // 
@@ -888,7 +889,7 @@
             this.corruptionValueBox.Location = new System.Drawing.Point(57, 235);
             this.corruptionValueBox.Name = "corruptionValueBox";
             this.corruptionValueBox.Size = new System.Drawing.Size(56, 20);
-            this.corruptionValueBox.TabIndex = 49;
+            this.corruptionValueBox.TabIndex = 7;
             this.corruptionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.corruptionValueBox.ValueChanged += new System.EventHandler(this.corruptionValueBox_ValueChanged);
             // 
@@ -906,7 +907,7 @@
             this.wealthValueBox.Location = new System.Drawing.Point(57, 210);
             this.wealthValueBox.Name = "wealthValueBox";
             this.wealthValueBox.Size = new System.Drawing.Size(56, 20);
-            this.wealthValueBox.TabIndex = 47;
+            this.wealthValueBox.TabIndex = 6;
             this.wealthValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.wealthValueBox.ValueChanged += new System.EventHandler(this.wealthValueBox_ValueChanged);
             // 
@@ -915,7 +916,7 @@
             this.rankValueBox.Location = new System.Drawing.Point(57, 184);
             this.rankValueBox.Name = "rankValueBox";
             this.rankValueBox.Size = new System.Drawing.Size(56, 20);
-            this.rankValueBox.TabIndex = 46;
+            this.rankValueBox.TabIndex = 5;
             this.rankValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.rankValueBox.ValueChanged += new System.EventHandler(this.rankValueBox_ValueChanged);
             // 
@@ -942,7 +943,7 @@
             this.removeBPButton.Location = new System.Drawing.Point(238, 443);
             this.removeBPButton.Name = "removeBPButton";
             this.removeBPButton.Size = new System.Drawing.Size(169, 49);
-            this.removeBPButton.TabIndex = 42;
+            this.removeBPButton.TabIndex = 38;
             this.removeBPButton.Text = "Remove BP";
             this.removeBPButton.UseVisualStyleBackColor = true;
             this.removeBPButton.Click += new System.EventHandler(this.removeBPButton_Click);
@@ -952,7 +953,7 @@
             this.addBPButton.Location = new System.Drawing.Point(35, 443);
             this.addBPButton.Name = "addBPButton";
             this.addBPButton.Size = new System.Drawing.Size(169, 49);
-            this.addBPButton.TabIndex = 41;
+            this.addBPButton.TabIndex = 4137;
             this.addBPButton.Text = "Add BP";
             this.addBPButton.UseVisualStyleBackColor = true;
             this.addBPButton.Click += new System.EventHandler(this.addBPButton_Click);
@@ -962,7 +963,7 @@
             this.nameBox.Location = new System.Drawing.Point(61, 37);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(184, 20);
-            this.nameBox.TabIndex = 40;
+            this.nameBox.TabIndex = 1;
             this.nameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // nameLabel
@@ -980,7 +981,7 @@
             this.removeTalentBtn.Location = new System.Drawing.Point(696, 360);
             this.removeTalentBtn.Name = "removeTalentBtn";
             this.removeTalentBtn.Size = new System.Drawing.Size(94, 23);
-            this.removeTalentBtn.TabIndex = 38;
+            this.removeTalentBtn.TabIndex = 34;
             this.removeTalentBtn.Text = "Remove Talent";
             this.removeTalentBtn.UseVisualStyleBackColor = true;
             this.removeTalentBtn.Click += new System.EventHandler(this.removeTalentBtn_Click);
@@ -990,7 +991,7 @@
             this.addTalentBtn.Location = new System.Drawing.Point(576, 360);
             this.addTalentBtn.Name = "addTalentBtn";
             this.addTalentBtn.Size = new System.Drawing.Size(94, 23);
-            this.addTalentBtn.TabIndex = 37;
+            this.addTalentBtn.TabIndex = 33;
             this.addTalentBtn.Text = "Add Talent";
             this.addTalentBtn.UseVisualStyleBackColor = true;
             this.addTalentBtn.Click += new System.EventHandler(this.addTalentBtn_Click);
@@ -1020,7 +1021,7 @@
             this.archetypeSelect.Location = new System.Drawing.Point(61, 113);
             this.archetypeSelect.Name = "archetypeSelect";
             this.archetypeSelect.Size = new System.Drawing.Size(184, 21);
-            this.archetypeSelect.TabIndex = 34;
+            this.archetypeSelect.TabIndex = 4;
             this.archetypeSelect.SelectedIndexChanged += new System.EventHandler(this.archetypeSelect_SelectedIndexChanged);
             // 
             // speciesSelect
@@ -1030,7 +1031,7 @@
             this.speciesSelect.Location = new System.Drawing.Point(61, 87);
             this.speciesSelect.Name = "speciesSelect";
             this.speciesSelect.Size = new System.Drawing.Size(184, 21);
-            this.speciesSelect.TabIndex = 33;
+            this.speciesSelect.TabIndex = 3;
             this.speciesSelect.SelectedIndexChanged += new System.EventHandler(this.speciesSelect_SelectedIndexChanged);
             // 
             // tierSelect
@@ -1046,7 +1047,7 @@
             this.tierSelect.Location = new System.Drawing.Point(61, 62);
             this.tierSelect.Name = "tierSelect";
             this.tierSelect.Size = new System.Drawing.Size(184, 21);
-            this.tierSelect.TabIndex = 32;
+            this.tierSelect.TabIndex = 2;
             this.tierSelect.SelectedIndexChanged += new System.EventHandler(this.tierSelect_SelectedIndexChanged_1);
             // 
             // tierLabel
@@ -1185,7 +1186,7 @@
             this.attSpeed.Name = "attSpeed";
             this.attSpeed.ReadOnly = true;
             this.attSpeed.Size = new System.Drawing.Size(47, 20);
-            this.attSpeed.TabIndex = 16;
+            this.attSpeed.TabIndex = 31;
             this.attSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attSpeed.ValueChanged += new System.EventHandler(this.attSpeed_ValueChanged);
             // 
@@ -1195,7 +1196,7 @@
             this.attInitiative.Name = "attInitiative";
             this.attInitiative.ReadOnly = true;
             this.attInitiative.Size = new System.Drawing.Size(47, 20);
-            this.attInitiative.TabIndex = 15;
+            this.attInitiative.TabIndex = 29;
             this.attInitiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attInitiative.ValueChanged += new System.EventHandler(this.attInitiative_ValueChanged);
             // 
@@ -1205,7 +1206,7 @@
             this.attFellowship.Name = "attFellowship";
             this.attFellowship.ReadOnly = true;
             this.attFellowship.Size = new System.Drawing.Size(47, 20);
-            this.attFellowship.TabIndex = 14;
+            this.attFellowship.TabIndex = 27;
             this.attFellowship.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attFellowship.ValueChanged += new System.EventHandler(this.attFellowship_ValueChanged);
             // 
@@ -1215,7 +1216,7 @@
             this.attWillpower.Name = "attWillpower";
             this.attWillpower.ReadOnly = true;
             this.attWillpower.Size = new System.Drawing.Size(47, 20);
-            this.attWillpower.TabIndex = 13;
+            this.attWillpower.TabIndex = 25;
             this.attWillpower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attWillpower.ValueChanged += new System.EventHandler(this.attWillpower_ValueChanged);
             // 
@@ -1225,7 +1226,7 @@
             this.attIntellect.Name = "attIntellect";
             this.attIntellect.ReadOnly = true;
             this.attIntellect.Size = new System.Drawing.Size(47, 20);
-            this.attIntellect.TabIndex = 12;
+            this.attIntellect.TabIndex = 23;
             this.attIntellect.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attIntellect.ValueChanged += new System.EventHandler(this.attIntellect_ValueChanged);
             // 
@@ -1235,7 +1236,7 @@
             this.attToughness.Name = "attToughness";
             this.attToughness.ReadOnly = true;
             this.attToughness.Size = new System.Drawing.Size(47, 20);
-            this.attToughness.TabIndex = 11;
+            this.attToughness.TabIndex = 21;
             this.attToughness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attToughness.ValueChanged += new System.EventHandler(this.attToughness_ValueChanged);
             // 
@@ -1245,7 +1246,7 @@
             this.attAgility.Name = "attAgility";
             this.attAgility.ReadOnly = true;
             this.attAgility.Size = new System.Drawing.Size(47, 20);
-            this.attAgility.TabIndex = 10;
+            this.attAgility.TabIndex = 19;
             this.attAgility.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attAgility.ValueChanged += new System.EventHandler(this.attAgility_ValueChanged);
             // 
@@ -1255,7 +1256,7 @@
             this.attStrength.Name = "attStrength";
             this.attStrength.ReadOnly = true;
             this.attStrength.Size = new System.Drawing.Size(47, 20);
-            this.attStrength.TabIndex = 9;
+            this.attStrength.TabIndex = 17;
             this.attStrength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.attStrength.ValueChanged += new System.EventHandler(this.attStrength_ValueChanged);
             // 
@@ -1469,7 +1470,7 @@
             this.skillWeaponSkillBonus.Name = "skillWeaponSkillBonus";
             this.skillWeaponSkillBonus.ReadOnly = true;
             this.skillWeaponSkillBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillWeaponSkillBonus.TabIndex = 92;
+            this.skillWeaponSkillBonus.TabIndex = 53;
             this.skillWeaponSkillBonus.ValueChanged += new System.EventHandler(this.skillWeaponSkillBonus_ValueChanged);
             // 
             // skillTechBonus
@@ -1478,7 +1479,7 @@
             this.skillTechBonus.Name = "skillTechBonus";
             this.skillTechBonus.ReadOnly = true;
             this.skillTechBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillTechBonus.TabIndex = 91;
+            this.skillTechBonus.TabIndex = 50;
             this.skillTechBonus.ValueChanged += new System.EventHandler(this.skillTechBonus_ValueChanged);
             // 
             // skillSurvivalBonus
@@ -1487,7 +1488,7 @@
             this.skillSurvivalBonus.Name = "skillSurvivalBonus";
             this.skillSurvivalBonus.ReadOnly = true;
             this.skillSurvivalBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillSurvivalBonus.TabIndex = 90;
+            this.skillSurvivalBonus.TabIndex = 47;
             this.skillSurvivalBonus.ValueChanged += new System.EventHandler(this.skillSurvivalBonus_ValueChanged);
             // 
             // skillStealthBonus
@@ -1496,7 +1497,7 @@
             this.skillStealthBonus.Name = "skillStealthBonus";
             this.skillStealthBonus.ReadOnly = true;
             this.skillStealthBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillStealthBonus.TabIndex = 89;
+            this.skillStealthBonus.TabIndex = 44;
             this.skillStealthBonus.ValueChanged += new System.EventHandler(this.skillAgilityBonus_ValueChanged);
             // 
             // skillScholarBonus
@@ -1505,7 +1506,7 @@
             this.skillScholarBonus.Name = "skillScholarBonus";
             this.skillScholarBonus.ReadOnly = true;
             this.skillScholarBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillScholarBonus.TabIndex = 88;
+            this.skillScholarBonus.TabIndex = 41;
             this.skillScholarBonus.ValueChanged += new System.EventHandler(this.skillScholarBonus_ValueChanged);
             // 
             // skillPsychicBonus
@@ -1514,7 +1515,7 @@
             this.skillPsychicBonus.Name = "skillPsychicBonus";
             this.skillPsychicBonus.ReadOnly = true;
             this.skillPsychicBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillPsychicBonus.TabIndex = 87;
+            this.skillPsychicBonus.TabIndex = 38;
             this.skillPsychicBonus.ValueChanged += new System.EventHandler(this.skillPsychicBonus_ValueChanged);
             // 
             // skillPilotBonus
@@ -1523,7 +1524,7 @@
             this.skillPilotBonus.Name = "skillPilotBonus";
             this.skillPilotBonus.ReadOnly = true;
             this.skillPilotBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillPilotBonus.TabIndex = 86;
+            this.skillPilotBonus.TabIndex = 35;
             this.skillPilotBonus.ValueChanged += new System.EventHandler(this.skillPilotBonus_ValueChanged);
             // 
             // skillPersuasionBonus
@@ -1532,7 +1533,7 @@
             this.skillPersuasionBonus.Name = "skillPersuasionBonus";
             this.skillPersuasionBonus.ReadOnly = true;
             this.skillPersuasionBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillPersuasionBonus.TabIndex = 85;
+            this.skillPersuasionBonus.TabIndex = 32;
             this.skillPersuasionBonus.ValueChanged += new System.EventHandler(this.skillPersuasionBonus_ValueChanged);
             // 
             // skillMedicaeBonus
@@ -1541,7 +1542,7 @@
             this.skillMedicaeBonus.Name = "skillMedicaeBonus";
             this.skillMedicaeBonus.ReadOnly = true;
             this.skillMedicaeBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillMedicaeBonus.TabIndex = 84;
+            this.skillMedicaeBonus.TabIndex = 29;
             this.skillMedicaeBonus.ValueChanged += new System.EventHandler(this.skillMedicaeBonus_ValueChanged);
             // 
             // skillLeadershipBonus
@@ -1550,7 +1551,7 @@
             this.skillLeadershipBonus.Name = "skillLeadershipBonus";
             this.skillLeadershipBonus.ReadOnly = true;
             this.skillLeadershipBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillLeadershipBonus.TabIndex = 83;
+            this.skillLeadershipBonus.TabIndex = 26;
             this.skillLeadershipBonus.ValueChanged += new System.EventHandler(this.skillLeadershipBonus_ValueChanged);
             // 
             // skillInvestigationBonus
@@ -1559,7 +1560,7 @@
             this.skillInvestigationBonus.Name = "skillInvestigationBonus";
             this.skillInvestigationBonus.ReadOnly = true;
             this.skillInvestigationBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillInvestigationBonus.TabIndex = 82;
+            this.skillInvestigationBonus.TabIndex = 23;
             this.skillInvestigationBonus.ValueChanged += new System.EventHandler(this.skillInvestigationBonus_ValueChanged);
             // 
             // skillIntimidationBonus
@@ -1568,7 +1569,7 @@
             this.skillIntimidationBonus.Name = "skillIntimidationBonus";
             this.skillIntimidationBonus.ReadOnly = true;
             this.skillIntimidationBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillIntimidationBonus.TabIndex = 81;
+            this.skillIntimidationBonus.TabIndex = 20;
             this.skillIntimidationBonus.ValueChanged += new System.EventHandler(this.skillIntimidationBonus_ValueChanged);
             // 
             // skillInsightBonus
@@ -1577,7 +1578,7 @@
             this.skillInsightBonus.Name = "skillInsightBonus";
             this.skillInsightBonus.ReadOnly = true;
             this.skillInsightBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillInsightBonus.TabIndex = 80;
+            this.skillInsightBonus.TabIndex = 17;
             this.skillInsightBonus.ValueChanged += new System.EventHandler(this.skillInsightBonus_ValueChanged);
             // 
             // skillDeceptionBonus
@@ -1586,7 +1587,7 @@
             this.skillDeceptionBonus.Name = "skillDeceptionBonus";
             this.skillDeceptionBonus.ReadOnly = true;
             this.skillDeceptionBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillDeceptionBonus.TabIndex = 79;
+            this.skillDeceptionBonus.TabIndex = 14;
             this.skillDeceptionBonus.ValueChanged += new System.EventHandler(this.skillDeceptionBonus_ValueChanged);
             // 
             // skillCunningBonus
@@ -1595,7 +1596,7 @@
             this.skillCunningBonus.Name = "skillCunningBonus";
             this.skillCunningBonus.ReadOnly = true;
             this.skillCunningBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillCunningBonus.TabIndex = 78;
+            this.skillCunningBonus.TabIndex = 11;
             this.skillCunningBonus.ValueChanged += new System.EventHandler(this.skillCunningBonus_ValueChanged);
             // 
             // skillBallisticBonus
@@ -1604,7 +1605,7 @@
             this.skillBallisticBonus.Name = "skillBallisticBonus";
             this.skillBallisticBonus.ReadOnly = true;
             this.skillBallisticBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillBallisticBonus.TabIndex = 77;
+            this.skillBallisticBonus.TabIndex = 8;
             this.skillBallisticBonus.ValueChanged += new System.EventHandler(this.skillBallisticBonus_ValueChanged);
             // 
             // skillAwarenessBonus
@@ -1613,7 +1614,7 @@
             this.skillAwarenessBonus.Name = "skillAwarenessBonus";
             this.skillAwarenessBonus.ReadOnly = true;
             this.skillAwarenessBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillAwarenessBonus.TabIndex = 76;
+            this.skillAwarenessBonus.TabIndex = 5;
             this.skillAwarenessBonus.ValueChanged += new System.EventHandler(this.skillAwarenessBonus_ValueChanged);
             // 
             // skillAthleticsBonus
@@ -1622,7 +1623,7 @@
             this.skillAthleticsBonus.Name = "skillAthleticsBonus";
             this.skillAthleticsBonus.ReadOnly = true;
             this.skillAthleticsBonus.Size = new System.Drawing.Size(45, 20);
-            this.skillAthleticsBonus.TabIndex = 75;
+            this.skillAthleticsBonus.TabIndex = 2;
             this.skillAthleticsBonus.ValueChanged += new System.EventHandler(this.skillAthleticsBonus_ValueChanged);
             // 
             // weaponSkillBonusBox
@@ -1630,7 +1631,7 @@
             this.weaponSkillBonusBox.Location = new System.Drawing.Point(350, 475);
             this.weaponSkillBonusBox.Name = "weaponSkillBonusBox";
             this.weaponSkillBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.weaponSkillBonusBox.TabIndex = 74;
+            this.weaponSkillBonusBox.TabIndex = 54;
             // 
             // weaponSkillRatingLabel
             // 
@@ -1648,7 +1649,7 @@
             this.skillWeaponSkill.Name = "skillWeaponSkill";
             this.skillWeaponSkill.ReadOnly = true;
             this.skillWeaponSkill.Size = new System.Drawing.Size(45, 20);
-            this.skillWeaponSkill.TabIndex = 72;
+            this.skillWeaponSkill.TabIndex = 52;
             this.skillWeaponSkill.ValueChanged += new System.EventHandler(this.skillWeaponSkill_ValueChanged);
             // 
             // weaponSkillLabel
@@ -1665,7 +1666,7 @@
             this.techBonusBox.Location = new System.Drawing.Point(350, 449);
             this.techBonusBox.Name = "techBonusBox";
             this.techBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.techBonusBox.TabIndex = 70;
+            this.techBonusBox.TabIndex = 51;
             // 
             // techRatingLabel
             // 
@@ -1683,7 +1684,7 @@
             this.skillTech.Name = "skillTech";
             this.skillTech.ReadOnly = true;
             this.skillTech.Size = new System.Drawing.Size(45, 20);
-            this.skillTech.TabIndex = 68;
+            this.skillTech.TabIndex = 49;
             this.skillTech.ValueChanged += new System.EventHandler(this.skillTech_ValueChanged);
             // 
             // techLabel
@@ -1700,7 +1701,7 @@
             this.survivalBonusBox.Location = new System.Drawing.Point(350, 423);
             this.survivalBonusBox.Name = "survivalBonusBox";
             this.survivalBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.survivalBonusBox.TabIndex = 66;
+            this.survivalBonusBox.TabIndex = 48;
             // 
             // survivalRatingLabel
             // 
@@ -1718,7 +1719,7 @@
             this.skillSurvival.Name = "skillSurvival";
             this.skillSurvival.ReadOnly = true;
             this.skillSurvival.Size = new System.Drawing.Size(45, 20);
-            this.skillSurvival.TabIndex = 64;
+            this.skillSurvival.TabIndex = 46;
             this.skillSurvival.ValueChanged += new System.EventHandler(this.skillSurvival_ValueChanged);
             // 
             // survivalLabel
@@ -1735,7 +1736,7 @@
             this.stealthBonusBox.Location = new System.Drawing.Point(350, 397);
             this.stealthBonusBox.Name = "stealthBonusBox";
             this.stealthBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.stealthBonusBox.TabIndex = 62;
+            this.stealthBonusBox.TabIndex = 45;
             // 
             // stealthRatingLabel
             // 
@@ -1753,7 +1754,7 @@
             this.skillStealth.Name = "skillStealth";
             this.skillStealth.ReadOnly = true;
             this.skillStealth.Size = new System.Drawing.Size(45, 20);
-            this.skillStealth.TabIndex = 60;
+            this.skillStealth.TabIndex = 43;
             this.skillStealth.ValueChanged += new System.EventHandler(this.skillStealth_ValueChanged);
             // 
             // stealthLabel
@@ -1770,7 +1771,7 @@
             this.scholarBonusBox.Location = new System.Drawing.Point(350, 371);
             this.scholarBonusBox.Name = "scholarBonusBox";
             this.scholarBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.scholarBonusBox.TabIndex = 58;
+            this.scholarBonusBox.TabIndex = 42;
             // 
             // scholarRatingLabel
             // 
@@ -1788,7 +1789,7 @@
             this.skillScholar.Name = "skillScholar";
             this.skillScholar.ReadOnly = true;
             this.skillScholar.Size = new System.Drawing.Size(45, 20);
-            this.skillScholar.TabIndex = 56;
+            this.skillScholar.TabIndex = 40;
             this.skillScholar.ValueChanged += new System.EventHandler(this.skillScholar_ValueChanged);
             // 
             // scholarLabel
@@ -1805,7 +1806,7 @@
             this.psychicBonusBox.Location = new System.Drawing.Point(350, 345);
             this.psychicBonusBox.Name = "psychicBonusBox";
             this.psychicBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.psychicBonusBox.TabIndex = 54;
+            this.psychicBonusBox.TabIndex = 39;
             // 
             // psychicRatingLabel
             // 
@@ -1823,7 +1824,7 @@
             this.skillPsychic.Name = "skillPsychic";
             this.skillPsychic.ReadOnly = true;
             this.skillPsychic.Size = new System.Drawing.Size(45, 20);
-            this.skillPsychic.TabIndex = 52;
+            this.skillPsychic.TabIndex = 37;
             this.skillPsychic.ValueChanged += new System.EventHandler(this.skillPsychic_ValueChanged);
             // 
             // psychicLabel
@@ -1840,7 +1841,7 @@
             this.pilotBonusBox.Location = new System.Drawing.Point(350, 319);
             this.pilotBonusBox.Name = "pilotBonusBox";
             this.pilotBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.pilotBonusBox.TabIndex = 50;
+            this.pilotBonusBox.TabIndex = 36;
             // 
             // pilotRatingLabel
             // 
@@ -1858,7 +1859,7 @@
             this.skillPilot.Name = "skillPilot";
             this.skillPilot.ReadOnly = true;
             this.skillPilot.Size = new System.Drawing.Size(45, 20);
-            this.skillPilot.TabIndex = 48;
+            this.skillPilot.TabIndex = 34;
             this.skillPilot.ValueChanged += new System.EventHandler(this.skillPilot_ValueChanged);
             // 
             // pilotLabel
@@ -1875,7 +1876,7 @@
             this.persuasionBonusBox.Location = new System.Drawing.Point(350, 293);
             this.persuasionBonusBox.Name = "persuasionBonusBox";
             this.persuasionBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.persuasionBonusBox.TabIndex = 46;
+            this.persuasionBonusBox.TabIndex = 33;
             // 
             // persuasionRatingLabel
             // 
@@ -1893,7 +1894,7 @@
             this.skillPersuasion.Name = "skillPersuasion";
             this.skillPersuasion.ReadOnly = true;
             this.skillPersuasion.Size = new System.Drawing.Size(45, 20);
-            this.skillPersuasion.TabIndex = 44;
+            this.skillPersuasion.TabIndex = 31;
             this.skillPersuasion.ValueChanged += new System.EventHandler(this.skillPersuasion_ValueChanged);
             // 
             // persuasionLabel
@@ -1910,7 +1911,7 @@
             this.medicaeBonusBox.Location = new System.Drawing.Point(350, 267);
             this.medicaeBonusBox.Name = "medicaeBonusBox";
             this.medicaeBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.medicaeBonusBox.TabIndex = 42;
+            this.medicaeBonusBox.TabIndex = 30;
             // 
             // medicaeRatingLabel
             // 
@@ -1928,7 +1929,7 @@
             this.skillMedicae.Name = "skillMedicae";
             this.skillMedicae.ReadOnly = true;
             this.skillMedicae.Size = new System.Drawing.Size(45, 20);
-            this.skillMedicae.TabIndex = 40;
+            this.skillMedicae.TabIndex = 28;
             this.skillMedicae.ValueChanged += new System.EventHandler(this.skillMedicae_ValueChanged);
             // 
             // medicaeLabel
@@ -1945,7 +1946,7 @@
             this.leadershipBonusBox.Location = new System.Drawing.Point(350, 241);
             this.leadershipBonusBox.Name = "leadershipBonusBox";
             this.leadershipBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.leadershipBonusBox.TabIndex = 38;
+            this.leadershipBonusBox.TabIndex = 27;
             // 
             // leadershipRatingLabel
             // 
@@ -1963,7 +1964,7 @@
             this.skillLeadership.Name = "skillLeadership";
             this.skillLeadership.ReadOnly = true;
             this.skillLeadership.Size = new System.Drawing.Size(45, 20);
-            this.skillLeadership.TabIndex = 36;
+            this.skillLeadership.TabIndex = 25;
             this.skillLeadership.ValueChanged += new System.EventHandler(this.skillLeadership_ValueChanged);
             // 
             // leadershipLabel
@@ -1980,7 +1981,7 @@
             this.investigationBonusBox.Location = new System.Drawing.Point(350, 215);
             this.investigationBonusBox.Name = "investigationBonusBox";
             this.investigationBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.investigationBonusBox.TabIndex = 34;
+            this.investigationBonusBox.TabIndex = 24;
             // 
             // investigationRatingLabel
             // 
@@ -1998,7 +1999,7 @@
             this.skillInvestigation.Name = "skillInvestigation";
             this.skillInvestigation.ReadOnly = true;
             this.skillInvestigation.Size = new System.Drawing.Size(45, 20);
-            this.skillInvestigation.TabIndex = 32;
+            this.skillInvestigation.TabIndex = 22;
             this.skillInvestigation.ValueChanged += new System.EventHandler(this.skillInvestigation_ValueChanged);
             // 
             // investigationLabel
@@ -2015,7 +2016,7 @@
             this.intimidationBonusBox.Location = new System.Drawing.Point(350, 189);
             this.intimidationBonusBox.Name = "intimidationBonusBox";
             this.intimidationBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.intimidationBonusBox.TabIndex = 30;
+            this.intimidationBonusBox.TabIndex = 21;
             // 
             // intimidationRatingLabel
             // 
@@ -2033,7 +2034,7 @@
             this.skillIntimidation.Name = "skillIntimidation";
             this.skillIntimidation.ReadOnly = true;
             this.skillIntimidation.Size = new System.Drawing.Size(45, 20);
-            this.skillIntimidation.TabIndex = 28;
+            this.skillIntimidation.TabIndex = 19;
             this.skillIntimidation.ValueChanged += new System.EventHandler(this.skillIntimidation_ValueChanged);
             // 
             // intimidationLabel
@@ -2050,7 +2051,7 @@
             this.insightBonusBox.Location = new System.Drawing.Point(350, 163);
             this.insightBonusBox.Name = "insightBonusBox";
             this.insightBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.insightBonusBox.TabIndex = 26;
+            this.insightBonusBox.TabIndex = 18;
             // 
             // insightRatingLabel
             // 
@@ -2068,7 +2069,7 @@
             this.skillInsight.Name = "skillInsight";
             this.skillInsight.ReadOnly = true;
             this.skillInsight.Size = new System.Drawing.Size(45, 20);
-            this.skillInsight.TabIndex = 24;
+            this.skillInsight.TabIndex = 16;
             this.skillInsight.ValueChanged += new System.EventHandler(this.skillInsight_ValueChanged);
             // 
             // insightLabel
@@ -2085,7 +2086,7 @@
             this.deceptionBonusBox.Location = new System.Drawing.Point(350, 137);
             this.deceptionBonusBox.Name = "deceptionBonusBox";
             this.deceptionBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.deceptionBonusBox.TabIndex = 22;
+            this.deceptionBonusBox.TabIndex = 15;
             // 
             // deceptionRatingLabel
             // 
@@ -2103,7 +2104,7 @@
             this.skillDeception.Name = "skillDeception";
             this.skillDeception.ReadOnly = true;
             this.skillDeception.Size = new System.Drawing.Size(45, 20);
-            this.skillDeception.TabIndex = 20;
+            this.skillDeception.TabIndex = 13;
             this.skillDeception.ValueChanged += new System.EventHandler(this.skillDeception_ValueChanged);
             // 
             // deceptionLabel
@@ -2120,7 +2121,7 @@
             this.cunningBonusBox.Location = new System.Drawing.Point(350, 111);
             this.cunningBonusBox.Name = "cunningBonusBox";
             this.cunningBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.cunningBonusBox.TabIndex = 18;
+            this.cunningBonusBox.TabIndex = 12;
             // 
             // cunningRatingLabel
             // 
@@ -2138,7 +2139,7 @@
             this.skillCunning.Name = "skillCunning";
             this.skillCunning.ReadOnly = true;
             this.skillCunning.Size = new System.Drawing.Size(45, 20);
-            this.skillCunning.TabIndex = 16;
+            this.skillCunning.TabIndex = 10;
             this.skillCunning.ValueChanged += new System.EventHandler(this.skillCunning_ValueChanged);
             // 
             // cunningLabel
@@ -2155,7 +2156,7 @@
             this.ballisticBonusBox.Location = new System.Drawing.Point(350, 85);
             this.ballisticBonusBox.Name = "ballisticBonusBox";
             this.ballisticBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.ballisticBonusBox.TabIndex = 14;
+            this.ballisticBonusBox.TabIndex = 9;
             // 
             // ballisticRatingLabel
             // 
@@ -2173,7 +2174,7 @@
             this.skillBallstic.Name = "skillBallstic";
             this.skillBallstic.ReadOnly = true;
             this.skillBallstic.Size = new System.Drawing.Size(45, 20);
-            this.skillBallstic.TabIndex = 12;
+            this.skillBallstic.TabIndex = 7;
             this.skillBallstic.ValueChanged += new System.EventHandler(this.skillBallstic_ValueChanged);
             // 
             // ballisticLabel
@@ -2190,7 +2191,7 @@
             this.awarenessBonusBox.Location = new System.Drawing.Point(350, 59);
             this.awarenessBonusBox.Name = "awarenessBonusBox";
             this.awarenessBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.awarenessBonusBox.TabIndex = 10;
+            this.awarenessBonusBox.TabIndex = 6;
             // 
             // awarenessRatingLabel
             // 
@@ -2208,7 +2209,7 @@
             this.skillAwareness.Name = "skillAwareness";
             this.skillAwareness.ReadOnly = true;
             this.skillAwareness.Size = new System.Drawing.Size(45, 20);
-            this.skillAwareness.TabIndex = 8;
+            this.skillAwareness.TabIndex = 4;
             this.skillAwareness.ValueChanged += new System.EventHandler(this.skillAwareness_ValueChanged);
             // 
             // awarenessLabel
@@ -2245,7 +2246,7 @@
             this.athleticsBonusBox.Location = new System.Drawing.Point(350, 33);
             this.athleticsBonusBox.Name = "athleticsBonusBox";
             this.athleticsBonusBox.Size = new System.Drawing.Size(456, 20);
-            this.athleticsBonusBox.TabIndex = 4;
+            this.athleticsBonusBox.TabIndex = 3;
             // 
             // athleticsRatingLabel
             // 
@@ -2329,7 +2330,7 @@
             treeNode4});
             this.equipTreeBox.ShowRootLines = false;
             this.equipTreeBox.Size = new System.Drawing.Size(214, 316);
-            this.equipTreeBox.TabIndex = 134;
+            this.equipTreeBox.TabIndex = 1;
             this.equipTreeBox.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.equipTreeBox_AfterSelect);
             this.equipTreeBox.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.equipTreeBox_NodeMouseClick);
             // 
@@ -2418,7 +2419,7 @@
             this.removeEquipButton.Location = new System.Drawing.Point(126, 359);
             this.removeEquipButton.Name = "removeEquipButton";
             this.removeEquipButton.Size = new System.Drawing.Size(94, 23);
-            this.removeEquipButton.TabIndex = 125;
+            this.removeEquipButton.TabIndex = 3;
             this.removeEquipButton.Text = "Remove";
             this.removeEquipButton.UseVisualStyleBackColor = true;
             this.removeEquipButton.Click += new System.EventHandler(this.removeEquipButton_Click);
@@ -2428,7 +2429,7 @@
             this.addEquipButton.Location = new System.Drawing.Point(6, 359);
             this.addEquipButton.Name = "addEquipButton";
             this.addEquipButton.Size = new System.Drawing.Size(94, 23);
-            this.addEquipButton.TabIndex = 124;
+            this.addEquipButton.TabIndex = 2;
             this.addEquipButton.Text = "Add Equipment";
             this.addEquipButton.UseVisualStyleBackColor = true;
             this.addEquipButton.Click += new System.EventHandler(this.addEquipButton_Click);
@@ -2453,9 +2454,9 @@
             this.miscEquipmentHeaderLabel.Location = new System.Drawing.Point(479, 9);
             this.miscEquipmentHeaderLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.miscEquipmentHeaderLabel.Name = "miscEquipmentHeaderLabel";
-            this.miscEquipmentHeaderLabel.Size = new System.Drawing.Size(318, 13);
+            this.miscEquipmentHeaderLabel.Size = new System.Drawing.Size(212, 13);
             this.miscEquipmentHeaderLabel.TabIndex = 51;
-            this.miscEquipmentHeaderLabel.Text = "Miscellaneous Equipment (Trinkets, Ammo, Tools, etc.)";
+            this.miscEquipmentHeaderLabel.Text = "Miscellaneous Equipment and Notes";
             // 
             // equipmentTextBox
             // 
@@ -2465,7 +2466,7 @@
             this.equipmentTextBox.Location = new System.Drawing.Point(482, 37);
             this.equipmentTextBox.Name = "equipmentTextBox";
             this.equipmentTextBox.Size = new System.Drawing.Size(337, 466);
-            this.equipmentTextBox.TabIndex = 50;
+            this.equipmentTextBox.TabIndex = 4;
             this.equipmentTextBox.Text = "";
             // 
             // cyberAndAugments
@@ -2518,7 +2519,7 @@
             this.removeAugButton.Location = new System.Drawing.Point(126, 359);
             this.removeAugButton.Name = "removeAugButton";
             this.removeAugButton.Size = new System.Drawing.Size(94, 23);
-            this.removeAugButton.TabIndex = 42;
+            this.removeAugButton.TabIndex = 3;
             this.removeAugButton.Text = "Remove";
             this.removeAugButton.UseVisualStyleBackColor = true;
             this.removeAugButton.Click += new System.EventHandler(this.removeAugButton_Click);
@@ -2528,7 +2529,7 @@
             this.addAugButton.Location = new System.Drawing.Point(6, 359);
             this.addAugButton.Name = "addAugButton";
             this.addAugButton.Size = new System.Drawing.Size(94, 23);
-            this.addAugButton.TabIndex = 41;
+            this.addAugButton.TabIndex = 2;
             this.addAugButton.Text = "Add Modification";
             this.addAugButton.UseVisualStyleBackColor = true;
             this.addAugButton.Click += new System.EventHandler(this.addAugButton_Click);
@@ -2539,7 +2540,7 @@
             this.augmeticsBox.Location = new System.Drawing.Point(6, 37);
             this.augmeticsBox.Name = "augmeticsBox";
             this.augmeticsBox.Size = new System.Drawing.Size(214, 316);
-            this.augmeticsBox.TabIndex = 40;
+            this.augmeticsBox.TabIndex = 1;
             this.augmeticsBox.SelectedIndexChanged += new System.EventHandler(this.augmeticsBox_SelectedIndexChanged);
             // 
             // augmeticHeaderLabel
@@ -2662,7 +2663,7 @@
             this.removePowerButton.Location = new System.Drawing.Point(126, 359);
             this.removePowerButton.Name = "removePowerButton";
             this.removePowerButton.Size = new System.Drawing.Size(94, 23);
-            this.removePowerButton.TabIndex = 114;
+            this.removePowerButton.TabIndex = 3;
             this.removePowerButton.Text = "Remove";
             this.removePowerButton.UseVisualStyleBackColor = true;
             this.removePowerButton.Click += new System.EventHandler(this.removePowerButton_Click);
@@ -2672,7 +2673,7 @@
             this.addPowerButton.Location = new System.Drawing.Point(6, 359);
             this.addPowerButton.Name = "addPowerButton";
             this.addPowerButton.Size = new System.Drawing.Size(94, 23);
-            this.addPowerButton.TabIndex = 113;
+            this.addPowerButton.TabIndex = 2;
             this.addPowerButton.Text = "Add Power";
             this.addPowerButton.UseVisualStyleBackColor = true;
             this.addPowerButton.Click += new System.EventHandler(this.addPowerButton_Click);
@@ -2683,7 +2684,7 @@
             this.powerBox.Location = new System.Drawing.Point(6, 37);
             this.powerBox.Name = "powerBox";
             this.powerBox.Size = new System.Drawing.Size(214, 316);
-            this.powerBox.TabIndex = 112;
+            this.powerBox.TabIndex = 1;
             this.powerBox.SelectedIndexChanged += new System.EventHandler(this.powerBox_SelectedIndexChanged);
             // 
             // psychicPowersLabel
@@ -2718,7 +2719,7 @@
             this.powersTextBox.MinimumSize = new System.Drawing.Size(100, 100);
             this.powersTextBox.Name = "powersTextBox";
             this.powersTextBox.Size = new System.Drawing.Size(337, 466);
-            this.powersTextBox.TabIndex = 109;
+            this.powersTextBox.TabIndex = 4;
             this.powersTextBox.Text = "";
             // 
             // notes
@@ -2836,14 +2837,14 @@
             this.textBox2.Location = new System.Drawing.Point(59, 64);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(36, 20);
-            this.textBox2.TabIndex = 18;
+            this.textBox2.TabIndex = 35;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(206, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(36, 20);
-            this.textBox1.TabIndex = 17;
+            this.textBox1.TabIndex = 36;
             // 
             // damageTrackLabel
             // 
@@ -3028,6 +3029,7 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "mainForm";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(powerForm));
             this.powerCancelButton = new System.Windows.Forms.Button();
             this.addPowerButton = new System.Windows.Forms.Button();
             this.selectedPowerDetailLabel = new System.Windows.Forms.Label();
@@ -76,61 +77,62 @@
             // 
             this.powerSelectBox.FormattingEnabled = true;
             this.powerSelectBox.Items.AddRange(new object[] {
+            "Assail",
+            "Boil Blood",
             "Chameleon",
             "Compel",
             "Conceal Phenomena",
+            "Conceal/Reveal",
             "Create Flame",
+            "Crush",
             "Dull Pain",
+            "Embolden/Horrify",
+            "Empower/Enervate",
+            "Enfeeble",
+            "Enhance/Drain",
+            "Fiery Form",
             "Flash Bang ",
+            "Flight",
+            "Fog the Mind",
+            "Force Field",
+            "Forewarning",
             "Fortune",
+            "Glimpse the Future",
+            "Gout of Flame",
             "Inflict Pain",
             "Jam Mechanism",
             "Levitation",
-            "Orb",
-            "Phantom Grip",
-            "Psyniscience",
-            "Shove",
-            "Voices",
-            "Smite",
-            "Enfeeble",
             "Life Leech",
             "Living Lightning",
-            "Phantom Form",
-            "Regenerate",
-            "Forewarning",
-            "Glimpse the Future",
-            "Prophetic Visions",
-            "Scry",
-            "Omens of Doom",
-            "Fiery Form",
-            "Gout of Flame",
-            "Molten Beam",
-            "Spontaneous Cumbustion",
-            "Wall of Flame",
-            "Assail",
-            "Crush",
-            "Flight",
-            "Force Field",
-            "Shockwave",
-            "Fog the Mind",
             "Mind Probe",
+            "Molten Beam",
+            "Omens of Doom",
+            "Orb",
+            "Phantom Form",
+            "Phantom Grip",
+            "Prophetic Visions",
+            "Protect/Jinx",
             "Psychic Shriek",
+            "Psyniscience",
+            "Puppet Master",
+            "Quicken/Delay",
+            "Regenerate",
+            "Scry",
+            "Shockwave",
+            "Shove",
+            "Smite",
+            "Soul Shrivel",
+            "Spontaneous Cumbustion",
             "Telepathy",
             "Terrify",
-            "Boil Blood",
-            "Puppet Master",
-            "Soul Shrivel",
             "Touch of Corruption",
+            "Voices",
             "Waking Nightmare",
-            "Conceal/Reveal",
-            "Embolden/Horrify",
-            "Empower/Enervate",
-            "Enhance/Drain",
-            "Protect/Jinx",
-            "Quicken/Delay"});
+            "Wall of Flame"});
             this.powerSelectBox.Location = new System.Drawing.Point(12, 15);
             this.powerSelectBox.Name = "powerSelectBox";
             this.powerSelectBox.Size = new System.Drawing.Size(279, 420);
+            this.powerSelectBox.Sorted = true;
             this.powerSelectBox.TabIndex = 5;
             this.powerSelectBox.SelectedIndexChanged += new System.EventHandler(this.powerSelectBox_SelectedIndexChanged);
             // 
@@ -231,6 +233,7 @@
             this.Controls.Add(this.addPowerButton);
             this.Controls.Add(this.selectedPowerDetailLabel);
             this.Controls.Add(this.powerSelectBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "powerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Psychic Power";

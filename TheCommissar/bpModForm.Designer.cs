@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bpModForm));
             this.bpModLabel = new System.Windows.Forms.Label();
             this.bpChangeButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -88,6 +89,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.bpChangeButton);
             this.Controls.Add(this.bpModLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "bpModForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             ((System.ComponentModel.ISupportInitialize)(this.bpValueBox)).EndInit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cyberneticsForm));
             this.augSelectBox = new System.Windows.Forms.ListBox();
             this.augHeaderLabel = new System.Windows.Forms.Label();
             this.augRaceLabel = new System.Windows.Forms.Label();
@@ -40,40 +41,41 @@
             // 
             this.augSelectBox.FormattingEnabled = true;
             this.augSelectBox.Items.AddRange(new object[] {
-            "Bionic Reconstruction",
-            "Augmetic Arms",
+            "Auger Array",
             "Auger Eye",
-            "Night\'s Eye",
-            "Pict Recorder Eye",
-            "Reticule Eye",
-            "Telescopic Eye",
+            "Augmetic Arms",
             "Augmetic Legs (Pair)",
             "Augmetic Respirator",
             "Augmetic Viscera",
-            "Auger Array",
             "Autodogmatic Cortex",
+            "Ballistic Mechadendrite",
+            "Bionic Reconstruction",
             "Cardioproxy",
             "Cortex Implant",
-            "Ballistic Mechadendrite",
             "Exploration Mechadendrite",
-            "Medicae Mechadendrite",
-            "Optical Mechadendrite",
-            "Servo-Arm Mechadendrite",
-            "Utility Mechadendrite",
-            "Mind Impulse Unit",
-            "Neuroplastic Psychosectemy",
-            "Reflex Catalyst",
-            "Sinew Armature",
-            "Sub-Dermal Armor",
-            "Weapon Implant",
+            "Eyes of the Crone",
+            "Heart of Vaul",
             "Iron Gob",
             "Iron Gutz",
+            "Medicae Mechadendrite",
+            "Mind Impulse Unit",
+            "Neuroplastic Psychosectemy",
+            "Night\'s Eye",
+            "Optical Mechadendrite",
+            "Pict Recorder Eye",
             "Rebuilt Cranium",
-            "Eyes of the Crone",
-            "Heart of Vaul"});
+            "Reflex Catalyst",
+            "Reticule Eye",
+            "Servo-Arm Mechadendrite",
+            "Sinew Armature",
+            "Sub-Dermal Armor",
+            "Telescopic Eye",
+            "Utility Mechadendrite",
+            "Weapon Implant"});
             this.augSelectBox.Location = new System.Drawing.Point(12, 12);
             this.augSelectBox.Name = "augSelectBox";
             this.augSelectBox.Size = new System.Drawing.Size(279, 420);
+            this.augSelectBox.Sorted = true;
             this.augSelectBox.TabIndex = 1;
             this.augSelectBox.SelectedIndexChanged += new System.EventHandler(this.augSelectBox_SelectedIndexChanged);
             // 
@@ -137,6 +139,7 @@
             this.Controls.Add(this.augRaceLabel);
             this.Controls.Add(this.augHeaderLabel);
             this.Controls.Add(this.augSelectBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cyberneticsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Augments and Cybernetics";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(talentForm));
             this.talentSelectBox = new System.Windows.Forms.ListBox();
             this.selectedTalentLabel = new System.Windows.Forms.Label();
             this.bpCostLabel = new System.Windows.Forms.Label();
@@ -173,6 +174,7 @@
             this.Controls.Add(this.selectedTalentLabel);
             this.Controls.Add(this.talentSelectBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "talentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Talents";

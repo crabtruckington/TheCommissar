@@ -18,7 +18,7 @@ namespace TheCommissar
         List<string> armorList = new List<string>();
         List<string> weaponModList = new List<string>();
         List<string> toolsList = new List<string>();
-
+        List<string> unfilteredEquipList = new List<string>();
 
         public equipForm(int type)
         {
@@ -39,8 +39,6 @@ namespace TheCommissar
                 createEquipLists();
                 updateEquipSelections();
             }
-
-
         }
 
         private void equipSelectBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,10 +78,35 @@ namespace TheCommissar
             return result;
         }
 
+        private void equipSearchBox_TextChanged(object sender, EventArgs e)
+        {
+
+            if (equipSearchBox.Text.Length > 0)
+            {
+                List<string> filteredEquipList = new List<string>();
+                string searchText = equipSearchBox.Text;
+
+                equipSelectBox.Items.Clear();
+                filteredEquipList = unfilteredEquipList.Where(x => x.IndexOf(searchText, StringComparison.InvariantCultureIgnoreCase) >= 0).ToList();
+
+                foreach (string item in filteredEquipList)
+                {
+                    equipSelectBox.Items.Add(item);
+                }
+
+            }
+            else
+            {
+                updateEquipSelections();
+            }
+
+        }
+
 
         private void equipBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateEquipSelections();
+            equipSearchBox.Text = "";
         }
 
 
@@ -1693,7 +1716,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
                 keywords = "Keywords: Imperium, Scum";
-                traits = "Traits: +1ED";
+                traits = "Description: +1ED";
                 type = "tools";
             }
             else if (name == "Reloads")
@@ -1876,6 +1899,42 @@ namespace TheCommissar
                 traits = "Description: +1d bonus to Survival to" + Environment.NewLine + "find food";
                 type = "tools";
             }
+            else if (name == "Guard-Issue Mess Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 2 (Common)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: +1d bonus to Survival to" + Environment.NewLine + "find food";
+                type = "tools";
+            }
+            else if (name == "Blanket")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 1 (Common)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: A Blanket";
+                type = "tools";
+            }
+            else if (name == "Grooming Kit")
+            {
+                damage = "Damage: N/A";
+                ap = "AP: N/A";
+                range = "Range: N/A";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 1 (Common)";
+                keywords = "Keywords: Imperium, Astra Militarum";
+                traits = "Description: Moustache Trimmer";
+                type = "tools";
+            }
             else if (name == "Jump Pack")
             {
                 damage = "Damage: N/A";
@@ -1957,7 +2016,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: Imperium, <Any>";
-                traits = "Traits: Contains Chrono, Data-Slate, Magnoculars" + Environment.NewLine + "2 Ration Packs, Respirator, Vox-beads";
+                traits = "Description: Contains Chrono, Data-Slate, Magnoculars" + Environment.NewLine + "2 Ration Packs, Respirator, Vox-beads";
                 type = "tools";
             }
             else if (name == "Preysense Goggles")
@@ -1981,7 +2040,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Traits: +1d Psychic Mastery tests";
+                traits = "Description: +1d Psychic Mastery tests";
                 type = "tools";
             }
             else if (name == "Ration Packs")
@@ -2005,7 +2064,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 2 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Traits: 2 hours of oxygen";
+                traits = "Description: 2 hours of oxygen";
                 type = "tools";
             }
             else if (name == "Rule of the Sororitas")
@@ -2467,6 +2526,7 @@ namespace TheCommissar
                     {
                         equipSelectBox.Items.Add(item);
                     }
+                    
                 }
 
                 //add ranged weapons
@@ -2517,6 +2577,7 @@ namespace TheCommissar
                     }
                 }
             }
+            unfilteredEquipList = equipSelectBox.Items.Cast<string>().ToList();
         }
 
 
@@ -2674,13 +2735,13 @@ namespace TheCommissar
             weaponModList.Add("Silencer");
 
             //tools and ammo
-            toolsList.Add("Ammunition Bandolier");
-            toolsList.Add("Ammunition Backpack");
             toolsList.Add("Hellfire Bolt Rounds");
             toolsList.Add("Kraken Bolt Rounds");
             toolsList.Add("Manstopper Rounds");
-            toolsList.Add("Reloads");
             toolsList.Add("Vengeance Bolt Rounds");
+            toolsList.Add("Reloads");
+            toolsList.Add("Ammunition Bandolier");
+            toolsList.Add("Ammunition Backpack");
             toolsList.Add("9-70 Entrenching Tool");
             toolsList.Add("Auspex");
             toolsList.Add("Auto-Quill");
@@ -2694,6 +2755,9 @@ namespace TheCommissar
             toolsList.Add("Diagnostor");
             toolsList.Add("Grav-Chute");
             toolsList.Add("Munitorum-Issue Mess Kit");
+            toolsList.Add("Guard-Issue Mess Kit");
+            toolsList.Add("Blanket");
+            toolsList.Add("Grooming Kit");
             toolsList.Add("Jump Pack");
             toolsList.Add("Magnoculars");
             toolsList.Add("Medikit");
@@ -2724,7 +2788,6 @@ namespace TheCommissar
             toolsList.Add("Dok Bag");
             toolsList.Add("Fightin' Juice");
             toolsList.Add("Mek Toolz");
-
         }
 
 
