@@ -12,6 +12,8 @@ An **unofficial** Warhammer: Wrath and Glory character creator
 
 4) Build your character using the book as a guide. Make special note of rules around maximum build point allocations as there is no validation for overspend or illegal choices.
 
+![Screenshot](https://i.imgur.com/tRSVLCw.png)
+
 ### Known issues and quirks
 
 1) It is *strongly* recommended that you do not modify the save files by hand, the loading system is extremely rickety and manually editing the saves will likely cause it to fall apart and endlessly loop. This will be entirely reworked to be more robust at some point, its a brute force proof of concept as of now. There is virtually no validation so trying to load files that are *not* saves or not in a very specific format will cause all kinds of problems, dont do it.
