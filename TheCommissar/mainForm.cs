@@ -706,6 +706,15 @@ namespace TheCommissar
             {
                 string results = cyber.returnAugDetails();
                 augmeticsBox.Items.Add(results);
+                if (results == "Servo-Arm Mechadendrite")
+                {
+                    TreeNode rootNode = equipTreeBox.Nodes.Cast<TreeNode>().ToList().Find(n => n.Text.Equals("Melee Weapons"));
+                    if (rootNode != null)
+                    {
+                        rootNode.Nodes.Add(results);
+                        rootNode.Expand();
+                    }
+                }
             }
         }
 

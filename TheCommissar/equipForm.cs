@@ -1305,6 +1305,19 @@ namespace TheCommissar
                 traits = "Traits: None";
                 type = "melee";
             }
+            else if (name == "Servo-Arm Mechadendrite")
+            {
+                damage = "Damage: 6 + 2ED";
+                ap = "AP: -3";
+                range = "Range: 1m";
+                salvo = "Salvo: N/A";
+                armor = "Armor: N/A";
+                value = "Value: 5 (Very Rare)";
+                keywords = "Keywords: Adeptus Mechanicus";
+                traits = "Traits: Unwieldy(2)";
+                type = "melee";
+            }
+            //"Melee Combat Stats: 6+2ED, AP-3," + Environment.NewLine + "Range 1m (M), Unweildy 2" + Environment.NewLine + Environment.NewLine + "Value: 5 (Very Rare)"
 
             //armor
             else if (name == "Bodyglove")

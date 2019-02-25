@@ -70,7 +70,7 @@ namespace TheCommissar
             else if (aug == "Pict Recorder Eye")
             {
                 race = "Race: Human";
-                details = "Details: Record pictures of 1 hour of video" + Environment.NewLine + Environment.NewLine + "Value: 6 (Uncommon)";
+                details = "Details: Record pictures or 1 hour of video" + Environment.NewLine + Environment.NewLine + "Value: 6 (Uncommon)";
             }
             else if (aug == "Reticule Eye")
             {
