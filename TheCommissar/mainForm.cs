@@ -2219,6 +2219,168 @@ namespace TheCommissar
                 e.Cancel = true;
             }
         }
+
+        private void checkCharacterValidityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "";
+            string caption = "";
+            MessageBoxButtons button = MessageBoxButtons.OK;
+            int tierValidation = tierSelection;
+            List<NumericUpDown> attributeList = new List<NumericUpDown>();
+            List<NumericUpDown> skillList = new List<NumericUpDown>();
+
+            attributeList.Add(attStrength);
+            attributeList.Add(attAgility);
+            attributeList.Add(attToughness);
+            attributeList.Add(attIntellect);
+            attributeList.Add(attWillpower);
+            attributeList.Add(attFellowship);
+            attributeList.Add(attInitiative);
+
+            skillList.Add(skillAthletics);
+            skillList.Add(skillAwareness);
+            skillList.Add(skillBallstic);
+            skillList.Add(skillCunning);
+            skillList.Add(skillDeception);
+            skillList.Add(skillInsight);
+            skillList.Add(skillIntimidation);
+            skillList.Add(skillInvestigation);
+            skillList.Add(skillLeadership);
+            skillList.Add(skillMedicae);
+            skillList.Add(skillPersuasion);
+            skillList.Add(skillPilot);
+            skillList.Add(skillPsychic);
+            skillList.Add(skillScholar);
+            skillList.Add(skillStealth);
+            skillList.Add(skillSurvival);
+            skillList.Add(skillTech);
+            skillList.Add(skillWeaponSkill);
+
+
+
+            if (tierValidation == 1)
+            {
+                if (bpSpentOnAttributes > 100)
+                {
+                    message += "You have spent more than 100BP on Attributes!" + Environment.NewLine;
+                }
+                foreach (NumericUpDown item in attributeList)
+                {
+                    if (item.Value > 4)
+                    {
+                        message += "You have put more than 4 points into " + item.Name.Substring(3, item.Name.Length -3) + Environment.NewLine;
+                    }
+                }
+                foreach (NumericUpDown item in skillList)
+                {
+                    if (item.Value > 4)
+                    {
+                        message += "You have put more than 4 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                    }
+                }
+            }
+            else if (tierValidation == 2)
+            {
+                if (bpSpentOnAttributes > 100)
+                {
+                    message += "You have spent more than 100BP on Attributes!" + Environment.NewLine;
+                }
+                foreach (NumericUpDown item in attributeList)
+                {
+                    if (item.Value > 5)
+                    {
+                        message += "You have put more than 5 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                    }
+                }
+                foreach (NumericUpDown item in skillList)
+                {
+                    if (item.Value > 5)
+                    {
+                        message += "You have put more than 5 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                    }
+                }
+            }
+            else if (tierValidation == 3)
+            {
+                if (bpSpentOnAttributes > 150)
+                {
+                    message += "You have spent more than 150BP on Attributes!" + Environment.NewLine;
+                }
+                foreach (NumericUpDown item in attributeList)
+                {
+                    if (item.Value > 6)
+                    {
+                        message += "You have put more than 6 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                    }
+                }
+                foreach (NumericUpDown item in skillList)
+                {
+                    if (item.Value > 6)
+                    {
+                        message += "You have put more than 6 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                    }
+                }
+            }
+            else if (tierValidation == 4)
+            {
+                if (bpSpentOnAttributes > 200)
+                {
+                    message += "You have spent more than 200BP on Attributes!" + Environment.NewLine;
+                }
+                foreach (NumericUpDown item in attributeList)
+                {
+                    if (item.Value > 8)
+                    {
+                        message += "You have put more than 8 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                    }
+                }
+                foreach (NumericUpDown item in skillList)
+                {
+                    if (item.Value > 7)
+                    {
+                        message += "You have put more than 7 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                    }
+                }
+            }
+            else if (tierValidation == 5)
+            {
+                if (bpSpentOnAttributes > 500)
+                {
+                    message += "You have spent more than 500BP on Attributes!" + Environment.NewLine;
+                }
+                foreach (NumericUpDown item in attributeList)
+                {
+                    if (item.Value > 10)
+                    {
+                        message += "You have put more than 10 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                    }
+                }
+                foreach (NumericUpDown item in skillList)
+                {
+                    if (item.Value > 8)
+                    {
+                        message += "You have put more than 8 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                    }
+                }
+            }
+            else 
+            {
+                message += "You dont have a tier selected";
+            }
+
+            if (message == "")
+            {
+                caption = "Character is valid!";
+                message = "Your character has no errors!";
+            }
+            else
+            {
+                caption = "Validation errors";
+            }
+
+            MessageBox.Show(message, caption, button);
+
+        }
     }
 }
 

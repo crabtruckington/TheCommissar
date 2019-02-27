@@ -294,6 +294,7 @@
             this.equipModMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkCharacterValidityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -428,7 +429,8 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.checkCharacterValidityToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -436,8 +438,8 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.optionsToolStripMenuItem.Text = "Options (Placeholder)";
             // 
             // statusStrip1
             // 
@@ -2115,9 +2117,9 @@
             this.deceptionLabel.AutoSize = true;
             this.deceptionLabel.Location = new System.Drawing.Point(1, 140);
             this.deceptionLabel.Name = "deceptionLabel";
-            this.deceptionLabel.Size = new System.Drawing.Size(116, 13);
+            this.deceptionLabel.Size = new System.Drawing.Size(114, 13);
             this.deceptionLabel.TabIndex = 19;
-            this.deceptionLabel.Text = "Deception (FellowShip)";
+            this.deceptionLabel.Text = "Deception (Fellowship)";
             // 
             // cunningBonusBox
             // 
@@ -3028,6 +3030,13 @@
             this.newCharacterToolStripMenuItem.Text = "New";
             this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharacterToolStripMenuItem_Click);
             // 
+            // checkCharacterValidityToolStripMenuItem
+            // 
+            this.checkCharacterValidityToolStripMenuItem.Name = "checkCharacterValidityToolStripMenuItem";
+            this.checkCharacterValidityToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.checkCharacterValidityToolStripMenuItem.Text = "Check Character Validity";
+            this.checkCharacterValidityToolStripMenuItem.Click += new System.EventHandler(this.checkCharacterValidityToolStripMenuItem_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3400,6 +3409,7 @@
         private System.Windows.Forms.ContextMenuStrip equipModMenu;
         private System.Windows.Forms.ToolStripMenuItem addModToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newCharacterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkCharacterValidityToolStripMenuItem;
     }
 }
 
