@@ -1309,6 +1309,7 @@ namespace TheCommissar
         public void updateSpeciesSelectList()
         {
             speciesSelect.Items.Clear();
+            speciesSelect.SelectedItem = null;
             speciesSelect.Items.Add("Human, 0BP");
             speciesSelect.Items.Add("Eldar, 10BP");
             speciesSelect.Items.Add("Ork, 10BP");
@@ -1326,6 +1327,7 @@ namespace TheCommissar
         public void updateArchetypeSelectList()
         {
             archetypeSelect.Items.Clear();
+            archetypeSelect.SelectedItem = null;
             if (tierSelection >= 1)
             {
                 if (raceSelection == "Human, 0BP")
@@ -1430,37 +1432,31 @@ namespace TheCommissar
             {
                 tierSelection = 1;
                 totalBP = 100;
-                updateBuildPoints(0);
-                updateSpeciesSelectList();
             }
             if (tierSelect.SelectedItem.ToString() == "2")
             {
                 tierSelection = 2;
                 totalBP = 200;
-                updateBuildPoints(0);
-                updateSpeciesSelectList();
             }
             if (tierSelect.SelectedItem.ToString() == "3")
             {
                 tierSelection = 3;
                 totalBP = 300;
-                updateBuildPoints(0);
-                updateSpeciesSelectList();
             }
             if (tierSelect.SelectedItem.ToString() == "4")
             {
                 tierSelection = 4;
                 totalBP = 400;
-                updateBuildPoints(0);
-                updateSpeciesSelectList();
             }
             if (tierSelect.SelectedItem.ToString() == "5")
             {
                 tierSelection = 5;
                 totalBP = 500;
-                updateBuildPoints(0);
-                updateSpeciesSelectList();
             }
+            updateSpeciesSelectList();
+            updateArchetypeSelectList();
+            bpSpentOnRace = 0;
+            bpSpentOnArchetype = 0;
             updateBuildPoints(0);
         }
 
@@ -2227,6 +2223,7 @@ namespace TheCommissar
             MessageBoxButtons button = MessageBoxButtons.OK;
             int tierValidation = tierSelection;
             List<NumericUpDown> attributeList = new List<NumericUpDown>();
+            List<Label> attributeTotalList = new List<Label>();
             List<NumericUpDown> skillList = new List<NumericUpDown>();
 
             attributeList.Add(attStrength);
@@ -2236,6 +2233,14 @@ namespace TheCommissar
             attributeList.Add(attWillpower);
             attributeList.Add(attFellowship);
             attributeList.Add(attInitiative);
+
+            attributeTotalList.Add(attStrengthTotal);
+            attributeTotalList.Add(attAgilityTotal);
+            attributeTotalList.Add(attToughnessTotal);
+            attributeTotalList.Add(attIntellectTotal);
+            attributeTotalList.Add(attWillpowerTotal);
+            attributeTotalList.Add(attFellowshipTotal);
+            attributeTotalList.Add(attInitiativeTotal);
 
             skillList.Add(skillAthletics);
             skillList.Add(skillAwareness);
@@ -2258,6 +2263,34 @@ namespace TheCommissar
 
 
 
+            if (totalBP - totalSpentBP - bpSpentOnRace - bpSpentOnArchetype - bpSpentOnAttributes - bpSpentOnSkills - bpSpentOnPowers < 0)
+            {
+                message += "You you have spent too much total BP!" + Environment.NewLine;
+            }
+
+            if (tierSelect.SelectedItem == null)
+            {
+                message += "You do not have a Tier selected!" + Environment.NewLine;
+            }
+
+            if (speciesSelect.SelectedItem == null)
+            {
+                message += "You do not have a Species selected!" + Environment.NewLine;
+            }
+
+            if (archetypeSelect.SelectedItem == null)
+            {
+                message += "You do not have an Archetype selected!" + Environment.NewLine;
+            }
+
+            foreach (Label item in attributeTotalList)
+            {
+                if (Convert.ToInt32(item.Text) == 0)
+                {
+                    message += "You have not put any points into " + item.Name.Substring(3, item.Name.Length - 8) + "!" + Environment.NewLine;
+                }
+            }
+
             if (tierValidation == 1)
             {
                 if (bpSpentOnAttributes > 100)
@@ -2268,16 +2301,17 @@ namespace TheCommissar
                 {
                     if (item.Value > 4)
                     {
-                        message += "You have put more than 4 points into " + item.Name.Substring(3, item.Name.Length -3) + Environment.NewLine;
+                        message += "You have put more than 4 points into " + item.Name.Substring(3, item.Name.Length -3) + "!" + Environment.NewLine;
                     }
                 }
                 foreach (NumericUpDown item in skillList)
                 {
                     if (item.Value > 4)
                     {
-                        message += "You have put more than 4 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                        message += "You have put more than 4 points into " + item.Name.Substring(5, item.Name.Length - 5) + "!" + Environment.NewLine;
                     }
                 }
+                
             }
             else if (tierValidation == 2)
             {
@@ -2289,16 +2323,17 @@ namespace TheCommissar
                 {
                     if (item.Value > 5)
                     {
-                        message += "You have put more than 5 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                        message += "You have put more than 5 points into " + item.Name.Substring(3, item.Name.Length-3) + "!" + Environment.NewLine;
                     }
                 }
                 foreach (NumericUpDown item in skillList)
                 {
                     if (item.Value > 5)
                     {
-                        message += "You have put more than 5 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                        message += "You have put more than 5 points into " + item.Name.Substring(5, item.Name.Length - 5) + "!" + Environment.NewLine;
                     }
                 }
+                
             }
             else if (tierValidation == 3)
             {
@@ -2310,16 +2345,17 @@ namespace TheCommissar
                 {
                     if (item.Value > 6)
                     {
-                        message += "You have put more than 6 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                        message += "You have put more than 6 points into " + item.Name.Substring(3, item.Name.Length-3) + "!" + Environment.NewLine;
                     }
                 }
                 foreach (NumericUpDown item in skillList)
                 {
                     if (item.Value > 6)
                     {
-                        message += "You have put more than 6 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                        message += "You have put more than 6 points into " + item.Name.Substring(5, item.Name.Length - 5) + "!" + Environment.NewLine;
                     }
                 }
+                
             }
             else if (tierValidation == 4)
             {
@@ -2331,16 +2367,17 @@ namespace TheCommissar
                 {
                     if (item.Value > 8)
                     {
-                        message += "You have put more than 8 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                        message += "You have put more than 8 points into " + item.Name.Substring(3, item.Name.Length-3) + "!" + Environment.NewLine;
                     }
                 }
                 foreach (NumericUpDown item in skillList)
                 {
                     if (item.Value > 7)
                     {
-                        message += "You have put more than 7 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                        message += "You have put more than 7 points into " + item.Name.Substring(5, item.Name.Length - 5) + "!" + Environment.NewLine;
                     }
                 }
+                
             }
             else if (tierValidation == 5)
             {
@@ -2352,33 +2389,33 @@ namespace TheCommissar
                 {
                     if (item.Value > 10)
                     {
-                        message += "You have put more than 10 points into " + item.Name.Substring(3, item.Name.Length-3) + Environment.NewLine;
+                        message += "You have put more than 10 points into " + item.Name.Substring(3, item.Name.Length-3) + "!" + Environment.NewLine;
                     }
                 }
                 foreach (NumericUpDown item in skillList)
                 {
                     if (item.Value > 8)
                     {
-                        message += "You have put more than 8 points into " + item.Name.Substring(5, item.Name.Length - 5) + Environment.NewLine;
+                        message += "You have put more than 8 points into " + item.Name.Substring(5, item.Name.Length - 5) + "!" + Environment.NewLine;
                     }
                 }
+                
             }
-            else 
-            {
-                message += "You dont have a tier selected";
-            }
+
+
+            
 
             if (message == "")
             {
-                caption = "Character is valid!";
+                caption = "Character is Valid!";
                 message = "Your character has no errors!";
             }
             else
             {
-                caption = "Validation errors";
+                caption = "Validation Errors";
             }
 
-            MessageBox.Show(message, caption, button);
+            MessageBox.Show(message, caption, button, MessageBoxIcon.Information);
 
         }
     }
