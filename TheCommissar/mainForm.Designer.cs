@@ -36,12 +36,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkCharacterValidityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.buildPointsLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.bpSpentAttribLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -293,8 +295,6 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.equipModMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkCharacterValidityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -400,29 +400,36 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newCharacterToolStripMenuItem
+            // 
+            this.newCharacterToolStripMenuItem.Name = "newCharacterToolStripMenuItem";
+            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.newCharacterToolStripMenuItem.Text = "New";
+            this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharacterToolStripMenuItem_Click);
+            // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(100, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -440,6 +447,13 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.optionsToolStripMenuItem.Text = "Options (Placeholder)";
+            // 
+            // checkCharacterValidityToolStripMenuItem
+            // 
+            this.checkCharacterValidityToolStripMenuItem.Name = "checkCharacterValidityToolStripMenuItem";
+            this.checkCharacterValidityToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.checkCharacterValidityToolStripMenuItem.Text = "Check Character Validity";
+            this.checkCharacterValidityToolStripMenuItem.Click += new System.EventHandler(this.checkCharacterValidityToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -630,6 +644,11 @@
             // shockValueBox
             // 
             this.shockValueBox.Location = new System.Drawing.Point(189, 315);
+            this.shockValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.shockValueBox.Name = "shockValueBox";
             this.shockValueBox.Size = new System.Drawing.Size(56, 20);
             this.shockValueBox.TabIndex = 16;
@@ -648,6 +667,11 @@
             // woundsValueBox
             // 
             this.woundsValueBox.Location = new System.Drawing.Point(57, 315);
+            this.woundsValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.woundsValueBox.Name = "woundsValueBox";
             this.woundsValueBox.Size = new System.Drawing.Size(56, 20);
             this.woundsValueBox.TabIndex = 10;
@@ -676,6 +700,11 @@
             // influenceValueBox
             // 
             this.influenceValueBox.Location = new System.Drawing.Point(189, 289);
+            this.influenceValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.influenceValueBox.Name = "influenceValueBox";
             this.influenceValueBox.Size = new System.Drawing.Size(56, 20);
             this.influenceValueBox.TabIndex = 15;
@@ -685,6 +714,11 @@
             // resolveValueBox
             // 
             this.resolveValueBox.Location = new System.Drawing.Point(189, 262);
+            this.resolveValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.resolveValueBox.Name = "resolveValueBox";
             this.resolveValueBox.Size = new System.Drawing.Size(56, 20);
             this.resolveValueBox.TabIndex = 14;
@@ -712,6 +746,11 @@
             // passiveAwarenessValueBox
             // 
             this.passiveAwarenessValueBox.Location = new System.Drawing.Point(189, 235);
+            this.passiveAwarenessValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.passiveAwarenessValueBox.Name = "passiveAwarenessValueBox";
             this.passiveAwarenessValueBox.Size = new System.Drawing.Size(56, 20);
             this.passiveAwarenessValueBox.TabIndex = 13;
@@ -730,6 +769,11 @@
             // convictionValueBox
             // 
             this.convictionValueBox.Location = new System.Drawing.Point(189, 210);
+            this.convictionValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.convictionValueBox.Name = "convictionValueBox";
             this.convictionValueBox.Size = new System.Drawing.Size(56, 20);
             this.convictionValueBox.TabIndex = 12;
@@ -748,6 +792,11 @@
             // resilienceValueBox
             // 
             this.resilienceValueBox.Location = new System.Drawing.Point(189, 184);
+            this.resilienceValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.resilienceValueBox.Name = "resilienceValueBox";
             this.resilienceValueBox.Size = new System.Drawing.Size(56, 20);
             this.resilienceValueBox.TabIndex = 11;
@@ -757,6 +806,11 @@
             // soakValueBox
             // 
             this.soakValueBox.Location = new System.Drawing.Point(57, 289);
+            this.soakValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.soakValueBox.Name = "soakValueBox";
             this.soakValueBox.Size = new System.Drawing.Size(56, 20);
             this.soakValueBox.TabIndex = 9;
@@ -784,6 +838,11 @@
             // defenceValueBox
             // 
             this.defenceValueBox.Location = new System.Drawing.Point(57, 262);
+            this.defenceValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.defenceValueBox.Name = "defenceValueBox";
             this.defenceValueBox.Size = new System.Drawing.Size(56, 20);
             this.defenceValueBox.TabIndex = 8;
@@ -802,6 +861,11 @@
             // attSpeedModifier
             // 
             this.attSpeedModifier.Location = new System.Drawing.Point(438, 213);
+            this.attSpeedModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attSpeedModifier.Name = "attSpeedModifier";
             this.attSpeedModifier.ReadOnly = true;
             this.attSpeedModifier.Size = new System.Drawing.Size(47, 20);
@@ -812,6 +876,11 @@
             // attInitiativeModifier
             // 
             this.attInitiativeModifier.Location = new System.Drawing.Point(438, 188);
+            this.attInitiativeModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attInitiativeModifier.Name = "attInitiativeModifier";
             this.attInitiativeModifier.ReadOnly = true;
             this.attInitiativeModifier.Size = new System.Drawing.Size(47, 20);
@@ -822,6 +891,11 @@
             // attFellowshipModifier
             // 
             this.attFellowshipModifier.Location = new System.Drawing.Point(438, 163);
+            this.attFellowshipModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attFellowshipModifier.Name = "attFellowshipModifier";
             this.attFellowshipModifier.ReadOnly = true;
             this.attFellowshipModifier.Size = new System.Drawing.Size(47, 20);
@@ -832,6 +906,11 @@
             // attWillpowerModifier
             // 
             this.attWillpowerModifier.Location = new System.Drawing.Point(438, 138);
+            this.attWillpowerModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attWillpowerModifier.Name = "attWillpowerModifier";
             this.attWillpowerModifier.ReadOnly = true;
             this.attWillpowerModifier.Size = new System.Drawing.Size(47, 20);
@@ -842,6 +921,11 @@
             // attIntellectModifier
             // 
             this.attIntellectModifier.Location = new System.Drawing.Point(438, 113);
+            this.attIntellectModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attIntellectModifier.Name = "attIntellectModifier";
             this.attIntellectModifier.ReadOnly = true;
             this.attIntellectModifier.Size = new System.Drawing.Size(47, 20);
@@ -852,6 +936,11 @@
             // attToughnessModifier
             // 
             this.attToughnessModifier.Location = new System.Drawing.Point(438, 88);
+            this.attToughnessModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attToughnessModifier.Name = "attToughnessModifier";
             this.attToughnessModifier.ReadOnly = true;
             this.attToughnessModifier.Size = new System.Drawing.Size(47, 20);
@@ -862,6 +951,11 @@
             // attAgilityModifier
             // 
             this.attAgilityModifier.Location = new System.Drawing.Point(438, 63);
+            this.attAgilityModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attAgilityModifier.Name = "attAgilityModifier";
             this.attAgilityModifier.ReadOnly = true;
             this.attAgilityModifier.Size = new System.Drawing.Size(47, 20);
@@ -872,6 +966,11 @@
             // attStrengthModifier
             // 
             this.attStrengthModifier.Location = new System.Drawing.Point(438, 38);
+            this.attStrengthModifier.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.attStrengthModifier.Name = "attStrengthModifier";
             this.attStrengthModifier.ReadOnly = true;
             this.attStrengthModifier.Size = new System.Drawing.Size(47, 20);
@@ -892,6 +991,11 @@
             // corruptionValueBox
             // 
             this.corruptionValueBox.Location = new System.Drawing.Point(57, 235);
+            this.corruptionValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.corruptionValueBox.Name = "corruptionValueBox";
             this.corruptionValueBox.Size = new System.Drawing.Size(56, 20);
             this.corruptionValueBox.TabIndex = 7;
@@ -910,6 +1014,11 @@
             // wealthValueBox
             // 
             this.wealthValueBox.Location = new System.Drawing.Point(57, 210);
+            this.wealthValueBox.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.wealthValueBox.Name = "wealthValueBox";
             this.wealthValueBox.Size = new System.Drawing.Size(56, 20);
             this.wealthValueBox.TabIndex = 6;
@@ -1472,6 +1581,11 @@
             // skillWeaponSkillBonus
             // 
             this.skillWeaponSkillBonus.Location = new System.Drawing.Point(276, 476);
+            this.skillWeaponSkillBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillWeaponSkillBonus.Name = "skillWeaponSkillBonus";
             this.skillWeaponSkillBonus.ReadOnly = true;
             this.skillWeaponSkillBonus.Size = new System.Drawing.Size(45, 20);
@@ -1481,6 +1595,11 @@
             // skillTechBonus
             // 
             this.skillTechBonus.Location = new System.Drawing.Point(276, 450);
+            this.skillTechBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillTechBonus.Name = "skillTechBonus";
             this.skillTechBonus.ReadOnly = true;
             this.skillTechBonus.Size = new System.Drawing.Size(45, 20);
@@ -1490,6 +1609,11 @@
             // skillSurvivalBonus
             // 
             this.skillSurvivalBonus.Location = new System.Drawing.Point(276, 424);
+            this.skillSurvivalBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillSurvivalBonus.Name = "skillSurvivalBonus";
             this.skillSurvivalBonus.ReadOnly = true;
             this.skillSurvivalBonus.Size = new System.Drawing.Size(45, 20);
@@ -1499,6 +1623,11 @@
             // skillStealthBonus
             // 
             this.skillStealthBonus.Location = new System.Drawing.Point(276, 398);
+            this.skillStealthBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillStealthBonus.Name = "skillStealthBonus";
             this.skillStealthBonus.ReadOnly = true;
             this.skillStealthBonus.Size = new System.Drawing.Size(45, 20);
@@ -1508,6 +1637,11 @@
             // skillScholarBonus
             // 
             this.skillScholarBonus.Location = new System.Drawing.Point(276, 372);
+            this.skillScholarBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillScholarBonus.Name = "skillScholarBonus";
             this.skillScholarBonus.ReadOnly = true;
             this.skillScholarBonus.Size = new System.Drawing.Size(45, 20);
@@ -1517,6 +1651,11 @@
             // skillPsychicBonus
             // 
             this.skillPsychicBonus.Location = new System.Drawing.Point(276, 346);
+            this.skillPsychicBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillPsychicBonus.Name = "skillPsychicBonus";
             this.skillPsychicBonus.ReadOnly = true;
             this.skillPsychicBonus.Size = new System.Drawing.Size(45, 20);
@@ -1526,6 +1665,11 @@
             // skillPilotBonus
             // 
             this.skillPilotBonus.Location = new System.Drawing.Point(276, 320);
+            this.skillPilotBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillPilotBonus.Name = "skillPilotBonus";
             this.skillPilotBonus.ReadOnly = true;
             this.skillPilotBonus.Size = new System.Drawing.Size(45, 20);
@@ -1535,6 +1679,11 @@
             // skillPersuasionBonus
             // 
             this.skillPersuasionBonus.Location = new System.Drawing.Point(276, 294);
+            this.skillPersuasionBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillPersuasionBonus.Name = "skillPersuasionBonus";
             this.skillPersuasionBonus.ReadOnly = true;
             this.skillPersuasionBonus.Size = new System.Drawing.Size(45, 20);
@@ -1544,6 +1693,11 @@
             // skillMedicaeBonus
             // 
             this.skillMedicaeBonus.Location = new System.Drawing.Point(276, 268);
+            this.skillMedicaeBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillMedicaeBonus.Name = "skillMedicaeBonus";
             this.skillMedicaeBonus.ReadOnly = true;
             this.skillMedicaeBonus.Size = new System.Drawing.Size(45, 20);
@@ -1553,6 +1707,11 @@
             // skillLeadershipBonus
             // 
             this.skillLeadershipBonus.Location = new System.Drawing.Point(276, 242);
+            this.skillLeadershipBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillLeadershipBonus.Name = "skillLeadershipBonus";
             this.skillLeadershipBonus.ReadOnly = true;
             this.skillLeadershipBonus.Size = new System.Drawing.Size(45, 20);
@@ -1562,6 +1721,11 @@
             // skillInvestigationBonus
             // 
             this.skillInvestigationBonus.Location = new System.Drawing.Point(276, 216);
+            this.skillInvestigationBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillInvestigationBonus.Name = "skillInvestigationBonus";
             this.skillInvestigationBonus.ReadOnly = true;
             this.skillInvestigationBonus.Size = new System.Drawing.Size(45, 20);
@@ -1571,6 +1735,11 @@
             // skillIntimidationBonus
             // 
             this.skillIntimidationBonus.Location = new System.Drawing.Point(276, 190);
+            this.skillIntimidationBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillIntimidationBonus.Name = "skillIntimidationBonus";
             this.skillIntimidationBonus.ReadOnly = true;
             this.skillIntimidationBonus.Size = new System.Drawing.Size(45, 20);
@@ -1580,6 +1749,11 @@
             // skillInsightBonus
             // 
             this.skillInsightBonus.Location = new System.Drawing.Point(276, 164);
+            this.skillInsightBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillInsightBonus.Name = "skillInsightBonus";
             this.skillInsightBonus.ReadOnly = true;
             this.skillInsightBonus.Size = new System.Drawing.Size(45, 20);
@@ -1589,6 +1763,11 @@
             // skillDeceptionBonus
             // 
             this.skillDeceptionBonus.Location = new System.Drawing.Point(276, 138);
+            this.skillDeceptionBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillDeceptionBonus.Name = "skillDeceptionBonus";
             this.skillDeceptionBonus.ReadOnly = true;
             this.skillDeceptionBonus.Size = new System.Drawing.Size(45, 20);
@@ -1598,6 +1777,11 @@
             // skillCunningBonus
             // 
             this.skillCunningBonus.Location = new System.Drawing.Point(276, 112);
+            this.skillCunningBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillCunningBonus.Name = "skillCunningBonus";
             this.skillCunningBonus.ReadOnly = true;
             this.skillCunningBonus.Size = new System.Drawing.Size(45, 20);
@@ -1607,6 +1791,11 @@
             // skillBallisticBonus
             // 
             this.skillBallisticBonus.Location = new System.Drawing.Point(276, 86);
+            this.skillBallisticBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillBallisticBonus.Name = "skillBallisticBonus";
             this.skillBallisticBonus.ReadOnly = true;
             this.skillBallisticBonus.Size = new System.Drawing.Size(45, 20);
@@ -1616,6 +1805,11 @@
             // skillAwarenessBonus
             // 
             this.skillAwarenessBonus.Location = new System.Drawing.Point(276, 60);
+            this.skillAwarenessBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillAwarenessBonus.Name = "skillAwarenessBonus";
             this.skillAwarenessBonus.ReadOnly = true;
             this.skillAwarenessBonus.Size = new System.Drawing.Size(45, 20);
@@ -1625,6 +1819,11 @@
             // skillAthleticsBonus
             // 
             this.skillAthleticsBonus.Location = new System.Drawing.Point(276, 34);
+            this.skillAthleticsBonus.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.skillAthleticsBonus.Name = "skillAthleticsBonus";
             this.skillAthleticsBonus.ReadOnly = true;
             this.skillAthleticsBonus.Size = new System.Drawing.Size(45, 20);
@@ -3022,20 +3221,6 @@
             this.addModToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.addModToolStripMenuItem.Text = "Add Mod";
             this.addModToolStripMenuItem.Click += new System.EventHandler(this.addModToolStripMenuItem_Click);
-            // 
-            // newCharacterToolStripMenuItem
-            // 
-            this.newCharacterToolStripMenuItem.Name = "newCharacterToolStripMenuItem";
-            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newCharacterToolStripMenuItem.Text = "New";
-            this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharacterToolStripMenuItem_Click);
-            // 
-            // checkCharacterValidityToolStripMenuItem
-            // 
-            this.checkCharacterValidityToolStripMenuItem.Name = "checkCharacterValidityToolStripMenuItem";
-            this.checkCharacterValidityToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.checkCharacterValidityToolStripMenuItem.Text = "Check Character Validity";
-            this.checkCharacterValidityToolStripMenuItem.Click += new System.EventHandler(this.checkCharacterValidityToolStripMenuItem_Click);
             // 
             // mainForm
             // 
