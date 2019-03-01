@@ -28,6 +28,11 @@ namespace TheCommissar
         string objectives = "Objectives: ";
         string raceSelection = "";
         string archetypeSelection = "";
+        string keywordsList = "";
+        string raceBenefitsList = "";
+        string archetypeBenefitsList = "";
+        List<Tuple<string, int>> archetypeRequirementsList = new List<Tuple<string, int>>();
+
 
         public mainForm()
         {
@@ -94,13 +99,40 @@ namespace TheCommissar
             speedTraitLabel.Text = "Speed: " + attSpeedTotal.Text;
             convictionTraitLabel.Text = "Conviction: " + Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + Convert.ToInt32(convictionValueBox.Value));
             passiveAwarenessTraitLabel.Text = "Passive Awareness: " + Convert.ToString((Convert.ToInt32(awarenessRatingLabel.Text) / 2) + Convert.ToInt32(passiveAwarenessValueBox.Value));
-            corruptionTraitLabel.Text = "Corruption: " + Convert.ToString(corruptionValueBox.Value);
+            if (raceSelection == "Necron, 20BP")
+            {
+                corruptionValueLabel.Text = "Insanity";
+                corruptionTraitLabel.Text = "Insanity: " + Convert.ToString(corruptionValueBox.Value);
+            }
+            else
+            {
+                corruptionValueLabel.Text = "Corruption";
+                corruptionTraitLabel.Text = "Corruption: " + Convert.ToString(corruptionValueBox.Value);
+            }
             resolveTraitLabel.Text = "Resolve: " + Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) - 1 + Convert.ToInt32(resolveValueBox.Value));
-            influenceTraitLabel.Text = "Influence: " + Convert.ToString(Convert.ToInt32(attFellowshipTotal.Text) - 1 + influenceValueBox.Value);
+            if (raceSelection == "Ork, 10BP")
+            {
+                influenceTraitLabel.Text = "Influence: " + Convert.ToString(Convert.ToInt32(attStrengthTotal.Text) - 1 + influenceValueBox.Value);
+            }
+            else
+            { 
+                influenceTraitLabel.Text = "Influence: " + Convert.ToString(Convert.ToInt32(attFellowshipTotal.Text) - 1 + influenceValueBox.Value);
+            }
             rankTraitLabel.Text = "Rank: " + Convert.ToString(rankValueBox.Value);
             wealthTraitLabel.Text = "Wealth: " + Convert.ToString(wealthValueBox.Value + tierSelection);
             lifetimeBPEarnedLabel.Text = "Lifetime BP: " + Convert.ToString(totalBPGained - totalBPRemoved);
             objectiveLabel.Text = objectives;
+
+            //set the keywords, benefits and bonuses section up
+            archInfoLabel.Text = raceBenefitsList + archetypeBenefitsList;
+            if (keywordsList == "")
+            {
+                
+            }
+            else
+            {
+                archInfoLabel.Text += "Keywords: " + keywordsList;
+            }
 
             // update tooltips for summary tab
             calcValuesToolTip.SetToolTip(shockTotalLabel, "Willpower " + attWillpowerTotal.Text + " + Tier " + Convert.ToString(tierSelection) + " + Bonus " + Convert.ToString(shockValueBox.Value));
@@ -111,14 +143,30 @@ namespace TheCommissar
             calcValuesToolTip.SetToolTip(speedTraitLabel, "Speed " + attSpeedTotal.Text);
             calcValuesToolTip.SetToolTip(convictionTraitLabel, "Willpower " + attWillpowerTotal.Text + " + Bonus " + Convert.ToString(convictionValueBox.Value));
             calcValuesToolTip.SetToolTip(passiveAwarenessTraitLabel, "Awareness " + awarenessRatingLabel.Text + " / 2 + Bonus " + Convert.ToString(passiveAwarenessValueBox.Value));
-            calcValuesToolTip.SetToolTip(corruptionTraitLabel, "Corruption " + Convert.ToString(corruptionValueBox.Value));
+            if (raceSelection == "Necron, 20BP")
+            {
+                calcValuesToolTip.SetToolTip(corruptionTraitLabel, "Insanity " + Convert.ToString(corruptionValueBox.Value));
+            }
+            else
+            { 
+                calcValuesToolTip.SetToolTip(corruptionTraitLabel, "Corruption " + Convert.ToString(corruptionValueBox.Value));
+            }
             calcValuesToolTip.SetToolTip(resolveTraitLabel, "Willpower " + attWillpowerTotal.Text + " - 1 + Bonus " + Convert.ToString(resolveValueBox.Value));
-            calcValuesToolTip.SetToolTip(influenceTraitLabel, "Fellowship " + attFellowshipTotal.Text + " - 1 + Bonus " + Convert.ToString(influenceValueBox.Value));
+            if (raceSelection == "Ork, 10BP")
+            {
+                calcValuesToolTip.SetToolTip(influenceTraitLabel, "Strenght " + attStrengthTotal.Text + " - 1 + Bonus " + Convert.ToString(influenceValueBox.Value));
+            }
+            else
+            {
+                calcValuesToolTip.SetToolTip(influenceTraitLabel, "Fellowship " + attFellowshipTotal.Text + " - 1 + Bonus " + Convert.ToString(influenceValueBox.Value));
+            }
             calcValuesToolTip.SetToolTip(rankTraitLabel, "Rank " + Convert.ToString(rankValueBox.Value));
             calcValuesToolTip.SetToolTip(wealthTraitLabel, "Tier " + Convert.ToString(tierSelection) + " + Bonus " + Convert.ToString(wealthValueBox.Value));
             calcValuesToolTip.SetToolTip(lifetimeBPEarnedLabel, "BP Gained " + Convert.ToString(totalBPGained) + " - BP Removed " + Convert.ToString(totalBPRemoved));
         }
 
+
+        // this section updates the BP spent for raising or lowering attributes
         public void updateAttribBuildPoints (int OldValue, int NewValue)
         {
             int oldValue = OldValue;
@@ -234,6 +282,7 @@ namespace TheCommissar
             updateBuildPoints(0);
         }
 
+        // this section updates the BP spent for raising or lowering skills
         public void updateSkillBuildPoints(int OldValue, int NewValue)
         {
             int oldValue = OldValue;
@@ -315,163 +364,9 @@ namespace TheCommissar
             }
             updateBuildPoints(0);
         }
-
-        //public void changeAttributeValue(string attribute, int value)
-        //{
-        //    string Attribute = attribute;
-        //    int Value = value;
-
-        //    if (Attribute == "strength")
-        //        {
-        //            attStrengthTotal.Text = Convert.ToString(Convert.ToInt32(attStrengthTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "agility")
-        //        {
-        //            attAgilityTotal.Text = Convert.ToString(Convert.ToInt32(attAgilityTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "toughness")
-        //        {
-        //            attToughnessTotal.Text = Convert.ToString(Convert.ToInt32(attToughnessTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "intellect")
-        //        {
-        //            attIntellectTotal.Text = Convert.ToString(Convert.ToInt32(attIntellectTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "willpower")
-        //        {
-        //            attWillpowerTotal.Text = Convert.ToString(Convert.ToInt32(attWillpowerTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "fellowship")
-        //        {
-        //            attFellowshipTotal.Text = Convert.ToString(Convert.ToInt32(attFellowshipTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "initiative")
-        //        {
-        //            attInitiativeTotal.Text = Convert.ToString(Convert.ToInt32(attInitiativeTotal.Text) + Value);
-        //        }
-        //    else if (Attribute == "speed")
-        //        {
-        //            // speed is unique in that its a derived state from your race
-        //            attSpeedTotal.Text = Convert.ToString(Value);
-        //        }
-        //    else
-        //        {
-                    
-        //        }
-        //}
-
-        public void changeSkillValue(string Skill)
-        {
-            string skill = Skill;
-            if (skill == "athletics")
-            {
-                athleticsRatingLabel.Text = Convert.ToString(skillAthletics.Value + Convert.ToInt32(attStrengthTotal.Text));
-            }
-            else if (skill == "awareness")
-            {
-                awarenessRatingLabel.Text = Convert.ToString(skillAwareness.Value + Convert.ToInt32(attIntellectTotal.Text));
-            }
-            else if (skill == "ballistic")
-            {
-                ballisticRatingLabel.Text = Convert.ToString(skillBallstic.Value + Convert.ToInt32(attAgilityTotal.Text));
-            }
-            else if (skill == "cunning")
-            {
-                cunningRatingLabel.Text = Convert.ToString(skillCunning.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            }
-            else if (skill == "deception")
-            {
-                deceptionRatingLabel.Text = Convert.ToString(skillDeception.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            }
-            else if (skill == "insight")
-            {
-                insightRatingLabel.Text = Convert.ToString(skillInsight.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            }
-            else if (skill == "intimidation")
-            {
-                intimidationRatingLabel.Text = Convert.ToString(skillIntimidation.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            }
-            else if (skill == "investigation")
-            {
-                investigationRatingLabel.Text = Convert.ToString(skillInvestigation.Value + Convert.ToInt32(attIntellectTotal.Text));
-            }
-            else if (skill == "leadership")
-            {
-                leadershipRatingLabel.Text = Convert.ToString(skillLeadership.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            }
-            else if (skill == "medicae")
-            {
-                medicaeRatingLabel.Text = Convert.ToString(skillMedicae.Value + Convert.ToInt32(attIntellectTotal.Text));
-            }
-            else if (skill == "persuasion")
-            {
-                persuasionRatingLabel.Text = Convert.ToString(skillPersuasion.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            }
-            else if (skill == "pilot")
-            {
-                pilotRatingLabel.Text = Convert.ToString(skillPilot.Value + Convert.ToInt32(attAgilityTotal.Text));
-            }
-            else if (skill == "psychic")
-            {
-                psychicRatingLabel.Text = Convert.ToString(skillPsychic.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            }
-            else if (skill == "scholar")
-            {
-                scholarRatingLabel.Text = Convert.ToString(skillScholar.Value + Convert.ToInt32(attIntellectTotal.Text));
-            }
-            else if (skill == "stealth")
-            {
-                stealthRatingLabel.Text = Convert.ToString(skillStealth.Value + Convert.ToInt32(attAgilityTotal.Text));
-            }
-            else if (skill == "survival")
-            {
-                survivalRatingLabel.Text = Convert.ToString(skillSurvival.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            }
-            else if (skill == "tech")
-            {
-                techRatingLabel.Text = Convert.ToString(skillTech.Value + Convert.ToInt32(attIntellectTotal.Text));
-            }
-            else if (skill == "weapon")
-            {
-                weaponSkillRatingLabel.Text = Convert.ToString(skillWeaponSkill.Value + Convert.ToInt32(attInitiativeTotal.Text));
-            }
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void attStrengthTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tierSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+               
+      
+        //traits BP change triggers
         private void armorRatingBox_ValueChanged(object sender, EventArgs e)
         {
             updateBuildPoints(0);
@@ -537,6 +432,7 @@ namespace TheCommissar
             updateBuildPoints(0);
         }
 
+        //attributes modifier change BP triggers
         private void attStrengthModifier_ValueChanged(object sender, EventArgs e)
         {
             updateBuildPoints(0);
@@ -577,11 +473,99 @@ namespace TheCommissar
             updateBuildPoints(0);
         }
 
-        private void powerMultiCheckBox1_CheckedChanged(object sender, EventArgs e)
+        //BP trigger off skill changes
+        private void skillAthleticsBonus_ValueChanged(object sender, EventArgs e)
         {
-
+            updateBuildPoints(0);
         }
 
+        private void skillAwarenessBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillBallisticBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillCunningBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillDeceptionBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillInsightBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillIntimidationBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillInvestigationBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillLeadershipBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillMedicaeBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillPersuasionBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillPilotBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillPsychicBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillScholarBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillAgilityBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillSurvivalBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillTechBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+        private void skillWeaponSkillBonus_ValueChanged(object sender, EventArgs e)
+        {
+            updateBuildPoints(0);
+        }
+
+
+        //attributes update BP triggers
         private void attStrength_ValueChanged(object sender, EventArgs e)
         {
             int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
@@ -652,16 +636,234 @@ namespace TheCommissar
             updateAttribBuildPoints(prevValue, newValue);
         }
 
+        // You cant change speed manually, its Race Derived
         private void attSpeed_ValueChanged(object sender, EventArgs e)
         {
-            // You cant change speed manually, its Race Derived
-
             //int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
             //int newValue = Convert.ToInt32(attSpeed.Value);
             //int change = newValue - prevValue;
             //changeAttributeValue("speed", change);
             //updateAttribBuildPoints(prevValue, newValue);
         }
+
+
+        //skill value changes and BP triggers
+        private void skillAthletics_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillAthletics.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("athletics");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillAwareness_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillAwareness.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("awareness");
+            ////updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillBallstic_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillBallstic.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("ballistic");
+            ////updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillCunning_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillCunning.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("cunning");
+            ////updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillDeception_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillDeception.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("deception");
+            ////updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillInsight_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillInsight.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("insight");
+            ////updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillIntimidation_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillIntimidation.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("intimidation");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillInvestigation_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillInvestigation.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("investigation");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillLeadership_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillLeadership.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("leadership");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillMedicae_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillMedicae.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("medicae");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillPersuasion_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillPersuasion.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("persuasion");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillPilot_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillPilot.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("pilot");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillPsychic_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillPsychic.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("psychic");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillScholar_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillScholar.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("scholar");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillStealth_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillStealth.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("stealth");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillSurvival_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillSurvival.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("survival");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillTech_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillTech.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("tech");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+        private void skillWeaponSkill_ValueChanged(object sender, EventArgs e)
+        {
+            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
+            int newValue = Convert.ToInt32(skillWeaponSkill.Value);
+            int change = newValue - prevValue;
+            //changeSkillValue("weapon");
+            //updateSkillValues();
+            updateSkillBuildPoints(prevValue, newValue);
+        }
+
+
+        // these two sections calculate the total values update the labels based on base attribute or skill values plus bonuses
+        public void updateSkillValues()
+        {
+            athleticsRatingLabel.Text = Convert.ToString(skillAthletics.Value + skillAthleticsBonus.Value + Convert.ToInt32(attStrengthTotal.Text));
+            awarenessRatingLabel.Text = Convert.ToString(skillAwareness.Value + skillAwarenessBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            ballisticRatingLabel.Text = Convert.ToString(skillBallstic.Value + skillBallisticBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
+            cunningRatingLabel.Text = Convert.ToString(skillCunning.Value + +skillCunningBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            deceptionRatingLabel.Text = Convert.ToString(skillDeception.Value + skillDeceptionBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            insightRatingLabel.Text = Convert.ToString(skillInsight.Value + skillInsightBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            intimidationRatingLabel.Text = Convert.ToString(skillIntimidation.Value + skillIntimidationBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
+            investigationRatingLabel.Text = Convert.ToString(skillInvestigation.Value + skillInvestigationBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            leadershipRatingLabel.Text = Convert.ToString(skillLeadership.Value + skillLeadershipBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            medicaeRatingLabel.Text = Convert.ToString(skillMedicae.Value + skillMedicaeBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            persuasionRatingLabel.Text = Convert.ToString(skillPersuasion.Value + skillPersuasionBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
+            pilotRatingLabel.Text = Convert.ToString(skillPilot.Value + skillPilotBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
+            psychicRatingLabel.Text = Convert.ToString(skillPsychic.Value + skillPsychicBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
+            scholarRatingLabel.Text = Convert.ToString(skillScholar.Value + skillScholarBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            stealthRatingLabel.Text = Convert.ToString(skillStealth.Value + skillStealthBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
+            survivalRatingLabel.Text = Convert.ToString(skillSurvival.Value + skillSurvivalBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
+            techRatingLabel.Text = Convert.ToString(skillTech.Value + skillTechBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
+            weaponSkillRatingLabel.Text = Convert.ToString(skillWeaponSkill.Value + skillWeaponSkillBonus.Value + Convert.ToInt32(attInitiativeTotal.Text));
+        }
+
+        public void updateAttribValues()
+        {
+            attStrengthTotal.Text = Convert.ToString(attStrength.Value + attStrengthModifier.Value);
+            attAgilityTotal.Text = Convert.ToString(attAgility.Value + attAgilityModifier.Value);
+            attToughnessTotal.Text = Convert.ToString(attToughness.Value + attToughnessModifier.Value);
+            attIntellectTotal.Text = Convert.ToString(attIntellect.Value + attIntellectModifier.Value);
+            attWillpowerTotal.Text = Convert.ToString(attWillpower.Value + attWillpowerModifier.Value);
+            attFellowshipTotal.Text = Convert.ToString(attFellowship.Value + attFellowshipModifier.Value);
+            attInitiativeTotal.Text = Convert.ToString(attInitiative.Value + attInitiativeModifier.Value);
+            attSpeedTotal.Text = Convert.ToString(attSpeed.Value + attSpeedModifier.Value);
+        }
+
 
 
         //Adding talents
@@ -947,369 +1149,14 @@ namespace TheCommissar
 
 
 
-        //private bool tierMaxValidation(int raisedValue, string type)
-        //{
-        //    if (type == "skill")
-        //    {
-        //        if (raisedValue > (Convert.ToInt32(tierSelection) + 3))
-        //        {
-        //            return false;
-        //        }
-        //        else
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    else if (type == "attribute")
-        //    {
-        //        if (raisedValue > (Convert.ToInt32(tierSelection) * 2 + 2))
-        //        {
-        //            return false;
-        //        }
-        //        else
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    else if (type == "talent")
-        //    {
-        //        if (raisedValue > (Convert.ToInt32(tierSelection) +1) || raisedValue > 5)
-        //        {
-        //            return false;
-        //        }
-        //        else
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        private void skillAthletics_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillAthletics.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("athletics");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-            // we're going to add the tier validation here
-            //if (tierMaxValidation(newValue, "skill"))
-            //{
-            //    int change = newValue - prevValue;
-            //    changeSkillValue("athletics");
-            //}
-            //else
-            //{
-            //    skillAthletics.Value = prevValue;
-            //}
-            
-        }
-
-        private void skillAwareness_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillAwareness.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("awareness");
-            ////updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillBallstic_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillBallstic.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("ballistic");
-            ////updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillCunning_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillCunning.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("cunning");
-            ////updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillDeception_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillDeception.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("deception");
-            ////updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillInsight_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillInsight.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("insight");
-            ////updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillIntimidation_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillIntimidation.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("intimidation");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillInvestigation_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillInvestigation.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("investigation");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillLeadership_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillLeadership.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("leadership");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillMedicae_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillMedicae.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("medicae");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillPersuasion_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillPersuasion.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("persuasion");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillPilot_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillPilot.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("pilot");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillPsychic_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillPsychic.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("psychic");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillScholar_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillScholar.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("scholar");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillStealth_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillStealth.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("stealth");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillSurvival_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillSurvival.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("survival");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillTech_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillTech.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("tech");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillWeaponSkill_ValueChanged(object sender, EventArgs e)
-        {
-            int prevValue = Convert.ToInt32(((UpDownBase)sender).Text);
-            int newValue = Convert.ToInt32(skillWeaponSkill.Value);
-            int change = newValue - prevValue;
-            //changeSkillValue("weapon");
-            //updateSkillValues();
-            updateSkillBuildPoints(prevValue, newValue);
-        }
-
-        private void skillAthleticsBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillAwarenessBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillBallisticBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillCunningBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillDeceptionBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillInsightBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillIntimidationBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillInvestigationBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillLeadershipBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillMedicaeBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillPersuasionBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillPilotBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillPsychicBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillScholarBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillAgilityBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillSurvivalBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillTechBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-        private void skillWeaponSkillBonus_ValueChanged(object sender, EventArgs e)
-        {
-            updateBuildPoints(0);
-        }
-
-
-
-
-        public void updateSkillValues()
-        {
-            athleticsRatingLabel.Text = Convert.ToString(skillAthletics.Value +  skillAthleticsBonus.Value + Convert.ToInt32(attStrengthTotal.Text));
-            awarenessRatingLabel.Text = Convert.ToString(skillAwareness.Value + skillAwarenessBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
-            ballisticRatingLabel.Text = Convert.ToString(skillBallstic.Value + skillBallisticBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
-            cunningRatingLabel.Text = Convert.ToString(skillCunning.Value + +skillCunningBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            deceptionRatingLabel.Text = Convert.ToString(skillDeception.Value + skillDeceptionBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            insightRatingLabel.Text = Convert.ToString(skillInsight.Value + skillInsightBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            intimidationRatingLabel.Text = Convert.ToString(skillIntimidation.Value + skillIntimidationBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            investigationRatingLabel.Text = Convert.ToString(skillInvestigation.Value + skillInvestigationBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
-            leadershipRatingLabel.Text = Convert.ToString(skillLeadership.Value + skillLeadershipBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            medicaeRatingLabel.Text = Convert.ToString(skillMedicae.Value + skillMedicaeBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
-            persuasionRatingLabel.Text = Convert.ToString(skillPersuasion.Value + skillPersuasionBonus.Value + Convert.ToInt32(attFellowshipTotal.Text));
-            pilotRatingLabel.Text = Convert.ToString(skillPilot.Value + skillPilotBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
-            psychicRatingLabel.Text = Convert.ToString(skillPsychic.Value + skillPsychicBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            scholarRatingLabel.Text = Convert.ToString(skillScholar.Value + skillScholarBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
-            stealthRatingLabel.Text = Convert.ToString(skillStealth.Value + skillStealthBonus.Value + Convert.ToInt32(attAgilityTotal.Text));
-            survivalRatingLabel.Text = Convert.ToString(skillSurvival.Value + skillSurvivalBonus.Value + Convert.ToInt32(attWillpowerTotal.Text));
-            techRatingLabel.Text = Convert.ToString(skillTech.Value + skillTechBonus.Value + Convert.ToInt32(attIntellectTotal.Text));
-            weaponSkillRatingLabel.Text = Convert.ToString(skillWeaponSkill.Value + skillWeaponSkillBonus.Value + Convert.ToInt32(attInitiativeTotal.Text));
-        }
-
-        public void updateAttribValues()
-        {
-            attStrengthTotal.Text = Convert.ToString(attStrength.Value + attStrengthModifier.Value);
-            attAgilityTotal.Text = Convert.ToString(attAgility.Value + attAgilityModifier.Value);
-            attToughnessTotal.Text = Convert.ToString(attToughness.Value + attToughnessModifier.Value);
-            attIntellectTotal.Text = Convert.ToString(attIntellect.Value + attIntellectModifier.Value);
-            attWillpowerTotal.Text = Convert.ToString(attWillpower.Value + attWillpowerModifier.Value);
-            attFellowshipTotal.Text = Convert.ToString(attFellowship.Value + attFellowshipModifier.Value);
-            attInitiativeTotal.Text = Convert.ToString(attInitiative.Value + attInitiativeModifier.Value);
-            attSpeedTotal.Text = Convert.ToString(attSpeed.Value + attSpeedModifier.Value);
-        }
-
         public void updateSpeciesSelectList()
         {
             speciesSelect.Items.Clear();
             speciesSelect.SelectedItem = null;
+            archetypeRequirementsList.Clear();
+            raceBenefitsList = "";
+            archetypeBenefitsList = "";
+            raceSelection = "";
             speciesSelect.Items.Add("Human, 0BP");
             speciesSelect.Items.Add("Eldar, 10BP");
             speciesSelect.Items.Add("Ork, 10BP");
@@ -1324,10 +1171,16 @@ namespace TheCommissar
             }
         }
 
+
+        // this updates the species select dropdown, as well as adds bonuses to the bonus list
         public void updateArchetypeSelectList()
         {
             archetypeSelect.Items.Clear();
             archetypeSelect.SelectedItem = null;
+            archetypeRequirementsList.Clear();
+            raceBenefitsList = "";
+            archetypeBenefitsList = "";
+            keywordsList = "";
             if (tierSelection >= 1)
             {
                 if (raceSelection == "Human, 0BP")
@@ -1385,7 +1238,7 @@ namespace TheCommissar
                 if (raceSelection == "Human, 0BP")
                 {
                     archetypeSelect.Items.Add("Crusader");
-                    archetypeSelect.Items.Add("Imperial Commisar");
+                    archetypeSelect.Items.Add("Imperial Commissar");
                     archetypeSelect.Items.Add("Tech-Priest");
                     archetypeSelect.Items.Add("Desperado");
                     archetypeSelect.Items.Add("Heretek");
@@ -1422,6 +1275,50 @@ namespace TheCommissar
                 {
                     archetypeSelect.Items.Add("Necron Nemesor");
                 }
+            }
+
+            if (raceSelection == "Eldar, 10BP")
+            {
+                raceBenefitsList = "Eldar: +1\u00A0Agility, +2DN\u00A0to all Interaction tests against " +
+                                          "<Imperium> keyword. +1DN\u00A0to all Resolve tests. All Eldar " +
+                                          "may purchase 1\u00A0Minor Psychic Power and gain the <Psyker> " +
+                                          "keyword if they also purchase the Psychic Mastery Skill. " +
+                                          "Eldar may purchase 1\u00A0more power per Tier level if they " +
+                                          "choose to do this. " + Environment.NewLine + Environment.NewLine;
+            }
+            if (raceSelection == "Ork, 10BP")
+            {
+
+                raceBenefitsList = "Ork: +1\u00A0Toughness. +2DN\u00A0to all Interaction tests " +
+                                          "against <Imperium> keyword. +1\u00A0to all Intimidation " + 
+                                          "tests. Orks calculate Influence using Strength rather " + 
+                                          "than Fellowship. " + Environment.NewLine + Environment.NewLine;
+            }
+            if (raceSelection == "Necron, 20BP")
+            {
+                raceBenefitsList = "Necron: +1\u00A0Shock, +1\u00A0Resilience. +2DN\u00A0to all " + 
+                                          "Interaction tests against anyone without <Necron> " + 
+                                          "keyword. Necrons are immune to warp Corruption, but " + 
+                                          "use a replacement trait called Insanity. Any time you " +
+                                          "face a terrifying threat (GM\u00A0Discretion), make an Insanity " + 
+                                          "test using the same mechanics as Corruption." + Environment.NewLine + Environment.NewLine;                
+            }
+            if (raceSelection == "Adeptus Astartes, 50BP")
+            {
+                raceBenefitsList = "Adeptus Astartes: +1\u00A0Strength, +1\u00A0Agility, +1\u00A0Toughness, " +
+                                          "+1\u00A0Resolve. Space Marines add +1/2\u00A0Rank icons to attacks " + 
+                                          "against Mobs. Space Marines do not bleed. You may add " +
+                                          "+1\u00A0to any test using their implants, at GM\u00A0discretion. " + Environment.NewLine + Environment.NewLine;
+            }
+            if (raceSelection == "Primaris Astartes, 100BP")
+            {
+                raceBenefitsList = "Primaris Astartes: +2\u00A0Strength, +1\u00A0Agility, " +
+                                          "+1\u00A0Toughness, +1\u00A0Resolve, +4\u00A0Wounds. Space Marines add " +
+                                          "+1/2\u00A0Rank icons to attacks against Mobs. Space Marines " +
+                                          "do not bleed. You may add +1\u00A0to any test using their " +
+                                          "implants, at GM\u00A0discretion. " + Environment.NewLine + Environment.NewLine;
+
+                
             }
 
         }
@@ -1504,6 +1401,7 @@ namespace TheCommissar
 
         private void archetypeSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            archetypeRequirementsList.Clear();
             string selectedArchetype = archetypeSelect.SelectedItem.ToString();
 
             bpSpentOnArchetype = 0;
@@ -1535,7 +1433,7 @@ namespace TheCommissar
                 bpSpentOnArchetype = 40;
             }
             if (selectedArchetype == "Sanctioned Psyker" || selectedArchetype == "Rogue Psyker" ||
-                selectedArchetype == "Imperial Commisar" || selectedArchetype == "Tactical Space Marine" ||
+                selectedArchetype == "Imperial Commissar" || selectedArchetype == "Tactical Space Marine" ||
                 selectedArchetype == "Necron Cryptek")
             {
                 bpSpentOnArchetype = 50;
@@ -1555,7 +1453,7 @@ namespace TheCommissar
             }
 
 
-            // update Objectives
+            // update Objectives and benefits/keywords
             if (selectedArchetype == "Ministorum Priest" || selectedArchetype == "Death Cult Assassin" || selectedArchetype == "Crusader")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1: Extoll the virtues of worshipping the God-Emperor" + Environment.NewLine +
@@ -1564,6 +1462,49 @@ namespace TheCommissar
                                                                                             "     of the Emperor's Light." + Environment.NewLine + Environment.NewLine +
                                                                                             "3: Bear witness to an act that you consider a" + Environment.NewLine +
                                                                                             "     miracle of the divine emperor.";
+
+                if (selectedArchetype == "Ministorum Priest")
+                {
+                    archetypeBenefitsList = "Ministorum Priest: +1 Influence. Once per combat, the " + 
+                                              "Priest may take a free action to preach the Imperial " +
+                                              "Creed. All allies with <Imperium> keyword heal 1d3\u00A0+\u00A0" + 
+                                              "Rank Shock." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Ministorum>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 3));
+                }
+
+                if (selectedArchetype == "Crusader")
+                {
+                    archetypeBenefitsList = "Crusader: +1 Influence, +1/2 Rank Resolve. +Rank bonus " + 
+                                              "dice to attacks against <Heretic> or <Chaos> keyword " + 
+                                              "enemies." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Ministorum>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attInitiativeTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 3));
+                }
+
+                if (selectedArchetype == "Death Cult Assassin")
+                {
+                    archetypeBenefitsList = "Death Cult Assassin: Unless immobilized or restrained, " + 
+                                              "may attempt to soak Mortal Wounds, and may substitute " + 
+                                              "their Agility for their Soak when doing so." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Ministorum>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 2));
+                }
+
+
+
             }
             if (selectedArchetype == "Sister Hospitaller" || selectedArchetype == "Sister of Battle")
             {
@@ -1573,6 +1514,41 @@ namespace TheCommissar
                                                                                             "     are two examples) to bless your achievements." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Bear witness to an act that you consider" + Environment.NewLine +
                                                                                             "     a miracle of the divine Emperor.";
+
+
+                if (selectedArchetype == "Sister of Battle")
+                {
+                    archetypeBenefitsList = "Sister of Battle: +1 Influence. Character and all Allies " +
+                                              "within 15\u00A0meters may add +Rank to all corruption tests." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Ministorum>, <Adepta\u00A0Sororitas>, " + 
+                                            "<ORDER>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 1));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Sister Hospitaller")
+                {
+                    archetypeBenefitsList = "Sister Hospitaller: Add +Rank on Medicae tests when " + 
+                                              "treating characters with <Imperium> keyword." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Ministorum>, <Adepta\u00A0Sororitas>, " + 
+                                   "<ORDER>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attIntellectTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("medicaeRatingLabel", 1));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 1));
+                }
+
+
+
             }
             if (selectedArchetype == "Imperial Guardsman" || selectedArchetype == "Tempestus Scion" || selectedArchetype == "Imperial Commissar")
             {
@@ -1583,6 +1559,50 @@ namespace TheCommissar
                                                                                             "     to the current situation." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Reminisce about your far-flung home world and" + Environment.NewLine +
                                                                                             "     compare it to the current situation.";
+
+                if (selectedArchetype == "Imperial Commissar")
+                {
+                    archetypeBenefitsList = "Imperial Commissar: +3 Influence. Commissar and all " +
+                                              "Allies within 15\u00A0meters add +Rank to Resolve tests. " + 
+                                              "Commissar adds +Rank to Intimidation tests." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList          = "<Imperium>, <Astra Militarum>, <Officio\u00A0Prefectus>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("intimidationRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Imperial Guardsman")
+                {
+                    archetypeBenefitsList = "Imperial Guardsman: Once per battle, you may dive " + 
+                                              "in front of an attack that would have hit an Ally. " + 
+                                              "When doing so, add +Rank to your Resilience when " + 
+                                              "determining the damage." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Astra Militarum>, <REGIMENT>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticSkillLabel", 2));
+                }
+
+                if (selectedArchetype == "Tempestus Scion")
+                {
+                    archetypeBenefitsList = "Tempestus Scion: +1 Influence. When spending Glory to " + 
+                                              "increase attack damage, if the weapon has <Imperium> " +
+                                              "or <Astra\u00A0Militarum> tags, add +Rank to final damage." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList         = "<Imperium>, <Astra Militarum>, <Militarum\u00A0Tempestus>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attInitiativeTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("stealthRatingLabel", 2));
+                }
+
+
+
             }
             if (selectedArchetype == "Space Marine Scout" || selectedArchetype == "Tactical Space Marine" || selectedArchetype == "Primaris Marine Intercessor")
             {
@@ -1593,6 +1613,53 @@ namespace TheCommissar
                                                                                             "3. Reminisce upon the traditions of your Chapter" + Environment.NewLine +
                                                                                             "     (and the Chapter's Homeworld, if any, and" + Environment.NewLine +
                                                                                             "     compare it to the current situation.";
+
+                if (selectedArchetype == "Space Marine Scout")
+                {
+                    archetypeBenefitsList = "Space Marine Scout: +1 Influence. +Rank to all Stealth " + 
+                                              "tests if they are in cover." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus Astartes>, <CHAPTER>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Tactical Space Marine")
+                {
+                    archetypeBenefitsList = "Tactical Space Marine: +2 Influence. On a Critical " +
+                                              "Hit, draw 2\u00A0cards (or make 2\u00A0rolls) and pick one " + 
+                                              "to keep." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus Astartes>, <CHAPTER>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 3));
+                }
+
+                if (selectedArchetype == "Primaris Marine Intercessor")
+                {
+                    archetypeBenefitsList = "Primaris Marine Intercessor: +1 Influence. When firing " + 
+                                              "a Bolt Rifle or Heavy Bolt Pistol, add +Rank to attack " + 
+                                              "rolls." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList          = "<Imperium>, <Adeptus\u00A0Astartes>, <Primaris>, <CHAPTER>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 4));
+                }
+
+
+
             }
             if (selectedArchetype == "Inquisitional Acolyte" || selectedArchetype == "Inquisitorial Adept" || selectedArchetype == "Sanctioned Psyker" ||
                 selectedArchetype == "Inquisitor" || selectedArchetype == "Rogue Trader")
@@ -1605,6 +1672,77 @@ namespace TheCommissar
                                                                                             "3. Display a symbol of your authority, and use it to" + Environment.NewLine +
                                                                                             "     firmly establish your position in an interaction" + Environment.NewLine +
                                                                                             "     with an NPC.";
+
+                if (selectedArchetype == "Inquisitional Acolyte")
+                {
+                    archetypeBenefitsList = "Inquisitional Acolyte: +2 Influence. Once per Scene, " + 
+                                              "you may invoke the name of your Inquisitor to add +Rank " + 
+                                              "to an Influence or Interaction skill test involving a " + 
+                                              "character with the <Imperium> keyword." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList          = "<Imperium>, <Inquisition>, <Any>, <ORDO>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 1));
+                }
+
+                if (selectedArchetype == "Inquisitorial Adept")
+                {
+                    archetypeBenefitsList = "Inquisitorial Adept: +1 Influence. Add +Rank to " + 
+                                              "Influence or Investigation tests to acquire " + 
+                                              "information." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Inquisition>, <ORDO>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attIntellectTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Inquisitor")
+                {
+                    archetypeBenefitsList = "Inquisitor: +4 Influence. +Rank to all Influence and " + 
+                                              "Interaction skill tests against characters with the " + 
+                                              "<Imperium> keyword." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Inquisition>, <Any>, <ORDO>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attIntellectTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("cunningRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("insightRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("intimidationRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("awarenessRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Rogue Trader")
+                {
+                    archetypeBenefitsList = "Rogue Trader: +2 Influence. +Rank to all Persuassion " + 
+                                              "and Influence tests to acquire goods or services." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Rogue Trader>, <DYNASTY>";
+
+
+                    archetypeRequirementsList.Add(Tuple.Create("attFellowshipTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("cunningRatingLabel", 1));
+                    archetypeRequirementsList.Add(Tuple.Create("insightRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("persuasionRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("awarenessRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Sanctioned Psyker")
+                {
+                    archetypeBenefitsList = "Sanctioned Psyker: Starts with 1\u00A0Minor Psychic Power, " + 
+                                              "and the Smite power. May purchase additional Minor " + 
+                                              "Psychic Powers, subject to Tier restrictions." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList          = "<Imperium>, <Adeptus\u00A0Astra\u00A0Telepathica>, <Psyker>, " +
+                                            "<Scholastica\u00A0Psykana>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("psychicRatingLabel", 1));
+                }
+
+
+
             }
             if (selectedArchetype == "Skitarius" || selectedArchetype == "Tech-Priest")
             {
@@ -1616,6 +1754,34 @@ namespace TheCommissar
                                                                                             "     success (or both)." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Reminisce about a Forge World you have visited" + Environment.NewLine +
                                                                                             "     and compare it to the current location.";
+
+                if (selectedArchetype == "Tech-Priest")
+                {
+                    archetypeBenefitsList = "Tech-Priest: +2 Influence. You reduce the time by half " +  
+                                              "for any Tech test. You receive +Rank on Tech tests to " + 
+                                              "repair damaged machines." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Mechanicus>, <Cult\u00A0Mechanicus>, " +
+                                            "<FORGE\u00A0WORLD>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attIntellectTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("techRatingLabel", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Skitarius")
+                {
+                    archetypeBenefitsList = "Skitarius: You do not bleed, and gain +1/2 Rank to " + 
+                                              "Soak tests." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Imperium>, <Adeptus\u00A0Mechanicus>, <Skitarii>, " +
+                                            "<FORGE\u00A0WORLD>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("techRatingLabel", 1));
+                }
+
             }
             if (selectedArchetype == "Hive Ganger" || selectedArchetype == "Scavvy" || selectedArchetype == "Desperado")
             {
@@ -1626,6 +1792,42 @@ namespace TheCommissar
                                                                                             "     This may be as subtle or as overt as you wish." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Describe a desperate act of survival you attempted" + Environment.NewLine +
                                                                                             "     under difficult circumstances.";
+                if (selectedArchetype == "Hive Ganger")
+                {
+                    archetypeBenefitsList = "Hive Ganger: +1 Influence. +Rank to Cunning tests. " + 
+                                              "May make a single retroactive Influence test, +Rank " + 
+                                              "to represent an item they prepared in advance." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Scum>, <Any>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("cunningRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Scavvy")
+                {
+                    archetypeBenefitsList = "Scavvy: -1 Influence. May select 1 Mutation\u00A0(P.368). " + 
+                                              "When you gain a Rank, you may select 1 new Mutation." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Scum>, <Any>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("survivalRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Desperado")
+                {
+                    archetypeBenefitsList = "Desperado: +1 Influence. +Rank for Cunning tests. " + 
+                                              "+Rank for Awareness tests while tracking a target." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Scum>, <Any>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("attIntellectTotal", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("awarenessRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("cunningRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("investigationRatingLabel", 2));
+                }
+
             }
             if (selectedArchetype == "Cultist" || selectedArchetype == "Chaos Space Marine" || selectedArchetype == "Heretek" || selectedArchetype == "Rogue Psyker")
             {
@@ -1635,6 +1837,58 @@ namespace TheCommissar
                                                                                             "     to its downfall." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Bear witness to an act that you consider a sign" + Environment.NewLine +
                                                                                             "     of the Ruinous Powers' favour (or contempt).";
+
+                if (selectedArchetype == "Cultist")
+                {
+                    archetypeBenefitsList = "Cultist: +2\u00A0Influence. +1\u00A0Corruption. +Rank to " + 
+                                              "Deception tests, including attacks, against any " + 
+                                              "characters with the <Imperium> keyword." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList          = "<Chaos>, <Heretic>, <Heretic\u00A0Astartes>, " +
+                                            "<Mark\u00A0of\u00A0Chaos>, <Any>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("deceptionRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Heretek")
+                {
+                    archetypeBenefitsList = "Heretek: +1\u00A0Influence. +3\u00A0Corruption. Automatically " + 
+                                              "reduce the time for tech tests by half. +Rank for " + 
+                                              "tech Interaction attacks." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Chaos>, <Heretic>, <Adeptus Mechanicus>, " + 
+                                            "<Dark Mechanicus>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attIntellectTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("techRatingLabel", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("scholarRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Rogue Psyker")
+                {
+                    archetypeBenefitsList = "Rogue Psyker: +3\u00A0Corruption. Starts with 1\u00A0Minor" +  
+                                              "Psychic Power, and Smite. May purchase additional " + 
+                                              "Minor, Universal, or Maleficarum Psychic Powers, " + 
+                                              "subject to Tier restrictions" + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Chaos>, <Heretic>, <Psyker>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("psychicRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Chaos Space Marine")
+                {
+                    archetypeBenefitsList = "Chaos Space Marine: +3\u00A0Corruption. See Imperium " +
+                                              "Space Marine benefits for more details\u00A0(P.126)." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Chaos>, <Heretic>, <Heretic\u00A0Astartes>," +
+                                            "<Mark\u00A0of\u00A0Chaos>, <LEGION>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 1));
+                }
+
+
             }
             if (selectedArchetype == "Eldar Corsair" || selectedArchetype == "Eldar Ranger" || selectedArchetype == "Eldar Warlock")
             {
@@ -1644,7 +1898,47 @@ namespace TheCommissar
                                                                                             "     accomplish a difficult task or defeat an enemy." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Reminisce upon the traditions of an Eldar Craftworld," + Environment.NewLine +
                                                                                             "     and compare it to the current situation.";
+
+                if (selectedArchetype == "Eldar Corsair")
+                {
+                    archetypeBenefitsList = "Eldar Corsair: Choose either Athletics or Persuassion " + 
+                                              "Interaction attacks. You receive +Rank to the chosen " + 
+                                              "attack, and +Rank to defending against the same. You " +
+                                              "suffer +1DN\u00A0penalty to fear tests." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Aeldari>, <Anhrathe>, <COTERIE>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("athleticsRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Eldar Ranger")
+                {
+                    archetypeBenefitsList = "Eldar Ranger: Any penalties to detect (using " + 
+                                              "Awareness) or attack you, due to lighting or cover " +
+                                              "are increased by +1/2\u00A0Rank." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Aeldari>, <Asuryani>, <CRAFTWORLD>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("stealthRatingLabel", 1));
+                    archetypeRequirementsList.Add(Tuple.Create("survivalRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Eldar Warlock")
+                {
+                    archetypeBenefitsList = "Eldar Warlock: +2\u00A0Influence. Starts with Psyniscience " + 
+                                              "and Smite. May purchase additional Minor, Universal, " + 
+                                              "and Runes of Battle Psychic Powers, subject to Tier " + 
+                                              "restrictions." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList          = "<Aeldari>, <Asuryani>, <Psyker>, <CRAFTWORLD>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("psychicRatingLabel", 2));
+                }
             }
+
             if (selectedArchetype == "Ork Boy" || selectedArchetype == "Ork Kommando" || selectedArchetype == "Ork Nob")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Reminisce on the traditions of your Ork Clan," + Environment.NewLine +
@@ -1653,6 +1947,45 @@ namespace TheCommissar
                                                                                             "     in a fearsome manner." + Environment.NewLine + Environment.NewLine +
                                                                                             "3. Sincerely express your desire for a brutal," + Environment.NewLine +
                                                                                             "     uncompromising combat.";
+
+                if (selectedArchetype == "Ork Boy")
+                {
+                    archetypeBenefitsList = "Ork Boy: +Rank to melee attacks for every ally " + 
+                                              "engaged in melee combat with the same target." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Ork>, <CLAN>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("weaponSkillRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Ork Kommando")
+                {
+                    archetypeBenefitsList = "Ork Kommando: You and any Allies within 15\u00A0meters " +
+                                              "gain +1/2\u00A0Rank to Stealth tests." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Ork>, <CLAN>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("stealthRatingLabel", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("survivalRatingLabel", 1));
+                }
+
+                if (selectedArchetype == "Ork Nob")
+                {
+                    archetypeBenefitsList = "Ork Nob: +2\u00A0Influence. You command a Mob of Troops, " +
+                                              "numbering up to Rank\u00A0x\u00A03\u00A0Boyz who loyally follow " + 
+                                              "your direction. See\u00A0P.150 for Boyz profile." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Ork>, <CLAN>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 4));
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("intimidationRatingLabel", 2));
+                }
+
+
             }
 
             if (selectedArchetype == "Necron Warrior" || selectedArchetype ==  "Necron Nemesor" || selectedArchetype == "Necron Cryptek")
@@ -1666,6 +1999,46 @@ namespace TheCommissar
                                                                                           "3. Willingly make a sacrific (Ammo, equipment," + Environment.NewLine +
                                                                                           "     or even your own wellbeing!) for the benefit" + Environment.NewLine +
                                                                                           "     of another Necron or the mission.";
+
+                if (selectedArchetype == "Necron Warrior")
+                {
+                    archetypeBenefitsList = "Necron Warrior: At 0\u00A0wounds, if you have at least " + 
+                                              "1\u00A0point of Glory, may spend ALL Glory in the pool " + 
+                                              "to recover all Wounds, instead of making a Defiance " + 
+                                              "check." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Necron>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attAgilityTotal", 2));
+                    archetypeRequirementsList.Add(Tuple.Create("ballisticRatingLabel", 2));
+                }
+
+                if (selectedArchetype == "Necron Nemesor")
+                {
+                    archetypeBenefitsList = "Necron Nemesor: At 0\u00A0wounds, if you have at least " +
+                                              "1\u00A0point of Glory, may spend ALL Glory in the pool " + 
+                                              "to recover all Wounds, instead of making a Defiance " + 
+                                              "check." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Necron>, <DYNASTY>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attToughnessTotal", 3));
+                }
+                if (selectedArchetype == "Necron Cryptek")
+                {
+                    archetypeBenefitsList = "Necron Cryptek: At 0\u00A0wounds, if you have at least " + 
+                                              "1\u00A0point of Glory, may spend ALL Glory in the pool " + 
+                                              "to recover all Wounds, instead of making a Defiance " +
+                                              "check. Starts with 1\u00A0Minor Psychic Power, and Smite. " +
+                                              "May purchase additional Psychic Powers, subject to " + 
+                                              "Tier restrictions. Treat these powers as working " + 
+                                              "technologically, rather than via the Warp." + Environment.NewLine + Environment.NewLine;
+
+                    keywordsList = "<Necron>, <Psyker>";
+
+                    archetypeRequirementsList.Add(Tuple.Create("attWillpowerTotal", 3));
+                    archetypeRequirementsList.Add(Tuple.Create("psychicRatingLabel", 3));
+                }
             }
 
             archetypeSelection = archetypeSelect.SelectedItem.ToString();
@@ -2223,8 +2596,9 @@ namespace TheCommissar
             MessageBoxButtons button = MessageBoxButtons.OK;
             int tierValidation = tierSelection;
             List<NumericUpDown> attributeList = new List<NumericUpDown>();
-            List<Label> attributeTotalList = new List<Label>();
             List<NumericUpDown> skillList = new List<NumericUpDown>();
+            List<Label> attributeTotalList = new List<Label>();
+            List<Tuple<Label, string>> skillTotalList = new List<Tuple<Label, String>>();
 
             attributeList.Add(attStrength);
             attributeList.Add(attAgility);
@@ -2233,14 +2607,6 @@ namespace TheCommissar
             attributeList.Add(attWillpower);
             attributeList.Add(attFellowship);
             attributeList.Add(attInitiative);
-
-            attributeTotalList.Add(attStrengthTotal);
-            attributeTotalList.Add(attAgilityTotal);
-            attributeTotalList.Add(attToughnessTotal);
-            attributeTotalList.Add(attIntellectTotal);
-            attributeTotalList.Add(attWillpowerTotal);
-            attributeTotalList.Add(attFellowshipTotal);
-            attributeTotalList.Add(attInitiativeTotal);
 
             skillList.Add(skillAthletics);
             skillList.Add(skillAwareness);
@@ -2260,6 +2626,33 @@ namespace TheCommissar
             skillList.Add(skillSurvival);
             skillList.Add(skillTech);
             skillList.Add(skillWeaponSkill);
+
+            attributeTotalList.Add(attStrengthTotal);
+            attributeTotalList.Add(attAgilityTotal);
+            attributeTotalList.Add(attToughnessTotal);
+            attributeTotalList.Add(attIntellectTotal);
+            attributeTotalList.Add(attWillpowerTotal);
+            attributeTotalList.Add(attFellowshipTotal);
+            attributeTotalList.Add(attInitiativeTotal);
+
+            skillTotalList.Add(Tuple.Create(athleticsRatingLabel, "Athletics"));
+            skillTotalList.Add(Tuple.Create(awarenessRatingLabel, "Awareness"));
+            skillTotalList.Add(Tuple.Create(ballisticRatingLabel, "Ballistics"));
+            skillTotalList.Add(Tuple.Create(cunningRatingLabel, "Cunning"));
+            skillTotalList.Add(Tuple.Create(deceptionRatingLabel, "Deception"));
+            skillTotalList.Add(Tuple.Create(insightRatingLabel, "Insight"));
+            skillTotalList.Add(Tuple.Create(intimidationRatingLabel, "Intimidation"));
+            skillTotalList.Add(Tuple.Create(investigationRatingLabel, "Investigation"));
+            skillTotalList.Add(Tuple.Create(leadershipRatingLabel, "Leadership"));
+            skillTotalList.Add(Tuple.Create(medicaeRatingLabel, "Medicae"));
+            skillTotalList.Add(Tuple.Create(persuasionRatingLabel, "Persusasion"));
+            skillTotalList.Add(Tuple.Create(pilotRatingLabel, "Pilot"));
+            skillTotalList.Add(Tuple.Create(psychicRatingLabel, "Psychic Master"));
+            skillTotalList.Add(Tuple.Create(scholarRatingLabel, "Scholar"));
+            skillTotalList.Add(Tuple.Create(stealthRatingLabel, "Stealth"));
+            skillTotalList.Add(Tuple.Create(survivalRatingLabel, "Survival"));
+            skillTotalList.Add(Tuple.Create(techRatingLabel, "Tech"));
+            skillTotalList.Add(Tuple.Create(weaponSkillRatingLabel, "Weapon Skill"));
 
 
 
@@ -2281,6 +2674,32 @@ namespace TheCommissar
             if (archetypeSelect.SelectedItem == null)
             {
                 message += "You do not have an Archetype selected!" + Environment.NewLine;
+            }
+            else // do the archetype requirements validation
+            {
+                foreach (Tuple<string, int> item in archetypeRequirementsList)
+                {
+                    foreach (Label att in attributeTotalList)
+                    {
+                        if (item.Item1 == att.Name.ToString())
+                        {
+                            if (Convert.ToInt32(att.Text) < item.Item2)
+                            {
+                                message += "Your " + att.Name.Substring(3, att.Name.Length - 8) + " is " + att.Text + "! It needs to be atleast " + item.Item2.ToString() + "!" + Environment.NewLine;
+                            }
+                        }
+                    }
+                    foreach (Tuple<Label, string> skill in skillTotalList)
+                    {
+                        if (item.Item1 == skill.Item1.Name.ToString())
+                        {
+                            if  (Convert.ToInt32(skill.Item1.Text) < item.Item2)
+                            {
+                                message += "Your " + skill.Item2 + " is " + skill.Item1.Text + "! It needs to be atleast " + item.Item2.ToString() + "!" + Environment.NewLine;
+                            }
+                        }
+                    }
+                }
             }
 
             foreach (Label item in attributeTotalList)

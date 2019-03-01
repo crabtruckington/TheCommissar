@@ -56,6 +56,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.core = new System.Windows.Forms.TabPage();
+            this.archInfoLabel = new System.Windows.Forms.Label();
+            this.archetypeInfoHeaderLabel = new System.Windows.Forms.Label();
             this.shockValueBox = new System.Windows.Forms.NumericUpDown();
             this.shockBonusLabel = new System.Windows.Forms.Label();
             this.woundsValueBox = new System.Windows.Forms.NumericUpDown();
@@ -477,7 +479,6 @@
             this.buildPointsLabel.Size = new System.Drawing.Size(77, 19);
             this.buildPointsLabel.Text = "Build Points:";
             this.buildPointsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buildPointsLabel.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // bpSpentAttribLabel
             // 
@@ -560,6 +561,8 @@
             // 
             this.core.AutoScroll = true;
             this.core.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.core.Controls.Add(this.archInfoLabel);
+            this.core.Controls.Add(this.archetypeInfoHeaderLabel);
             this.core.Controls.Add(this.shockValueBox);
             this.core.Controls.Add(this.shockBonusLabel);
             this.core.Controls.Add(this.woundsValueBox);
@@ -641,16 +644,34 @@
             this.core.TabIndex = 0;
             this.core.Text = "Core";
             // 
+            // archInfoLabel
+            // 
+            this.archInfoLabel.Location = new System.Drawing.Point(0, 185);
+            this.archInfoLabel.Name = "archInfoLabel";
+            this.archInfoLabel.Size = new System.Drawing.Size(245, 245);
+            this.archInfoLabel.TabIndex = 4139;
+            this.archInfoLabel.Text = "archInfoLabel";
+            // 
+            // archetypeInfoHeaderLabel
+            // 
+            this.archetypeInfoHeaderLabel.AutoSize = true;
+            this.archetypeInfoHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.archetypeInfoHeaderLabel.Location = new System.Drawing.Point(-3, 157);
+            this.archetypeInfoHeaderLabel.Name = "archetypeInfoHeaderLabel";
+            this.archetypeInfoHeaderLabel.Size = new System.Drawing.Size(94, 13);
+            this.archetypeInfoHeaderLabel.TabIndex = 4138;
+            this.archetypeInfoHeaderLabel.Text = "Archetype Info:";
+            // 
             // shockValueBox
             // 
-            this.shockValueBox.Location = new System.Drawing.Point(189, 315);
+            this.shockValueBox.Location = new System.Drawing.Point(482, 410);
             this.shockValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.shockValueBox.Name = "shockValueBox";
-            this.shockValueBox.Size = new System.Drawing.Size(56, 20);
+            this.shockValueBox.Size = new System.Drawing.Size(47, 20);
             this.shockValueBox.TabIndex = 16;
             this.shockValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.shockValueBox.ValueChanged += new System.EventHandler(this.shockValueBox_ValueChanged);
@@ -658,7 +679,7 @@
             // shockBonusLabel
             // 
             this.shockBonusLabel.AutoSize = true;
-            this.shockBonusLabel.Location = new System.Drawing.Point(129, 317);
+            this.shockBonusLabel.Location = new System.Drawing.Point(403, 412);
             this.shockBonusLabel.Name = "shockBonusLabel";
             this.shockBonusLabel.Size = new System.Drawing.Size(38, 13);
             this.shockBonusLabel.TabIndex = 76;
@@ -666,14 +687,14 @@
             // 
             // woundsValueBox
             // 
-            this.woundsValueBox.Location = new System.Drawing.Point(57, 315);
+            this.woundsValueBox.Location = new System.Drawing.Point(350, 410);
             this.woundsValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.woundsValueBox.Name = "woundsValueBox";
-            this.woundsValueBox.Size = new System.Drawing.Size(56, 20);
+            this.woundsValueBox.Size = new System.Drawing.Size(47, 20);
             this.woundsValueBox.TabIndex = 10;
             this.woundsValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.woundsValueBox.ValueChanged += new System.EventHandler(this.woundsValueBox_ValueChanged);
@@ -681,7 +702,7 @@
             // woundsBonusLabel
             // 
             this.woundsBonusLabel.AutoSize = true;
-            this.woundsBonusLabel.Location = new System.Drawing.Point(0, 317);
+            this.woundsBonusLabel.Location = new System.Drawing.Point(268, 412);
             this.woundsBonusLabel.Name = "woundsBonusLabel";
             this.woundsBonusLabel.Size = new System.Drawing.Size(47, 13);
             this.woundsBonusLabel.TabIndex = 74;
@@ -691,7 +712,7 @@
             // 
             this.rankAndBonusLabel.AutoSize = true;
             this.rankAndBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rankAndBonusLabel.Location = new System.Drawing.Point(0, 155);
+            this.rankAndBonusLabel.Location = new System.Drawing.Point(268, 250);
             this.rankAndBonusLabel.Name = "rankAndBonusLabel";
             this.rankAndBonusLabel.Size = new System.Drawing.Size(114, 13);
             this.rankAndBonusLabel.TabIndex = 73;
@@ -699,28 +720,28 @@
             // 
             // influenceValueBox
             // 
-            this.influenceValueBox.Location = new System.Drawing.Point(189, 289);
+            this.influenceValueBox.Location = new System.Drawing.Point(482, 384);
             this.influenceValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.influenceValueBox.Name = "influenceValueBox";
-            this.influenceValueBox.Size = new System.Drawing.Size(56, 20);
+            this.influenceValueBox.Size = new System.Drawing.Size(47, 20);
             this.influenceValueBox.TabIndex = 15;
             this.influenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.influenceValueBox.ValueChanged += new System.EventHandler(this.influenceValueBox_ValueChanged_1);
             // 
             // resolveValueBox
             // 
-            this.resolveValueBox.Location = new System.Drawing.Point(189, 262);
+            this.resolveValueBox.Location = new System.Drawing.Point(482, 357);
             this.resolveValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.resolveValueBox.Name = "resolveValueBox";
-            this.resolveValueBox.Size = new System.Drawing.Size(56, 20);
+            this.resolveValueBox.Size = new System.Drawing.Size(47, 20);
             this.resolveValueBox.TabIndex = 14;
             this.resolveValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.resolveValueBox.ValueChanged += new System.EventHandler(this.resolveValueBox_ValueChanged);
@@ -728,7 +749,7 @@
             // influenceBonusLabel
             // 
             this.influenceBonusLabel.AutoSize = true;
-            this.influenceBonusLabel.Location = new System.Drawing.Point(129, 291);
+            this.influenceBonusLabel.Location = new System.Drawing.Point(403, 386);
             this.influenceBonusLabel.Name = "influenceBonusLabel";
             this.influenceBonusLabel.Size = new System.Drawing.Size(51, 13);
             this.influenceBonusLabel.TabIndex = 70;
@@ -737,7 +758,7 @@
             // resolveBonusLabel
             // 
             this.resolveBonusLabel.AutoSize = true;
-            this.resolveBonusLabel.Location = new System.Drawing.Point(129, 264);
+            this.resolveBonusLabel.Location = new System.Drawing.Point(403, 359);
             this.resolveBonusLabel.Name = "resolveBonusLabel";
             this.resolveBonusLabel.Size = new System.Drawing.Size(46, 13);
             this.resolveBonusLabel.TabIndex = 69;
@@ -745,14 +766,14 @@
             // 
             // passiveAwarenessValueBox
             // 
-            this.passiveAwarenessValueBox.Location = new System.Drawing.Point(189, 235);
+            this.passiveAwarenessValueBox.Location = new System.Drawing.Point(482, 330);
             this.passiveAwarenessValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.passiveAwarenessValueBox.Name = "passiveAwarenessValueBox";
-            this.passiveAwarenessValueBox.Size = new System.Drawing.Size(56, 20);
+            this.passiveAwarenessValueBox.Size = new System.Drawing.Size(47, 20);
             this.passiveAwarenessValueBox.TabIndex = 13;
             this.passiveAwarenessValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.passiveAwarenessValueBox.ValueChanged += new System.EventHandler(this.passiveAwarenessValueBox_ValueChanged);
@@ -760,7 +781,7 @@
             // passiveAwarenessBonusLabel
             // 
             this.passiveAwarenessBonusLabel.AutoSize = true;
-            this.passiveAwarenessBonusLabel.Location = new System.Drawing.Point(129, 233);
+            this.passiveAwarenessBonusLabel.Location = new System.Drawing.Point(403, 328);
             this.passiveAwarenessBonusLabel.Name = "passiveAwarenessBonusLabel";
             this.passiveAwarenessBonusLabel.Size = new System.Drawing.Size(59, 26);
             this.passiveAwarenessBonusLabel.TabIndex = 67;
@@ -768,14 +789,14 @@
             // 
             // convictionValueBox
             // 
-            this.convictionValueBox.Location = new System.Drawing.Point(189, 210);
+            this.convictionValueBox.Location = new System.Drawing.Point(482, 305);
             this.convictionValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.convictionValueBox.Name = "convictionValueBox";
-            this.convictionValueBox.Size = new System.Drawing.Size(56, 20);
+            this.convictionValueBox.Size = new System.Drawing.Size(47, 20);
             this.convictionValueBox.TabIndex = 12;
             this.convictionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.convictionValueBox.ValueChanged += new System.EventHandler(this.convictionValueBox_ValueChanged);
@@ -783,7 +804,7 @@
             // convictionBonusLabel
             // 
             this.convictionBonusLabel.AutoSize = true;
-            this.convictionBonusLabel.Location = new System.Drawing.Point(129, 212);
+            this.convictionBonusLabel.Location = new System.Drawing.Point(403, 307);
             this.convictionBonusLabel.Name = "convictionBonusLabel";
             this.convictionBonusLabel.Size = new System.Drawing.Size(57, 13);
             this.convictionBonusLabel.TabIndex = 65;
@@ -791,28 +812,28 @@
             // 
             // resilienceValueBox
             // 
-            this.resilienceValueBox.Location = new System.Drawing.Point(189, 184);
+            this.resilienceValueBox.Location = new System.Drawing.Point(482, 279);
             this.resilienceValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.resilienceValueBox.Name = "resilienceValueBox";
-            this.resilienceValueBox.Size = new System.Drawing.Size(56, 20);
+            this.resilienceValueBox.Size = new System.Drawing.Size(47, 20);
             this.resilienceValueBox.TabIndex = 11;
             this.resilienceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.resilienceValueBox.ValueChanged += new System.EventHandler(this.resilienceValueBox_ValueChanged);
             // 
             // soakValueBox
             // 
-            this.soakValueBox.Location = new System.Drawing.Point(57, 289);
+            this.soakValueBox.Location = new System.Drawing.Point(350, 384);
             this.soakValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.soakValueBox.Name = "soakValueBox";
-            this.soakValueBox.Size = new System.Drawing.Size(56, 20);
+            this.soakValueBox.Size = new System.Drawing.Size(47, 20);
             this.soakValueBox.TabIndex = 9;
             this.soakValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.soakValueBox.ValueChanged += new System.EventHandler(this.soakValueBox_ValueChanged);
@@ -820,7 +841,7 @@
             // resilienceBonusLabel
             // 
             this.resilienceBonusLabel.AutoSize = true;
-            this.resilienceBonusLabel.Location = new System.Drawing.Point(129, 186);
+            this.resilienceBonusLabel.Location = new System.Drawing.Point(403, 281);
             this.resilienceBonusLabel.Name = "resilienceBonusLabel";
             this.resilienceBonusLabel.Size = new System.Drawing.Size(56, 13);
             this.resilienceBonusLabel.TabIndex = 62;
@@ -829,7 +850,7 @@
             // soakBonusLabel
             // 
             this.soakBonusLabel.AutoSize = true;
-            this.soakBonusLabel.Location = new System.Drawing.Point(0, 291);
+            this.soakBonusLabel.Location = new System.Drawing.Point(268, 386);
             this.soakBonusLabel.Name = "soakBonusLabel";
             this.soakBonusLabel.Size = new System.Drawing.Size(32, 13);
             this.soakBonusLabel.TabIndex = 61;
@@ -837,14 +858,14 @@
             // 
             // defenceValueBox
             // 
-            this.defenceValueBox.Location = new System.Drawing.Point(57, 262);
+            this.defenceValueBox.Location = new System.Drawing.Point(350, 357);
             this.defenceValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.defenceValueBox.Name = "defenceValueBox";
-            this.defenceValueBox.Size = new System.Drawing.Size(56, 20);
+            this.defenceValueBox.Size = new System.Drawing.Size(47, 20);
             this.defenceValueBox.TabIndex = 8;
             this.defenceValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.defenceValueBox.ValueChanged += new System.EventHandler(this.defenceValueBox_ValueChanged);
@@ -852,7 +873,7 @@
             // defenceBonusLabel
             // 
             this.defenceBonusLabel.AutoSize = true;
-            this.defenceBonusLabel.Location = new System.Drawing.Point(0, 264);
+            this.defenceBonusLabel.Location = new System.Drawing.Point(268, 359);
             this.defenceBonusLabel.Name = "defenceBonusLabel";
             this.defenceBonusLabel.Size = new System.Drawing.Size(48, 13);
             this.defenceBonusLabel.TabIndex = 59;
@@ -990,14 +1011,14 @@
             // 
             // corruptionValueBox
             // 
-            this.corruptionValueBox.Location = new System.Drawing.Point(57, 235);
+            this.corruptionValueBox.Location = new System.Drawing.Point(350, 330);
             this.corruptionValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.corruptionValueBox.Name = "corruptionValueBox";
-            this.corruptionValueBox.Size = new System.Drawing.Size(56, 20);
+            this.corruptionValueBox.Size = new System.Drawing.Size(47, 20);
             this.corruptionValueBox.TabIndex = 7;
             this.corruptionValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.corruptionValueBox.ValueChanged += new System.EventHandler(this.corruptionValueBox_ValueChanged);
@@ -1005,7 +1026,7 @@
             // corruptionValueLabel
             // 
             this.corruptionValueLabel.AutoSize = true;
-            this.corruptionValueLabel.Location = new System.Drawing.Point(0, 237);
+            this.corruptionValueLabel.Location = new System.Drawing.Point(268, 332);
             this.corruptionValueLabel.Name = "corruptionValueLabel";
             this.corruptionValueLabel.Size = new System.Drawing.Size(55, 13);
             this.corruptionValueLabel.TabIndex = 48;
@@ -1013,23 +1034,23 @@
             // 
             // wealthValueBox
             // 
-            this.wealthValueBox.Location = new System.Drawing.Point(57, 210);
+            this.wealthValueBox.Location = new System.Drawing.Point(350, 305);
             this.wealthValueBox.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.wealthValueBox.Name = "wealthValueBox";
-            this.wealthValueBox.Size = new System.Drawing.Size(56, 20);
+            this.wealthValueBox.Size = new System.Drawing.Size(47, 20);
             this.wealthValueBox.TabIndex = 6;
             this.wealthValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.wealthValueBox.ValueChanged += new System.EventHandler(this.wealthValueBox_ValueChanged);
             // 
             // rankValueBox
             // 
-            this.rankValueBox.Location = new System.Drawing.Point(57, 184);
+            this.rankValueBox.Location = new System.Drawing.Point(350, 279);
             this.rankValueBox.Name = "rankValueBox";
-            this.rankValueBox.Size = new System.Drawing.Size(56, 20);
+            this.rankValueBox.Size = new System.Drawing.Size(47, 20);
             this.rankValueBox.TabIndex = 5;
             this.rankValueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.rankValueBox.ValueChanged += new System.EventHandler(this.rankValueBox_ValueChanged);
@@ -1037,7 +1058,7 @@
             // wealthValueLabel
             // 
             this.wealthValueLabel.AutoSize = true;
-            this.wealthValueLabel.Location = new System.Drawing.Point(0, 212);
+            this.wealthValueLabel.Location = new System.Drawing.Point(268, 307);
             this.wealthValueLabel.Name = "wealthValueLabel";
             this.wealthValueLabel.Size = new System.Drawing.Size(41, 13);
             this.wealthValueLabel.TabIndex = 45;
@@ -1046,7 +1067,7 @@
             // rankValueLabel
             // 
             this.rankValueLabel.AutoSize = true;
-            this.rankValueLabel.Location = new System.Drawing.Point(0, 186);
+            this.rankValueLabel.Location = new System.Drawing.Point(268, 281);
             this.rankValueLabel.Name = "rankValueLabel";
             this.rankValueLabel.Size = new System.Drawing.Size(33, 13);
             this.rankValueLabel.TabIndex = 43;
@@ -1078,7 +1099,6 @@
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(184, 20);
             this.nameBox.TabIndex = 1;
-            this.nameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // nameLabel
             // 
@@ -1261,7 +1281,6 @@
             this.attStrengthTotal.Size = new System.Drawing.Size(21, 13);
             this.attStrengthTotal.TabIndex = 22;
             this.attStrengthTotal.Text = "22";
-            this.attStrengthTotal.Click += new System.EventHandler(this.attStrengthTotal_Click);
             // 
             // archetypeSelectLabel
             // 
@@ -2036,9 +2055,9 @@
             this.psychicLabel.AutoSize = true;
             this.psychicLabel.Location = new System.Drawing.Point(1, 348);
             this.psychicLabel.Name = "psychicLabel";
-            this.psychicLabel.Size = new System.Drawing.Size(134, 13);
+            this.psychicLabel.Size = new System.Drawing.Size(139, 13);
             this.psychicLabel.TabIndex = 51;
-            this.psychicLabel.Text = "Psychic Master (Willpower)";
+            this.psychicLabel.Text = "Psychic Mastery (Willpower)";
             // 
             // pilotBonusBox
             // 
@@ -3239,7 +3258,6 @@
             this.Name = "mainForm";
             this.Text = "The Commissar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing_1);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -3595,6 +3613,8 @@
         private System.Windows.Forms.ToolStripMenuItem addModToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newCharacterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkCharacterValidityToolStripMenuItem;
+        private System.Windows.Forms.Label archInfoLabel;
+        private System.Windows.Forms.Label archetypeInfoHeaderLabel;
     }
 }
 
