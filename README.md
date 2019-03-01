@@ -10,7 +10,7 @@ An **unofficial** Warhammer: Wrath and Glory character creator
 
 3) Unzip the files to a directory of your choosing, and then launch **TheCommissar.exe**. Make sure you either run as administrator or have write permissions to the directory for saving.
 
-4) Build your character using the book as a guide. Make special note of rules around maximum build point allocations as there is no validation for overspend or illegal choices.
+4) Build your character using the book as a guide. Once you're finished, go to Settings -> Check Character Validity to validate your character.
 
 ![Screenshot](https://i.imgur.com/HlZlSu6.png)
 
