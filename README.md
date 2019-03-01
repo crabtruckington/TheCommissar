@@ -12,7 +12,7 @@ An **unofficial** Warhammer: Wrath and Glory character creator
 
 4) Build your character using the book as a guide. Make special note of rules around maximum build point allocations as there is no validation for overspend or illegal choices.
 
-![Screenshot](https://i.imgur.com/tRSVLCw.png)
+![Screenshot](https://i.imgur.com/HlZlSu6.png)
 
 ### Known issues and quirks
 
