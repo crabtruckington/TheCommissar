@@ -1,0 +1,27 @@
+/* This file allows you to add custom Cybernetics and Augments */
+/* All entries should go between the [ and ] brackets */
+/* All entries MUST be in the following format: 
+
+  {
+    "name": "Testing Custom Cyber",
+    "race": "Human",
+    "details": "This is a custom piece of cyberware"
+  } 
+
+*/
+/* and please note the comma after each entry EXCEPT the last, see the example file if youre not familiar with JSON */
+/* you can use \u00A0 to set a non-breaking space within long descriptions to prevent them from wrapping strangely, ex: long\u00A0string */
+/* use \u2011 for a nonbreaking hyphen ex: Two\u2011\Handed */
+/* All values must be strings!! Do not use other datatypes, you will probably receive an error or crash the program */
+[
+  {
+    "name": "Testing Custom Cyber",
+    "race": "Human",
+    "details": "This is a custom piece of cyberware"
+  },
+  {
+    "name": "Testing Custom Cyber 2",
+    "race": "Human",
+    "details": "This is another custom piece of cyberware"
+  }
+]

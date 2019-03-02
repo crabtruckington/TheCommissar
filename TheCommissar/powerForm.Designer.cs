@@ -33,14 +33,7 @@
             this.addPowerButton = new System.Windows.Forms.Button();
             this.selectedPowerDetailLabel = new System.Windows.Forms.Label();
             this.powerSelectBox = new System.Windows.Forms.ListBox();
-            this.powerDisciplineLabel = new System.Windows.Forms.Label();
-            this.powerKeywordsLabel = new System.Windows.Forms.Label();
-            this.powerMultiLabel = new System.Windows.Forms.Label();
-            this.powerRangeLabel = new System.Windows.Forms.Label();
-            this.powerDurationLabel = new System.Windows.Forms.Label();
-            this.powerActivationLabel = new System.Windows.Forms.Label();
-            this.powerDNLabel = new System.Windows.Forms.Label();
-            this.powerBPCostLabel = new System.Windows.Forms.Label();
+            this.powerDetailLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // powerCancelButton
@@ -136,99 +129,22 @@
             this.powerSelectBox.TabIndex = 5;
             this.powerSelectBox.SelectedIndexChanged += new System.EventHandler(this.powerSelectBox_SelectedIndexChanged);
             // 
-            // powerDisciplineLabel
+            // powerDetailLabel
             // 
-            this.powerDisciplineLabel.AutoSize = true;
-            this.powerDisciplineLabel.Location = new System.Drawing.Point(300, 40);
-            this.powerDisciplineLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerDisciplineLabel.Name = "powerDisciplineLabel";
-            this.powerDisciplineLabel.Size = new System.Drawing.Size(55, 13);
-            this.powerDisciplineLabel.TabIndex = 130;
-            this.powerDisciplineLabel.Text = "Discipline:";
-            // 
-            // powerKeywordsLabel
-            // 
-            this.powerKeywordsLabel.AutoSize = true;
-            this.powerKeywordsLabel.Location = new System.Drawing.Point(300, 215);
-            this.powerKeywordsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerKeywordsLabel.Name = "powerKeywordsLabel";
-            this.powerKeywordsLabel.Size = new System.Drawing.Size(56, 13);
-            this.powerKeywordsLabel.TabIndex = 129;
-            this.powerKeywordsLabel.Text = "Keywords:";
-            // 
-            // powerMultiLabel
-            // 
-            this.powerMultiLabel.AutoSize = true;
-            this.powerMultiLabel.Location = new System.Drawing.Point(300, 190);
-            this.powerMultiLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerMultiLabel.Name = "powerMultiLabel";
-            this.powerMultiLabel.Size = new System.Drawing.Size(66, 13);
-            this.powerMultiLabel.TabIndex = 128;
-            this.powerMultiLabel.Text = "Multi-Target:";
-            // 
-            // powerRangeLabel
-            // 
-            this.powerRangeLabel.AutoSize = true;
-            this.powerRangeLabel.Location = new System.Drawing.Point(300, 165);
-            this.powerRangeLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerRangeLabel.Name = "powerRangeLabel";
-            this.powerRangeLabel.Size = new System.Drawing.Size(42, 13);
-            this.powerRangeLabel.TabIndex = 127;
-            this.powerRangeLabel.Text = "Range:";
-            // 
-            // powerDurationLabel
-            // 
-            this.powerDurationLabel.AutoSize = true;
-            this.powerDurationLabel.Location = new System.Drawing.Point(300, 140);
-            this.powerDurationLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerDurationLabel.Name = "powerDurationLabel";
-            this.powerDurationLabel.Size = new System.Drawing.Size(50, 13);
-            this.powerDurationLabel.TabIndex = 126;
-            this.powerDurationLabel.Text = "Duration:";
-            // 
-            // powerActivationLabel
-            // 
-            this.powerActivationLabel.AutoSize = true;
-            this.powerActivationLabel.Location = new System.Drawing.Point(300, 115);
-            this.powerActivationLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerActivationLabel.Name = "powerActivationLabel";
-            this.powerActivationLabel.Size = new System.Drawing.Size(57, 13);
-            this.powerActivationLabel.TabIndex = 125;
-            this.powerActivationLabel.Text = "Activation:";
-            // 
-            // powerDNLabel
-            // 
-            this.powerDNLabel.AutoSize = true;
-            this.powerDNLabel.Location = new System.Drawing.Point(300, 90);
-            this.powerDNLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerDNLabel.Name = "powerDNLabel";
-            this.powerDNLabel.Size = new System.Drawing.Size(29, 13);
-            this.powerDNLabel.TabIndex = 124;
-            this.powerDNLabel.Text = "DN: ";
-            // 
-            // powerBPCostLabel
-            // 
-            this.powerBPCostLabel.AutoSize = true;
-            this.powerBPCostLabel.Location = new System.Drawing.Point(300, 65);
-            this.powerBPCostLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerBPCostLabel.Name = "powerBPCostLabel";
-            this.powerBPCostLabel.Size = new System.Drawing.Size(48, 13);
-            this.powerBPCostLabel.TabIndex = 123;
-            this.powerBPCostLabel.Text = "BP Cost:";
+            this.powerDetailLabel.AutoSize = true;
+            this.powerDetailLabel.Location = new System.Drawing.Point(300, 40);
+            this.powerDetailLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.powerDetailLabel.Name = "powerDetailLabel";
+            this.powerDetailLabel.Size = new System.Drawing.Size(89, 13);
+            this.powerDetailLabel.TabIndex = 130;
+            this.powerDetailLabel.Text = "powerDetailLabel";
             // 
             // powerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 450);
-            this.Controls.Add(this.powerDisciplineLabel);
-            this.Controls.Add(this.powerKeywordsLabel);
-            this.Controls.Add(this.powerMultiLabel);
-            this.Controls.Add(this.powerRangeLabel);
-            this.Controls.Add(this.powerDurationLabel);
-            this.Controls.Add(this.powerActivationLabel);
-            this.Controls.Add(this.powerDNLabel);
-            this.Controls.Add(this.powerBPCostLabel);
+            this.Controls.Add(this.powerDetailLabel);
             this.Controls.Add(this.powerCancelButton);
             this.Controls.Add(this.addPowerButton);
             this.Controls.Add(this.selectedPowerDetailLabel);
@@ -248,13 +164,6 @@
         private System.Windows.Forms.Button addPowerButton;
         private System.Windows.Forms.Label selectedPowerDetailLabel;
         private System.Windows.Forms.ListBox powerSelectBox;
-        private System.Windows.Forms.Label powerDisciplineLabel;
-        private System.Windows.Forms.Label powerKeywordsLabel;
-        private System.Windows.Forms.Label powerMultiLabel;
-        private System.Windows.Forms.Label powerRangeLabel;
-        private System.Windows.Forms.Label powerDurationLabel;
-        private System.Windows.Forms.Label powerActivationLabel;
-        private System.Windows.Forms.Label powerDNLabel;
-        private System.Windows.Forms.Label powerBPCostLabel;
+        private System.Windows.Forms.Label powerDetailLabel;
     }
 }

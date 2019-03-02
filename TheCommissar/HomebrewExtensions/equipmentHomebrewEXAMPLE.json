@@ -1,0 +1,73 @@
+/* This file allows you to add homebrew equipment to the equipment list */
+/* All entries should go between the [ and ] brackets. */
+/* You MUST use the following format when adding new items: */
+/* 
+{
+  "name": "Assault Bolter",
+  "damage": "12 + 2ED",
+  "ap": "-1",
+  "range": "36m",
+  "salvo": "3",
+  "armor": "N/A",
+  "value": "8 (Very Rare)",
+  "keywords": "Bolt, Imperium, Adeptus Astartes, Primaris",
+  "traits": "Assault, Brutal",
+  "type": "ranged"
+}
+*/
+/* and please note the comma after each entry EXCEPT the last, see the example file if youre not familiar with JSON */
+/* you can use \u00A0 to set a non-breaking space within long descriptions to prevent them from wrapping strangely, ex: long\u00A0string */
+/* use \u2011 for a nonbreaking hyphen ex: Two\u2011\Handed */
+/* valid item types are "ranged" for ranged weapons, "melee" for melee weapons, "armor" for armor, "tools" for miscellaneous equipment and "mods" for Weapon Mods*/
+/* IMPORTANT: If type = "armor", the value for armor MUST be a single digit numeric from 0-9, or it wont work. Otherwise, the value can be any string. */
+/* If you need armor beyond 9, add a two piece item */
+[
+  {
+    "name": "Testing Ranged Weapon",
+    "damage": "12 + 2ED",
+    "ap": "-1",
+    "range": "36m",
+    "salvo": "3",
+    "armor": "N/A",
+    "value": "Testing Ranged Weapon",
+    "keywords": "Bolt, Imperium, Adeptus\u00A0Astartes, Primaris",
+    "traits": "Assault, Brutal",
+    "type": "ranged"
+  },
+  {
+    "name": "Testing Melee Weapon",
+    "damage": "4 + 2ED",
+    "ap": "-1",
+    "range": "--",
+    "salvo": "N/A",
+    "armor": "N/A",
+    "value": "Testing Melee Weapon",
+    "keywords": "Imperium, Adeptus\u00A0Astartes, Primaris",
+    "traits": "Brutal",
+    "type": "melee"
+  },
+  {
+    "name": "Testing Armor",
+    "damage": "N/A",
+    "ap": "N/A",
+    "range": "N/A",
+    "salvo": "N/A",
+    "armor": "3",
+    "value": "3 (Uncommon)",
+    "keywords": "Adeptus\u00A0Astartes",
+    "traits": "Powered(2)",
+    "type": "armor"
+  },
+  {
+    "name": "Testing Tools",
+    "damage": "N/A",
+    "ap": "N/A",
+    "range": "N/A",
+    "salvo": "N/A",
+    "armor": "N/A",
+    "value": "1 (Common)",
+    "keywords": "Imperium",
+    "traits": "Tools use descriptions since they dont have traits. This is a common tool with a long description and a Non\u2011Breaking Hyphen.",
+    "type": "tools"
+  }
+]

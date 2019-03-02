@@ -363,9 +363,5 @@ namespace TheCommissar
             }
         }
 
-        private void addTalentButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

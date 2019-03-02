@@ -1,28 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace TheCommissar
 {
     public partial class equipForm : Form
     {
-
+        
         List<string> rangedWeaponsList = new List<string>();
         List<string> meleeWeaponsList = new List<string>();
         List<string> armorList = new List<string>();
         List<string> weaponModList = new List<string>();
         List<string> toolsList = new List<string>();
         List<string> unfilteredEquipList = new List<string>();
+        
+
+        public class equipmentObject
+        {
+            public string name { get; set; }
+            public string damage { get; set; }
+            public string ap { get; set; }
+            public string range { get; set; }
+            public string salvo { get; set; }
+            public string armor { get; set; }
+            public string value { get; set; }
+            public string keywords { get; set; }
+            public string traits { get; set; }
+            public string type { get; set; }
+        }
 
         public equipForm(int type)
         {
             InitializeComponent();
+
+            equipDetailsLabel.Text = "";
 
             if (type == 0)
             {
@@ -47,24 +62,26 @@ namespace TheCommissar
             //result = Tuple.Create(Tuple.Create(name, damage, ap, range, salvo), Tuple.Create(armor, value, keywords, traits));
             string curItem = equipSelectBox.SelectedItem.ToString();
             var result = getEquipValues(curItem);
-            equipDamageLabel.Text = result.Item1.Item2;
-            equipAPLabel.Text = result.Item1.Item3;
-            equipRangeLabel.Text = result.Item1.Item4;
-            equipSalvoLabel.Text = result.Item1.Item5;
-            equipArmorRatingLabel.Text = result.Item2.Item1;
-            equipValueLabel.Text = result.Item2.Item2;
-            equipKeywordsLabel.Text = result.Item2.Item3;
-            equipTraitsLabel.Text = result.Item2.Item4;
 
-            if (equipKeywordsLabel.Text.Contains(Environment.NewLine))
-            {
-                equipTraitsLabel.Visible = false;
-                equipKeywordsLabel.Text += Environment.NewLine + Environment.NewLine + equipTraitsLabel.Text;
-            }
-            else
-            {
-                equipTraitsLabel.Visible = true;
-            }            
+            equipDetailsLabel.Text = "";
+
+            equipDetailsLabel.Text += result.Item1.Item2 + Environment.NewLine + Environment.NewLine +
+                                      result.Item1.Item3 + Environment.NewLine + Environment.NewLine +
+                                      result.Item1.Item4 + Environment.NewLine + Environment.NewLine +
+                                      result.Item1.Item5 + Environment.NewLine + Environment.NewLine +
+                                      result.Item2.Item1 + Environment.NewLine + Environment.NewLine +
+                                      result.Item2.Item2 + Environment.NewLine + Environment.NewLine +
+                                      result.Item2.Item3 + Environment.NewLine + Environment.NewLine +
+                                      result.Item2.Item4;
+
+            //equipDamageLabel.Text = result.Item1.Item2;
+            //equipAPLabel.Text = result.Item1.Item3;
+            //equipRangeLabel.Text = result.Item1.Item4;
+            //equipSalvoLabel.Text = result.Item1.Item5;
+            //equipArmorRatingLabel.Text = result.Item2.Item1;
+            //equipValueLabel.Text = result.Item2.Item2;
+            //equipKeywordsLabel.Text = result.Item2.Item3;
+            //equipTraitsLabel.Text = result.Item2.Item4;
         }
 
         private void addEquipButton_Click(object sender, EventArgs e)
@@ -135,7 +152,7 @@ namespace TheCommissar
                 salvo = "Salvo: 3";
                 armor = "Armor: N/A";
                 value = "Value: 8 (Very Rare)";
-                keywords = "Keywords: Bolt, Imperium, Adeptus Astartes," + Environment.NewLine + "Primaris";
+                keywords = "Keywords: Bolt, Imperium, Adeptus\u00A0Astartes, Primaris";
                 traits = "Traits: Assault, Brutal";
                 type = "ranged";
             }
@@ -147,7 +164,7 @@ namespace TheCommissar
                 salvo = "Salvo: 2";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Bolt, Imperium, Adeptus Astartes," + Environment.NewLine + "Primaris";
+                keywords = "Keywords: Bolt, Imperium, Adeptus\u00A0Astartes, Primaris";
                 traits = "Traits: Brutal, Rapid Fire(2)";
                 type = "ranged";
             }
@@ -195,7 +212,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Bolt, Imperium, Adeptus Astartes," + Environment.NewLine + "Primaris";
+                keywords = "Keywords: Bolt, Imperium, Adeptus\u00A0Astartes, Primaris";
                 traits = "Traits: Brutal, Pistol";
                 type = "ranged";
             }
@@ -220,7 +237,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
                 keywords = "Keywords: Fire, Imperium";
-                traits = "Traits: Assault, Blast (Medium), Blaze, Spread";
+                traits = "Traits: Assault, Blast\u00A0(Medium), Blaze, Spread";
                 type = "ranged";
             }
             else if (name == "Hand Flamer")
@@ -232,7 +249,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: Fire, Imperium";
-                traits = "Traits: Blast (Small), Blaze, Pistol, Spread";
+                traits = "Traits: Blast\u00A0(Small), Blaze, Pistol, Spread";
                 type = "ranged";
             }
             else if (name == "Heavy Flamer")
@@ -244,7 +261,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: Fire Imperium";
-                traits = "Traits: Blast (Large), Blaze, Heavy, Spread";
+                traits = "Traits: Blast\u00A0(Large), Blaze, Heavy, Spread";
                 type = "ranged";
             }
             else if (name == "Duelling Laspistol")
@@ -267,7 +284,7 @@ namespace TheCommissar
                 salvo = "Salvo: 2";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Las, Imperium, Astra Militarum";
+                keywords = "Keywords: Las, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: Rapid Fire(1), Steadfast";
                 type = "ranged";
             }
@@ -279,7 +296,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Las, Imperium, Astra Militarum";
+                keywords = "Keywords: Las, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: Pistol, Steadfast";
                 type = "ranged";
             }
@@ -291,7 +308,7 @@ namespace TheCommissar
                 salvo = "Salvo: 4";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Las, Imperium, Astra Militarum";
+                keywords = "Keywords: Las, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: Heavy, Steadfast";
                 type = "ranged";
             }
@@ -316,7 +333,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Common)";
                 keywords = "Keywords: Las, Imperium";
-                traits = "Traits: Rapid Fire(1), Steadfast";
+                traits = "Traits: Rapid\u00A0Fire(1), Steadfast";
                 type = "ranged";
             }
             else if (name == "Laspistol")
@@ -339,7 +356,7 @@ namespace TheCommissar
                 salvo = "Salvo: 0";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Uncommon)";
-                keywords = "Keywords: Las, Imperium, Astra Militarum";
+                keywords = "Keywords: Las, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: Sniper(1), Steadfast";
                 type = "ranged";
             }
@@ -351,7 +368,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Melta, Imperium, Adepta Sororitas," + Environment.NewLine + "Adeptus Astartes";
+                keywords = "Keywords: Melta, Imperium, Adepta\u00A0Sororitas, Adeptus\u00A0Astartes";
                 traits = "Traits: Melta, Pistol";
                 type = "ranged";
             }
@@ -423,7 +440,7 @@ namespace TheCommissar
                 salvo = "Salvo: 6";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Uncommon)";
-                keywords = "Keywords: Projectile, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Projectile, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Heavy";
                 type = "ranged";
             }
@@ -435,7 +452,7 @@ namespace TheCommissar
                 salvo = "Salvo: 2";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Rare)";
-                keywords = "Keywords: Projectile, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Projectile, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Assault, Spread, Steadfast";
                 type = "ranged";
             }
@@ -447,7 +464,7 @@ namespace TheCommissar
                 salvo = "Salvo: 0";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Uncommon)";
-                keywords = "Keywords: Projectile, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Projectile, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Sniper(2)";
                 type = "ranged";
             }
@@ -496,7 +513,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: Projectile, Imperium";
-                traits = "Traits: Assault, Rapid Fire(1), Spread";
+                traits = "Traits: Assault, Rapid\u00A0Fire(1), Spread";
                 type = "ranged";
             }
             else if (name == "Hand Cannon")
@@ -567,7 +584,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1*";
                 armor = "Armor: N/A";
                 value = "Value: 11 (Very Rare)";
-                keywords = "Keywords: Explosive, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Explosive, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Heavy";
                 type = "ranged";
             }
@@ -604,10 +621,10 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 6 (Uncommon)";
                 keywords = "Keywords: Explosive, Imperium";
-                traits = "Traits: Blast (Small)";
+                traits = "Traits: Blast\u00A0(Small)";
                 type = "ranged";
             }
-            else if (name == "Militarum Tempestus Grenade Launcher")
+            else if (name == "Militarum\u00A0Tempestus Grenade Launcher")
             {
                 damage = "Damage: By Grenade";
                 ap = "AP: By Grenade";
@@ -615,7 +632,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Uncommon)";
-                keywords = "Keywords: Explosive, Imperium, Astra Militarum";
+                keywords = "Keywords: Explosive, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: Assault";
                 type = "ranged";
             }
@@ -627,7 +644,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
-                keywords = "Keywords: Explosive, Imperium, Astra Militarum";
+                keywords = "Keywords: Explosive, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: Assault";
                 type = "ranged";
             }
@@ -640,7 +657,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
                 keywords = "Keywords: Explosive, Imperium";
-                traits = "Traits: Blast (Medium)";
+                traits = "Traits: Blast\u00A0(Medium)";
                 type = "ranged";
             }
             else if (name == "Krak Grenade")
@@ -652,7 +669,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 4 (Uncommon)";
                 keywords = "Keywords: Explosive, Imperium";
-                traits = "Traits: Blast (Small)";
+                traits = "Traits: Blast\u00A0(Small)";
                 type = "ranged";
             }
             else if (name == "Plasma Grenade")
@@ -664,7 +681,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
                 keywords = "Keywords: Explosive, Aeldari";
-                traits = "Traits: Blast (Medium)";
+                traits = "Traits: Blast\u00A0(Medium)";
                 type = "ranged";
             }
             else if (name == "Arc Pistol")
@@ -675,7 +692,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Arc, Adeptus Mechanicus";
+                keywords = "Keywords: Arc, Adeptus\u00A0Mechanicus";
                 traits = "Traits: Arc(2), Pistol";
                 type = "ranged";
             }
@@ -687,7 +704,7 @@ namespace TheCommissar
                 salvo = "Salvo: 2";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Arc, Adeptus Mechanicus";
+                keywords = "Keywords: Arc, Adeptus\u00A0Mechanicus";
                 traits = "Traits: Arc(2), Rapid Fire(1)";
                 type = "ranged";
             }
@@ -699,7 +716,7 @@ namespace TheCommissar
                 salvo = "Salvo: 2";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Projectile, Adeptus Mechanicus";
+                keywords = "Keywords: Projectile, Adeptus\u00A0Mechanicus";
                 traits = "Traits: Rapid Fire(1), Penetrating(1)";
                 type = "ranged";
             }
@@ -711,7 +728,7 @@ namespace TheCommissar
                 salvo = "Salvo: 3";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Projectile, Adeptus Mechanicus";
+                keywords = "Keywords: Projectile, Adeptus\u00A0Mechanicus";
                 traits = "Traits: Assault, Rad(2)";
                 type = "ranged";
             }
@@ -723,7 +740,7 @@ namespace TheCommissar
                 salvo = "Salvo: 1";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Projectile, Adeptus Mechanicus";
+                keywords = "Keywords: Projectile, Adeptus\u00A0Mechanicus";
                 traits = "Traits: Pistol, Rad(2)";
                 type = "ranged";
             }
@@ -808,7 +825,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
                 keywords = "Keywords: Fire, Ork";
-                traits = "Traits: Assault, Blast (Small), Blaze, Spread";
+                traits = "Traits: Assault, Blast\u00A0(Small), Blaze, Spread";
                 type = "ranged";
             }
             else if (name == "Rokkit Launcha")
@@ -820,7 +837,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 7 (Rare)";
                 keywords = "Keywords: Explosive, Ork";
-                traits = "Traits: Blast (Small)";
+                traits = "Traits: Blast\u00A0(Small)";
                 type = "ranged";
             }
             else if (name == "Shoota")
@@ -863,12 +880,12 @@ namespace TheCommissar
             {
                 damage = "Damage: 7 + 1ED";
                 ap = "AP: 0";
-                range = "Range: Strength X4 Meters or By Launcher";
+                range = "Range: Strength\u00A0X4\u00A0Meters or By\u00A0Launcher";
                 salvo = "Salvo: --";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Uncommon)";
                 keywords = "Keywords: Explosive, Ork";
-                traits = "Traits: Blast (Medium)";
+                traits = "Traits: Blast\u00A0(Medium)";
                 type = "ranged";
             }
             else if (name == "Gauss Rifle")
@@ -893,7 +910,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
-                keywords = "Keywords: Blade, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Blade, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Steadfast";
                 type = "melee";
             }
@@ -917,7 +934,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
-                keywords = "Keywords: Blade, Imperium, Aeldari, Ork," + Environment.NewLine + "Scum, <Any>";
+                keywords = "Keywords: Blade, Imperium, Aeldari, Ork, Scum, <Any>";
                 traits = "Traits: None";
                 type = "melee";
             }
@@ -941,7 +958,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Uncommon)";
-                keywords = "Keywords: Blade, Imperium," + Environment.NewLine + "Adeptus Astra Telepathica";
+                keywords = "Keywords: Blade, Imperium, Adeptus\u00A0Astra\u00A0Telepathica";
                 traits = "Traits: None";
                 type = "melee";
             }
@@ -953,7 +970,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 3 (Common)";
-                keywords = "Keywords: Blade, Imperium," + Environment.NewLine + "Aeldari, <Any>";
+                keywords = "Keywords: Blade, Imperium, Aeldari, <Any>";
                 traits = "Traits: Parry";
                 type = "melee";
             }
@@ -965,7 +982,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
-                keywords = "Keywords: Blade, Aeldari," + Environment.NewLine + "Scum, <Any>";
+                keywords = "Keywords: Blade, Aeldari, Scum, <Any>";
                 traits = "Traits: None";
                 type = "melee";
             }
@@ -1001,7 +1018,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 10 (Very Rare)";
-                keywords = "Keywords: Chain, Power Field," + Environment.NewLine + "Imperium, Chaos, Adeptus Astartes";
+                keywords = "Keywords: Chain, Power\u00A0Field, Imperium, Chaos, Adeptus\u00A0Astartes";
                 traits = "Traits: Brutal, Unwieldy(3)";
                 type = "melee";
             }
@@ -1013,7 +1030,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
-                keywords = "Keywords: Chain, Aeldari, Imperium," + Environment.NewLine + "Chaos";
+                keywords = "Keywords: Chain, Aeldari, Imperium, Chaos";
                 traits = "Traits: Brutal, Parry";
                 type = "melee";
             }
@@ -1025,7 +1042,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Chain, Adeptus Ministorum," + Environment.NewLine + "Adeptus Sororitaas, Two-Handed";
+                keywords = "Keywords: Chain, Adeptus\u00A0Ministorum, Adeptus\u00A0Sororitas, Two\u2011Handed";
                 traits = "Traits: Brutal, Unwieldy(2)";
                 type = "melee";
             }
@@ -1037,7 +1054,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Force, Imperium, Inquisition," + Environment.NewLine + "Adeptus Astartes";
+                keywords = "Keywords: Force, Imperium, Inquisition, Adeptus\u00A0Astartes";
                 traits = "Traits: Force";
                 type = "melee";
             }
@@ -1049,7 +1066,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Force, Imperium, Inquisition," + Environment.NewLine + "Two-Handed, Adeptus Astartes";
+                keywords = "Keywords: Force, Imperium, Inquisition, Two\u2011Handed, Adeptus\u00A0Astartes";
                 traits = "Traits: Force, Unwieldy(2)";
                 type = "melee";
             }
@@ -1061,7 +1078,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Uncommon)";
-                keywords = "Keywords: Force, Imperium, Inquisition," + Environment.NewLine + "Adeptus Astartes, Adeptus Astra Telepathica," + Environment.NewLine + "Two-Handed";
+                keywords = "Keywords: Force, Imperium, Inquisition, Adeptus\u00A0Astartes, Adeptus\u00A0Astra\u00A0Telepathica, Two\u2011Handed";
                 traits = "Traits: Brutal, Force";
                 type = "melee";
             }
@@ -1073,7 +1090,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Force, Imperium, Inquisition," + Environment.NewLine + "Adeptus Astartes";
+                keywords = "Keywords: Force, Imperium, Inquisition, Adeptus\u00A0Astartes";
                 traits = "Traits: Force, Parry";
                 type = "melee";
             }
@@ -1085,7 +1102,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Power Field, Imperium," + Environment.NewLine + "Adeptus Ministorum";
+                keywords = "Keywords: Power\u00A0Field, Imperium, Adeptus\u00A0Ministorum";
                 traits = "Traits: Parry";
                 type = "melee";
             }
@@ -1097,7 +1114,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Power Field, Imperium," + Environment.NewLine + "Adeptus Mechanicus, Two-Handed";
+                keywords = "Keywords: Power\u00A0Field, Imperium, Adeptus\u00A0Mechanicus, Two\u2011Handed";
                 traits = "Traits: None";
                 type = "melee";
             }
@@ -1109,7 +1126,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Power Field, Imperium," + Environment.NewLine + "Adeptus Astartes, Adeptus Mechanicus, Aeldari";
+                keywords = "Keywords: Power\u00A0Field, Imperium, Adeptus\u00A0Astartes, Adeptus\u00A0Mechanicus, Aeldari";
                 traits = "Traits: ";
                 type = "melee";
             }
@@ -1121,7 +1138,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 8 (Very Rare)";
-                keywords = "Keywords: Power Field, Imperium," + Environment.NewLine + "Adeptus Astartes";
+                keywords = "Keywords: Power\u00A0Field, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Brutal, Unwieldy(2)";
                 type = "melee";
             }
@@ -1133,7 +1150,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Power Field, Imperium, Aeldari";
+                keywords = "Keywords: Power\u00A0Field, Imperium, Aeldari";
                 traits = "Traits: Parry";
                 type = "melee";
             }
@@ -1145,7 +1162,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 9 (Unique)";
-                keywords = "Keywords: Power Field, Imperium," + Environment.NewLine + "Adeptus Astartes, Inquisition, Two-Handed";
+                keywords = "Keywords: Power\u00A0Field, Imperium, Adeptus\u00A0Astartes, Inquisition, Two\u2011Handed";
                 traits = "Traits: Brutal, Unwieldy(2)";
                 type = "melee";
             }
@@ -1157,7 +1174,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 8 (Very Rare)";
-                keywords = "Keywords: Power Field, Aeldari," + Environment.NewLine + "Anhrathe";
+                keywords = "Keywords: Power\u00A0Field, Aeldari, Anhrathe";
                 traits = "Traits: Brutal, Parry";
                 type = "melee";
             }
@@ -1181,7 +1198,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
-                keywords = "Keywords: Exotic, Imperium," + Environment.NewLine + "Adeptus Arbites";
+                keywords = "Keywords: Exotic, Imperium, Adeptus\u00A0Arbites";
                 traits = "Traits: Agonizing, Brutal";
                 type = "melee";
             }
@@ -1218,7 +1235,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 11 (Unique)";
                 keywords = "Keywords: Force, Aeldari, Asuryani";
-                traits = "Traits: Assault, Force, Warp Weapon";
+                traits = "Traits: Assault, Force, Warp\u00A0Weapon";
                 type = "melee";
             }
             else if (name == "Witchblade")
@@ -1230,7 +1247,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 9 (Very Rare)";
                 keywords = "Keywords: Force, Aeldari, Asuryani";
-                traits = "Traits: Force, Parry, Warp Weapon";
+                traits = "Traits: Force, Parry, Warp\u00A0Weapon";
                 type = "melee";
             }
             else if (name == "Big Choppa")
@@ -1241,7 +1258,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 4 (Rare)";
-                keywords = "Keywords: Blade, Ork, Two-Handed";
+                keywords = "Keywords: Blade, Ork, Two\u2011Handed";
                 traits = "Traits: Waaagh!";
                 type = "melee";
             }
@@ -1277,7 +1294,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 8 (Very Rare)";
-                keywords = "Keywords: Power Field, Ork";
+                keywords = "Keywords: Power\u00A0Field, Ork";
                 traits = "Traits: Brutal, Unwieldy(3)";
                 type = "melee";
             }
@@ -1289,7 +1306,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Very Rare)";
-                keywords = "Keywords: Force, Ork, Two-Handed";
+                keywords = "Keywords: Force, Ork, Two\u2011Handed";
                 traits = "Traits: Force, Waaagh!";
                 type = "melee";
             }
@@ -1313,11 +1330,11 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Very Rare)";
-                keywords = "Keywords: Adeptus Mechanicus";
+                keywords = "Keywords: Adeptus\u00A0Mechanicus";
                 traits = "Traits: Unwieldy(2)";
                 type = "melee";
             }
-            //"Melee Combat Stats: 6+2ED, AP-3," + Environment.NewLine + "Range 1m (M), Unweildy 2" + Environment.NewLine + Environment.NewLine + "Value: 5 (Very Rare)"
+            //"Melee Combat Stats: 6+2ED, AP-3, Range 1m (M), Unweildy 2" + Environment.NewLine + Environment.NewLine + "Value: 5 (Very Rare)"
 
             //armor
             else if (name == "Bodyglove")
@@ -1328,7 +1345,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 2";
                 value = "Value: 3 (Rare)";
-                keywords = "Keywords: Light, Imperium," + Environment.NewLine + "Adeptus Ministorum";
+                keywords = "Keywords: Light, Imperium, Adeptus\u00A0Ministorum";
                 traits = "Traits: None";
                 type = "armor";
             }
@@ -1340,7 +1357,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 4";
                 value = "Value: 5 (Uncommon)";
-                keywords = "Keywords: Imperium, Officio Assassinorum," + Environment.NewLine + "Astra Militarum";
+                keywords = "Keywords: Imperium, Officio\u00A0Assassinorum, Astra\u00A0Militarum";
                 traits = "Traits: Bulk(1)";
                 type = "armor";
             }
@@ -1352,7 +1369,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 3";
                 value = "Value: 4 (Common)";
-                keywords = "Keywords: Flak, Imperium, Astra Militarum";
+                keywords = "Keywords: Flak, Imperium, Astra\u00A0Militarum";
                 traits = "Traits: None";
                 type = "armor";
             }
@@ -1364,7 +1381,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 3";
                 value = "Value: 4 (Uncommon)";
-                keywords = "Keywords: Flak Imperium, Astra Militarum";
+                keywords = "Keywords: Flak Imperium, Astra\u00A0Militarum";
                 traits = "Traits: None";
                 type = "armor";
             }
@@ -1400,7 +1417,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 3";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Heavy, Imperium, Adeptus Mechanicus," + Environment.NewLine + "Skitarii";
+                keywords = "Keywords: Heavy, Imperium, Adeptus\u00A0Mechanicus, Skitarii";
                 traits = "Traits: None";
                 type = "armor";
             }
@@ -1412,7 +1429,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 4";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Heavy, Imperium, Astra Militarum," + Environment.NewLine + "Militarum Tempestus";
+                keywords = "Keywords: Heavy, Imperium, Astra\u00A0Militarum, Militarum\u00A0Tempestus";
                 traits = "Traits: None";
                 type = "armor";
             }
@@ -1460,7 +1477,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 5";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Powered, Imperium, Adepta Sororitas";
+                keywords = "Keywords: Powered, Imperium, Adepta\u00A0Sororitas";
                 traits = "Traits: Powered(2)";
                 type = "armor";
             }
@@ -1472,7 +1489,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 5";
                 value = "Value: 8 (Very Rare)";
-                keywords = "Keywords: Powered, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Powered, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Powered(3)";
                 type = "armor";
             }
@@ -1484,7 +1501,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 4";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Imperium, Adeptus Astartes";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: None";
                 type = "armor";
             }
@@ -1496,7 +1513,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 5";
                 value = "Value: 9 (Very Rare)";
-                keywords = "Keywords: Powered, Imperium, Adeptus Astartes," + Environment.NewLine + "Primaris";
+                keywords = "Keywords: Powered, Imperium, Adeptus\u00A0Astartes, Primaris";
                 traits = "Traits: Powered(4)";
                 type = "armor";
             }
@@ -1508,7 +1525,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 7";
                 value = "Value: 10 (Unique)";
-                keywords = "Keywords: Powered, Imperium, Adeptus Astartes";
+                keywords = "Keywords: Powered, Imperium, Adeptus\u00A0Astartes";
                 traits = "Traits: Powered(5), Cumbersome";
                 type = "armor";
             }
@@ -1520,8 +1537,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: *3";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Force Field, Imperium, Astra Militarum";
-                traits = "Traits: Force Shield";
+                keywords = "Keywords: Force\u00A0Field, Imperium, Astra\u00A0Militarum";
+                traits = "Traits: Force\u00A0Shield";
                 type = "armor";
             }
             else if (name == "Rosarius")
@@ -1532,8 +1549,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: *4";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Force Field, Imperium, Adeptus Astartes," + Environment.NewLine + "Adeptus Ministorum";
-                traits = "Traits: Force Shield";
+                keywords = "Keywords: Force\u00A0Field, Imperium, Adeptus\u00A0Astartes, Adeptus\u00A0Ministorum";
+                traits = "Traits: Force\u00A0Shield";
                 type = "armor";
             }
             else if (name == "Storm Shield")
@@ -1544,8 +1561,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: *2";
                 value = "Value: 8 (Unique)";
-                keywords = "Keywords: Force Field, Imperium, Adeptus Astartes," + Environment.NewLine + "Adeptus Ministorum, Inquisition";
-                traits = "Traits: Bulk(1), Force Shield, Shield";
+                keywords = "Keywords: Force\u00A0Field, Imperium, Adeptus\u00A0Astartes, Adeptus\u00A0Ministorum, Inquisition";
+                traits = "Traits: Bulk(1), Force\u00A0Shield, Shield";
                 type = "armor";
             }
             else if (name == "Corsair Armour")
@@ -1592,8 +1609,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: *2";
                 value = "Value: 7 (Unique)";
-                keywords = "Keywords: Force Field, Aeldari, Asuryani";
-                traits = "Traits: Force Shield, Shield";
+                keywords = "Keywords: Force\u00A0Field, Aeldari, Asuryani";
+                traits = "Traits: Force\u00A0Shield, Shield";
                 type = "armor";
             }
             else if (name == "Rune Armour")
@@ -1604,8 +1621,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 4";
                 value = "Value: 6 (Unique)";
-                keywords = "Keywords: Force Field, Aeldari, Asuryani";
-                traits = "Traits: Force Shield";
+                keywords = "Keywords: Force\u00A0Field, Aeldari, Asuryani";
+                traits = "Traits: Force\u00A0Shield";
                 type = "armor";
             }
             else if (name == "Voidplate Harness")
@@ -1628,8 +1645,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: 4";
                 value = "Value: 3 (Uncommon)";
-                keywords = "Keywords: Heavy, Primitive Ork";
-                traits = "Traits: Ere We Go, Bulk(1)";
+                keywords = "Keywords: Heavy, Primitive, Ork";
+                traits = "Traits: Ere\u00A0We\u00A0Go, Bulk(1)";
                 type = "armor";
             }
             else if (name == "Mega Armour")
@@ -1641,7 +1658,7 @@ namespace TheCommissar
                 armor = "Armor: 7";
                 value = "Value: 9 (Very Rare)";
                 keywords = "Keywords: Powered, Ork";
-                traits = "Traits: Ere We Go, Cumbersome, Powered(4)";
+                traits = "Traits: Ere\u00A0We\u00A0Go, Cumbersome, Powered(4)";
                 type = "armor";
             }
             else if (name == "Ork Flak")
@@ -1668,8 +1685,8 @@ namespace TheCommissar
                 traits = "Traits: None";
                 type = "armor";
             }
-            
-            
+
+
             // new stuff, ammo and tools
 
             else if (name == "Ammunition Bandolier")
@@ -1704,7 +1721,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Imperium, Adeptus Astartes";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Astartes";
                 traits = "Description: +2ED, +3ED vs Organic targets";
                 type = "tools";
             }
@@ -1716,7 +1733,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Imperium, Adeptus Astartes";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Astartes";
                 traits = "Description: AP -2";
                 type = "tools";
             }
@@ -1752,8 +1769,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
-                keywords = "Keywords: Imperium, Adeptus Astartes";
-                traits = "Description: Weapon gains Spread," + Environment.NewLine + "defender loses Cover bonus";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Astartes";
+                traits = "Description: Weapon gains Spread, defender loses Cover bonus";
                 type = "tools";
             }
             else if (name == "9-70 Entrenching Tool")
@@ -1764,7 +1781,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
-                keywords = "Keywords: Imperium, Astra Militarum";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
                 traits = "Description: Halves time to dig holes";
                 type = "tools";
             }
@@ -1776,7 +1793,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Imperium, Adeptus Mechanicus";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Mechanicus";
                 traits = "Description: +2d to Awareness tests";
                 type = "tools";
             }
@@ -1800,7 +1817,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare";
-                keywords = "Keywords: Imperium, Adeptus Astartes, Primaris";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Astartes, Primaris";
                 traits = "Description: Clear weapon jams as a free action";
                 type = "tools";
             }
@@ -1837,7 +1854,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: +1d Stealth," + Environment.NewLine + "+1d Defence when in shadows";
+                traits = "Description: +1d\u00A0Stealth, +1d\u00A0Defence when in shadows";
                 type = "tools";
             }
             else if (name == "Chaplet Ecclesiasticus")
@@ -1848,7 +1865,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
-                keywords = "Keywords: Imperium, Adeptus Ministorum" + Environment.NewLine + "Adepta Sororitas";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Ministorum Adepta\u00A0Sororitas";
                 traits = "Description: Can be used as a garrotte";
                 type = "tools";
             }
@@ -1885,7 +1902,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Very Rare)";
                 keywords = "Keywords: Imperium";
-                traits = "Description: +1d Medicae when diagnosing," + Environment.NewLine + "+1d Awareness and Investigation when" + Environment.NewLine + "when investigating cause of death";
+                traits = "Description: +1d Medicae when diagnosing, +1d\u00A0Awareness and Investigation when investigating cause of death";
                 type = "tools";
             }
             else if (name == "Grav-Chute")
@@ -1896,8 +1913,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
-                keywords = "Keywords: Imperium, Astra Militarum";
-                traits = "Description: Can hover for 1 minute," + Environment.NewLine + "slow falls. See P.308";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
+                traits = "Description: Can hover for 1\u00A0minute, slow falls. See P.308";
                 type = "tools";
             }
             else if (name == "Munitorum-Issue Mess Kit")
@@ -1908,8 +1925,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
-                keywords = "Keywords: Imperium, Astra Militarum";
-                traits = "Description: +1d bonus to Survival to" + Environment.NewLine + "find food";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
+                traits = "Description: +1d bonus to Survival to find food";
                 type = "tools";
             }
             else if (name == "Guard-Issue Mess Kit")
@@ -1920,8 +1937,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
-                keywords = "Keywords: Imperium, Astra Militarum";
-                traits = "Description: +1d bonus to Survival to" + Environment.NewLine + "find food";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
+                traits = "Description: +1d bonus to Survival to find food";
                 type = "tools";
             }
             else if (name == "Blanket")
@@ -1932,7 +1949,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 1 (Common)";
-                keywords = "Keywords: Imperium, Astra Militarum";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
                 traits = "Description: A Blanket";
                 type = "tools";
             }
@@ -1944,7 +1961,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 1 (Common)";
-                keywords = "Keywords: Imperium, Astra Militarum";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
                 traits = "Description: Moustache Trimmer";
                 type = "tools";
             }
@@ -1957,7 +1974,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 7 (Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: Can jump for twice Movement" + Environment.NewLine + "distance. See P.308";
+                traits = "Description: Can jump for twice Movement distance. See P.308";
                 type = "tools";
             }
             else if (name == "Magnoculars")
@@ -1969,7 +1986,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: No distance penalties" + Environment.NewLine + "on Awareness tests";
+                traits = "Description: No distance penalties on Awareness tests";
                 type = "tools";
             }
             else if (name == "Medikit")
@@ -1992,8 +2009,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Imperium, Adepta Sororitas";
-                traits = "Description: +2d Medicae tests to stabalize" + Environment.NewLine + "a dying person";
+                keywords = "Keywords: Imperium, Adepta\u00A0Sororitas";
+                traits = "Description: +2d\u00A0Medicae tests to stabalize a dying person";
                 type = "tools";
             }
             else if (name == "Martyr's Gift Variant Medkit")
@@ -2004,7 +2021,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
-                keywords = "Keywords: Imperium, Astra Militarum";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
                 traits = "Description: +1d Medicae. See P.309";
                 type = "tools";
             }
@@ -2016,8 +2033,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Rare)";
-                keywords = "Keywords: Imperium, Adeptus Ministorum";
-                traits = "Description: +1d Persuassion to convert" + Environment.NewLine + "people to the Imperial Creed";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Ministorum";
+                traits = "Description: +1d Persuassion to convert people to the Imperial Creed";
                 type = "tools";
             }
             else if (name == "Periculum Kit")
@@ -2029,7 +2046,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: Imperium, <Any>";
-                traits = "Description: Contains Chrono, Data-Slate, Magnoculars" + Environment.NewLine + "2 Ration Packs, Respirator, Vox-beads";
+                traits = "Description: Contains Chrono, Data-Slate, Magnoculars, 2\u00A0Ration Packs, Respirator, Vox\u2011beads";
                 type = "tools";
             }
             else if (name == "Preysense Goggles")
@@ -2088,8 +2105,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Uncommon)";
-                keywords = "Keywords: Imperium, Adepta Sororitas";
-                traits = "Description: Adeptus Sororitas bible";
+                keywords = "Keywords: Imperium, Adepta\u00A0Sororitas";
+                traits = "Description: Adeptus\u00A0Sororitas bible";
                 type = "tools";
             }
             else if (name == "Sacred Machine Oil")
@@ -2100,8 +2117,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
-                keywords = "Keywords: Imperium, Adeptus Mechanicus";
-                traits = "Description: May ignore the first complication" + Environment.NewLine + "in combat";
+                keywords = "Keywords: Imperium, Adeptus\u00A0Mechanicus";
+                traits = "Description: May ignore the first complication in combat";
                 type = "tools";
             }
             else if (name == "Slate Monitron")
@@ -2112,7 +2129,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
-                keywords = "Keywords: Imperium, Astra Militarum";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
                 traits = "Description: Shows wearers vital signs";
                 type = "tools";
             }
@@ -2125,7 +2142,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 4 (Uncommon)";
                 keywords = "Keywords: Imperium, Scum";
-                traits = "Description: Heals 1d3+6 Shock, requires" + Environment.NewLine + "on a successful Medicae test";
+                traits = "Description: Heals 1d3+6\u00A0Shock, requires on a successful Medicae test";
                 type = "tools";
             }
             else if (name == "Survival Kit")
@@ -2149,7 +2166,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: +1d bonus to Leadership and" + Environment.NewLine + "Intimidation vs. appropriate targets";
+                traits = "Description: +1d bonus to Leadership and Intimidation\u00A0vs. appropriate targets";
                 type = "tools";
             }
             else if (name == "Uplifting Primer")
@@ -2160,7 +2177,7 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 2 (Common)";
-                keywords = "Keywords: Imperium, Astra Militarum";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
                 traits = "Description: Soldiers field guide";
                 type = "tools";
             }
@@ -2173,7 +2190,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: Space suit, 5 hours of oxygen";
+                traits = "Description: Space suit, 5\u00A0hours of oxygen";
                 type = "tools";
             }
             else if (name == "Vox-beads")
@@ -2185,7 +2202,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: Can transmit audio 1km";
+                traits = "Description: Can transmit audio\u00A01km";
                 type = "tools";
             }
             else if (name == "Small Vox Unit")
@@ -2197,7 +2214,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 4 (Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: Can transmit audio 10km";
+                traits = "Description: Can transmit audio\u00A010km";
                 type = "tools";
             }
             else if (name == "Large Vox Unit")
@@ -2209,7 +2226,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: Can transmit audio 100km";
+                traits = "Description: Can transmit audio\u00A0100km";
                 type = "tools";
             }
             else if (name == "Writing Kit")
@@ -2257,7 +2274,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 7 (Unique)";
                 keywords = "Keywords: Aeldari";
-                traits = "Description: Manipulate webway portals with" + Environment.NewLine + "a 5DN Tech test";
+                traits = "Description: Manipulate webway portals with a 5DN\u00A0Tech test";
                 type = "tools";
             }
             else if (name == "Ammo Grot")
@@ -2269,7 +2286,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
                 keywords = "Keywords: Ork";
-                traits = "Description: Lootgoblin that holds 2 ammo." + Environment.NewLine + "See P.311";
+                traits = "Description: Lootgoblin that holds 2\u00A0ammo. See P.311";
                 type = "tools";
             }
             else if (name == "Dok Bag")
@@ -2293,7 +2310,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 4 (Rare)";
                 keywords = "Keywords: Ork";
-                traits = "Description: Removes all Shock, +2d bonus" + Environment.NewLine + "to Melee attacks, +1 to the result of all" + Environment.NewLine + " Defiance checks";
+                traits = "Description: Removes all Shock, +2d\u00A0bonus to Melee attacks, +1\u00A0to the result of all Defiance checks";
                 type = "tools";
             }
             else if (name == "Mek Toolz")
@@ -2334,7 +2351,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: Imperium";
-                traits = "Description: Reloading the weapon is" + Environment.NewLine + "is a Free Action";
+                traits = "Description: Reloading the weapon is a Free Action";
                 type = "mods";
             }
             else if (name == "Bayonet Lug")
@@ -2370,7 +2387,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 6 (Rare)";
                 keywords = "Keywords: Imperium, Chaos, Scum";
-                traits = "Description: Combine 2 weapons, see P.298";
+                traits = "Description: Combine 2\u00A0weapons, see P.298";
                 type = "mods";
             }
             else if (name == "Dueling Grip")
@@ -2382,7 +2399,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: +1d to attacks. Can only be" + Environment.NewLine + "attached to pistols and one-handed" + Environment.NewLine + "melee weapons";
+                traits = "Description: +1d to attacks. Can only be attached to pistols and one\u2011handed melee weapons";
                 type = "mods";
             }
             else if (name == "Distinction")
@@ -2394,7 +2411,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Uncommon)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: Unique weapon. +1d to Intimidation";
+                traits = "Description: Unique weapon. +1d\u00A0to Intimidation";
                 type = "mods";
             }
             else if (name == "Gene-Grip Bio-Veritor")
@@ -2406,7 +2423,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 5 (Rare)";
                 keywords = "Keywords: Imperium";
-                traits = "Description: Bio-safety switch";
+                traits = "Description: Bio\u2011safety switch";
                 type = "mods";
             }
             else if (name == "Master-Crafted")
@@ -2418,7 +2435,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 7 (Very Rare)";
                 keywords = "Keywords: <Any>";
-                traits = "Description: A true work of art. Adds Steadfast" + Environment.NewLine + "trait, +2d bonus to attacks with this weapon";
+                traits = "Description: A true work of art. Adds Steadfast trait, +2d\u00A0bonus to attacks with this weapon";
                 type = "mods";
             }
             else if (name == "Megathoule Accelerator")
@@ -2429,8 +2446,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 6 (Very Rare)";
-                keywords = "Keywords: Imperium, Astra Militarum";
-                traits = "Description: +2 Salvo, loses Steadfast trait";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
+                traits = "Description: +2\u00A0Salvo, loses Steadfast trait";
                 type = "mods";
             }
             else if (name == "Monoscope")
@@ -2441,8 +2458,8 @@ namespace TheCommissar
                 salvo = "Salvo: N/A";
                 armor = "Armor: N/A";
                 value = "Value: 4 (Rare)";
-                keywords = "Keywords: Imperium, Astra Militarum";
-                traits = "Description: Reduce range penalties by 2DN";
+                keywords = "Keywords: Imperium, Astra\u00A0Militarum";
+                traits = "Description: Reduce range penalties by\u00A02DN";
                 type = "mods";
             }
             else if (name == "Percussive Muzzle Brake")
@@ -2454,7 +2471,7 @@ namespace TheCommissar
                 armor = "Armor: N/A";
                 value = "Value: 3 (Uncommon)";
                 keywords = "Keywords: Imperium, Scum";
-                traits = "Description: Cannot apply to Heavy weapons." + Environment.NewLine + "Salvo +1";
+                traits = "Description: Cannot apply to Heavy weapons. Salvo\u00A0+1";
                 type = "mods";
             }
             else if (name == "Preysense Sight")
@@ -2505,9 +2522,51 @@ namespace TheCommissar
                 keywords = "Keywords: ";
                 traits = "Traits: ";
                 type = "armor";
+
+                // load in the homebrew file
+
+                string resourceName = Environment.CurrentDirectory + "\\HomebrewExtensions\\equipmentHomebrew.json";
+
+                //JObject eBrew = JObject.Parse(File.ReadAllText(resourceName));
+
+                try
+                {
+                    List<equipmentObject> eBrew = JsonConvert.DeserializeObject<List<equipmentObject>>(File.ReadAllText(resourceName));
+
+
+                    foreach (equipmentObject x in eBrew)
+                    {
+                        if (name == x.name)
+                        {
+                            damage = "Damage: " + x.damage;
+                            ap = "AP:" + x.ap;
+                            range = "Range: " + x.range;
+                            salvo = "Salvo: " + x.salvo;
+                            armor = "Armor: " + x.armor;
+                            value = "Value: " + x.value;
+                            keywords = "Keywords: " + x.keywords;
+                            // description for mods
+                            if (x.type == "mods")
+                            {
+                                traits = "Description: " + x.traits;
+                            }
+                            else
+                            {
+                                traits = "Traits: " + x.traits;
+                            }
+                            type = x.type;
+                        }
+                    }
+                }
+                catch (IOException)
+                {
+                    string message = "Cant find the equipmentHomebrew.json file! Have you moved it? Do you have read access to the directory the program is running from?";
+                    string caption = "Error!";
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+                }
+
             }
-
-
 
             result = Tuple.Create(Tuple.Create(name, damage, ap, range, salvo), Tuple.Create(armor, value, keywords, traits, type));
             return result;
@@ -2638,8 +2697,8 @@ namespace TheCommissar
             rangedWeaponsList.Add("Missile Launcher");
             rangedWeaponsList.Add("Frag Missile");
             rangedWeaponsList.Add("Krak Missile");
-            rangedWeaponsList.Add("Militarum Tempestus Grenade Launcher");
-            rangedWeaponsList.Add("Astra Militarum Voss Pattern Grenade Launcher");
+            rangedWeaponsList.Add("Militarum\u00A0Tempestus Grenade Launcher");
+            rangedWeaponsList.Add("Astra\u00A0Militarum Voss Pattern Grenade Launcher");
             rangedWeaponsList.Add("Frag Grenade");
             rangedWeaponsList.Add("Krak Grenade");
             rangedWeaponsList.Add("Plasma Grenade");
@@ -2801,6 +2860,60 @@ namespace TheCommissar
             toolsList.Add("Dok Bag");
             toolsList.Add("Fightin' Juice");
             toolsList.Add("Mek Toolz");
+
+
+            // load in the homebrew file
+
+            string resourceName = Environment.CurrentDirectory + "\\HomebrewExtensions\\equipmentHomebrew.json";
+
+            //JObject eBrew = JObject.Parse(File.ReadAllText(resourceName));
+
+            try
+            {
+                List<equipmentObject> eBrew = JsonConvert.DeserializeObject<List<equipmentObject>>(File.ReadAllText(resourceName));
+            
+
+                foreach(equipmentObject x in eBrew)
+                {
+                    string name;
+                    string type;
+
+                    name = x.name;
+                    type = x.type;
+
+                    if (type == "ranged")
+                    {
+                        rangedWeaponsList.Add(name);
+                    }
+                    else if (type == "melee")
+                    {
+                        meleeWeaponsList.Add(name);
+                    }
+                    else if (type == "armor")
+                    {
+                        armorList.Add(name);
+                    }
+                    else if (type == "tools")
+                    {
+                        toolsList.Add(name);
+                    }
+                    else if (type == "mods")
+                    {
+                        weaponModList.Add(name);
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            catch (IOException)
+            {
+                string message = "Cant find the equipmentHomebrew.json file! Have you moved it? Do you have read access to the directory the program is running from?";
+                string caption = "Error!";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+            }
         }
 
 

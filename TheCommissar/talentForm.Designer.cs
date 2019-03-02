@@ -151,7 +151,6 @@
             this.addTalentButton.TabIndex = 3;
             this.addTalentButton.Text = "Add Talent";
             this.addTalentButton.UseVisualStyleBackColor = true;
-            this.addTalentButton.Click += new System.EventHandler(this.addTalentButton_Click);
             // 
             // talentCancelButton
             // 

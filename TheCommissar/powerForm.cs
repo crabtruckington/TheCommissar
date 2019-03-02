@@ -7,29 +7,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace TheCommissar
 {
     public partial class powerForm : Form
     {
+
+        List<powerObject> customPowerList;
+
+        public class powerObject
+        {
+            public string name { get; set; }
+            public string discipline { get; set; }
+            public string bpcost { get; set; }
+            public string dn { get; set; }
+            public string activation { get; set; }
+            public string duration { get; set; }
+            public string range { get; set; }
+            public string multi { get; set; }
+            public string keywords { get; set; }
+        }
+
         public powerForm()
         {
             InitializeComponent();
+            addHomebrewPowers();
+            powerDetailLabel.Text = "";
+        }
+
+        private void addHomebrewPowers()
+        {
+            string resourceName = Environment.CurrentDirectory + "\\HomebrewExtensions\\powersHomebrew.json";
+
+            //JObject eBrew = JObject.Parse(File.ReadAllText(resourceName));
+
+            try
+            {
+                customPowerList = JsonConvert.DeserializeObject<List<powerObject>>(File.ReadAllText(resourceName));
+                foreach (powerObject x in customPowerList)
+                {
+                    string name = x.name;
+                    powerSelectBox.Items.Add(name);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
         }
 
         private void powerSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string curItem = powerSelectBox.SelectedItem.ToString();
             var result = getPowerDetails(curItem);
-            powerDisciplineLabel.Text = result.Item1.Item2;
-            powerBPCostLabel.Text = "BP Cost: " + Convert.ToString(result.Item1.Item3);
-            powerDNLabel.Text = result.Item1.Item4;
-            powerActivationLabel.Text = result.Item1.Item5;
-            powerDurationLabel.Text = result.Item2.Item1;
-            powerRangeLabel.Text = result.Item2.Item2;
-            powerMultiLabel.Text = result.Item2.Item3;
-            powerKeywordsLabel.Text = result.Item2.Item4;
-            //bpCostLabel.Text = "BP Cost: " + Convert.ToString(bpCost);
+            powerDetailLabel.Text = result.Item1.Item2 + Environment.NewLine + Environment.NewLine +
+                                    "BP Cost: " + result.Item1.Item3 + Environment.NewLine + Environment.NewLine +
+                                    result.Item1.Item4 + Environment.NewLine + Environment.NewLine +
+                                    result.Item1.Item5 + Environment.NewLine + Environment.NewLine +
+                                    result.Item2.Item1 + Environment.NewLine + Environment.NewLine +
+                                    result.Item2.Item2 + Environment.NewLine + Environment.NewLine +
+                                    result.Item2.Item3 + Environment.NewLine + Environment.NewLine +
+                                    result.Item2.Item4;
         }
 
         public string returnPowerDetails()
@@ -633,6 +673,23 @@ namespace TheCommissar
                 range = "Range: ";
                 multi = "Multi-Target: ";
                 keywords = "Keywords: ";
+
+                foreach (powerObject x in customPowerList)
+                {
+                    if (power == x.name)
+                    {
+                        discipline = "Discipline: " + x.discipline;
+                        bpcost = x.bpcost;
+                        dn = "DN: " + x.dn;
+                        activation = "Activation: " + x.activation;
+                        duration = "Duration: " + x.duration;
+                        range = "Range: " + x.range;
+                        multi = "Multi-Target: " + x.multi;
+                        keywords = "Keywords: " + x.keywords;
+
+                    }
+                }
+
             }
             result = Tuple.Create(Tuple.Create(power, discipline, bpcost, dn, activation), Tuple.Create(duration, range, multi, keywords));
             return result;

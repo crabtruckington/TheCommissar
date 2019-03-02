@@ -229,14 +229,7 @@
             this.athleticsLabel = new System.Windows.Forms.Label();
             this.equipment = new System.Windows.Forms.TabPage();
             this.equipTreeBox = new System.Windows.Forms.TreeView();
-            this.equipDamageLabel = new System.Windows.Forms.Label();
-            this.equipArmorRatingLabel = new System.Windows.Forms.Label();
-            this.equipKeywordsLabel = new System.Windows.Forms.Label();
-            this.equipValueLabel = new System.Windows.Forms.Label();
-            this.equipTraitsLabel = new System.Windows.Forms.Label();
-            this.equipSalvoLabel = new System.Windows.Forms.Label();
-            this.equipRangeLabel = new System.Windows.Forms.Label();
-            this.equipAPLabel = new System.Windows.Forms.Label();
+            this.equipDetailsLabel = new System.Windows.Forms.Label();
             this.removeEquipButton = new System.Windows.Forms.Button();
             this.addEquipButton = new System.Windows.Forms.Button();
             this.equipmentLabel = new System.Windows.Forms.Label();
@@ -244,21 +237,12 @@
             this.equipmentTextBox = new System.Windows.Forms.RichTextBox();
             this.cyberAndAugments = new System.Windows.Forms.TabPage();
             this.augDetailsLabel = new System.Windows.Forms.Label();
-            this.augRaceLabel = new System.Windows.Forms.Label();
-            this.augHeaderLabel = new System.Windows.Forms.Label();
             this.removeAugButton = new System.Windows.Forms.Button();
             this.addAugButton = new System.Windows.Forms.Button();
             this.augmeticsBox = new System.Windows.Forms.ListBox();
             this.augmeticHeaderLabel = new System.Windows.Forms.Label();
             this.psychicpowers = new System.Windows.Forms.TabPage();
-            this.powerDisciplineLabel = new System.Windows.Forms.Label();
-            this.powerKeywordsLabel = new System.Windows.Forms.Label();
-            this.powerMultiLabel = new System.Windows.Forms.Label();
-            this.powerRangeLabel = new System.Windows.Forms.Label();
-            this.powerDurationLabel = new System.Windows.Forms.Label();
-            this.powerActivationLabel = new System.Windows.Forms.Label();
-            this.powerDNLabel = new System.Windows.Forms.Label();
-            this.powerBPCostLabel = new System.Windows.Forms.Label();
+            this.powerDescriptionLabel = new System.Windows.Forms.Label();
             this.removePowerButton = new System.Windows.Forms.Button();
             this.addPowerButton = new System.Windows.Forms.Button();
             this.powerBox = new System.Windows.Forms.ListBox();
@@ -292,7 +276,6 @@
             this.speedTraitLabel = new System.Windows.Forms.Label();
             this.resilienceTraitLabel = new System.Windows.Forms.Label();
             this.defenceTraitLabel = new System.Windows.Forms.Label();
-            this.traitsLabel = new System.Windows.Forms.Label();
             this.calcValuesToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.equipModMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -2514,14 +2497,7 @@
             this.equipment.AutoScroll = true;
             this.equipment.BackColor = System.Drawing.Color.WhiteSmoke;
             this.equipment.Controls.Add(this.equipTreeBox);
-            this.equipment.Controls.Add(this.equipDamageLabel);
-            this.equipment.Controls.Add(this.equipArmorRatingLabel);
-            this.equipment.Controls.Add(this.equipKeywordsLabel);
-            this.equipment.Controls.Add(this.equipValueLabel);
-            this.equipment.Controls.Add(this.equipTraitsLabel);
-            this.equipment.Controls.Add(this.equipSalvoLabel);
-            this.equipment.Controls.Add(this.equipRangeLabel);
-            this.equipment.Controls.Add(this.equipAPLabel);
+            this.equipment.Controls.Add(this.equipDetailsLabel);
             this.equipment.Controls.Add(this.removeEquipButton);
             this.equipment.Controls.Add(this.addEquipButton);
             this.equipment.Controls.Add(this.equipmentLabel);
@@ -2557,85 +2533,14 @@
             this.equipTreeBox.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.equipTreeBox_AfterSelect);
             this.equipTreeBox.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.equipTreeBox_NodeMouseClick);
             // 
-            // equipDamageLabel
+            // equipDetailsLabel
             // 
-            this.equipDamageLabel.AutoSize = true;
-            this.equipDamageLabel.Location = new System.Drawing.Point(226, 37);
-            this.equipDamageLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipDamageLabel.Name = "equipDamageLabel";
-            this.equipDamageLabel.Size = new System.Drawing.Size(53, 13);
-            this.equipDamageLabel.TabIndex = 133;
-            this.equipDamageLabel.Text = "Damage: ";
-            // 
-            // equipArmorRatingLabel
-            // 
-            this.equipArmorRatingLabel.AutoSize = true;
-            this.equipArmorRatingLabel.Location = new System.Drawing.Point(226, 137);
-            this.equipArmorRatingLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipArmorRatingLabel.Name = "equipArmorRatingLabel";
-            this.equipArmorRatingLabel.Size = new System.Drawing.Size(37, 13);
-            this.equipArmorRatingLabel.TabIndex = 132;
-            this.equipArmorRatingLabel.Text = "Armor:";
-            // 
-            // equipKeywordsLabel
-            // 
-            this.equipKeywordsLabel.AutoSize = true;
-            this.equipKeywordsLabel.Location = new System.Drawing.Point(226, 187);
-            this.equipKeywordsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipKeywordsLabel.Name = "equipKeywordsLabel";
-            this.equipKeywordsLabel.Size = new System.Drawing.Size(56, 13);
-            this.equipKeywordsLabel.TabIndex = 131;
-            this.equipKeywordsLabel.Text = "Keywords:";
-            // 
-            // equipValueLabel
-            // 
-            this.equipValueLabel.AutoSize = true;
-            this.equipValueLabel.Location = new System.Drawing.Point(226, 162);
-            this.equipValueLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipValueLabel.Name = "equipValueLabel";
-            this.equipValueLabel.Size = new System.Drawing.Size(37, 13);
-            this.equipValueLabel.TabIndex = 130;
-            this.equipValueLabel.Text = "Value:";
-            // 
-            // equipTraitsLabel
-            // 
-            this.equipTraitsLabel.AutoSize = true;
-            this.equipTraitsLabel.Location = new System.Drawing.Point(226, 212);
-            this.equipTraitsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipTraitsLabel.Name = "equipTraitsLabel";
-            this.equipTraitsLabel.Size = new System.Drawing.Size(39, 13);
-            this.equipTraitsLabel.TabIndex = 129;
-            this.equipTraitsLabel.Text = "Traits: ";
-            // 
-            // equipSalvoLabel
-            // 
-            this.equipSalvoLabel.AutoSize = true;
-            this.equipSalvoLabel.Location = new System.Drawing.Point(226, 112);
-            this.equipSalvoLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipSalvoLabel.Name = "equipSalvoLabel";
-            this.equipSalvoLabel.Size = new System.Drawing.Size(40, 13);
-            this.equipSalvoLabel.TabIndex = 128;
-            this.equipSalvoLabel.Text = "Salvo: ";
-            // 
-            // equipRangeLabel
-            // 
-            this.equipRangeLabel.AutoSize = true;
-            this.equipRangeLabel.Location = new System.Drawing.Point(226, 87);
-            this.equipRangeLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipRangeLabel.Name = "equipRangeLabel";
-            this.equipRangeLabel.Size = new System.Drawing.Size(45, 13);
-            this.equipRangeLabel.TabIndex = 127;
-            this.equipRangeLabel.Text = "Range: ";
-            // 
-            // equipAPLabel
-            // 
-            this.equipAPLabel.AutoSize = true;
-            this.equipAPLabel.Location = new System.Drawing.Point(226, 62);
-            this.equipAPLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.equipAPLabel.Name = "equipAPLabel";
-            this.equipAPLabel.Size = new System.Drawing.Size(27, 13);
-            this.equipAPLabel.TabIndex = 126;
-            this.equipAPLabel.Text = "AP: ";
+            this.equipDetailsLabel.Location = new System.Drawing.Point(226, 37);
+            this.equipDetailsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.equipDetailsLabel.Name = "equipDetailsLabel";
+            this.equipDetailsLabel.Size = new System.Drawing.Size(238, 316);
+            this.equipDetailsLabel.TabIndex = 133;
+            this.equipDetailsLabel.Text = "equipDetailsLabel";
             // 
             // removeEquipButton
             // 
@@ -2696,8 +2601,6 @@
             // 
             this.cyberAndAugments.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cyberAndAugments.Controls.Add(this.augDetailsLabel);
-            this.cyberAndAugments.Controls.Add(this.augRaceLabel);
-            this.cyberAndAugments.Controls.Add(this.augHeaderLabel);
             this.cyberAndAugments.Controls.Add(this.removeAugButton);
             this.cyberAndAugments.Controls.Add(this.addAugButton);
             this.cyberAndAugments.Controls.Add(this.augmeticsBox);
@@ -2711,31 +2614,11 @@
             // 
             // augDetailsLabel
             // 
-            this.augDetailsLabel.AutoSize = true;
-            this.augDetailsLabel.Location = new System.Drawing.Point(240, 90);
+            this.augDetailsLabel.Location = new System.Drawing.Point(226, 37);
             this.augDetailsLabel.Name = "augDetailsLabel";
-            this.augDetailsLabel.Size = new System.Drawing.Size(42, 13);
-            this.augDetailsLabel.TabIndex = 45;
-            this.augDetailsLabel.Text = "Details:";
-            // 
-            // augRaceLabel
-            // 
-            this.augRaceLabel.AutoSize = true;
-            this.augRaceLabel.Location = new System.Drawing.Point(241, 64);
-            this.augRaceLabel.Name = "augRaceLabel";
-            this.augRaceLabel.Size = new System.Drawing.Size(36, 13);
-            this.augRaceLabel.TabIndex = 44;
-            this.augRaceLabel.Text = "Race:";
-            // 
-            // augHeaderLabel
-            // 
-            this.augHeaderLabel.AutoSize = true;
-            this.augHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.augHeaderLabel.Location = new System.Drawing.Point(240, 37);
-            this.augHeaderLabel.Name = "augHeaderLabel";
-            this.augHeaderLabel.Size = new System.Drawing.Size(91, 13);
-            this.augHeaderLabel.TabIndex = 43;
-            this.augHeaderLabel.Text = "Implant Details";
+            this.augDetailsLabel.Size = new System.Drawing.Size(300, 316);
+            this.augDetailsLabel.TabIndex = 44;
+            this.augDetailsLabel.Text = "augDetailsLabel";
             // 
             // removeAugButton
             // 
@@ -2780,14 +2663,7 @@
             // 
             this.psychicpowers.AutoScroll = true;
             this.psychicpowers.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.psychicpowers.Controls.Add(this.powerDisciplineLabel);
-            this.psychicpowers.Controls.Add(this.powerKeywordsLabel);
-            this.psychicpowers.Controls.Add(this.powerMultiLabel);
-            this.psychicpowers.Controls.Add(this.powerRangeLabel);
-            this.psychicpowers.Controls.Add(this.powerDurationLabel);
-            this.psychicpowers.Controls.Add(this.powerActivationLabel);
-            this.psychicpowers.Controls.Add(this.powerDNLabel);
-            this.psychicpowers.Controls.Add(this.powerBPCostLabel);
+            this.psychicpowers.Controls.Add(this.powerDescriptionLabel);
             this.psychicpowers.Controls.Add(this.removePowerButton);
             this.psychicpowers.Controls.Add(this.addPowerButton);
             this.psychicpowers.Controls.Add(this.powerBox);
@@ -2801,85 +2677,14 @@
             this.psychicpowers.TabIndex = 3;
             this.psychicpowers.Text = "Psychic Powers";
             // 
-            // powerDisciplineLabel
+            // powerDescriptionLabel
             // 
-            this.powerDisciplineLabel.AutoSize = true;
-            this.powerDisciplineLabel.Location = new System.Drawing.Point(226, 37);
-            this.powerDisciplineLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerDisciplineLabel.Name = "powerDisciplineLabel";
-            this.powerDisciplineLabel.Size = new System.Drawing.Size(55, 13);
-            this.powerDisciplineLabel.TabIndex = 122;
-            this.powerDisciplineLabel.Text = "Discipline:";
-            // 
-            // powerKeywordsLabel
-            // 
-            this.powerKeywordsLabel.AutoSize = true;
-            this.powerKeywordsLabel.Location = new System.Drawing.Point(226, 212);
-            this.powerKeywordsLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerKeywordsLabel.Name = "powerKeywordsLabel";
-            this.powerKeywordsLabel.Size = new System.Drawing.Size(56, 13);
-            this.powerKeywordsLabel.TabIndex = 121;
-            this.powerKeywordsLabel.Text = "Keywords:";
-            // 
-            // powerMultiLabel
-            // 
-            this.powerMultiLabel.AutoSize = true;
-            this.powerMultiLabel.Location = new System.Drawing.Point(226, 187);
-            this.powerMultiLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerMultiLabel.Name = "powerMultiLabel";
-            this.powerMultiLabel.Size = new System.Drawing.Size(66, 13);
-            this.powerMultiLabel.TabIndex = 120;
-            this.powerMultiLabel.Text = "Multi-Target:";
-            // 
-            // powerRangeLabel
-            // 
-            this.powerRangeLabel.AutoSize = true;
-            this.powerRangeLabel.Location = new System.Drawing.Point(226, 162);
-            this.powerRangeLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerRangeLabel.Name = "powerRangeLabel";
-            this.powerRangeLabel.Size = new System.Drawing.Size(42, 13);
-            this.powerRangeLabel.TabIndex = 119;
-            this.powerRangeLabel.Text = "Range:";
-            // 
-            // powerDurationLabel
-            // 
-            this.powerDurationLabel.AutoSize = true;
-            this.powerDurationLabel.Location = new System.Drawing.Point(226, 137);
-            this.powerDurationLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerDurationLabel.Name = "powerDurationLabel";
-            this.powerDurationLabel.Size = new System.Drawing.Size(50, 13);
-            this.powerDurationLabel.TabIndex = 118;
-            this.powerDurationLabel.Text = "Duration:";
-            // 
-            // powerActivationLabel
-            // 
-            this.powerActivationLabel.AutoSize = true;
-            this.powerActivationLabel.Location = new System.Drawing.Point(226, 112);
-            this.powerActivationLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerActivationLabel.Name = "powerActivationLabel";
-            this.powerActivationLabel.Size = new System.Drawing.Size(57, 13);
-            this.powerActivationLabel.TabIndex = 117;
-            this.powerActivationLabel.Text = "Activation:";
-            // 
-            // powerDNLabel
-            // 
-            this.powerDNLabel.AutoSize = true;
-            this.powerDNLabel.Location = new System.Drawing.Point(226, 87);
-            this.powerDNLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerDNLabel.Name = "powerDNLabel";
-            this.powerDNLabel.Size = new System.Drawing.Size(29, 13);
-            this.powerDNLabel.TabIndex = 116;
-            this.powerDNLabel.Text = "DN: ";
-            // 
-            // powerBPCostLabel
-            // 
-            this.powerBPCostLabel.AutoSize = true;
-            this.powerBPCostLabel.Location = new System.Drawing.Point(226, 62);
-            this.powerBPCostLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
-            this.powerBPCostLabel.Name = "powerBPCostLabel";
-            this.powerBPCostLabel.Size = new System.Drawing.Size(48, 13);
-            this.powerBPCostLabel.TabIndex = 115;
-            this.powerBPCostLabel.Text = "BP Cost:";
+            this.powerDescriptionLabel.Location = new System.Drawing.Point(226, 37);
+            this.powerDescriptionLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.powerDescriptionLabel.Name = "powerDescriptionLabel";
+            this.powerDescriptionLabel.Size = new System.Drawing.Size(239, 466);
+            this.powerDescriptionLabel.TabIndex = 122;
+            this.powerDescriptionLabel.Text = "powerDescriptionLabel";
             // 
             // removePowerButton
             // 
@@ -3002,7 +2807,6 @@
             this.summary.Controls.Add(this.speedTraitLabel);
             this.summary.Controls.Add(this.resilienceTraitLabel);
             this.summary.Controls.Add(this.defenceTraitLabel);
-            this.summary.Controls.Add(this.traitsLabel);
             this.summary.Location = new System.Drawing.Point(4, 22);
             this.summary.Name = "summary";
             this.summary.Padding = new System.Windows.Forms.Padding(3);
@@ -3013,7 +2817,7 @@
             // objectiveLabel
             // 
             this.objectiveLabel.AutoSize = true;
-            this.objectiveLabel.Location = new System.Drawing.Point(6, 394);
+            this.objectiveLabel.Location = new System.Drawing.Point(6, 363);
             this.objectiveLabel.Name = "objectiveLabel";
             this.objectiveLabel.Size = new System.Drawing.Size(60, 13);
             this.objectiveLabel.TabIndex = 46;
@@ -3022,7 +2826,7 @@
             // lifetimeBPEarnedLabel
             // 
             this.lifetimeBPEarnedLabel.AutoSize = true;
-            this.lifetimeBPEarnedLabel.Location = new System.Drawing.Point(6, 359);
+            this.lifetimeBPEarnedLabel.Location = new System.Drawing.Point(6, 328);
             this.lifetimeBPEarnedLabel.Name = "lifetimeBPEarnedLabel";
             this.lifetimeBPEarnedLabel.Size = new System.Drawing.Size(63, 13);
             this.lifetimeBPEarnedLabel.TabIndex = 45;
@@ -3031,7 +2835,7 @@
             // rankTraitLabel
             // 
             this.rankTraitLabel.AutoSize = true;
-            this.rankTraitLabel.Location = new System.Drawing.Point(6, 324);
+            this.rankTraitLabel.Location = new System.Drawing.Point(6, 293);
             this.rankTraitLabel.Name = "rankTraitLabel";
             this.rankTraitLabel.Size = new System.Drawing.Size(33, 13);
             this.rankTraitLabel.TabIndex = 44;
@@ -3040,7 +2844,7 @@
             // woundsTotalLabel
             // 
             this.woundsTotalLabel.AutoSize = true;
-            this.woundsTotalLabel.Location = new System.Drawing.Point(96, 67);
+            this.woundsTotalLabel.Location = new System.Drawing.Point(96, 36);
             this.woundsTotalLabel.Name = "woundsTotalLabel";
             this.woundsTotalLabel.Size = new System.Drawing.Size(24, 13);
             this.woundsTotalLabel.TabIndex = 20;
@@ -3049,7 +2853,7 @@
             // shockTotalLabel
             // 
             this.shockTotalLabel.AutoSize = true;
-            this.shockTotalLabel.Location = new System.Drawing.Point(243, 67);
+            this.shockTotalLabel.Location = new System.Drawing.Point(243, 36);
             this.shockTotalLabel.Name = "shockTotalLabel";
             this.shockTotalLabel.Size = new System.Drawing.Size(24, 13);
             this.shockTotalLabel.TabIndex = 19;
@@ -3057,14 +2861,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(59, 64);
+            this.textBox2.Location = new System.Drawing.Point(59, 33);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(36, 20);
             this.textBox2.TabIndex = 35;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(206, 64);
+            this.textBox1.Location = new System.Drawing.Point(206, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(36, 20);
             this.textBox1.TabIndex = 36;
@@ -3072,8 +2876,8 @@
             // damageTrackLabel
             // 
             this.damageTrackLabel.AutoSize = true;
-            this.damageTrackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.damageTrackLabel.Location = new System.Drawing.Point(6, 40);
+            this.damageTrackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.damageTrackLabel.Location = new System.Drawing.Point(6, 9);
             this.damageTrackLabel.Name = "damageTrackLabel";
             this.damageTrackLabel.Size = new System.Drawing.Size(90, 13);
             this.damageTrackLabel.TabIndex = 16;
@@ -3082,8 +2886,8 @@
             // socialTraitsLabel
             // 
             this.socialTraitsLabel.AutoSize = true;
-            this.socialTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.socialTraitsLabel.Location = new System.Drawing.Point(6, 274);
+            this.socialTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socialTraitsLabel.Location = new System.Drawing.Point(6, 243);
             this.socialTraitsLabel.Name = "socialTraitsLabel";
             this.socialTraitsLabel.Size = new System.Drawing.Size(78, 13);
             this.socialTraitsLabel.TabIndex = 15;
@@ -3092,8 +2896,8 @@
             // mentalTraitsLabel
             // 
             this.mentalTraitsLabel.AutoSize = true;
-            this.mentalTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mentalTraitsLabel.Location = new System.Drawing.Point(6, 190);
+            this.mentalTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mentalTraitsLabel.Location = new System.Drawing.Point(6, 159);
             this.mentalTraitsLabel.Name = "mentalTraitsLabel";
             this.mentalTraitsLabel.Size = new System.Drawing.Size(81, 13);
             this.mentalTraitsLabel.TabIndex = 14;
@@ -3102,8 +2906,8 @@
             // combatTraitsLabel
             // 
             this.combatTraitsLabel.AutoSize = true;
-            this.combatTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combatTraitsLabel.Location = new System.Drawing.Point(6, 103);
+            this.combatTraitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatTraitsLabel.Location = new System.Drawing.Point(6, 72);
             this.combatTraitsLabel.Name = "combatTraitsLabel";
             this.combatTraitsLabel.Size = new System.Drawing.Size(85, 13);
             this.combatTraitsLabel.TabIndex = 13;
@@ -3112,7 +2916,7 @@
             // wealthTraitLabel
             // 
             this.wealthTraitLabel.AutoSize = true;
-            this.wealthTraitLabel.Location = new System.Drawing.Point(164, 299);
+            this.wealthTraitLabel.Location = new System.Drawing.Point(164, 268);
             this.wealthTraitLabel.Name = "wealthTraitLabel";
             this.wealthTraitLabel.Size = new System.Drawing.Size(41, 13);
             this.wealthTraitLabel.TabIndex = 12;
@@ -3121,7 +2925,7 @@
             // resolveTraitLabel
             // 
             this.resolveTraitLabel.AutoSize = true;
-            this.resolveTraitLabel.Location = new System.Drawing.Point(164, 240);
+            this.resolveTraitLabel.Location = new System.Drawing.Point(164, 209);
             this.resolveTraitLabel.Name = "resolveTraitLabel";
             this.resolveTraitLabel.Size = new System.Drawing.Size(46, 13);
             this.resolveTraitLabel.TabIndex = 11;
@@ -3130,7 +2934,7 @@
             // corruptionTraitLabel
             // 
             this.corruptionTraitLabel.AutoSize = true;
-            this.corruptionTraitLabel.Location = new System.Drawing.Point(164, 216);
+            this.corruptionTraitLabel.Location = new System.Drawing.Point(164, 185);
             this.corruptionTraitLabel.Name = "corruptionTraitLabel";
             this.corruptionTraitLabel.Size = new System.Drawing.Size(55, 13);
             this.corruptionTraitLabel.TabIndex = 10;
@@ -3139,7 +2943,7 @@
             // woundsTraitLabel
             // 
             this.woundsTraitLabel.AutoSize = true;
-            this.woundsTraitLabel.Location = new System.Drawing.Point(6, 67);
+            this.woundsTraitLabel.Location = new System.Drawing.Point(6, 36);
             this.woundsTraitLabel.Name = "woundsTraitLabel";
             this.woundsTraitLabel.Size = new System.Drawing.Size(47, 13);
             this.woundsTraitLabel.TabIndex = 9;
@@ -3148,7 +2952,7 @@
             // shockTraitLabel
             // 
             this.shockTraitLabel.AutoSize = true;
-            this.shockTraitLabel.Location = new System.Drawing.Point(164, 67);
+            this.shockTraitLabel.Location = new System.Drawing.Point(164, 36);
             this.shockTraitLabel.Name = "shockTraitLabel";
             this.shockTraitLabel.Size = new System.Drawing.Size(38, 13);
             this.shockTraitLabel.TabIndex = 8;
@@ -3157,7 +2961,7 @@
             // soakTraitLabel
             // 
             this.soakTraitLabel.AutoSize = true;
-            this.soakTraitLabel.Location = new System.Drawing.Point(164, 130);
+            this.soakTraitLabel.Location = new System.Drawing.Point(164, 99);
             this.soakTraitLabel.Name = "soakTraitLabel";
             this.soakTraitLabel.Size = new System.Drawing.Size(32, 13);
             this.soakTraitLabel.TabIndex = 7;
@@ -3166,7 +2970,7 @@
             // influenceTraitLabel
             // 
             this.influenceTraitLabel.AutoSize = true;
-            this.influenceTraitLabel.Location = new System.Drawing.Point(6, 299);
+            this.influenceTraitLabel.Location = new System.Drawing.Point(6, 268);
             this.influenceTraitLabel.Name = "influenceTraitLabel";
             this.influenceTraitLabel.Size = new System.Drawing.Size(51, 13);
             this.influenceTraitLabel.TabIndex = 6;
@@ -3175,7 +2979,7 @@
             // passiveAwarenessTraitLabel
             // 
             this.passiveAwarenessTraitLabel.AutoSize = true;
-            this.passiveAwarenessTraitLabel.Location = new System.Drawing.Point(6, 240);
+            this.passiveAwarenessTraitLabel.Location = new System.Drawing.Point(6, 209);
             this.passiveAwarenessTraitLabel.Name = "passiveAwarenessTraitLabel";
             this.passiveAwarenessTraitLabel.Size = new System.Drawing.Size(99, 13);
             this.passiveAwarenessTraitLabel.TabIndex = 5;
@@ -3184,7 +2988,7 @@
             // convictionTraitLabel
             // 
             this.convictionTraitLabel.AutoSize = true;
-            this.convictionTraitLabel.Location = new System.Drawing.Point(6, 215);
+            this.convictionTraitLabel.Location = new System.Drawing.Point(6, 184);
             this.convictionTraitLabel.Name = "convictionTraitLabel";
             this.convictionTraitLabel.Size = new System.Drawing.Size(57, 13);
             this.convictionTraitLabel.TabIndex = 4;
@@ -3193,7 +2997,7 @@
             // speedTraitLabel
             // 
             this.speedTraitLabel.AutoSize = true;
-            this.speedTraitLabel.Location = new System.Drawing.Point(164, 155);
+            this.speedTraitLabel.Location = new System.Drawing.Point(164, 124);
             this.speedTraitLabel.Name = "speedTraitLabel";
             this.speedTraitLabel.Size = new System.Drawing.Size(38, 13);
             this.speedTraitLabel.TabIndex = 3;
@@ -3202,7 +3006,7 @@
             // resilienceTraitLabel
             // 
             this.resilienceTraitLabel.AutoSize = true;
-            this.resilienceTraitLabel.Location = new System.Drawing.Point(6, 155);
+            this.resilienceTraitLabel.Location = new System.Drawing.Point(6, 124);
             this.resilienceTraitLabel.Name = "resilienceTraitLabel";
             this.resilienceTraitLabel.Size = new System.Drawing.Size(56, 13);
             this.resilienceTraitLabel.TabIndex = 2;
@@ -3211,21 +3015,11 @@
             // defenceTraitLabel
             // 
             this.defenceTraitLabel.AutoSize = true;
-            this.defenceTraitLabel.Location = new System.Drawing.Point(6, 128);
+            this.defenceTraitLabel.Location = new System.Drawing.Point(6, 97);
             this.defenceTraitLabel.Name = "defenceTraitLabel";
             this.defenceTraitLabel.Size = new System.Drawing.Size(48, 13);
             this.defenceTraitLabel.TabIndex = 1;
             this.defenceTraitLabel.Text = "Defence";
-            // 
-            // traitsLabel
-            // 
-            this.traitsLabel.AutoSize = true;
-            this.traitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.traitsLabel.Location = new System.Drawing.Point(6, 6);
-            this.traitsLabel.Name = "traitsLabel";
-            this.traitsLabel.Size = new System.Drawing.Size(39, 13);
-            this.traitsLabel.TabIndex = 0;
-            this.traitsLabel.Text = "Traits";
             // 
             // equipModMenu
             // 
@@ -3508,7 +3302,6 @@
         private System.Windows.Forms.Label speedTraitLabel;
         private System.Windows.Forms.Label resilienceTraitLabel;
         private System.Windows.Forms.Label defenceTraitLabel;
-        private System.Windows.Forms.Label traitsLabel;
         private System.Windows.Forms.Label woundsTotalLabel;
         private System.Windows.Forms.Label shockTotalLabel;
         private System.Windows.Forms.TextBox textBox2;
@@ -3576,32 +3369,16 @@
         private System.Windows.Forms.ListBox augmeticsBox;
         private System.Windows.Forms.Label augmeticHeaderLabel;
         private System.Windows.Forms.Label augDetailsLabel;
-        private System.Windows.Forms.Label augRaceLabel;
-        private System.Windows.Forms.Label augHeaderLabel;
-        private System.Windows.Forms.Label powerKeywordsLabel;
-        private System.Windows.Forms.Label powerMultiLabel;
-        private System.Windows.Forms.Label powerRangeLabel;
-        private System.Windows.Forms.Label powerDurationLabel;
-        private System.Windows.Forms.Label powerActivationLabel;
-        private System.Windows.Forms.Label powerDNLabel;
-        private System.Windows.Forms.Label powerBPCostLabel;
         private System.Windows.Forms.Button removePowerButton;
         private System.Windows.Forms.Button addPowerButton;
         private System.Windows.Forms.ListBox powerBox;
         private System.Windows.Forms.Label psychicPowersLabel;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.RichTextBox powersTextBox;
-        private System.Windows.Forms.Label powerDisciplineLabel;
+        private System.Windows.Forms.Label powerDescriptionLabel;
         private System.Windows.Forms.ToolStripStatusLabel bpSpentOnPowersLabel;
         private System.Windows.Forms.TreeView equipTreeBox;
-        private System.Windows.Forms.Label equipDamageLabel;
-        private System.Windows.Forms.Label equipArmorRatingLabel;
-        private System.Windows.Forms.Label equipKeywordsLabel;
-        private System.Windows.Forms.Label equipValueLabel;
-        private System.Windows.Forms.Label equipTraitsLabel;
-        private System.Windows.Forms.Label equipSalvoLabel;
-        private System.Windows.Forms.Label equipRangeLabel;
-        private System.Windows.Forms.Label equipAPLabel;
+        private System.Windows.Forms.Label equipDetailsLabel;
         private System.Windows.Forms.Button removeEquipButton;
         private System.Windows.Forms.Button addEquipButton;
         private System.Windows.Forms.Label equipmentLabel;

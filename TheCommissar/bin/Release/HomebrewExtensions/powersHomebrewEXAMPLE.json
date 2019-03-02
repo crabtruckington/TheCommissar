@@ -1,0 +1,46 @@
+/* This file allows you to add custom Psyker Powers */
+/* All entries should go between the [ and ] brackets */
+/* All entries MUST be in the following format: 
+
+{
+    "name": "Testing Custom Power",
+    "discipline": "testing discipline",
+    "bpcost": "11",
+    "dn": "testing DN",
+    "activation": "Testing activation",
+    "duration": "Testing duration",
+    "range": "Testing range",
+    "multi": "Testing multi target",
+    "keywords": "Testing keywords"
+  }
+
+*/
+/* and please note the comma after each entry EXCEPT the last, see the example file if youre not familiar with JSON */
+/* you can use \u00A0 to set a non-breaking space within long descriptions to prevent them from wrapping strangely, ex: long\u00A0string */
+/* use \u2011 for a nonbreaking hyphen ex: Two\u2011\Handed */
+/* All values must be strings!! Do not use other datatypes, you will probably receive an error or crash the program */
+/* Please do not make the descriptions too long, there is a limited amount of space, approximately 50 characters. If you exceed this, you will understand.*/
+[
+  {
+    "name": "Testing Custom Power",
+    "discipline": "testing discipline",
+    "bpcost": "11",
+    "dn": "testing DN",
+    "activation": "Testing activation",
+    "duration": "Testing duration",
+    "range": "Testing range",
+    "multi": "Testing multi target",
+    "keywords": "Testing keywords"
+  },
+  {
+    "name": "Testing Custom Power2",
+    "discipline": "testing discipline2",
+    "bpcost": "22",
+    "dn": "testing DN2",
+    "activation": "Testing activation2",
+    "duration": "Testing duration2",
+    "range": "Testing range2",
+    "multi": "Testing multi target2",
+    "keywords": "Testing keywords2"
+  }
+]

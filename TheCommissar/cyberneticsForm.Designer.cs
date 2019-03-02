@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cyberneticsForm));
             this.augSelectBox = new System.Windows.Forms.ListBox();
-            this.augHeaderLabel = new System.Windows.Forms.Label();
-            this.augRaceLabel = new System.Windows.Forms.Label();
             this.augDetailsLabel = new System.Windows.Forms.Label();
             this.augCancelButton = new System.Windows.Forms.Button();
             this.addAugButton = new System.Windows.Forms.Button();
@@ -79,34 +77,13 @@
             this.augSelectBox.TabIndex = 1;
             this.augSelectBox.SelectedIndexChanged += new System.EventHandler(this.augSelectBox_SelectedIndexChanged);
             // 
-            // augHeaderLabel
-            // 
-            this.augHeaderLabel.AutoSize = true;
-            this.augHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.augHeaderLabel.Location = new System.Drawing.Point(297, 12);
-            this.augHeaderLabel.Name = "augHeaderLabel";
-            this.augHeaderLabel.Size = new System.Drawing.Size(91, 13);
-            this.augHeaderLabel.TabIndex = 2;
-            this.augHeaderLabel.Text = "Implant Details";
-            // 
-            // augRaceLabel
-            // 
-            this.augRaceLabel.AutoSize = true;
-            this.augRaceLabel.Location = new System.Drawing.Point(298, 39);
-            this.augRaceLabel.Name = "augRaceLabel";
-            this.augRaceLabel.Size = new System.Drawing.Size(36, 13);
-            this.augRaceLabel.TabIndex = 3;
-            this.augRaceLabel.Text = "Race:";
-            // 
             // augDetailsLabel
             // 
-            this.augDetailsLabel.AutoSize = true;
-            this.augDetailsLabel.Location = new System.Drawing.Point(297, 65);
+            this.augDetailsLabel.Location = new System.Drawing.Point(298, 12);
             this.augDetailsLabel.Name = "augDetailsLabel";
-            this.augDetailsLabel.Size = new System.Drawing.Size(42, 13);
-            this.augDetailsLabel.TabIndex = 4;
-            this.augDetailsLabel.Text = "Details:";
-            this.augDetailsLabel.Click += new System.EventHandler(this.label1_Click);
+            this.augDetailsLabel.Size = new System.Drawing.Size(268, 384);
+            this.augDetailsLabel.TabIndex = 3;
+            this.augDetailsLabel.Text = "augDetailsLabel";
             // 
             // augCancelButton
             // 
@@ -136,8 +113,6 @@
             this.Controls.Add(this.augCancelButton);
             this.Controls.Add(this.addAugButton);
             this.Controls.Add(this.augDetailsLabel);
-            this.Controls.Add(this.augRaceLabel);
-            this.Controls.Add(this.augHeaderLabel);
             this.Controls.Add(this.augSelectBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cyberneticsForm";
@@ -145,15 +120,12 @@
             this.Text = "Add Augments and Cybernetics";
             this.Load += new System.EventHandler(this.cyberneticsForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox augSelectBox;
-        private System.Windows.Forms.Label augHeaderLabel;
-        private System.Windows.Forms.Label augRaceLabel;
         private System.Windows.Forms.Label augDetailsLabel;
         private System.Windows.Forms.Button augCancelButton;
         private System.Windows.Forms.Button addAugButton;

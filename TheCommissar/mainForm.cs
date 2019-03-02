@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace TheCommissar
 {
@@ -32,7 +29,17 @@ namespace TheCommissar
         string raceBenefitsList = "";
         string archetypeBenefitsList = "";
         List<Tuple<string, int>> archetypeRequirementsList = new List<Tuple<string, int>>();
+        List<customArchetype> customArchetypeList = new List<customArchetype>();
 
+
+        public class customArchetype
+        {
+            public string name { get; set; }
+            public int bpCost { get; set; }
+            public string racialBonus { get; set; }
+            public List<Dictionary<string, string>> archetypes { get; set; }
+            public string tier { get; set; }
+        }
 
         public mainForm()
         {
@@ -70,6 +77,44 @@ namespace TheCommissar
             rankValueBox.Value = 1;
             wealthValueBox.Value = 0;
             updateBuildPoints(0);
+
+            // set equipment details label
+            equipDetailsLabel.Text = "";
+            equipDetailsLabel.Text += "Damage:" + Environment.NewLine + Environment.NewLine +
+                                      "AP:" + Environment.NewLine + Environment.NewLine +
+                                      "Range:" + Environment.NewLine + Environment.NewLine +
+                                      "Salvo:" + Environment.NewLine + Environment.NewLine +
+                                      "Armor" + Environment.NewLine + Environment.NewLine +
+                                      "Value:" + Environment.NewLine + Environment.NewLine +
+                                      "Keywords:" + Environment.NewLine + Environment.NewLine +
+                                      "Traits:";
+
+            // grab custom archetypes
+            string resourceName = Environment.CurrentDirectory + "\\HomebrewExtensions\\characterHomebrew.json";
+
+            try
+            {
+                customArchetypeList = JsonConvert.DeserializeObject<List<customArchetype>>(File.ReadAllText(resourceName));
+
+                foreach (customArchetype x in customArchetypeList)
+                {
+                    string name = x.name;
+                }
+
+            }
+            catch (IOException)
+            {
+                string message = "Cant find the characterHomebrew.json file! Have you moved it? Do you have read access to the directory the program is running from?";
+                string caption = "Error!";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+            }
+
+            augDetailsLabel.Text = "";
+            powerDescriptionLabel.Text = "";
+
+
+            //List<equipmentObject> eBrew = JsonConvert.DeserializeObject<List<equipmentObject>>(File.ReadAllText(resourceName));
         }
 
         // this does much more than just update buildpoints, it basically refreshes all the computed values and updates labels, but the input is for BP
@@ -930,8 +975,8 @@ namespace TheCommissar
             cyberneticsForm cyber = new cyberneticsForm();
             var results = new Tuple<string, string, string>("", "", "");
             results = cyber.getAugDetails(Convert.ToString(augmeticsBox.SelectedItem));
-            augRaceLabel.Text = results.Item2;
-            augDetailsLabel.Text = results.Item3;
+            augDetailsLabel.Text = results.Item2 + Environment.NewLine + Environment.NewLine +
+                                   results.Item3;
         }
 
 
@@ -969,14 +1014,14 @@ namespace TheCommissar
             powerForm powers = new powerForm();
             var results = Tuple.Create(Tuple.Create("", "", "", "", ""), Tuple.Create("", "", "", ""));
             results = powers.getPowerDetails(Convert.ToString(powerBox.SelectedItem));
-            powerDisciplineLabel.Text = results.Item1.Item2;
-            powerBPCostLabel.Text = "BP Cost: " + Convert.ToString(results.Item1.Item3);
-            powerDNLabel.Text = results.Item1.Item4;
-            powerActivationLabel.Text = results.Item1.Item5;
-            powerDurationLabel.Text = results.Item2.Item1;
-            powerRangeLabel.Text = results.Item2.Item2;
-            powerMultiLabel.Text = results.Item2.Item3;
-            powerKeywordsLabel.Text = results.Item2.Item4;
+            powerDescriptionLabel.Text = results.Item1.Item2 + Environment.NewLine + Environment.NewLine +
+                                         "BP Cost: " + results.Item1.Item3 + Environment.NewLine + Environment.NewLine +
+                                         results.Item1.Item4 + Environment.NewLine + Environment.NewLine +
+                                         results.Item1.Item5 + Environment.NewLine + Environment.NewLine +
+                                         results.Item2.Item1 + Environment.NewLine + Environment.NewLine +
+                                         results.Item2.Item2 + Environment.NewLine + Environment.NewLine +
+                                         results.Item2.Item3 + Environment.NewLine + Environment.NewLine +
+                                         results.Item2.Item4;
         }
 
         // adding weapon mods
@@ -1028,36 +1073,28 @@ namespace TheCommissar
             if (curItem.Parent != null)
             {
                 var result = equip.getEquipValues(curItem.Text);
-                equipDamageLabel.Text = result.Item1.Item2;
-                equipAPLabel.Text = result.Item1.Item3;
-                equipRangeLabel.Text = result.Item1.Item4;
-                equipSalvoLabel.Text = result.Item1.Item5;
-                equipArmorRatingLabel.Text = result.Item2.Item1;
-                equipValueLabel.Text = result.Item2.Item2;
-                equipKeywordsLabel.Text = result.Item2.Item3;
-                equipTraitsLabel.Text = result.Item2.Item4;
 
-                if (equipKeywordsLabel.Text.Contains(Environment.NewLine))
-                {
-                    equipTraitsLabel.Visible = false;
-                    equipKeywordsLabel.Text += Environment.NewLine + Environment.NewLine + equipTraitsLabel.Text;
-                }
-                else
-                {
-                    equipTraitsLabel.Visible = true;
-                }
+                equipDetailsLabel.Text = "";
+                equipDetailsLabel.Text += result.Item1.Item2 + Environment.NewLine + Environment.NewLine +
+                                          result.Item1.Item3 + Environment.NewLine + Environment.NewLine +
+                                          result.Item1.Item4 + Environment.NewLine + Environment.NewLine +
+                                          result.Item1.Item5 + Environment.NewLine + Environment.NewLine +
+                                          result.Item2.Item1 + Environment.NewLine + Environment.NewLine +
+                                          result.Item2.Item2 + Environment.NewLine + Environment.NewLine +
+                                          result.Item2.Item3 + Environment.NewLine + Environment.NewLine +
+                                          result.Item2.Item4;
             }
             else
             {
-                equipTraitsLabel.Visible = true;
-                equipDamageLabel.Text = "Damage: ";
-                equipAPLabel.Text = "AP: ";
-                equipRangeLabel.Text = "Range: ";
-                equipSalvoLabel.Text = "Salvo: ";
-                equipArmorRatingLabel.Text = "Armor: ";
-                equipValueLabel.Text = "Value: ";
-                equipKeywordsLabel.Text = "Keywords: ";
-                equipTraitsLabel.Text = "Traits: ";
+                equipDetailsLabel.Text = "";
+                equipDetailsLabel.Text += "Damage:" + Environment.NewLine + Environment.NewLine +
+                                          "AP:" + Environment.NewLine + Environment.NewLine +
+                                          "Range:" + Environment.NewLine + Environment.NewLine +
+                                          "Salvo:" + Environment.NewLine + Environment.NewLine +
+                                          "Armor" + Environment.NewLine + Environment.NewLine +
+                                          "Value:" + Environment.NewLine + Environment.NewLine +
+                                          "Keywords:" + Environment.NewLine + Environment.NewLine +
+                                          "Traits:";
             }
         }
 
@@ -1102,7 +1139,18 @@ namespace TheCommissar
 
                         //get the armor value and set it so we can do things with it later
                         string armorValueNumber = results.Item2.Item1.Substring(results.Item2.Item1.Length - 1);
-                        int armorValue = Convert.ToInt32((armorValueNumber));
+                        int armorValue = 0;
+                        try
+                        {
+                            armorValue = Convert.ToInt32((armorValueNumber));
+                        }
+                        catch
+                        {
+                            string message = "You have entered a non-numeric value for Armor!! Please check your homebrew file, only values from 0\u20119 are accepted!!";
+                            string caption = "Error!";
+                            MessageBoxButtons button = MessageBoxButtons.OK;
+                            MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+                        }
                         armorFromEquip += armorValue;
                     }
                 }
@@ -1168,6 +1216,14 @@ namespace TheCommissar
             if (tierSelection >= 4)
             {
                 speciesSelect.Items.Add("Primaris Astartes, 100BP");
+            }
+
+            foreach (customArchetype x in customArchetypeList)
+            {
+                if (Convert.ToInt32(x.tier) <= tierSelection)
+                {
+                    speciesSelect.Items.Add(x.name + ", " + Convert.ToString(x.bpCost) + "BP");
+                }
             }
         }
 
@@ -1277,6 +1333,22 @@ namespace TheCommissar
                 }
             }
 
+
+            // add in custom archetypes
+
+            foreach (customArchetype x in customArchetypeList)
+            {
+                foreach (Dictionary<string, string> y in x.archetypes)
+                {
+                    if (Convert.ToInt32(y["tier"]) <= tierSelection)
+                    {
+                        archetypeSelect.Items.Add(y["archetype"]);
+                    }
+                }
+            }
+
+
+
             if (raceSelection == "Eldar, 10BP")
             {
                 raceBenefitsList = "Eldar: +1\u00A0Agility, +2DN\u00A0to all Interaction tests against " +
@@ -1286,7 +1358,7 @@ namespace TheCommissar
                                           "Eldar may purchase 1\u00A0more power per Tier level if they " +
                                           "choose to do this. " + Environment.NewLine + Environment.NewLine;
             }
-            if (raceSelection == "Ork, 10BP")
+            else if (raceSelection == "Ork, 10BP")
             {
 
                 raceBenefitsList = "Ork: +1\u00A0Toughness. +2DN\u00A0to all Interaction tests " +
@@ -1294,7 +1366,7 @@ namespace TheCommissar
                                           "tests. Orks calculate Influence using Strength rather " + 
                                           "than Fellowship. " + Environment.NewLine + Environment.NewLine;
             }
-            if (raceSelection == "Necron, 20BP")
+            else if (raceSelection == "Necron, 20BP")
             {
                 raceBenefitsList = "Necron: +1\u00A0Shock, +1\u00A0Resilience. +2DN\u00A0to all " + 
                                           "Interaction tests against anyone without <Necron> " + 
@@ -1303,14 +1375,14 @@ namespace TheCommissar
                                           "face a terrifying threat (GM\u00A0Discretion), make an Insanity " + 
                                           "test using the same mechanics as Corruption." + Environment.NewLine + Environment.NewLine;                
             }
-            if (raceSelection == "Adeptus Astartes, 50BP")
+            else if (raceSelection == "Adeptus Astartes, 50BP")
             {
                 raceBenefitsList = "Adeptus Astartes: +1\u00A0Strength, +1\u00A0Agility, +1\u00A0Toughness, " +
                                           "+1\u00A0Resolve. Space Marines add +1/2\u00A0Rank icons to attacks " + 
                                           "against Mobs. Space Marines do not bleed. You may add " +
                                           "+1\u00A0to any test using their implants, at GM\u00A0discretion. " + Environment.NewLine + Environment.NewLine;
             }
-            if (raceSelection == "Primaris Astartes, 100BP")
+            else if (raceSelection == "Primaris Astartes, 100BP")
             {
                 raceBenefitsList = "Primaris Astartes: +2\u00A0Strength, +1\u00A0Agility, " +
                                           "+1\u00A0Toughness, +1\u00A0Resolve, +4\u00A0Wounds. Space Marines add " +
@@ -1319,6 +1391,18 @@ namespace TheCommissar
                                           "implants, at GM\u00A0discretion. " + Environment.NewLine + Environment.NewLine;
 
                 
+            }
+            else
+            {
+                raceBenefitsList = "";
+
+                foreach (customArchetype x in customArchetypeList)
+                {
+                    if (raceSelection == x.name  + ", " + Convert.ToString(x.bpCost) + "BP")
+                    {
+                        raceBenefitsList = x.racialBonus + Environment.NewLine + Environment.NewLine;
+                    }
+                }
             }
 
         }
@@ -1506,7 +1590,7 @@ namespace TheCommissar
 
 
             }
-            if (selectedArchetype == "Sister Hospitaller" || selectedArchetype == "Sister of Battle")
+            else if (selectedArchetype == "Sister Hospitaller" || selectedArchetype == "Sister of Battle")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1: Describe how faith and/or sacrifice in the" + Environment.NewLine +
                                                                                             "     Emperor's name brings success." + Environment.NewLine + Environment.NewLine +
@@ -1550,7 +1634,7 @@ namespace TheCommissar
 
 
             }
-            if (selectedArchetype == "Imperial Guardsman" || selectedArchetype == "Tempestus Scion" || selectedArchetype == "Imperial Commissar")
+            else if (selectedArchetype == "Imperial Guardsman" || selectedArchetype == "Tempestus Scion" || selectedArchetype == "Imperial Commissar")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Express confidence (or the opposite!) in" + Environment.NewLine +
                                                                                             "     the virtue of overwhelming numbers and firepower." + Environment.NewLine + Environment.NewLine +
@@ -1604,7 +1688,7 @@ namespace TheCommissar
 
 
             }
-            if (selectedArchetype == "Space Marine Scout" || selectedArchetype == "Tactical Space Marine" || selectedArchetype == "Primaris Marine Intercessor")
+            else if (selectedArchetype == "Space Marine Scout" || selectedArchetype == "Tactical Space Marine" || selectedArchetype == "Primaris Marine Intercessor")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Call upon your Chapter's Primarch as you" + Environment.NewLine +
                                                                                             "     defeat an enemy." + Environment.NewLine + Environment.NewLine +
@@ -1661,7 +1745,7 @@ namespace TheCommissar
 
 
             }
-            if (selectedArchetype == "Inquisitional Acolyte" || selectedArchetype == "Inquisitorial Adept" || selectedArchetype == "Sanctioned Psyker" ||
+            else if (selectedArchetype == "Inquisitional Acolyte" || selectedArchetype == "Inquisitorial Adept" || selectedArchetype == "Sanctioned Psyker" ||
                 selectedArchetype == "Inquisitor" || selectedArchetype == "Rogue Trader")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Solve a problem using wealth, influence, psychic" + Environment.NewLine +
@@ -1744,7 +1828,7 @@ namespace TheCommissar
 
 
             }
-            if (selectedArchetype == "Skitarius" || selectedArchetype == "Tech-Priest")
+            else if (selectedArchetype == "Skitarius" || selectedArchetype == "Tech-Priest")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Praise the Omnissiah as you commune with a" + Environment.NewLine +
                                                                                             "     machine-spirit (a successful Tech test counts" + Environment.NewLine +
@@ -1783,7 +1867,7 @@ namespace TheCommissar
                 }
 
             }
-            if (selectedArchetype == "Hive Ganger" || selectedArchetype == "Scavvy" || selectedArchetype == "Desperado")
+            else if (selectedArchetype == "Hive Ganger" || selectedArchetype == "Scavvy" || selectedArchetype == "Desperado")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Compare the current situation to a crime you" + Environment.NewLine +
                                                                                             "     once observed (or participated in)." + Environment.NewLine + Environment.NewLine +
@@ -1829,7 +1913,7 @@ namespace TheCommissar
                 }
 
             }
-            if (selectedArchetype == "Cultist" || selectedArchetype == "Chaos Space Marine" || selectedArchetype == "Heretek" || selectedArchetype == "Rogue Psyker")
+            else if (selectedArchetype == "Cultist" || selectedArchetype == "Chaos Space Marine" || selectedArchetype == "Heretek" || selectedArchetype == "Rogue Psyker")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Describe the benefit (or lack thereof!) of" + Environment.NewLine +
                                                                                             "     gaining the attention of the Ruinous Powers." + Environment.NewLine + Environment.NewLine +
@@ -1890,7 +1974,7 @@ namespace TheCommissar
 
 
             }
-            if (selectedArchetype == "Eldar Corsair" || selectedArchetype == "Eldar Ranger" || selectedArchetype == "Eldar Warlock")
+            else if (selectedArchetype == "Eldar Corsair" || selectedArchetype == "Eldar Ranger" || selectedArchetype == "Eldar Warlock")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Unfavourably evaluate a facet of another species" + Environment.NewLine +
                                                                                             "     against Eldar culture, technology or art." + Environment.NewLine + Environment.NewLine +
@@ -1939,7 +2023,7 @@ namespace TheCommissar
                 }
             }
 
-            if (selectedArchetype == "Ork Boy" || selectedArchetype == "Ork Kommando" || selectedArchetype == "Ork Nob")
+            else if (selectedArchetype == "Ork Boy" || selectedArchetype == "Ork Kommando" || selectedArchetype == "Ork Nob")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Reminisce on the traditions of your Ork Clan," + Environment.NewLine +
                                                                                             "     and compare them to your current situation." + Environment.NewLine + Environment.NewLine +
@@ -1988,7 +2072,7 @@ namespace TheCommissar
 
             }
 
-            if (selectedArchetype == "Necron Warrior" || selectedArchetype ==  "Necron Nemesor" || selectedArchetype == "Necron Cryptek")
+            else if (selectedArchetype == "Necron Warrior" || selectedArchetype ==  "Necron Nemesor" || selectedArchetype == "Necron Cryptek")
             {
                 objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + "1. Remind another Necron of the Overlords" + Environment.NewLine +
                                                                                           "     wisdom and infallibility in a difficult" + Environment.NewLine +
@@ -2040,6 +2124,25 @@ namespace TheCommissar
                     archetypeRequirementsList.Add(Tuple.Create("psychicRatingLabel", 3));
                 }
             }
+
+            else
+            {
+                foreach (customArchetype x in customArchetypeList)
+                {
+                    if (raceSelection == x.name + ", " + Convert.ToString(x.bpCost) + "BP")
+                    {
+                        foreach (Dictionary<string, string> y in x.archetypes)
+                        {
+                            if (y["archetype"] == selectedArchetype)
+                            {
+                                archetypeBenefitsList = y["archetypeDescription"];
+                                archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 1));
+                            }
+                        }
+                    }
+                }
+            }
+
 
             archetypeSelection = archetypeSelect.SelectedItem.ToString();
             updateBuildPoints(0);

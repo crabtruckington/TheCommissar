@@ -1,0 +1,47 @@
+/* This file allows you to add homebrew player races. */
+/* All entries should go between the [ and ] brackets */
+/* All entries MUST be in the following format: 
+{
+  "name": "Tau",
+  "bpcost": "20",
+  "racialBonus": "Tau: +2 Fellowship. +2DN to all Interaction tests against characters with the <Imperium> keyword. -2DN to all Interaction tests against characters without the <Imperium> keyword.",
+  "archetypes": [
+    {
+      "archetype": "Infiltrator",
+      "archetypeDescription": "Tau Infiltrator: -1DN to all stealth tests.",
+      "tier": "1"
+    },
+    {
+      "archetype": "Sapper",
+      "archetypeDescription": "Tau Sapper: -1DN to all Tech tests to set explosives.",
+      "tier": "3"
+    }
+  ],
+  "tier": "1"
+}
+*/
+/* and please note the comma after each entry EXCEPT the last, see the example file if youre not familiar with JSON */
+/* you can use \u00A0 to set a non-breaking space within long descriptions to prevent them from wrapping strangely, ex: long\u00A0string */
+/* use \u2011 for a nonbreaking hyphen ex: Two\u2011\Handed */
+/* All values must be strings!! Do not use other datatypes, you will probably receive an error or crash the program */
+/*  Prerequisite Validation will NOT work for Homebrew races, a default check of 1 strength will be used instead. You may not have less than 1 in any attribute so this shouldnt matter. */
+[
+  {
+    "name": "Tau",
+    "bpcost": "20",
+    "racialBonus": "Tau: +2 Fellowship. +2DN to all Interaction tests against characters with the <Imperium> keyword. -2DN to all Interaction tests against characters without the <Imperium> keyword.",
+    "archetypes": [
+      {
+        "archetype": "Infiltrator",
+        "archetypeDescription": "Tau Infiltrator: -1DN to all stealth tests.",
+        "tier": "1"
+      },
+      {
+        "archetype": "Sapper",
+        "archetypeDescription": "Tau Sapper: -1DN to all Tech tests to set explosives.",
+        "tier": "3"
+      }
+    ],
+    "tier": "1"
+  }
+]

@@ -1,35 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace TheCommissar
 {
     public partial class cyberneticsForm : Form
     {
         Tuple<string, string, string> returnedAug;
+        List<cyberObject> customCyberList;
+
+        public class cyberObject
+        {
+            public string name { get; set; }
+            public string race { get; set; }
+            public string details { get; set; }
+        }
+
         public cyberneticsForm()
         {
             InitializeComponent();
+            addHomebrewAugments();
+            augDetailsLabel.Text = "";
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void addHomebrewAugments()
         {
+            string resourceName = Environment.CurrentDirectory + "\\HomebrewExtensions\\cyberHomebrew.json";
 
+            //JObject eBrew = JObject.Parse(File.ReadAllText(resourceName));
+
+            try
+            {
+                customCyberList = JsonConvert.DeserializeObject<List<cyberObject>>(File.ReadAllText(resourceName));
+                foreach (cyberObject x in customCyberList)
+                {
+                    string name = x.name;
+                    augSelectBox.Items.Add(name);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
         }
 
         private void augSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string curItem = augSelectBox.SelectedItem.ToString();
             var result = getAugDetails(curItem);
-            augRaceLabel.Text = result.Item2;
-            augDetailsLabel.Text = result.Item3;
+            augDetailsLabel.Text = result.Item2 + Environment.NewLine + Environment.NewLine +
+                                   result.Item3;
             returnedAug = result;
             //bpCostLabel.Text = "BP Cost: " + Convert.ToString(bpCost);
         }
@@ -205,9 +228,16 @@ namespace TheCommissar
             }
             else
             {
-                aug = "";
                 race = "";
                 details = "";
+                foreach (cyberObject x in customCyberList)
+                {
+                    if (aug == x.name)
+                    {
+                        race = "Race: " + x.race;
+                        details = "Details: " + x.details;
+                    }
+                }
             }
             result = Tuple.Create(aug, race, details);
             return result;
