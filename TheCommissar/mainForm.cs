@@ -39,6 +39,7 @@ namespace TheCommissar
             public string racialBonus { get; set; }
             public List<Dictionary<string, string>> archetypes { get; set; }
             public string tier { get; set; }
+            public int speed { get; set; }
         }
 
         public mainForm()
@@ -95,12 +96,6 @@ namespace TheCommissar
             try
             {
                 customArchetypeList = JsonConvert.DeserializeObject<List<customArchetype>>(File.ReadAllText(resourceName));
-
-                foreach (customArchetype x in customArchetypeList)
-                {
-                    string name = x.name;
-                }
-
             }
             catch (IOException)
             {
@@ -1365,11 +1360,14 @@ namespace TheCommissar
 
             foreach (customArchetype x in customArchetypeList)
             {
-                foreach (Dictionary<string, string> y in x.archetypes)
+                if (raceSelection == x.name + ", " + Convert.ToString(x.bpCost) + "BP")
                 {
-                    if (Convert.ToInt32(y["tier"]) <= tierSelection)
+                    foreach (Dictionary<string, string> y in x.archetypes)
                     {
-                        archetypeSelect.Items.Add(y["archetype"]);
+                        if (Convert.ToInt32(y["tier"]) <= tierSelection)
+                        {
+                            archetypeSelect.Items.Add(y["archetype"]);
+                        }
                     }
                 }
             }
@@ -1507,6 +1505,19 @@ namespace TheCommissar
                 //changeAttributeValue("speed", 6);
                 attSpeed.Value = 6;
             }
+            else
+            {
+                foreach (customArchetype x in customArchetypeList)
+                {
+                    if (raceSelection == x.name + ", " + Convert.ToString(x.bpCost) + "BP")
+                    {
+                        bpSpentOnRace = x.bpCost;
+                        attSpeed.Value = x.speed;
+                        break;
+                    }
+                }
+            }
+
             updateBuildPoints(0);
         }
 
@@ -1525,43 +1536,62 @@ namespace TheCommissar
                 bpSpentOnArchetype = 0;
 
             }
-            if (selectedArchetype == "Scavvy")
+            else if (selectedArchetype == "Scavvy")
             {
                 bpSpentOnArchetype = 10;
             }
-            if (selectedArchetype == "Death Cult Assassin" || selectedArchetype == "Space Marine Scout")
+            else if (selectedArchetype == "Death Cult Assassin" || selectedArchetype == "Space Marine Scout")
             {
                 bpSpentOnArchetype = 20;
             }
-            if (selectedArchetype == "Tempestus Scion" || selectedArchetype == "Eldar Ranger" ||
-                selectedArchetype == "Ork Kommando" || selectedArchetype == "Desperado")
+            else if (selectedArchetype == "Tempestus Scion" || selectedArchetype == "Eldar Ranger" ||
+                     selectedArchetype == "Ork Kommando" || selectedArchetype == "Desperado")
             {
                 bpSpentOnArchetype = 30;
             }
-            if (selectedArchetype == "Sister of Battle" || selectedArchetype == "Rogue Trader" ||
-                selectedArchetype == "Skitarius" || selectedArchetype == "Crusader")
+            else if (selectedArchetype == "Sister of Battle" || selectedArchetype == "Rogue Trader" ||
+                     selectedArchetype == "Skitarius" || selectedArchetype == "Crusader")
             {
                 bpSpentOnArchetype = 40;
             }
-            if (selectedArchetype == "Sanctioned Psyker" || selectedArchetype == "Rogue Psyker" ||
-                selectedArchetype == "Imperial Commissar" || selectedArchetype == "Tactical Space Marine" ||
-                selectedArchetype == "Necron Cryptek")
+            else if (selectedArchetype == "Sanctioned Psyker" || selectedArchetype == "Rogue Psyker" ||
+                    selectedArchetype == "Imperial Commissar" || selectedArchetype == "Tactical Space Marine" ||
+                    selectedArchetype == "Necron Cryptek")
             {
                 bpSpentOnArchetype = 50;
             }
-            if (selectedArchetype == "Primaris Marine Intercessor" || selectedArchetype == "Tech-Priest" ||
-                selectedArchetype == "Heretek" || selectedArchetype == "Ork Nob")
+            else if (selectedArchetype == "Primaris Marine Intercessor" || selectedArchetype == "Tech-Priest" ||
+                     selectedArchetype == "Heretek" || selectedArchetype == "Ork Nob")
             {
                 bpSpentOnArchetype = 60;
             }
-            if (selectedArchetype == "Inquisitor")
+            else if (selectedArchetype == "Inquisitor")
             {
                 bpSpentOnArchetype = 70;
             }
-            if (selectedArchetype == "Eldar Warlock" || selectedArchetype == "Necron Nemesor")
+            else if (selectedArchetype == "Eldar Warlock" || selectedArchetype == "Necron Nemesor")
             {
                 bpSpentOnArchetype = 80;
             }
+            else
+            {
+                foreach (customArchetype x in customArchetypeList)
+                {
+                    if (raceSelection == x.name + ", " + Convert.ToString(x.bpCost) + "BP")
+                    {
+                        foreach (Dictionary<string, string> y in x.archetypes)
+                        {
+                            if (selectedArchetype == y["archetype"])
+                            {
+                                bpSpentOnArchetype = Convert.ToInt32(y["bpcost"]);
+                                objectives = "Objectives: " + Environment.NewLine + Environment.NewLine + y["objectives"];
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
 
 
             // update Objectives and benefits/keywords
@@ -2162,8 +2192,10 @@ namespace TheCommissar
                         {
                             if (y["archetype"] == selectedArchetype)
                             {
-                                archetypeBenefitsList = y["archetypeDescription"];
+                                archetypeBenefitsList = y["archetypeDescription"] + Environment.NewLine + Environment.NewLine;
                                 archetypeRequirementsList.Add(Tuple.Create("attStrengthTotal", 1));
+                                keywordsList = y["keywords"];
+                                break;
                             }
                         }
                     }

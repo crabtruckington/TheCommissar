@@ -10,38 +10,96 @@
       "archetype": "Infiltrator",
       "archetypeDescription": "Tau Infiltrator: -1DN to all stealth tests.",
       "tier": "1"
+      "bpcost": "20",
+      "objectives": "1. Make a sacrifices in the name of the Great Good. This may be\n    as simple as providing ammo to an ally, or attempting to sacrifice\n    your own life, or even someone elses.\n\n2. Attempt to engage in diplomacy with a Xenos race.\n    This does not necessarily need to succeed.\n\n3. Complete a combat scene without lowering yourself to\n    engage in Melee combat.",
+      "keywords": "<Tau>"
     },
     {
       "archetype": "Sapper",
       "archetypeDescription": "Tau Sapper: -1DN to all Tech tests to set explosives.",
-      "tier": "3"
+      "tier": "3",
+      "bpcost": "20",
+      "objectives": "1. Make a sacrifices in the name of the Great Good. This may be\n    as simple as providing ammo to an ally, or attempting to sacrifice\n    your own life, or even someone elses.\n\n2. Attempt to engage in diplomacy with a Xenos race.\n    This does not necessarily need to succeed.\n\n3. Complete a combat scene without lowering yourself to\n    engage in Melee combat.",
+      "keywords": "<Tau>"
     }
   ],
-  "tier": "1"
+  "tier": "1",
+  "speed": "6"
 }
 */
 /* and please note the comma after each entry EXCEPT the last, see the example file if youre not familiar with JSON */
 /* you can use \u00A0 to set a non-breaking space within long descriptions to prevent them from wrapping strangely, ex: long\u00A0string */
 /* use \u2011 for a nonbreaking hyphen ex: Two\u2011\Handed */
 /* All values must be strings!! Do not use other datatypes, you will probably receive an error or crash the program */
+/* IMPORTANT: Objectives are a bit wonky as theres no good way to handle these. You should limit each line to approximately 55 characters, and end each line with "\n    " (ie, \n followed by 4 spaces). New list entries should be proceeded by \n\n to achieve correct spacing */
 /*  Prerequisite Validation will NOT work for Homebrew races, a default check of 1 strength will be used instead. You may not have less than 1 in any attribute so this shouldnt matter. */
 [
   {
     "name": "Tau",
     "bpcost": "20",
-    "racialBonus": "Tau: +2 Fellowship. +2DN to all Interaction tests against characters with the <Imperium> keyword. -2DN to all Interaction tests against characters without the <Imperium> keyword.",
+    "racialBonus": "Tau: +2 Fellowship. +2DN to all Interaction tests against characters with the <Imperium> keyword.",
     "archetypes": [
       {
-        "archetype": "Infiltrator",
-        "archetypeDescription": "Tau Infiltrator: -1DN to all stealth tests.",
-        "tier": "1"
+        "archetype": "Explorer",
+        "archetypeDescription": "Tau Explorer: -1DN to any test when acting under the orders of another Tau. -3DN if the order is particularly dangerous or life-threatening (GM Discretion).",
+        "tier": "1",
+        "bpcost": "0",
+        "objectives": "1. Make a sacrifices in the name of the Great Good. This may be\n    as simple as providing ammo to an ally, or attempting to sacrifice\n    your own life, or even someone elses.\n\n2. Attempt to engage in diplomacy with a Xenos race.\n    This does not necessarily need to succeed.\n\n3. Complete a combat scene without lowering yourself to\n    engaging in Melee combat.",
+        "keywords": "<Tau>"
+
       },
       {
-        "archetype": "Sapper",
-        "archetypeDescription": "Tau Sapper: -1DN to all Tech tests to set explosives.",
-        "tier": "3"
+        "archetype": "Fire Warrior",
+        "archetypeDescription": "Tau Fire Warrior: You may reduce Difficulty Modifiers by -1 for a Ranged Attack as a free action, at the expense of your movement for that turn.",
+        "tier": "2",
+        "bpcost": "10",
+        "objectives": "1. Make a sacrifices in the name of the Great Good. This may be\n    as simple as providing ammo to an ally, or attempting to sacrifice\n    your own life, or even someone elses.\n\n2. Attempt to engage in diplomacy with a Xenos race.\n    This does not necessarily need to succeed.\n\n3. Complete a combat scene without lowering yourself to\n    engaging in Melee combat.",
+        "keywords": "<Tau>"
+      },
+      {
+        "archetype": "Pathfinder",
+        "archetypeDescription": "Tau Pathfinder: Whenever you successfully damage an enemy in combat with a Ranged Attack, your allies receive +1d for all ranged attacks made on that target until the end of the round.",
+        "tier": "3",
+        "bpcost": "30",
+        "objectives": "1. Make a sacrifices in the name of the Great Good. This may be\n    as simple as providing ammo to an ally, or attempting to sacrifice\n    your own life, or even someone elses.\n\n2. Attempt to engage in diplomacy with a Xenos race.\n    This does not necessarily need to succeed.\n\n3. Complete a combat scene without lowering yourself to\n    engaging in Melee combat.",
+        "keywords": "<Tau>"
+      },
+      {
+        "archetype": "Battlesuit Pilot",
+        "archetypeDescription": "Tau Battlesuit Pilot: You begin play with access to a XV25 Sealth suit. This provides +1 to all attributes, +4 Armor, and comes equipped with a Burst Canon. However, melee attacks must be made using Piloting skill.",
+        "tier": "4",
+        "bpcost": "100",
+        "objectives": "1. Make a sacrifices in the name of the Great Good. This may be\n    as simple as providing ammo to an ally, or attempting to sacrifice\n    your own life, or even someone elses.\n\n2. Attempt to engage in diplomacy with a Xenos race.\n    This does not necessarily need to succeed.\n\n3. Complete a combat scene without lowering yourself to\n    engaging in Melee combat.",
+        "keywords": "<Tau>"
       }
     ],
-    "tier": "1"
+    "tier": "1",
+    "speed": "6"
+  },
+  {
+    "name": "Squat",
+    "bpcost": "20",
+    "racialBonus": "Squats: +1 Fellowship, +1 Toughness. -2DN to all Tech tests involving building or repairing.",
+    "archetypes": [
+      {
+        "archetype": "Mechanic",
+        "archetypeDescription": "Squat Mechanic: +2d bonus to all vehicle repair Tech tests.",
+        "tier": "1",
+        "bpcost": "10",
+        "objectives": "1. Reminisce on the destruction of your homeworld, and compare\n    it to the current situation.\n\n2. Extoll the superiority of Squat culture or tactics, especially\n    to unwilling listeners.\n\n3. Take note of a remarkable piece of engineering, but\n    remind everyone that Squats could build something better.",
+        "keywords": "<Squat>, <Imperium>"
+
+      },
+      {
+        "archetype": "Grenadier",
+        "archetypeDescription": "Squad Grenadier: Begin play with a Voss Pattern Grenade Launcher. Increase the Salvo value of this launcher to 2.",
+        "tier": "2",
+        "bpcost": "10",
+        "objectives": "1. Reminisce on the destruction of your homeworld, and compare\n    it to the current situation.\n\n2. Extoll the superiority of Squat culture or tactics, especially\n    to unwilling listeners.\n\n3. Take note of a remarkable piece of engineering, but\n    remind everyone that Squats could build something better.",
+        "keywords": "<Squat>, <Imperium>"
+      }
+    ],
+    "tier": "1",
+    "speed": "5"
   }
 ]
