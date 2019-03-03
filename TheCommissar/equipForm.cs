@@ -73,15 +73,6 @@ namespace TheCommissar
                                       result.Item2.Item2 + Environment.NewLine + Environment.NewLine +
                                       result.Item2.Item3 + Environment.NewLine + Environment.NewLine +
                                       result.Item2.Item4;
-
-            //equipDamageLabel.Text = result.Item1.Item2;
-            //equipAPLabel.Text = result.Item1.Item3;
-            //equipRangeLabel.Text = result.Item1.Item4;
-            //equipSalvoLabel.Text = result.Item1.Item5;
-            //equipArmorRatingLabel.Text = result.Item2.Item1;
-            //equipValueLabel.Text = result.Item2.Item2;
-            //equipKeywordsLabel.Text = result.Item2.Item3;
-            //equipTraitsLabel.Text = result.Item2.Item4;
         }
 
         private void addEquipButton_Click(object sender, EventArgs e)
@@ -2910,6 +2901,13 @@ namespace TheCommissar
             catch (IOException)
             {
                 string message = "Cant find the equipmentHomebrew.json file! Have you moved it? Do you have read access to the directory the program is running from?";
+                string caption = "Error!";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+            }
+            catch
+            {
+                string message = "There was an error loading equipmentHomebrew.json! Did you make a mistake in your syntax?";
                 string caption = "Error!";
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, button, MessageBoxIcon.Error);

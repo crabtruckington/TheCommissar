@@ -50,7 +50,17 @@ namespace TheCommissar
             }
             catch (IOException)
             {
-
+                string message = "Cant find the talentHomebrew.json file! Have you moved it? Do you have read access to the directory the program is running from?";
+                string caption = "Error!";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+            }
+            catch
+            {
+                string message = "There was an error loading talentHomebrew.json! Did you make a mistake in your syntax?";
+                string caption = "Error!";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
             }
         }
 

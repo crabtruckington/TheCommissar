@@ -109,6 +109,13 @@ namespace TheCommissar
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
             }
+            catch
+            {
+                string message = "There was an error loading characterHomebrew.json! Did you make a mistake in your syntax?";
+                string caption = "Error!";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button, MessageBoxIcon.Error);
+            }
 
             augDetailsLabel.Text = "";
             powerDescriptionLabel.Text = "";

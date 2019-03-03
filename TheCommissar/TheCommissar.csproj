@@ -147,7 +147,9 @@
     <Content Include="HomebrewExtensions\cyberHomebrewEXAMPLE.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="HomebrewExtensions\equipmentHomebrewEXAMPLE.json" />
+    <Content Include="HomebrewExtensions\equipmentHomebrewEXAMPLE.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="HomebrewExtensions\powersHomebrew.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
