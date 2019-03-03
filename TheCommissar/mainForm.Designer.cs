@@ -280,6 +280,7 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.equipModMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.talentDetailsLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -544,6 +545,7 @@
             // 
             this.core.AutoScroll = true;
             this.core.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.core.Controls.Add(this.talentDetailsLabel);
             this.core.Controls.Add(this.archInfoLabel);
             this.core.Controls.Add(this.archetypeInfoHeaderLabel);
             this.core.Controls.Add(this.shockValueBox);
@@ -1120,6 +1122,7 @@
             this.talentBox.Name = "talentBox";
             this.talentBox.Size = new System.Drawing.Size(214, 316);
             this.talentBox.TabIndex = 36;
+            this.talentBox.SelectedIndexChanged += new System.EventHandler(this.talentBox_SelectedIndexChanged);
             // 
             // talentLabel
             // 
@@ -3035,6 +3038,14 @@
             this.addModToolStripMenuItem.Text = "Add Mod";
             this.addModToolStripMenuItem.Click += new System.EventHandler(this.addModToolStripMenuItem_Click);
             // 
+            // talentDetailsLabel
+            // 
+            this.talentDetailsLabel.Location = new System.Drawing.Point(573, 400);
+            this.talentDetailsLabel.Name = "talentDetailsLabel";
+            this.talentDetailsLabel.Size = new System.Drawing.Size(246, 92);
+            this.talentDetailsLabel.TabIndex = 4140;
+            this.talentDetailsLabel.Text = "talentDetailsLabel";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3392,6 +3403,7 @@
         private System.Windows.Forms.ToolStripMenuItem checkCharacterValidityToolStripMenuItem;
         private System.Windows.Forms.Label archInfoLabel;
         private System.Windows.Forms.Label archetypeInfoHeaderLabel;
+        private System.Windows.Forms.Label talentDetailsLabel;
     }
 }
 

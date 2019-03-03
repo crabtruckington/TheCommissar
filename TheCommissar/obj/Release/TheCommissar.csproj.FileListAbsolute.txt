@@ -23,3 +23,6 @@ F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\New
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\Newtonsoft.Json.pdb
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\Newtonsoft.Json.xml
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.csproj.CopyComplete
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\obj\Release\TheCommissar.csprojAssemblyReference.cache
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\HomebrewExtensions\talentHomebrew.json
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Release\HomebrewExtensions\talentHomebrewEXAMPLE.json

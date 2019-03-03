@@ -1,0 +1,18 @@
+/* This file allows you to add custom Talents */
+/* All entries should go between the [ and ] brackets */
+/* All entries MUST be in the following format: 
+
+{
+    "name": "Testing custom talent",
+    "bpcost": 1,
+    "description": "Testing custom talent description"
+}
+
+*/
+/* and please note the comma after each entry EXCEPT the last, see the example file if youre not familiar with JSON */
+/* you can use \u00A0 to set a non-breaking space within long descriptions to prevent them from wrapping strangely, ex: long\u00A0string */
+/* use \u2011 for a nonbreaking hyphen ex: Two\u2011\Handed */
+/* Please be mindful of the datatypes!! bpcost is an integer, the rest are strings. */
+[
+
+]

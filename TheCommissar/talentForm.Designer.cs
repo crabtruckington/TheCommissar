@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(talentForm));
             this.talentSelectBox = new System.Windows.Forms.ListBox();
-            this.selectedTalentLabel = new System.Windows.Forms.Label();
-            this.bpCostLabel = new System.Windows.Forms.Label();
+            this.talentDetailsLabel = new System.Windows.Forms.Label();
             this.addTalentButton = new System.Windows.Forms.Button();
             this.talentCancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,11 +41,11 @@
             this.talentSelectBox.Items.AddRange(new object[] {
             "Acts of Faith",
             "Augmetic",
-            "Cybernetic Reconstruction",
             "Betrayer",
-            "Chaos Familiar",
             "Bombardment",
+            "Chaos Familiar",
             "Counterstrike",
+            "Cybernetic Reconstruction",
             "Dedicant",
             "Devotees",
             "Dual Wielder",
@@ -74,31 +73,31 @@
             "Special Weapons Trooper",
             "Steel and Doom",
             "Storm of Death",
-            "Superhuman Strength",
             "Superhuman Agility",
-            "Superhuman Toughness",
-            "Superhuman Intellect",
-            "Superhuman Willpower",
             "Superhuman Fellowship",
             "Superhuman Initiative",
+            "Superhuman Intellect",
             "Superhuman Speed",
+            "Superhuman Strength",
+            "Superhuman Toughness",
+            "Superhuman Willpower",
             "Supreme Presence",
             "The Emperor\'s Light",
             "Touched by Fate",
             "Trademark Weapon",
             "True Grit",
-            "Uncanny Defence",
-            "Uncanny Resilience",
-            "Uncanny Soak",
-            "Uncanny Shock",
-            "Uncanny Speed",
-            "Uncanny Wounds",
             "Uncanny Convinction",
             "Uncanny Corruption",
-            "Uncanny Passive Awareness",
-            "Uncanny Resolve",
+            "Uncanny Defence",
             "Uncanny Influence",
+            "Uncanny Passive Awareness",
+            "Uncanny Resilience",
+            "Uncanny Resolve",
+            "Uncanny Shock",
+            "Uncanny Soak",
+            "Uncanny Speed",
             "Uncanny Wealth",
+            "Uncanny Wounds",
             "Unnatural Athletics",
             "Unnatural Awareness",
             "Unnatural Ballistic Skill",
@@ -121,26 +120,17 @@
             this.talentSelectBox.Location = new System.Drawing.Point(13, 13);
             this.talentSelectBox.Name = "talentSelectBox";
             this.talentSelectBox.Size = new System.Drawing.Size(279, 420);
+            this.talentSelectBox.Sorted = true;
             this.talentSelectBox.TabIndex = 0;
             this.talentSelectBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // selectedTalentLabel
+            // talentDetailsLabel
             // 
-            this.selectedTalentLabel.AutoSize = true;
-            this.selectedTalentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedTalentLabel.Location = new System.Drawing.Point(298, 13);
-            this.selectedTalentLabel.Name = "selectedTalentLabel";
-            this.selectedTalentLabel.Size = new System.Drawing.Size(126, 13);
-            this.selectedTalentLabel.TabIndex = 1;
-            this.selectedTalentLabel.Text = "Selected Talent Cost";
-            // 
-            // bpCostLabel
-            // 
-            this.bpCostLabel.AutoSize = true;
-            this.bpCostLabel.Location = new System.Drawing.Point(301, 44);
-            this.bpCostLabel.Name = "bpCostLabel";
-            this.bpCostLabel.Size = new System.Drawing.Size(0, 13);
-            this.bpCostLabel.TabIndex = 2;
+            this.talentDetailsLabel.Location = new System.Drawing.Point(301, 13);
+            this.talentDetailsLabel.Name = "talentDetailsLabel";
+            this.talentDetailsLabel.Size = new System.Drawing.Size(272, 382);
+            this.talentDetailsLabel.TabIndex = 2;
+            this.talentDetailsLabel.Text = "talentDetailsLabel";
             // 
             // addTalentButton
             // 
@@ -169,8 +159,7 @@
             this.ClientSize = new System.Drawing.Size(585, 450);
             this.Controls.Add(this.talentCancelButton);
             this.Controls.Add(this.addTalentButton);
-            this.Controls.Add(this.bpCostLabel);
-            this.Controls.Add(this.selectedTalentLabel);
+            this.Controls.Add(this.talentDetailsLabel);
             this.Controls.Add(this.talentSelectBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -179,15 +168,13 @@
             this.Text = "Talents";
             this.Load += new System.EventHandler(this.talentForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox talentSelectBox;
-        private System.Windows.Forms.Label selectedTalentLabel;
-        private System.Windows.Forms.Label bpCostLabel;
+        private System.Windows.Forms.Label talentDetailsLabel;
         private System.Windows.Forms.Button addTalentButton;
         private System.Windows.Forms.Button talentCancelButton;
     }

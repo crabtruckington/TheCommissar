@@ -154,6 +154,12 @@
     <Content Include="HomebrewExtensions\powersHomebrewEXAMPLE.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="HomebrewExtensions\talentHomebrew.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HomebrewExtensions\talentHomebrewEXAMPLE.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

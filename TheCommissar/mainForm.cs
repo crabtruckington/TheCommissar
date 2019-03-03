@@ -112,6 +112,7 @@ namespace TheCommissar
 
             augDetailsLabel.Text = "";
             powerDescriptionLabel.Text = "";
+            talentDetailsLabel.Text = "";
 
 
             //List<equipmentObject> eBrew = JsonConvert.DeserializeObject<List<equipmentObject>>(File.ReadAllText(resourceName));
@@ -924,7 +925,7 @@ namespace TheCommissar
             else if (dr == DialogResult.OK)
             {
                 var results = talents.getTalentsAndCost();
-                talentBox.Items.Add(results.Item1.ToString() + ", " + results.Item2.ToString() + "BP");
+                talentBox.Items.Add(results.Item1.ToString());
                 updateBuildPoints(results.Item2);
             }
         }
@@ -932,10 +933,29 @@ namespace TheCommissar
         private void removeTalentBtn_Click(object sender, EventArgs e)
         {
             string findBPCost = talentBox.SelectedItem.ToString();
-            findBPCost = findBPCost.Substring(findBPCost.Length - 4);
-            findBPCost = findBPCost.Substring(0,2);
-            updateBuildPoints(Convert.ToInt32(findBPCost) * -1);
+            talentForm talents = new talentForm();
+            var results = talents.findTalentDetails(talentBox.SelectedItem.ToString());
+
+            updateBuildPoints(results.Item2 * -1);
+
             talentBox.Items.Remove(talentBox.SelectedItem);
+        }
+
+        private void talentBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (talentBox.SelectedItem != null)
+            {
+                string talentName = talentBox.SelectedItem.ToString();
+                talentForm talents = new talentForm();
+                var results = talents.findTalentDetails(talentName);
+
+                talentDetailsLabel.Text = "BP Cost: " + results.Item2.ToString() + Environment.NewLine + Environment.NewLine +
+                                          "Details: " + results.Item3;
+            }
+            else
+            {
+                talentDetailsLabel.Text = "";
+            }
         }
 
 
@@ -2940,6 +2960,7 @@ namespace TheCommissar
             MessageBox.Show(message, caption, button, MessageBoxIcon.Information);
 
         }
+
     }
 }
 

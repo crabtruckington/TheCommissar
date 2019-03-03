@@ -24,3 +24,5 @@ F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Debug\Homeb
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Debug\HomebrewExtensions\cyberHomebrewEXAMPLE.json
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Debug\HomebrewExtensions\powersHomebrew.json
 F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Debug\HomebrewExtensions\powersHomebrewEXAMPLE.json
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Debug\HomebrewExtensions\talentHomebrew.json
+F:\Visual Studio Projects\TheCommissar\TheCommissar\TheCommissar\bin\Debug\HomebrewExtensions\talentHomebrewEXAMPLE.json
